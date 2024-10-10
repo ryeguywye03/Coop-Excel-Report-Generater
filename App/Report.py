@@ -6,7 +6,7 @@ from datetime import datetime
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, 
     QFileDialog, QCheckBox, QProgressBar, QMessageBox, QComboBox, QGridLayout, 
-    QGroupBox, QDateTimeEdit, QStackedWidget, QSpacerItem, QSizePolicy, QHBoxLayout
+    QGroupBox, QDateTimeEdit, QStackedWidget, QSpacerItem, QSizePolicy, QHBoxLayout, QTableWidget, QTableWidgetItem, QDialog
 )
 from PyQt5.QtCore import QDateTime, Qt
 from sr_count import SRReportGenerator
@@ -72,7 +72,7 @@ class ReportGeneratorApp(QMainWindow):
         self.sr_counter_button.clicked.connect(self.show_sr_counter_page)
         self.sidebar_layout.addWidget(self.sr_counter_button)
 
-        # Add spacer to push any additional items to the bottom
+        # Add spacer to push items to the top
         self.sidebar_layout.addSpacerItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
 
     def create_sidebar_sr_counter(self):
@@ -94,15 +94,19 @@ class ReportGeneratorApp(QMainWindow):
         self.back_button.clicked.connect(self.back_to_main_menu)
         self.sidebar_layout.addWidget(self.back_button)
 
-        # Add spacer to push any additional items to the bottom
+        # Add spacer to push items to the top
         self.sidebar_layout.addSpacerItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
 
     def clear_sidebar(self):
         """Remove all widgets from the sidebar."""
         for i in reversed(range(self.sidebar_layout.count())):
-            widget = self.sidebar_layout.itemAt(i).widget()
+            item = self.sidebar_layout.itemAt(i)
+            widget = item.widget()
             if widget is not None:
                 widget.deleteLater()
+            elif isinstance(item, QSpacerItem):  # If it's a spacer, remove it
+                self.sidebar_layout.removeItem(item)
+
 
     def back_to_main_menu(self):
         """Switch back to the main menu in the sidebar."""
@@ -154,6 +158,12 @@ class ReportGeneratorApp(QMainWindow):
 
         # Add progress bar to the layout
         sr_counter_layout.addWidget(self.progress_bar)
+
+        # Preview button for showing the report preview
+        self.preview_button = QPushButton("Preview Report")
+        self.preview_button.setStyleSheet("background-color: purple; color: white;")
+        self.preview_button.clicked.connect(self.preview_report)
+        sr_counter_layout.addWidget(self.preview_button)
 
         self.sr_counter_page.setLayout(sr_counter_layout)
         self.content_area.addWidget(self.sr_counter_page)
@@ -241,27 +251,52 @@ class ReportGeneratorApp(QMainWindow):
 
                 report_df = self.report_generator.generate_report(self.df, start_date, end_date)
                 if report_df is not None:
-                    self.save_report(report_df)
+                    output_file = self.report_generator.save_report(report_df)
+                    QMessageBox.information(self, "Success", f"Report saved as {output_file}")
 
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"Error generating report: {e}")
 
-    def save_report(self, report_df):
-        """Save the generated report to an Excel file."""
-        try:
-            directory = os.path.expanduser("~/Desktop")
-            base_filename = "report_"
-            file_number = 1
-            while os.path.exists(os.path.join(directory, f"{base_filename}{file_number:03}.xlsx")):
-                file_number += 1
+    def preview_report(self):
+        """Show a preview of the report in a popup window."""
+        if self.df is not None and self.selected_columns:
+            try:
+                start_date = self.start_date_input.dateTime().toPyDateTime()
+                end_date = self.end_date_input.dateTime().toPyDateTime()
 
-            output_file = os.path.join(directory, f"{base_filename}{file_number:03}.xlsx")
-            report_df.to_excel(output_file, index=False)
-            QMessageBox.information(self, "Success", f"Report saved as {output_file}")
+                if start_date > end_date:
+                    QMessageBox.critical(self, "Error", "Start date cannot be after end date")
+                    return
 
-        except Exception as e:
-            QMessageBox.critical(self, "Error", f"Failed to save report: {e}")
+                report_df = self.report_generator.generate_report(self.df, start_date, end_date)
+                if report_df is not None:
+                    self.show_report_preview(report_df)
 
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Error generating report: {e}")
+
+    def show_report_preview(self, report_df):
+        """Show the report preview in a popup window."""
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Report Preview")
+        dialog.resize(600, 400)
+
+        # Create a table widget to show the preview
+        table = QTableWidget()
+        table.setRowCount(len(report_df))
+        table.setColumnCount(len(report_df.columns))
+        table.setHorizontalHeaderLabels(report_df.columns)
+
+        # Populate the table with data
+        for row in range(len(report_df)):
+            for col, value in enumerate(report_df.iloc[row]):
+                table.setItem(row, col, QTableWidgetItem(str(value)))
+
+        layout = QVBoxLayout()
+        layout.addWidget(table)
+        dialog.setLayout(layout)
+
+        dialog.exec_()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
