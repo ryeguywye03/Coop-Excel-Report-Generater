@@ -49,7 +49,7 @@ class ReportGeneratorApp(QMainWindow):
         self.create_sr_counter_page()
 
         # Create instance of SRReportGenerator
-        self.report_generator = SRReportGenerator(self.progress_bar)
+        self.report_generator = SRReportGenerator(self.progress_bar, logging)
 
         # Create the sidebar navigation
         self.sidebar_group = QGroupBox("Menu")

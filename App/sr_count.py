@@ -4,8 +4,9 @@ from datetime import datetime
 from PyQt5.QtWidgets import QProgressBar, QMessageBox
 
 class SRReportGenerator:
-    def __init__(self, progress_bar: QProgressBar):
+    def __init__(self, progress_bar, logger):
         self.progress_bar = progress_bar
+        self.logger = logger  # Save logger instance
 
     def generate_report(self, df: pd.DataFrame, start_date: datetime, end_date: datetime):
         """Generate the report by processing the DataFrame within the start and end date range."""
@@ -78,9 +79,10 @@ class SRReportGenerator:
         self.progress_bar.setValue(100)
 
         return combined_report
+    
 
-    def save_report(self, report_df: pd.DataFrame):
-        """Save the generated report to an Excel file with manual column width adjustment."""
+    def save_report(self, report_df):
+        """Save the generated report to an Excel file with autofit column widths."""
         try:
             directory = os.path.expanduser("~/Desktop")
             base_filename = "report_"
@@ -98,13 +100,13 @@ class SRReportGenerator:
                 workbook = writer.book
                 worksheet = writer.sheets['Report']
 
-                # Calculate and set column widths based on the length of the content
-                for i, col in enumerate(report_df.columns):
+                # Set column widths based on the max length of the data in each column
+                for idx, col in enumerate(report_df.columns):
                     max_len = max(
-                        report_df[col].astype(str).map(len).max(),  # Max length of column values
-                        len(str(col))  # Length of the column header
-                    )
-                    worksheet.set_column(i, i, max_len + 2)  # Add padding for better appearance
+                        report_df[col].astype(str).map(len).max(),  # Maximum content length in the column
+                        len(str(col))  # Length of the column name
+                    ) + 2  # Adding a little extra padding
+                    worksheet.set_column(idx, idx, max_len)  # Set column width based on the calculated max length
 
                 # Apply header format
                 header_format = workbook.add_format({
@@ -117,9 +119,9 @@ class SRReportGenerator:
 
                 for col_num, value in enumerate(report_df.columns.values):
                     worksheet.write(0, col_num, value, header_format)
-
+                self.logger.info(f"Report saved successfully at {output_file}")
             return output_file
 
         except Exception as e:
-            raise Exception(f"Failed to save report: {e}")
-
+            self.logger.error(f"Failed to save report: {e}")
+            return None
