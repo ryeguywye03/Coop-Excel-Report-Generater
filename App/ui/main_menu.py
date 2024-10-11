@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QGroupBox
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QGridLayout, QLabel, QPushButton, QGroupBox
 
 class MainMenuUI(QWidget):
     def __init__(self, parent):
@@ -6,8 +6,8 @@ class MainMenuUI(QWidget):
         self.setup_ui(parent)
 
     def setup_ui(self, parent):
-        # Layout for main menu
-        self.main_layout = QVBoxLayout(self)
+        # Layout for main menu using QGridLayout
+        self.main_layout = QGridLayout(self)
 
         # Sidebar with navigation buttons
         sidebar_group = self.setup_sidebar(parent)
@@ -15,9 +15,9 @@ class MainMenuUI(QWidget):
         # Main panel with welcome message
         welcome_panel = self.setup_main_panel()
 
-        # Add sidebar and welcome panel to the main layout
-        self.main_layout.addWidget(sidebar_group, 0, 0, 1, 1)
-        self.main_layout.addWidget(welcome_panel, 0, 1, 1, 2)
+        # Add sidebar and welcome panel to the main layout using grid
+        self.main_layout.addWidget(sidebar_group, 0, 0, 1, 1)  # Sidebar on the left
+        self.main_layout.addWidget(welcome_panel, 0, 1, 1, 2)  # Welcome panel takes 2 columns
 
     def setup_sidebar(self, parent):
         """Set up the sidebar for the Main Menu."""
@@ -27,23 +27,18 @@ class MainMenuUI(QWidget):
         # Add buttons for navigation
         sr_counter_button = QPushButton("SR Counter")
         sr_counter_button.clicked.connect(parent.switch_to_sr_counter)
-
-        settings_button = QPushButton("Settings")  # Could be added later
-
         sidebar_layout.addWidget(sr_counter_button)
-        sidebar_layout.addWidget(settings_button)
 
         sidebar_group.setLayout(sidebar_layout)
         return sidebar_group
 
     def setup_main_panel(self):
-        """Set up the main welcome panel."""
-        main_panel_group = QGroupBox("Welcome to the Excel Report Generator App")
-        main_panel_layout = QVBoxLayout()
+        """Set up the main content area for the welcome message."""
+        welcome_panel = QGroupBox("Welcome")
+        welcome_layout = QVBoxLayout()
 
-        # Add a welcome label
-        welcome_label = QLabel("Welcome! Use the sidebar to navigate to different options.")
+        welcome_message = QLabel("Welcome to the Excel Report Generator!")
+        welcome_layout.addWidget(welcome_message)
 
-        main_panel_layout.addWidget(welcome_label)
-        main_panel_group.setLayout(main_panel_layout)
-        return main_panel_group
+        welcome_panel.setLayout(welcome_layout)
+        return welcome_panel
