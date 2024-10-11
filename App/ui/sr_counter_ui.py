@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLabel, QDateTimeEdit, QCheckBox, QProgressBar, QFileDialog, QMessageBox, QScrollArea, QGroupBox, QPushButton
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLabel, QDateTimeEdit, QCheckBox, QProgressBar, QFileDialog, QMessageBox, QScrollArea, QGroupBox, QPushButton, QSizePolicy
 from PyQt5.QtCore import QDateTime
 import pandas as pd
 from logic.sr_count import SRReportGenerator
@@ -17,18 +17,32 @@ class SRCounterUI(QWidget):
         # Set window size
         self.setMinimumSize(1000, 600)  # Set a standard size for the window
 
+    from PyQt5.QtWidgets import QSizePolicy
+
     def setup_ui(self, parent):
         self.main_layout = QGridLayout(self)
 
         # Sidebar with buttons
         sidebar_group = self.setup_sidebar(parent)
-
+        
         # Main panel for SR counter options
         sr_counter_panel = self.setup_main_panel()
 
         # Add sidebar and SR Counter panel to the main layout using grid
         self.main_layout.addWidget(sidebar_group, 0, 0, 1, 1)  # Sidebar in column 0
         self.main_layout.addWidget(sr_counter_panel, 0, 1, 1, 2)  # SR Counter panel spans 2 columns
+
+        # Set stretch factors for columns
+        self.main_layout.setColumnStretch(0, 0)  # Sidebar gets a fixed width
+        self.main_layout.setColumnStretch(1, 1)  # Main panel expands more
+
+        # Set sidebar size policy to fixed
+        sidebar_group.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        
+        # Set main panel size policy to expanding
+        sr_counter_panel.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+
+
 
     def setup_sidebar(self, parent):
         """Set up the sidebar for the SR Counter page."""

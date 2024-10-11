@@ -21,3 +21,11 @@ class SettingsDialog(QDialog):
 
     def get_no_location_inclusion(self):
         return self.no_location_input.text()
+    
+
+    def sr_count_settings(self):
+        """Open the settings dialog to get user preferences."""
+        dialog = SettingsDialog(self)
+        if dialog.exec_():
+            return dialog.get_no_location_inclusion()
+        return None

@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QGridLayout, QLabel, QPushButton, QGroupBox
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QGridLayout, QLabel, QPushButton, QGroupBox, QSizePolicy
 
 class MainMenuUI(QWidget):
     def __init__(self, parent):
@@ -18,6 +18,16 @@ class MainMenuUI(QWidget):
         # Add sidebar and welcome panel to the main layout using grid
         self.main_layout.addWidget(sidebar_group, 0, 0, 1, 1)  # Sidebar on the left
         self.main_layout.addWidget(welcome_panel, 0, 1, 1, 2)  # Welcome panel takes 2 columns
+
+        # Set stretch factors for columns
+        self.main_layout.setColumnStretch(0, 0)  # Sidebar has a fixed width
+        self.main_layout.setColumnStretch(1, 1)  # Main panel expands more
+
+        # Set sidebar size policy to fixed
+        sidebar_group.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+    
+        # Set main panel size policy to expanding
+        welcome_panel.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
     def setup_sidebar(self, parent):
         """Set up the sidebar for the Main Menu."""
