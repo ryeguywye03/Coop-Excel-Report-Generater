@@ -6,7 +6,7 @@ from datetime import datetime
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, 
     QFileDialog, QCheckBox, QProgressBar, QMessageBox, QComboBox, QGridLayout, 
-    QGroupBox, QDateTimeEdit, QStackedWidget, QSpacerItem, QSizePolicy, QHBoxLayout, QTableWidget, QTableWidgetItem, QDialog
+    QGroupBox, QDateTimeEdit, QStackedWidget, QSpacerItem, QSizePolicy, QHBoxLayout, QDialog, QLineEdit, QTableWidget, QTableWidgetItem
 )
 from PyQt5.QtCore import QDateTime, Qt
 from sr_count import SRReportGenerator
@@ -49,7 +49,11 @@ class ReportGeneratorApp(QMainWindow):
         self.create_sr_counter_page()
 
         # Create instance of SRReportGenerator
-        self.report_generator = SRReportGenerator(self.progress_bar, logging)
+        # Inside the ReportGeneratorApp __init__ method
+        # Initialize the logger and pass it along with the progress bar
+        self.logger = logging.getLogger(__name__)
+        self.report_generator = SRReportGenerator(self.progress_bar, self.logger)
+
 
         # Create the sidebar navigation
         self.sidebar_group = QGroupBox("Menu")
@@ -72,11 +76,11 @@ class ReportGeneratorApp(QMainWindow):
         self.sr_counter_button.clicked.connect(self.show_sr_counter_page)
         self.sidebar_layout.addWidget(self.sr_counter_button)
 
-        # Add spacer to push items to the top
+        # Add spacer to push any additional items to the bottom
         self.sidebar_layout.addSpacerItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
 
     def create_sidebar_sr_counter(self):
-        """Create the SR Counter sidebar with Load, Generate, and Back buttons."""
+        """Create the SR Counter sidebar with Load, Generate, Preview, Back, and Settings buttons."""
         self.clear_sidebar()
 
         # Load Excel button
@@ -89,13 +93,40 @@ class ReportGeneratorApp(QMainWindow):
         self.generate_button.clicked.connect(self.generate_and_save_report)
         self.sidebar_layout.addWidget(self.generate_button)
 
+        # Settings button
+        self.settings_button = QPushButton("Settings")
+        self.settings_button.clicked.connect(self.show_settings_dialog)
+        self.sidebar_layout.addWidget(self.settings_button)
+
         # Back button to go back to the main menu
         self.back_button = QPushButton("Back")
         self.back_button.clicked.connect(self.back_to_main_menu)
         self.sidebar_layout.addWidget(self.back_button)
 
-        # Add spacer to push items to the top
+        # Add spacer to push any additional items to the bottom
         self.sidebar_layout.addSpacerItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
+
+    def show_settings_dialog(self):
+        """Show the settings dialog."""
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Settings")
+
+        # Layout for the settings dialog
+        layout = QVBoxLayout(dialog)
+
+        # "No location" inclusion criteria
+        self.no_location_label = QLabel("Enter SR descriptions to include if X,Y = 0,0:")
+        self.no_location_input = QLineEdit()
+        layout.addWidget(self.no_location_label)
+        layout.addWidget(self.no_location_input)
+
+        # OK button to save settings
+        ok_button = QPushButton("OK")
+        ok_button.clicked.connect(dialog.close)  # Properly close the dialog only
+        layout.addWidget(ok_button)
+
+        dialog.exec_()  # This keeps the dialog open independently from the main window
+
 
     def clear_sidebar(self):
         """Remove all widgets from the sidebar."""
@@ -259,44 +290,37 @@ class ReportGeneratorApp(QMainWindow):
 
     def preview_report(self):
         """Show a preview of the report in a popup window."""
-        if self.df is not None and self.selected_columns:
-            try:
-                start_date = self.start_date_input.dateTime().toPyDateTime()
-                end_date = self.end_date_input.dateTime().toPyDateTime()
+        if self.df is None or not self.selected_columns:
+            QMessageBox.warning(self, "No Data", "Please load a file and select columns first.")
+            return
 
-                if start_date > end_date:
-                    QMessageBox.critical(self, "Error", "Start date cannot be after end date")
-                    return
+        start_date = self.start_date_input.dateTime().toPyDateTime()
+        end_date = self.end_date_input.dateTime().toPyDateTime()
 
-                report_df = self.report_generator.generate_report(self.df, start_date, end_date)
-                if report_df is not None:
-                    self.show_report_preview(report_df)
+        report_df = self.report_generator.generate_report(self.df, start_date, end_date)
 
-            except Exception as e:
-                QMessageBox.critical(self, "Error", f"Error generating report: {e}")
+        if report_df is None:
+            QMessageBox.critical(self, "Error", "Failed to generate the report for preview.")
+            return
 
-    def show_report_preview(self, report_df):
-        """Show the report preview in a popup window."""
-        dialog = QDialog(self)
-        dialog.setWindowTitle("Report Preview")
-        dialog.resize(600, 400)
+        # Create a dialog to display the report preview
+        preview_dialog = QDialog(self)
+        preview_dialog.setWindowTitle("Report Preview")
+        preview_layout = QVBoxLayout(preview_dialog)
 
-        # Create a table widget to show the preview
         table = QTableWidget()
-        table.setRowCount(len(report_df))
-        table.setColumnCount(len(report_df.columns))
+        table.setRowCount(report_df.shape[0])
+        table.setColumnCount(report_df.shape[1])
         table.setHorizontalHeaderLabels(report_df.columns)
 
-        # Populate the table with data
-        for row in range(len(report_df)):
-            for col, value in enumerate(report_df.iloc[row]):
-                table.setItem(row, col, QTableWidgetItem(str(value)))
+        # Fill the table with report data
+        for i in range(report_df.shape[0]):
+            for j in range(report_df.shape[1]):
+                table.setItem(i, j, QTableWidgetItem(str(report_df.iloc[i, j])))
 
-        layout = QVBoxLayout()
-        layout.addWidget(table)
-        dialog.setLayout(layout)
-
-        dialog.exec_()
+        preview_layout.addWidget(table)
+        preview_dialog.resize(800, 600)  # Adjust the window size
+        preview_dialog.exec_()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
