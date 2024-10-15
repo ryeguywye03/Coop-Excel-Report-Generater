@@ -1,0 +1,127 @@
+/* General styling for the whole application */
+QWidget {
+    background-color: #2E2E3A;  /* Dark background for the whole app */
+    color: white;  /* Default text color */
+}
+
+/* Sidebar styling */
+QWidget#sidebar {
+    background-color: #3A3A48;  /* Slightly darker background for the sidebar */
+    border: 2px solid #555566;  /* More pronounced border around the sidebar */
+    border-radius: 15px;  /* More rounded corners for modern look */
+    padding: 10px;
+}
+
+/* Main panel styling */
+QWidget#mainpanel {
+    background-color: #2A2A37;  /* Differentiating color for the main content panel */
+    border: 2px solid #555566;  /* More pronounced border around the main panel */
+    border-radius: 15px;  /* Same rounded corners for consistency */
+    padding: 10px;
+}
+
+/* GroupBox title styling */
+QGroupBox {
+    color: white;
+    border: 1px solid #3A3A48;  /* Subtle inner border for GroupBox */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding-left: 10px;
+    color: rgb(0, 98, 163);  /* Accent color for group titles */
+}
+
+/* Checkbox Scrollbox */
+QScrollArea {
+    background-color: #40404F;  /* Dark background for the scroll area */
+    border: 2px solid #555566;  /* Subtle border to frame scroll area */
+    border-radius: 10px;
+}
+
+QScrollBar:vertical {
+    background: #50505F;
+    width: 10px;
+    margin: 15px 3px 15px 3px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgb(0, 98, 163);  /* Accent color for scroll bar */
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+/* Buttons (QPushButton) */
+QPushButton {
+    background-color: rgb(0, 98, 163);  /* Accent color for buttons */
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 2px solid #40404F;  /* Slight border around buttons */
+}
+
+QPushButton:hover {
+    background-color: rgb(0, 80, 133);  /* Darker accent on hover */
+}
+
+QPushButton:pressed {
+    background-color: rgb(0, 60, 100);  /* Even darker accent when pressed */
+}
+
+/* ProgressBar */
+QProgressBar {
+    border: 2px solid #3A3A48;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    background-color: #40404F;
+}
+
+QProgressBar::chunk {
+    background-color: rgb(0, 98, 163);  /* Accent color for progress */
+    width: 20px;
+    margin: 1px;
+}
+
+/* Labels (QLabel) */
+QLabel {
+    color: white;  /* White text for labels */
+    background-color: transparent;  /* Transparent background for labels */
+    font-weight: bold;  /* Bold text */
+    padding: 2px;
+}
+
+/* ComboBox (Sort dropdown and Settings dropdown) */
+QComboBox {
+    background-color: #2b2b2b;  /* Match with dark theme */
+    color: white;
+    border: 1px solid #5a5a5a;  /* Slight border around dropdown */
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid #5a5a5a;
+}
+
+QComboBox::down-arrow {
+    image: url(down_arrow.png);  /* Optional custom down arrow */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #333;
+    selection-background-color: #5a5a5a;
+    color: white;
+}
+
+/* Dialog styling (Settings dialog) */
+QDialog#settings_dialog {
+    background-color: #2E2E3A;
+    color: white;
+    border: 2px solid #555566;
+    border-radius: 10px;
+}

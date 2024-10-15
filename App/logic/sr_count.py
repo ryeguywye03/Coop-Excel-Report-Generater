@@ -7,19 +7,23 @@ class SRReportGenerator:
         self.progress_bar = progress_bar
         self.logger = logger
 
-    def generate_report(self, df: pd.DataFrame, selected_columns,start_date: datetime, end_date: datetime):
-        """Generate the report by processing the DataFrame within the start and end date range."""
-        
+    def generate_report(self, df: pd.DataFrame, selected_columns, start_date: datetime, end_date: datetime, sort_by=None, exclusions=None):
+        """Generate the report by processing the DataFrame within the start and end date range, grouped by selected columns, and sort it."""
+
+        # Exclude SR Type and Group based on the settings
+        if exclusions:
+            if exclusions['excluded_sr_type']:
+                df = df[df['Type Description'] != exclusions['excluded_sr_type']]
+            if exclusions['excluded_group']:
+                df = df[df['Group Description'] != exclusions['excluded_group']]
+
         # Ensure 'Created Date' is properly handled and convert to datetime if selected
-        # if 'Created Date' in selected_columns:
         df['Created Date'] = pd.to_datetime(df['Created Date'], errors='coerce')
         df = df.dropna(subset=['Created Date'])
         df = df[(df['Created Date'] >= start_date) & (df['Created Date'] <= end_date)]
 
         # Extract the month from 'Created Date'
         df['Month'] = df['Created Date'].dt.month  # Extract month
-        # else:
-            # df['Month'] = pd.NA  # Set Month to NA if 'Created Date' is not checked
 
         # Define month names
         all_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -41,14 +45,11 @@ class SRReportGenerator:
         group_count = len(grouped)
 
         for group_values, group_data in grouped:
-            # Monthly counts if 'Created Date' is in selected columns
-            # if 'Created Date' in selected_columns:
+            # Monthly counts
             monthly_counts = [
                 group_data[group_data['Month'] == month].shape[0]
                 for month in range(start_month, end_month + 1)
             ]
-            # else:
-                # monthly_counts = [pd.NA] * len(included_months)
 
             total_count = sum(monthly_counts)
 
@@ -69,20 +70,23 @@ class SRReportGenerator:
             progress = int(len(combined_data) / max(group_count, 1) * 100)
             self.progress_bar.setValue(progress)
 
-        # Append grand totals row
-        total_row = {col: '' for col in selected_columns}
-        total_row.update(grand_totals)
-        combined_data.append(total_row)
-
         # Create DataFrame for the report
         columns_order = selected_columns + included_months + ['TOTAL']
         combined_report = pd.DataFrame(combined_data)[columns_order]
+
+        # Sort the report by the selected field, if applicable
+        if sort_by and sort_by in combined_report.columns:
+            combined_report = combined_report.sort_values(by=sort_by)
+
+        # Append grand totals row **after sorting**, so it's at the bottom
+        total_row = {col: '' for col in selected_columns}
+        total_row.update(grand_totals)
+        combined_report = pd.concat([combined_report, pd.DataFrame([total_row])], ignore_index=True)
 
         # Set progress bar to 100% when done
         self.progress_bar.setValue(100)
 
         return combined_report
-
 
     def show_report_preview(self, preview_df):
         """Display a preview of the report in a QDialog."""

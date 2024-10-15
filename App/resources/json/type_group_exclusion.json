@@ -1,0 +1,13 @@
+{
+    "type_descriptions":{
+        "1":{
+            "description":"This is a description for type 1"
+        }
+    },
+
+    "group_descriptions":{
+        "1":{
+            "description":"This is a description for group 1"
+        }
+    }
+}

@@ -1,115 +1,119 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLabel, QDateTimeEdit, QCheckBox, QProgressBar, QFileDialog, QMessageBox, QScrollArea, QGroupBox, QPushButton, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLabel, QDateTimeEdit, QCheckBox, QProgressBar, QFileDialog, QMessageBox, QScrollArea, QGroupBox, QPushButton, QSizePolicy, QComboBox
 from PyQt5.QtCore import QDateTime
 import pandas as pd
+import json
+import os
 from logic.sr_count import SRReportGenerator
 from ui.report_preview import ReportPreview  # Import the ReportPreview dialog
 from ui.settings_dialog import SettingsDialog  # Import the Settings Dialog
-from datetime import datetime
+import logging
 
 
 class SRCounterUI(QWidget):
     def __init__(self, parent):
         super().__init__(parent)
-        self.parent = parent
-        self.setup_ui(parent)
-        self.report_generator = SRReportGenerator(self.progress_bar, parent)
+        self.main_window = parent  # Store the reference to the main window
+        
+        # Setup UI and get the progress bar from the main panel
+        self.setup_ui()
 
-        # Set window size
-        self.setMinimumSize(1000, 600)  # Set a standard size for the window
+        # Set up a logger (or pass None if not using a logger)
+        self.logger = logging.getLogger(__name__)
 
-    from PyQt5.QtWidgets import QSizePolicy
+        # Initialize the report generator with the existing progress bar and logger
+        self.report_generator = SRReportGenerator(self.progress_bar, self.logger)
 
-    def setup_ui(self, parent):
+        # Initialize the exclusions (to be populated from the settings dialog)
+        self.exclusions = {"excluded_sr_type": [], "excluded_group": []}
+
+    def setup_ui(self):
+        self.setObjectName("mainpanel")  # Set object name for styling
         self.main_layout = QGridLayout(self)
 
-        # Sidebar with buttons
-        sidebar_group = self.setup_sidebar(parent)
-        
-        # Main panel for SR counter options
-        sr_counter_panel = self.setup_main_panel()
+        # Setup main panel
+        sr_counter_panel = self.setup_main_panel()  # Main content panel
 
-        # Add sidebar and SR Counter panel to the main layout using grid
-        self.main_layout.addWidget(sidebar_group, 0, 0, 1, 1)  # Sidebar in column 0
-        self.main_layout.addWidget(sr_counter_panel, 0, 1, 1, 2)  # SR Counter panel spans 2 columns
+        # Add main content to the layout
+        self.main_layout.addWidget(sr_counter_panel, 0, 1, 1, 2)  # Main panel on the right
 
-        # Set stretch factors for columns
-        self.main_layout.setColumnStretch(0, 0)  # Sidebar gets a fixed width
-        self.main_layout.setColumnStretch(1, 1)  # Main panel expands more
+        # Set stretch factors for main panel
+        self.main_layout.setColumnStretch(1, 1)  # Main panel expands
 
-        # Set sidebar size policy to fixed
-        sidebar_group.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
-        
-        # Set main panel size policy to expanding
-        sr_counter_panel.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-
-
-
-    def setup_sidebar(self, parent):
-        """Set up the sidebar for the SR Counter page."""
+    def setup_sidebar(self):
+        """Set up the sidebar for SR Counter UI."""
         sidebar_group = QGroupBox("SR Counter Options")
         sidebar_layout = QVBoxLayout()
 
-        # Button to go back to the main menu
-        back_to_menu_button = QPushButton("Back to Main Menu")
-        back_to_menu_button.clicked.connect(parent.switch_to_main_menu)
+        # Back to Main Menu Button
+        back_button = QPushButton("Back to Main Menu")
+        back_button.clicked.connect(self.main_window.switch_to_main_menu)
 
-        # Button to load Excel file
+        # Load Excel Button
         load_excel_button = QPushButton("Load Excel")
         load_excel_button.clicked.connect(self.load_file)
 
-        # Button to open settings dialog
+        # Settings Button
         settings_button = QPushButton("Settings")
         settings_button.clicked.connect(self.open_settings_dialog)
 
         # Add buttons to sidebar layout
-        sidebar_layout.addWidget(back_to_menu_button)
         sidebar_layout.addWidget(load_excel_button)
         sidebar_layout.addWidget(settings_button)
+        sidebar_layout.addWidget(back_button)
 
         sidebar_group.setLayout(sidebar_layout)
         return sidebar_group
 
     def setup_main_panel(self):
         """Set up the main content area for SR Counter UI."""
-        main_panel_group = QGroupBox("SR Counter")
+        sr_counter_group = QGroupBox("SR Counter")
         main_panel_layout = QVBoxLayout()
 
         # Date range inputs
         date_layout = QHBoxLayout()
         start_date_label = QLabel("Start Date:")
-        self.start_date_input = QDateTimeEdit(QDateTime.currentDateTime())
+        self.start_date_input = QDateTimeEdit()
         self.start_date_input.setCalendarPopup(True)
+
+        today = QDateTime.currentDateTime()
+        self.start_date_input.setDateTime(today.addMonths(-1))  # Default to one month ago
+        
         end_date_label = QLabel("End Date:")
-        self.end_date_input = QDateTimeEdit(QDateTime.currentDateTime())
+        self.end_date_input = QDateTimeEdit()
         self.end_date_input.setCalendarPopup(True)
+        self.end_date_input.setDateTime(today)  # Default to today
 
         date_layout.addWidget(start_date_label)
         date_layout.addWidget(self.start_date_input)
         date_layout.addWidget(end_date_label)
         date_layout.addWidget(self.end_date_input)
 
-        # Add column selection checkboxes (initially hidden)
+        # Add column selection checkboxes
         columns_group = QGroupBox("Select Columns")
-        self.columns_layout = QVBoxLayout()  # Define columns_layout here
-        
+        self.columns_layout = QVBoxLayout()
+
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
         scroll_content = QWidget()
         scroll_content.setLayout(self.columns_layout)
-
         scroll_area.setWidget(scroll_content)
+
         columns_group.setLayout(self.columns_layout)
 
-        # Add the progress bar and buttons for generating reports
+        # Use the existing progress bar at the bottom of the panel
         self.progress_bar = QProgressBar()
         self.progress_bar.setValue(0)
 
+        # Add the sort dropdown before the buttons
+        self.setup_sort_dropdown(main_panel_layout)
+
+        # Buttons for report generation
         button_layout = QHBoxLayout()
         preview_button = QPushButton("Preview Report")
-        generate_button = QPushButton("Generate Report")
+        preview_button.clicked.connect(self.preview_report)
 
-        preview_button.clicked.connect(self.preview_report)  # Link preview button
-        generate_button.clicked.connect(self.generate_report)  # Link generate button
+        generate_button = QPushButton("Generate Report")
+        generate_button.clicked.connect(self.generate_report)
 
         button_layout.addWidget(preview_button)
         button_layout.addWidget(generate_button)
@@ -120,16 +124,50 @@ class SRCounterUI(QWidget):
         main_panel_layout.addWidget(self.progress_bar)
         main_panel_layout.addLayout(button_layout)
 
-        main_panel_group.setLayout(main_panel_layout)
-        return main_panel_group
+        sr_counter_group.setLayout(main_panel_layout)
+        return sr_counter_group
+
+    def setup_sort_dropdown(self, main_panel_layout):
+        """Creates a dropdown to allow the user to select a column to sort the report by."""
+        # Create a label for the dropdown
+        sort_layout = QHBoxLayout()
+        sort_label = QLabel("Sort By:")
+        sort_label.setObjectName("sort_by_label")  # For QSS styling, if needed
+        
+        # Create a dropdown for sorting columns
+        self.sort_by_dropdown = QComboBox(self)
+        self.sort_by_dropdown.setObjectName("sort_by_dropdown")  # For QSS styling
+
+        # Initially disable the dropdown until columns are loaded
+        self.sort_by_dropdown.setEnabled(False)
+
+        sort_layout.addWidget(sort_label)
+        sort_layout.addWidget(self.sort_by_dropdown)
+        # Add the sort dropdown to the layout above the progress bar
+        main_panel_layout.addLayout(sort_layout)
+
+    def get_sort_column(self):
+        """Retrieve the selected column to sort by from the dropdown."""
+        selected_sort_column = self.sort_by_dropdown.currentText()
+        if selected_sort_column == "Select column":
+            return None  # No valid selection
+        return selected_sort_column
 
     def open_settings_dialog(self):
-        """Open the settings dialog."""
-        dialog = SettingsDialog(self)
+        # Adjust the path to correctly point to the JSON file
+        json_path = os.path.join(os.path.dirname(__file__), "..", "resources", "json", "type_group_exclusion.json")
+        
+        with open(json_path) as f:
+            data = json.load(f)
+
+        sr_types = data["type_descriptions"]
+        group_descriptions = data["group_descriptions"]
+
+        dialog = SettingsDialog(self, sr_types, group_descriptions)
         if dialog.exec_():
-            inclusion_criteria = dialog.get_no_location_inclusion()
-            # Handle the settings from the dialog if necessary
-            print(f"Settings updated: {inclusion_criteria}")
+            self.exclusions = dialog.get_exclusions()
+            print(f"Excluding SR Type: {self.exclusions['excluded_sr_type']}, Group: {self.exclusions['excluded_group']}")
+
 
     def load_file(self):
         """Open the file dialog to load an Excel file and dynamically generate column checkboxes."""
@@ -192,6 +230,11 @@ class SRCounterUI(QWidget):
             self.columns_layout.addWidget(checkbox)
             self.checkboxes.append(checkbox)
 
+        # Enable and populate the sorting dropdown once columns are loaded
+        self.sort_by_dropdown.setEnabled(True)
+        self.sort_by_dropdown.clear()  # Clear previous options
+        self.sort_by_dropdown.addItems([col for col in self.df.columns])
+
     def preview_report(self):
         """Show a preview of the report by calling the ReportPreview dialog."""
         if self.df is None or not self.checkboxes:
@@ -203,6 +246,9 @@ class SRCounterUI(QWidget):
             QMessageBox.warning(self, "Warning", "No columns selected for the preview.")
             return
 
+        # Get the sort by column
+        sort_by_column = self.get_sort_column()
+
         try:
             start_date = self.start_date_input.dateTime().toPyDateTime()
             end_date = self.end_date_input.dateTime().toPyDateTime()
@@ -211,8 +257,12 @@ class SRCounterUI(QWidget):
                 QMessageBox.critical(self, "Error", "Start date cannot be after end date")
                 return
 
+            # Exclude rows based on exclusions from settings
+            df_filtered = self.df[~((self.df['Type Description'].isin(self.exclusions['excluded_sr_type'])) |
+                                   (self.df['Group Description'].isin(self.exclusions['excluded_group'])))]
+
             # Call the generate_report function to filter and generate the report DataFrame
-            report_df = self.report_generator.generate_report(self.df, selected_columns, start_date, end_date)
+            report_df = self.report_generator.generate_report(df_filtered, selected_columns, start_date, end_date, sort_by_column)
 
             # Call the ReportPreview dialog (from report_preview.py) to display the report
             if report_df is not None:
@@ -233,6 +283,9 @@ class SRCounterUI(QWidget):
             QMessageBox.warning(self, "Warning", "No columns selected for the report.")
             return
 
+        # Get the sort by column
+        sort_by_column = self.get_sort_column()
+
         try:
             start_date = self.start_date_input.dateTime().toPyDateTime()
             end_date = self.end_date_input.dateTime().toPyDateTime()
@@ -241,8 +294,12 @@ class SRCounterUI(QWidget):
                 QMessageBox.critical(self, "Error", "Start date cannot be after end date")
                 return
 
+            # Exclude rows based on exclusions from settings
+            df_filtered = self.df[~((self.df['Type Description'].isin(self.exclusions['excluded_sr_type'])) |
+                                   (self.df['Group Description'].isin(self.exclusions['excluded_group'])))]
+
             # Call the report generator from sr_count.py
-            report_df = self.report_generator.generate_report(self.df, selected_columns, start_date, end_date)
+            report_df = self.report_generator.generate_report(df_filtered, selected_columns, start_date, end_date, sort_by_column)
 
             # Save the report
             output_file = self.report_generator.save_report(report_df)
