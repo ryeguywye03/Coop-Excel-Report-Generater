@@ -3,9 +3,12 @@ from PyQt5.QtCore import QDateTime
 import pandas as pd
 import json
 import os
+from logic.logger_manager import LoggerManager
 from logic.sr_count import SRReportGenerator
 from ui.report_preview import ReportPreview  # Import the ReportPreview dialog
-from ui.settings_dialog import SettingsDialog  # Import the Settings Dialog
+from config.settings_manager import SettingsManager
+from ui.settings_dialog import SettingsDialog
+
 import logging
 
 
@@ -21,7 +24,9 @@ class SRCounterUI(QWidget):
         self.logger = logging.getLogger(__name__)
 
         # Initialize the report generator with the existing progress bar and logger
-        self.report_generator = SRReportGenerator(self.progress_bar, self.logger)
+        self.report_generator = SRReportGenerator(self.progress_bar)
+
+        self.settings_manager = SettingsManager()
 
         # Initialize the exclusions (to be populated from the settings dialog)
         self.exclusions = {"excluded_sr_type": [], "excluded_group": []}
@@ -153,21 +158,53 @@ class SRCounterUI(QWidget):
             return None  # No valid selection
         return selected_sort_column
 
+    
     def open_settings_dialog(self):
-        # Adjust the path to correctly point to the JSON file
-        json_path = os.path.join(os.path.dirname(__file__), "..", "resources", "json", "type_group_exclusion.json")
+        """Open the settings dialog, handling errors for missing JSON files."""
+        try:
+            json_path = os.path.join(os.path.dirname(__file__), '../assets/json/type_group_exclusion.json')
+            
+            # Load the JSON data
+            with open(json_path) as f:
+                data = json.load(f)
+            
+            sr_types = data.get("type_descriptions", {})
+            group_descriptions = data.get("group_descriptions", {})
+            
+            dialog = SettingsDialog(self, sr_types, group_descriptions)
+            
+            if dialog.exec_():  # Show the dialog and wait for the user to press OK
+                self.exclusions = dialog.get_exclusions()
+                print(f"Excluding SR Types: {self.exclusions['excluded_sr_types']}")
+                print(f"Excluding Groups: {self.exclusions['excluded_groups']}")
         
-        with open(json_path) as f:
-            data = json.load(f)
+        except FileNotFoundError as e:
+            self.logger.log_error(f"Error loading JSON file: {str(e)}")
+            error_dialog = QMessageBox()
+            error_dialog.setIcon(QMessageBox.Critical)
+            error_dialog.setWindowTitle("File Not Found")
+            error_dialog.setText(f"Error: {str(e)}")
+            error_dialog.setInformativeText("The required JSON file could not be found. Please ensure the file is in the correct location.")
+            error_dialog.exec_()
+        except json.JSONDecodeError as e:
+            self.logger.log_error(f"Error parsing JSON file: {str(e)}")
+            error_dialog = QMessageBox()
+            error_dialog.setIcon(QMessageBox.Critical)
+            error_dialog.setWindowTitle("JSON Parsing Error")
+            error_dialog.setText(f"Error: {str(e)}")
+            error_dialog.setInformativeText("The JSON file could not be parsed correctly. Please check its structure.")
+            error_dialog.exec_()
 
-        sr_types = data["type_descriptions"]
-        group_descriptions = data["group_descriptions"]
 
-        dialog = SettingsDialog(self, sr_types, group_descriptions)
-        if dialog.exec_():
-            self.exclusions = dialog.get_exclusions()
-            print(f"Excluding SR Type: {self.exclusions['excluded_sr_type']}, Group: {self.exclusions['excluded_group']}")
-
+    def refresh_json_file(self):
+        """Method to refresh or create the JSON file from Excel sources."""
+        try:
+            # Implement your logic here to convert the Excel files into JSON
+            # For example, call your script that reads the Excel files and generates the JSON
+            self.settings_manager.create_json_from_excel()
+            QMessageBox.information(self, "Success", "The settings file has been refreshed successfully.")
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"An error occurred while refreshing the settings file: {str(e)}")
 
     def load_file(self):
         """Open the file dialog to load an Excel file and dynamically generate column checkboxes."""

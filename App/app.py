@@ -2,12 +2,24 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget, QWidget, QGridLayout, QGroupBox, QVBoxLayout, QPushButton
 from ui.main_menu import MainMenuUI
 from ui.sr_counter_ui import SRCounterUI
+from logic.logger_manager import LoggerManager
 import os
 
 class ReportGeneratorApp(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.logger = LoggerManager()  # Initialize logger
+        self.logger.log_info("App initialized")
+
+        try:
+            self.setup_ui()
+            self.logger.log_info("UI setup completed")
+        except Exception as e:
+            self.logger.log_error(f"Error during UI setup: {e}")
+
+    
+    def setup_ui(self):
         # Setup the main window and central widget
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
@@ -33,6 +45,8 @@ class ReportGeneratorApp(QMainWindow):
 
         # Default page is the Main Menu
         self.switch_to_main_menu()
+
+        pass
 
     def switch_to_main_menu(self):
         """Switch to the Main Menu page."""
@@ -68,7 +82,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     # Adjust path to point to correct location of style.qss
-    qss_file = os.path.join(os.path.dirname(__file__), "resources", "QSS", "style.qss")
+    qss_file = os.path.join(os.path.dirname(__file__), "assets", "QSS", "style.qss")
 
     # Load QSS stylesheet
     try:

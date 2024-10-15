@@ -1,0 +1,123 @@
+2024-10-15 08:24:16,170 - AppLogger - INFO - App initialized
+2024-10-15 08:24:16,214 - AppLogger - ERROR - Error during UI setup: SRReportGenerator.__init__() takes 2 positional arguments but 3 were given
+2024-10-15 08:24:47,582 - AppLogger - INFO - App initialized
+2024-10-15 08:24:47,629 - AppLogger - ERROR - Error during UI setup: SRReportGenerator.__init__() takes 2 positional arguments but 3 were given
+2024-10-15 08:25:47,303 - AppLogger - INFO - App initialized
+2024-10-15 08:25:47,351 - AppLogger - ERROR - Error during UI setup: SRReportGenerator.__init__() takes 2 positional arguments but 3 were given
+2024-10-15 08:32:13,429 - AppLogger - INFO - App initialized
+2024-10-15 08:32:13,460 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 08:32:13,460 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 08:32:13,462 - AppLogger - INFO - UI setup completed
+2024-10-15 08:32:13,462 - AppLogger - INFO - UI setup completed
+2024-10-15 08:32:47,495 - AppLogger - INFO - Starting report generation: 2024-01-01 08:32:13.456000 to 2024-09-30 08:32:13.456000
+2024-10-15 08:32:47,495 - AppLogger - INFO - Starting report generation: 2024-01-01 08:32:13.456000 to 2024-09-30 08:32:13.456000
+2024-10-15 08:32:47,720 - AppLogger - INFO - Sorting report by Group Description
+2024-10-15 08:32:47,720 - AppLogger - INFO - Sorting report by Group Description
+2024-10-15 08:32:47,721 - AppLogger - INFO - Report generation completed
+2024-10-15 08:32:47,721 - AppLogger - INFO - Report generation completed
+2024-10-15 08:33:33,126 - AppLogger - INFO - Starting report generation: 2024-01-01 08:32:13.456000 to 2024-09-30 08:32:13.456000
+2024-10-15 08:33:33,126 - AppLogger - INFO - Starting report generation: 2024-01-01 08:32:13.456000 to 2024-09-30 08:32:13.456000
+2024-10-15 08:33:36,811 - AppLogger - INFO - Sorting report by Group Description
+2024-10-15 08:33:36,811 - AppLogger - INFO - Sorting report by Group Description
+2024-10-15 08:33:36,816 - AppLogger - INFO - Report generation completed
+2024-10-15 08:33:36,816 - AppLogger - INFO - Report generation completed
+2024-10-15 08:34:09,393 - AppLogger - INFO - Starting report generation: 2024-01-01 08:32:13.456000 to 2024-09-30 08:32:13.456000
+2024-10-15 08:34:09,393 - AppLogger - INFO - Starting report generation: 2024-01-01 08:32:13.456000 to 2024-09-30 08:32:13.456000
+2024-10-15 08:34:13,096 - AppLogger - INFO - Report generation completed
+2024-10-15 08:34:13,096 - AppLogger - INFO - Report generation completed
+2024-10-15 08:34:18,693 - AppLogger - INFO - Starting report generation: 2024-01-01 08:32:13.456000 to 2024-09-30 08:32:13.456000
+2024-10-15 08:34:18,693 - AppLogger - INFO - Starting report generation: 2024-01-01 08:32:13.456000 to 2024-09-30 08:32:13.456000
+2024-10-15 08:34:22,379 - AppLogger - INFO - Sorting report by Created Date
+2024-10-15 08:34:22,379 - AppLogger - INFO - Sorting report by Created Date
+2024-10-15 08:34:22,382 - AppLogger - INFO - Report generation completed
+2024-10-15 08:34:22,382 - AppLogger - INFO - Report generation completed
+2024-10-15 08:41:55,155 - AppLogger - INFO - App initialized
+2024-10-15 08:41:55,202 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 08:41:55,202 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 08:41:55,204 - AppLogger - INFO - UI setup completed
+2024-10-15 08:41:55,204 - AppLogger - INFO - UI setup completed
+2024-10-15 09:02:41,031 - AppLogger - INFO - App initialized
+2024-10-15 09:02:41,079 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:02:41,079 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:02:41,081 - AppLogger - INFO - UI setup completed
+2024-10-15 09:02:41,081 - AppLogger - INFO - UI setup completed
+2024-10-15 09:05:45,703 - AppLogger - INFO - App initialized
+2024-10-15 09:05:45,751 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:05:45,751 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:05:45,753 - AppLogger - INFO - UI setup completed
+2024-10-15 09:05:45,753 - AppLogger - INFO - UI setup completed
+2024-10-15 09:14:13,378 - AppLogger - INFO - App initialized
+2024-10-15 09:14:13,423 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:14:13,423 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:14:13,425 - AppLogger - INFO - UI setup completed
+2024-10-15 09:14:13,425 - AppLogger - INFO - UI setup completed
+2024-10-15 09:19:22,823 - AppLogger - INFO - App initialized
+2024-10-15 09:19:22,853 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:19:22,853 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:19:22,855 - AppLogger - INFO - UI setup completed
+2024-10-15 09:19:22,855 - AppLogger - INFO - UI setup completed
+2024-10-15 09:24:02,696 - AppLogger - INFO - App initialized
+2024-10-15 09:24:02,745 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:24:02,745 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:24:02,747 - AppLogger - INFO - UI setup completed
+2024-10-15 09:24:02,747 - AppLogger - INFO - UI setup completed
+2024-10-15 09:31:55,207 - AppLogger - INFO - App initialized
+2024-10-15 09:31:55,238 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:31:55,238 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:31:55,239 - AppLogger - INFO - UI setup completed
+2024-10-15 09:31:55,239 - AppLogger - INFO - UI setup completed
+2024-10-15 09:39:24,018 - AppLogger - INFO - App initialized
+2024-10-15 09:39:24,049 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:39:24,049 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:39:24,051 - AppLogger - INFO - UI setup completed
+2024-10-15 09:39:24,051 - AppLogger - INFO - UI setup completed
+2024-10-15 09:45:08,608 - AppLogger - INFO - App initialized
+2024-10-15 09:45:08,655 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:45:08,655 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:45:08,657 - AppLogger - INFO - UI setup completed
+2024-10-15 09:45:08,657 - AppLogger - INFO - UI setup completed
+2024-10-15 09:47:45,406 - AppLogger - INFO - App initialized
+2024-10-15 09:47:45,452 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:47:45,452 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:47:45,455 - AppLogger - INFO - UI setup completed
+2024-10-15 09:47:45,455 - AppLogger - INFO - UI setup completed
+2024-10-15 09:52:05,951 - AppLogger - INFO - App initialized
+2024-10-15 09:52:05,999 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:52:05,999 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:52:06,001 - AppLogger - INFO - UI setup completed
+2024-10-15 09:52:06,001 - AppLogger - INFO - UI setup completed
+2024-10-15 09:54:06,212 - AppLogger - INFO - App initialized
+2024-10-15 09:54:06,262 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:54:06,262 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:54:06,265 - AppLogger - INFO - UI setup completed
+2024-10-15 09:54:06,265 - AppLogger - INFO - UI setup completed
+2024-10-15 09:57:34,950 - AppLogger - INFO - App initialized
+2024-10-15 09:57:35,005 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:57:35,005 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 09:57:35,007 - AppLogger - INFO - UI setup completed
+2024-10-15 09:57:35,007 - AppLogger - INFO - UI setup completed
+2024-10-15 10:02:01,239 - AppLogger - INFO - App initialized
+2024-10-15 10:02:01,269 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:02:01,269 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:02:01,270 - AppLogger - INFO - UI setup completed
+2024-10-15 10:02:01,270 - AppLogger - INFO - UI setup completed
+2024-10-15 10:07:22,516 - AppLogger - INFO - App initialized
+2024-10-15 10:07:22,561 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:07:22,561 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:07:22,563 - AppLogger - INFO - UI setup completed
+2024-10-15 10:07:22,563 - AppLogger - INFO - UI setup completed
+2024-10-15 10:09:08,020 - AppLogger - INFO - App initialized
+2024-10-15 10:09:08,071 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:09:08,071 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:09:08,073 - AppLogger - INFO - UI setup completed
+2024-10-15 10:09:08,073 - AppLogger - INFO - UI setup completed
+2024-10-15 10:14:36,432 - AppLogger - INFO - App initialized
+2024-10-15 10:14:36,476 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:14:36,476 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:14:36,478 - AppLogger - INFO - UI setup completed
+2024-10-15 10:14:36,478 - AppLogger - INFO - UI setup completed
+2024-10-15 10:16:31,368 - AppLogger - INFO - App initialized
+2024-10-15 10:16:31,414 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:16:31,414 - AppLogger - INFO - SRReportGenerator initialized
+2024-10-15 10:16:31,416 - AppLogger - INFO - UI setup completed
+2024-10-15 10:16:31,416 - AppLogger - INFO - UI setup completed

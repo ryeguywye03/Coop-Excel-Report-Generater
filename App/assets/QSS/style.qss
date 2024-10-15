@@ -6,21 +6,21 @@ QWidget {
 
 /* Sidebar styling */
 QWidget#sidebar {
-    background-color: #3A3A48;  /* Slightly darker background for the sidebar */
-    border: 2px solid #555566;  /* More pronounced border around the sidebar */
+    background-color: #3A3A48;  /* Darker background for the sidebar */
+    border: 2px solid #555566;  /* Subtle border around the sidebar */
     border-radius: 15px;  /* More rounded corners for modern look */
     padding: 10px;
 }
 
 /* Main panel styling */
 QWidget#mainpanel {
-    background-color: #2A2A37;  /* Differentiating color for the main content panel */
-    border: 2px solid #555566;  /* More pronounced border around the main panel */
-    border-radius: 15px;  /* Same rounded corners for consistency */
+    background-color: #2A2A37;  /* Slightly different color for main panel */
+    border: 2px solid #555566;  /* Subtle border for the main panel */
+    border-radius: 15px;  /* Consistent rounded corners */
     padding: 10px;
 }
 
-/* GroupBox title styling */
+/* GroupBox styling */
 QGroupBox {
     color: white;
     border: 1px solid #3A3A48;  /* Subtle inner border for GroupBox */
@@ -35,10 +35,10 @@ QGroupBox::title {
     color: rgb(0, 98, 163);  /* Accent color for group titles */
 }
 
-/* Checkbox Scrollbox */
+/* ScrollArea styling */
 QScrollArea {
-    background-color: #40404F;  /* Dark background for the scroll area */
-    border: 2px solid #555566;  /* Subtle border to frame scroll area */
+    background-color: #40404F;  /* Dark background for scroll area */
+    border: 2px solid #555566;
     border-radius: 10px;
 }
 
@@ -50,18 +50,18 @@ QScrollBar:vertical {
 }
 
 QScrollBar::handle:vertical {
-    background: rgb(0, 98, 163);  /* Accent color for scroll bar */
+    background: rgb(0, 98, 163);  /* Accent color for scrollbar */
     min-height: 20px;
     border-radius: 5px;
 }
 
-/* Buttons (QPushButton) */
+/* QPushButton styling */
 QPushButton {
     background-color: rgb(0, 98, 163);  /* Accent color for buttons */
     color: white;
     border-radius: 10px;
     padding: 10px 20px;
-    border: 2px solid #40404F;  /* Slight border around buttons */
+    border: 2px solid #40404F;
 }
 
 QPushButton:hover {
@@ -72,7 +72,7 @@ QPushButton:pressed {
     background-color: rgb(0, 60, 100);  /* Even darker accent when pressed */
 }
 
-/* ProgressBar */
+/* QProgressBar styling */
 QProgressBar {
     border: 2px solid #3A3A48;
     border-radius: 5px;
@@ -87,19 +87,19 @@ QProgressBar::chunk {
     margin: 1px;
 }
 
-/* Labels (QLabel) */
+/* QLabel styling */
 QLabel {
     color: white;  /* White text for labels */
-    background-color: transparent;  /* Transparent background for labels */
+    background-color: transparent;
     font-weight: bold;  /* Bold text */
     padding: 2px;
 }
 
-/* ComboBox (Sort dropdown and Settings dropdown) */
+/* QComboBox styling (Dropdowns) */
 QComboBox {
-    background-color: #2b2b2b;  /* Match with dark theme */
+    background-color: #3A3A48;  /* Darker background to match the theme */
     color: white;
-    border: 1px solid #5a5a5a;  /* Slight border around dropdown */
+    border: 1px solid #5a5a5a;
     border-radius: 5px;
     padding: 5px;
 }
@@ -113,8 +113,8 @@ QComboBox::down-arrow {
 }
 
 QComboBox QAbstractItemView {
-    background-color: #333;
-    selection-background-color: #5a5a5a;
+    background-color: #333;  /* Match background with the theme */
+    selection-background-color: #5a5a5a;  /* Highlight selected item */
     color: white;
 }
 
