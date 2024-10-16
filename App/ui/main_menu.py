@@ -27,7 +27,7 @@ class MainMenuUI(QWidget):
         self.main_layout.setColumnStretch(1, 1)  # Main content area expands
 
         # Set sidebar size policy to fixed width
-        # sidebar_group.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        # sidebar_group.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
 
         # Set main panel size policy to expanding
         welcome_panel.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)

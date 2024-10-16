@@ -105,12 +105,12 @@ class SRCounterUI(QWidget):
 
         columns_group.setLayout(self.columns_layout)
 
-        # Use the existing progress bar at the bottom of the panel
+        # Add the sort dropdown just above the progress bar
+        self.setup_sort_dropdown(main_panel_layout)
+
+        # Progress bar
         self.progress_bar = QProgressBar()
         self.progress_bar.setValue(0)
-
-        # Add the sort dropdown before the buttons
-        self.setup_sort_dropdown(main_panel_layout)
 
         # Buttons for report generation
         button_layout = QHBoxLayout()
@@ -126,16 +126,23 @@ class SRCounterUI(QWidget):
         # Add all elements to the main panel layout
         main_panel_layout.addLayout(date_layout)
         main_panel_layout.addWidget(columns_group)
+
+        # Add the sort dropdown just above the progress bar
+        main_panel_layout.addLayout(self.sort_layout)
+
+        # Add the progress bar
         main_panel_layout.addWidget(self.progress_bar)
+
+        # Add buttons for report generation at the very bottom
         main_panel_layout.addLayout(button_layout)
 
         sr_counter_group.setLayout(main_panel_layout)
         return sr_counter_group
 
+
     def setup_sort_dropdown(self, main_panel_layout):
         """Creates a dropdown to allow the user to select a column to sort the report by."""
-        # Create a label for the dropdown
-        sort_layout = QHBoxLayout()
+        self.sort_layout = QHBoxLayout()
         sort_label = QLabel("Sort By:")
         sort_label.setObjectName("sort_by_label")  # For QSS styling, if needed
         
@@ -146,10 +153,9 @@ class SRCounterUI(QWidget):
         # Initially disable the dropdown until columns are loaded
         self.sort_by_dropdown.setEnabled(False)
 
-        sort_layout.addWidget(sort_label)
-        sort_layout.addWidget(self.sort_by_dropdown)
-        # Add the sort dropdown to the layout above the progress bar
-        main_panel_layout.addLayout(sort_layout)
+        self.sort_layout.addWidget(sort_label)
+        self.sort_layout.addWidget(self.sort_by_dropdown)
+
 
     def get_sort_column(self):
         """Retrieve the selected column to sort by from the dropdown."""
@@ -175,8 +181,9 @@ class SRCounterUI(QWidget):
             
             if dialog.exec_():  # Show the dialog and wait for the user to press OK
                 self.exclusions = dialog.get_exclusions()
-                print(f"Excluding SR Types: {self.exclusions['excluded_sr_types']}")
-                print(f"Excluding Groups: {self.exclusions['excluded_groups']}")
+                print(f"Excluding SR Types: {self.exclusions.get('excluded_sr_types', [])}")
+                print(f"Excluding Groups: {self.exclusions.get('excluded_groups', [])}")
+
         
         except FileNotFoundError as e:
             self.logger.log_error(f"Error loading JSON file: {str(e)}")
@@ -214,8 +221,10 @@ class SRCounterUI(QWidget):
             if file_path:
                 self.df = self.load_excel(file_path)
                 self.create_checkboxes()
+                self.sort_by_dropdown.setEnabled(True)  # Enable the sort section when file is loaded
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to load Excel file: {e}")
+
 
     def load_excel(self, file_path):
         """Load the Excel file into a DataFrame."""
