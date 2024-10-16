@@ -12,13 +12,20 @@ class ReportGeneratorApp(QMainWindow):
         self.logger = LoggerManager()  # Initialize logger
         self.logger.log_info("App initialized")
 
+        # Get version number and set window title
+        try:
+            version = self.get_version()
+            self.setWindowTitle(f"Excel Report Generator - v{version}")
+        except FileNotFoundError:
+            self.setWindowTitle("Excel Report Generator - Version not found")
+            self.logger.log_error("version.txt not found")
+
         try:
             self.setup_ui()
             self.logger.log_info("UI setup completed")
         except Exception as e:
             self.logger.log_error(f"Error during UI setup: {e}")
 
-    
     def setup_ui(self):
         # Setup the main window and central widget
         self.central_widget = QWidget()
@@ -45,8 +52,6 @@ class ReportGeneratorApp(QMainWindow):
 
         # Default page is the Main Menu
         self.switch_to_main_menu()
-
-        pass
 
     def switch_to_main_menu(self):
         """Switch to the Main Menu page."""
@@ -76,7 +81,11 @@ class ReportGeneratorApp(QMainWindow):
         self.sidebar = new_sidebar
         self.main_layout.addWidget(self.sidebar, 0, 0, 1, 1)
 
-
+    def get_version(self):
+        """Reads the version number from the version.txt file."""
+        with open("version.txt") as version_file:
+            version = version_file.read().strip()
+        return version
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

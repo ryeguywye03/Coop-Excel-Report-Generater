@@ -20,3 +20,9 @@ datas += collect_data_files('logic')
 
 # Include ui folder if it has any required data files
 datas += collect_data_files('ui')
+
+# Manually include extra files like version.txt, requirements.txt, README.md, and setup.py
+datas += [('version.txt', '.'), ('requirements.txt', '.'), ('README.md', '.'), ('setup.py', '.')]
+
+# Add the source code (App folder) so it's included in the package and accessible to users.
+datas += collect_data_files('App')
