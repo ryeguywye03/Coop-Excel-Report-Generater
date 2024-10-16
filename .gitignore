@@ -1,0 +1,9 @@
+# Ignore logs directory
+logs/
+
+# Ignore settings.json in the config folder
+config/settings.json
+
+# Optionally, you can add other folders or files to ignore
+myenv/  # Your virtual environment, which should be excluded from version control
+__pycache__/  # Python cache files
