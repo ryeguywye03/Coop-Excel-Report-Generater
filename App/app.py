@@ -13,6 +13,16 @@ class AppDelegate(NSObject):
     def applicationSupportsSecureRestorableState_(self, app):
         return True
 
+def resource_path(relative_path):
+    """ Get the absolute path to the resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temporary folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    
+    return os.path.join(base_path, relative_path)
+
 class ReportGeneratorApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -91,10 +101,10 @@ class ReportGeneratorApp(QMainWindow):
 
     def get_version(self):
         """Reads the version number from the version.txt file."""
-        with open("version.txt") as version_file:
+        version_path = resource_path("version.txt")  # Use resource_path to find version.txt
+        with open(version_path) as version_file:
             version = version_file.read().strip()
         return version
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -106,7 +116,7 @@ if __name__ == "__main__":
     logger_manager = LoggerManager(enable_logging=False)  # Disable logging for production
 
     # Adjust path to point to correct location of style.qss
-    qss_file = os.path.join(os.path.dirname(__file__), "app", "assets", "QSS", "style.qss")
+    qss_file = resource_path(os.path.join("app", "assets", "QSS", "style.qss"))  # Use resource_path for QSS
 
     # Load QSS stylesheet
     try:
