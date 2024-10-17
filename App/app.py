@@ -1,9 +1,17 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget, QWidget, QGridLayout, QGroupBox, QVBoxLayout, QPushButton
+from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget, QWidget, QGridLayout
 from ui.main_menu import MainMenuUI
 from ui.sr_counter_ui import SRCounterUI
 from logic.logger_manager import LoggerManager
 import os
+import objc
+from Foundation import NSObject
+from AppKit import NSApplication, NSApp
+
+# Define a custom subclass of NSApplicationDelegate
+class AppDelegate(NSObject):
+    def applicationSupportsSecureRestorableState_(self, app):
+        return True
 
 class ReportGeneratorApp(QMainWindow):
     def __init__(self):
@@ -87,11 +95,18 @@ class ReportGeneratorApp(QMainWindow):
             version = version_file.read().strip()
         return version
 
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
+    # Set up the custom delegate for secure coding
+    delegate = AppDelegate.alloc().init()
+    NSApp.setDelegate_(delegate)
+
+    logger_manager = LoggerManager(enable_logging=False)  # Disable logging for production
+
     # Adjust path to point to correct location of style.qss
-    qss_file = os.path.join(os.path.dirname(__file__), "assets", "QSS", "style.qss")
+    qss_file = os.path.join(os.path.dirname(__file__), "app", "assets", "QSS", "style.qss")
 
     # Load QSS stylesheet
     try:
