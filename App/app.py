@@ -21,7 +21,12 @@ class ReportGeneratorApp(QMainWindow):
     def __init__(self):
         super().__init__()
         # Use resource_path for file paths
-        qss_file = resource_path(os.path.join('assets', 'QSS', 'style.qss'))
+        if platform.system() == "Darwin":  # macOS
+            qss_file = resource_path(os.path.join('assets', 'QSS', 'mac_style.qss'))
+        elif platform.system() == "Windows":  # Windows
+            qss_file = resource_path(os.path.join('assets', 'QSS', 'windows_style.qss'))
+        else:
+            qss_file = resource_path(os.path.join('assets', 'QSS', 'default_style.qss'))
 
         try:
             with open(qss_file, "r") as file:
@@ -95,11 +100,14 @@ class ReportGeneratorApp(QMainWindow):
 
     def update_sidebar(self, new_sidebar):
         """Replace the existing sidebar with the new one."""
+        self.sidebar.hide()  # Hide before removing
         self.main_layout.removeWidget(self.sidebar)
         self.sidebar.deleteLater()
-
+        
         self.sidebar = new_sidebar
         self.main_layout.addWidget(self.sidebar, 0, 0, 1, 1)
+        self.sidebar.show()  # Show the new sidebar
+
 
     def get_version(self):
         """Reads the version number from the version.txt file."""
