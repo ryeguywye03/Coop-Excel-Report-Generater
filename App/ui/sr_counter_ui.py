@@ -2,14 +2,14 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLab
 from PyQt5.QtCore import QDateTime
 import pandas as pd
 import json
-import os
 from logic.logger_manager import LoggerManager
 from logic.sr_count import SRReportGenerator
 from ui.report_preview import ReportPreview  # Import the ReportPreview dialog
 from config.settings_manager import SettingsManager
 from ui.settings_dialog import SettingsDialog
-
+from utils import resource_path  # Import the resource path utility function
 import logging
+import os
 
 
 class SRCounterUI(QWidget):
@@ -20,8 +20,8 @@ class SRCounterUI(QWidget):
         # Setup UI and get the progress bar from the main panel
         self.setup_ui()
 
-        # Set up a logger (or pass None if not using a logger)
-        self.logger = logging.getLogger(__name__)
+        # Set up a logger
+        self.logger = LoggerManager()
 
         # Initialize the report generator with the existing progress bar and logger
         self.report_generator = SRReportGenerator(self.progress_bar)
@@ -105,12 +105,12 @@ class SRCounterUI(QWidget):
 
         columns_group.setLayout(self.columns_layout)
 
-        # Add the sort dropdown just above the progress bar
-        self.setup_sort_dropdown(main_panel_layout)
-
-        # Progress bar
+        # Use the existing progress bar at the bottom of the panel
         self.progress_bar = QProgressBar()
         self.progress_bar.setValue(0)
+
+        # Add the sort dropdown before the buttons
+        self.setup_sort_dropdown(main_panel_layout)
 
         # Buttons for report generation
         button_layout = QHBoxLayout()
@@ -126,23 +126,16 @@ class SRCounterUI(QWidget):
         # Add all elements to the main panel layout
         main_panel_layout.addLayout(date_layout)
         main_panel_layout.addWidget(columns_group)
-
-        # Add the sort dropdown just above the progress bar
-        main_panel_layout.addLayout(self.sort_layout)
-
-        # Add the progress bar
         main_panel_layout.addWidget(self.progress_bar)
-
-        # Add buttons for report generation at the very bottom
         main_panel_layout.addLayout(button_layout)
 
         sr_counter_group.setLayout(main_panel_layout)
         return sr_counter_group
 
-
     def setup_sort_dropdown(self, main_panel_layout):
         """Creates a dropdown to allow the user to select a column to sort the report by."""
-        self.sort_layout = QHBoxLayout()
+        # Create a label for the dropdown
+        sort_layout = QHBoxLayout()
         sort_label = QLabel("Sort By:")
         sort_label.setObjectName("sort_by_label")  # For QSS styling, if needed
         
@@ -153,9 +146,10 @@ class SRCounterUI(QWidget):
         # Initially disable the dropdown until columns are loaded
         self.sort_by_dropdown.setEnabled(False)
 
-        self.sort_layout.addWidget(sort_label)
-        self.sort_layout.addWidget(self.sort_by_dropdown)
-
+        sort_layout.addWidget(sort_label)
+        sort_layout.addWidget(self.sort_by_dropdown)
+        # Add the sort dropdown to the layout above the progress bar
+        main_panel_layout.addLayout(sort_layout)
 
     def get_sort_column(self):
         """Retrieve the selected column to sort by from the dropdown."""
@@ -168,46 +162,43 @@ class SRCounterUI(QWidget):
     def open_settings_dialog(self):
         """Open the settings dialog, handling errors for missing JSON files."""
         try:
-            json_path = os.path.join(os.path.dirname(__file__), '../assets/json/type_group_exclusion.json')
-            
+            json_path = resource_path(os.path.join('assets', 'json', 'type_group_exclusion.json'))
+
             # Load the JSON data
-            with open(json_path) as f:
+            with open(json_path, 'r') as f:
                 data = json.load(f)
-            
+
             sr_types = data.get("type_descriptions", {})
             group_descriptions = data.get("group_descriptions", {})
-            
-            dialog = SettingsDialog(self, sr_types, group_descriptions)
-            
-            if dialog.exec_():  # Show the dialog and wait for the user to press OK
-                self.exclusions = dialog.get_exclusions()
-                print(f"Excluding SR Types: {self.exclusions.get('excluded_sr_types', [])}")
-                print(f"Excluding Groups: {self.exclusions.get('excluded_groups', [])}")
 
-        
+            dialog = SettingsDialog(self, sr_types, group_descriptions)
+
+            if dialog.exec_():  # Show the dialog and wait for the user to press OK
+                # Ensure the correct structure for exclusions
+                self.exclusions = {
+                    'excluded_sr_type': dialog.exclusions.get('excluded_sr_types', []),
+                    'excluded_group': dialog.exclusions.get('excluded_groups', []),
+                    'no_location_excluded_sr_type': dialog.exclusions.get('no_location_excluded_sr_types', []),
+                    'no_location_excluded_group': dialog.exclusions.get('no_location_excluded_groups', [])
+                }
+
+                print(f"Excluding SR Types: {self.exclusions.get('excluded_sr_type', [])}")
+                print(f"Excluding Groups: {self.exclusions.get('excluded_group', [])}")
+                print(f"Excluding No Location SR Types: {self.exclusions.get('no_location_excluded_sr_type', [])}")
+                print(f"Excluding No Location Groups: {self.exclusions.get('no_location_excluded_group', [])}")
+
         except FileNotFoundError as e:
             self.logger.log_error(f"Error loading JSON file: {str(e)}")
-            error_dialog = QMessageBox()
-            error_dialog.setIcon(QMessageBox.Critical)
-            error_dialog.setWindowTitle("File Not Found")
-            error_dialog.setText(f"Error: {str(e)}")
-            error_dialog.setInformativeText("The required JSON file could not be found. Please ensure the file is in the correct location.")
-            error_dialog.exec_()
+            QMessageBox.critical(self, "File Not Found", f"Error: {str(e)}\nThe required JSON file could not be found.")
         except json.JSONDecodeError as e:
             self.logger.log_error(f"Error parsing JSON file: {str(e)}")
-            error_dialog = QMessageBox()
-            error_dialog.setIcon(QMessageBox.Critical)
-            error_dialog.setWindowTitle("JSON Parsing Error")
-            error_dialog.setText(f"Error: {str(e)}")
-            error_dialog.setInformativeText("The JSON file could not be parsed correctly. Please check its structure.")
-            error_dialog.exec_()
+            QMessageBox.critical(self, "JSON Parsing Error", f"Error: {str(e)}\nThe JSON file could not be parsed correctly.")
+
 
 
     def refresh_json_file(self):
         """Method to refresh or create the JSON file from Excel sources."""
         try:
-            # Implement your logic here to convert the Excel files into JSON
-            # For example, call your script that reads the Excel files and generates the JSON
             self.settings_manager.create_json_from_excel()
             QMessageBox.information(self, "Success", "The settings file has been refreshed successfully.")
         except Exception as e:
@@ -221,10 +212,8 @@ class SRCounterUI(QWidget):
             if file_path:
                 self.df = self.load_excel(file_path)
                 self.create_checkboxes()
-                self.sort_by_dropdown.setEnabled(True)  # Enable the sort section when file is loaded
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to load Excel file: {e}")
-
 
     def load_excel(self, file_path):
         """Load the Excel file into a DataFrame."""
@@ -283,7 +272,12 @@ class SRCounterUI(QWidget):
 
     def preview_report(self):
         """Show a preview of the report by calling the ReportPreview dialog."""
-        if self.df is None or not self.checkboxes:
+        # Check if the DataFrame (df) exists
+        if not hasattr(self, 'df') or self.df is None:
+            QMessageBox.warning(self, "No Data", "Please load an Excel file first before previewing the report.")
+            return
+
+        if not self.checkboxes:
             QMessageBox.warning(self, "No Data", "Please load a file and select columns first.")
             return
 
@@ -305,7 +299,7 @@ class SRCounterUI(QWidget):
 
             # Exclude rows based on exclusions from settings
             df_filtered = self.df[~((self.df['Type Description'].isin(self.exclusions['excluded_sr_type'])) |
-                                   (self.df['Group Description'].isin(self.exclusions['excluded_group'])))]
+                                (self.df['Group Description'].isin(self.exclusions['excluded_group'])))]
 
             # Call the generate_report function to filter and generate the report DataFrame
             report_df = self.report_generator.generate_report(df_filtered, selected_columns, start_date, end_date, sort_by_column)
@@ -317,6 +311,7 @@ class SRCounterUI(QWidget):
 
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Error generating preview: {e}")
+
 
     def generate_report(self):
         """Generate and save the report based on the selected columns and date range."""
@@ -354,3 +349,4 @@ class SRCounterUI(QWidget):
 
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Error generating report: {e}")
+

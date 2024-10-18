@@ -2,7 +2,7 @@
     "excluded_sr_types": [
         "Call Tracker"
     ],
-    "excluded_groups": [
-        "Wuc"
-    ]
+    "excluded_groups": [],
+    "no_location_excluded_sr_types": [],
+    "no_location_excluded_groups": []
 }

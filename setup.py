@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name='Excel_Report_Generator',
-    version='1.0.0',
+    version='1.0.3',
     description='An app to generate Excel reports',
     packages=find_packages(),
     include_package_data=True,
-    python_requires='>=3.11',  # Specify the Python version here
+    python_requires='>=3.11.6',  # Specify the Python version here
     install_requires=[
         'pandas',
         'numpy',

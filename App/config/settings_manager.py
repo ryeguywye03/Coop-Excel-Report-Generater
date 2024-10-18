@@ -1,12 +1,13 @@
 import json
 import os
 import pandas as pd
+from utils import resource_path  # Import the centralized resource_path
 
 class SettingsManager:
     def __init__(self, settings_file=None):
-        # Use the correct absolute path for the settings file
+        # Use resource_path to handle dynamic paths
         if settings_file is None:
-            self.settings_file = os.path.join(os.path.dirname(__file__), '..', 'assets', 'json', 'type_group_exclusion.json')
+            self.settings_file = resource_path(os.path.join('assets', 'json', 'type_group_exclusion.json'))
         else:
             self.settings_file = settings_file
         self.exclusions = None
@@ -18,7 +19,7 @@ class SettingsManager:
                 self.exclusions = json.load(file)
             return self.exclusions
         except FileNotFoundError:
-            print("Settings file not found.")
+            print(f"Settings file not found: {self.settings_file}")
             return None
         except json.JSONDecodeError:
             print("Error parsing settings file.")
@@ -47,10 +48,9 @@ class SettingsManager:
     def create_json_from_excel(self):
         """Create or refresh the JSON file from the Excel files."""
         try:
-            # Build paths to the Excel files dynamically based on the script location
-            base_dir = os.path.dirname(os.path.abspath(__file__))
-            sr_types_file = os.path.join(base_dir, '../assets/Excel/311_GIS_Type_Descriptions.xlsx')
-            group_descriptions_file = os.path.join(base_dir, '../assets/Excel/311_GIS_Group_Descriptions.xlsx')
+            # Use resource_path to handle dynamic paths for the Excel files
+            sr_types_file = resource_path(os.path.join('assets', 'Excel', '311_GIS_Type_Descriptions.xlsx'))
+            group_descriptions_file = resource_path(os.path.join('assets', 'Excel', '311_GIS_Group_Descriptions.xlsx'))
 
             print(f"Reading SR Types from: {sr_types_file}")
             print(f"Reading Group Descriptions from: {group_descriptions_file}")

@@ -1,31 +1,29 @@
-import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget, QWidget, QGridLayout
 from ui.main_menu import MainMenuUI
 from ui.sr_counter_ui import SRCounterUI
 from logic.logger_manager import LoggerManager
+from utils import resource_path  # Import from utils for file paths
 import os
-import objc
+import sys
 from Foundation import NSObject
-from AppKit import NSApplication, NSApp
+from AppKit import NSApp
 
 # Define a custom subclass of NSApplicationDelegate
 class AppDelegate(NSObject):
     def applicationSupportsSecureRestorableState_(self, app):
         return True
 
-def resource_path(relative_path):
-    """ Get the absolute path to the resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temporary folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except AttributeError:
-        base_path = os.path.abspath(".")
-    
-    return os.path.join(base_path, relative_path)
-
 class ReportGeneratorApp(QMainWindow):
     def __init__(self):
         super().__init__()
+        # Use resource_path for file paths
+        qss_file = resource_path(os.path.join('assets', 'QSS', 'style.qss'))
+
+        try:
+            with open(qss_file, "r") as file:
+                self.setStyleSheet(file.read())
+        except FileNotFoundError:
+            print(f"Error: The file {qss_file} was not found.")
 
         self.logger = LoggerManager()  # Initialize logger
         self.logger.log_info("App initialized")
@@ -101,10 +99,15 @@ class ReportGeneratorApp(QMainWindow):
 
     def get_version(self):
         """Reads the version number from the version.txt file."""
-        version_path = resource_path("version.txt")  # Use resource_path to find version.txt
-        with open(version_path) as version_file:
-            version = version_file.read().strip()
-        return version
+        version_path = os.path.join(os.path.dirname(__file__), '../version.txt')  # Use resource_path to find version.txt
+        try:
+            with open(version_path) as version_file:
+                version = version_file.read().strip()
+            return version
+        except FileNotFoundError:
+            self.logger.log_error(f"Error: version.txt not found at {version_path}")
+        return "Version not found"
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -114,16 +117,6 @@ if __name__ == "__main__":
     NSApp.setDelegate_(delegate)
 
     logger_manager = LoggerManager(enable_logging=False)  # Disable logging for production
-
-    # Adjust path to point to correct location of style.qss
-    qss_file = resource_path(os.path.join("app", "assets", "QSS", "style.qss"))  # Use resource_path for QSS
-
-    # Load QSS stylesheet
-    try:
-        with open(qss_file, "r") as file:
-            app.setStyleSheet(file.read())
-    except FileNotFoundError:
-        print(f"Error: The file {qss_file} was not found.")
 
     window = ReportGeneratorApp()
     window.show()

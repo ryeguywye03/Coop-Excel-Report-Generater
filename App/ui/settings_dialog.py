@@ -8,20 +8,42 @@ class SettingsDialog(QDialog):
         super().__init__(parent)
         self.setWindowTitle("Settings")
         self.setObjectName("settings_dialog")
+        self.setMinimumWidth(800)
 
-        # Make the dialog size dynamic
-        self.setMinimumWidth(800)  # Increase width to accommodate both sections side by side
+        # Initialize exclusions attribute
+        self.exclusions = {
+            'excluded_sr_types': [],
+            'excluded_groups': [],
+            'no_location_excluded_sr_types': [],
+            'no_location_excluded_groups': []
+        }
 
         # Setup the types and groups data
         self.sr_types = [sr["description"] for sr in sr_types.values()] if sr_types else []
         self.group_descriptions = [group["description"] for group in group_descriptions.values()] if group_descriptions else []
 
-        # Load saved exclusions from JSON file in /config directory
+        # Load saved exclusions from the JSON file
         self.config_path = os.path.join(os.path.dirname(__file__), '../config/settings.json')
         self.saved_exclusions = self.load_saved_exclusions()
 
         # Initialize the UI
         self.setup_ui()
+
+    def load_saved_exclusions(self):
+        """Load saved exclusions from the settings.json file."""
+        try:
+            with open(self.config_path, 'r') as f:
+                exclusions = json.load(f)
+                exclusions.setdefault('no_location_excluded_sr_types', [])
+                exclusions.setdefault('no_location_excluded_groups', [])
+                return exclusions
+        except (FileNotFoundError, json.JSONDecodeError):
+            return {
+                'excluded_sr_types': [],
+                'excluded_groups': [],
+                'no_location_excluded_sr_types': [],
+                'no_location_excluded_groups': []
+            }
 
     def load_saved_exclusions(self):
         """Load saved exclusions from the settings.json file."""
@@ -52,6 +74,7 @@ class SettingsDialog(QDialog):
         exclude_layout.addWidget(QLabel("Exclude SR Type Description:"))
         self.sr_type_search = QLineEdit(self)
         self.sr_type_search.setPlaceholderText("Search SR Type Description...")
+        self.sr_type_search.textChanged.connect(lambda: self.filter_list(self.sr_type_list, self.sr_types, self.sr_type_search.text()))  # Connect the search functionality
         exclude_layout.addWidget(self.sr_type_search)
         self.sr_type_list = QListWidget()
         self.populate_list_with_checkboxes(self.sr_type_list, self.sr_types, self.saved_exclusions['excluded_sr_types'])
@@ -61,6 +84,7 @@ class SettingsDialog(QDialog):
         exclude_layout.addWidget(QLabel("Exclude Group Description:"))
         self.group_search = QLineEdit(self)
         self.group_search.setPlaceholderText("Search Group Description...")
+        self.group_search.textChanged.connect(lambda: self.filter_list(self.group_list, self.group_descriptions, self.group_search.text()))  # Connect the search functionality
         exclude_layout.addWidget(self.group_search)
         self.group_list = QListWidget()
         self.populate_list_with_checkboxes(self.group_list, self.group_descriptions, self.saved_exclusions['excluded_groups'])
@@ -80,6 +104,7 @@ class SettingsDialog(QDialog):
         no_location_layout.addWidget(QLabel("Exclude SR Type Description (No Location):"))
         self.no_location_sr_type_search = QLineEdit(self)
         self.no_location_sr_type_search.setPlaceholderText("Search SR Type Description (No Location)...")
+        self.no_location_sr_type_search.textChanged.connect(lambda: self.filter_list(self.no_location_sr_type_list, self.sr_types, self.no_location_sr_type_search.text()))  # Connect the search functionality
         no_location_layout.addWidget(self.no_location_sr_type_search)
         self.no_location_sr_type_list = QListWidget()
         self.populate_list_with_checkboxes(
@@ -93,6 +118,7 @@ class SettingsDialog(QDialog):
         no_location_layout.addWidget(QLabel("Exclude Group Description (No Location):"))
         self.no_location_group_search = QLineEdit(self)
         self.no_location_group_search.setPlaceholderText("Search Group Description (No Location)...")
+        self.no_location_group_search.textChanged.connect(lambda: self.filter_list(self.no_location_group_list, self.group_descriptions, self.no_location_group_search.text()))  # Connect the search functionality
         no_location_layout.addWidget(self.no_location_group_search)
         self.no_location_group_list = QListWidget()
         self.populate_list_with_checkboxes(
@@ -123,6 +149,10 @@ class SettingsDialog(QDialog):
     def toggle_no_location_exclusion(self, checked):
         """Enable or disable the No Location Exclusion section based on the checkbox."""
         self.no_location_card.setEnabled(checked)
+
+    def get_exclusions(self):
+        """Return the current exclusions."""
+        return self.exclusions
 
     def populate_list_with_checkboxes(self, list_widget, items, selected_items=[]):
         """Populate a QListWidget with items and preselect checkboxes based on exclusions."""
@@ -172,21 +202,46 @@ class SettingsDialog(QDialog):
     def filter_list(self, list_widget, items, search_text):
         """Filter the items in the list based on the search text."""
         filtered_items = [item for item in items if search_text.lower() in item.lower()]
+        # Repopulate the list with filtered items
         self.populate_list_with_checkboxes(list_widget, filtered_items)
 
     def refresh_descriptions(self):
-        """Refresh the descriptions based on the Excel files."""
-        settings_manager = self.parent().settings_manager
-        settings_manager.create_json_from_excel()
+        """Refresh the descriptions by reloading the data and repopulating the lists."""
+        # Reload the data from the parent (or from an external source if needed)
+        if self.parent():
+            self.sr_types = [sr["description"] for sr in self.parent().sr_types.values()]
+            self.group_descriptions = [group["description"] for group in self.parent().group_descriptions.values()]
 
-        # Reload the settings after refreshing the Excel data
-        self.sr_types = [sr["description"] for sr in settings_manager.load_settings().get("type_descriptions", {}).values()]
-        self.group_descriptions = [group["description"] for group in settings_manager.load_settings().get("group_descriptions", {}).values()]
+        # Repopulate the lists with the refreshed data
+        self.populate_list_with_checkboxes(self.sr_type_list, self.sr_types, self.saved_exclusions['excluded_sr_types'])
+        self.populate_list_with_checkboxes(self.group_list, self.group_descriptions, self.saved_exclusions['excluded_groups'])
 
-        # Repopulate the lists
-        self.populate_list_with_checkboxes(self.sr_type_list, self.sr_types)
-        self.populate_list_with_checkboxes(self.group_list, self.group_descriptions)
+        # Refresh the no-location exclusion lists as well
+        self.populate_list_with_checkboxes(self.no_location_sr_type_list, self.sr_types, self.saved_exclusions['no_location_excluded_sr_types'])
+        self.populate_list_with_checkboxes(self.no_location_group_list, self.group_descriptions, self.saved_exclusions['no_location_excluded_groups'])
 
-        # Repopulate the No Location lists
-        self.populate_list_with_checkboxes(self.no_location_sr_type_list, self.sr_types)
-        self.populate_list_with_checkboxes(self.no_location_group_list, self.group_descriptions)
+        # Optionally, reset the search fields after refresh
+        self.sr_type_search.clear()
+        self.group_search.clear()
+        self.no_location_sr_type_search.clear()
+        self.no_location_group_search.clear()
+
+    def keyPressEvent(self, event):
+        """Handle key press events for the search functionality."""
+        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+            # Trigger search on Enter key press
+            self.perform_search()
+
+    def perform_search(self):
+        """Filter lists based on the current search fields."""
+        sr_type_search_text = self.sr_type_search.text()
+        group_search_text = self.group_search.text()
+        no_location_sr_type_search_text = self.no_location_sr_type_search.text()
+        no_location_group_search_text = self.no_location_group_search.text()
+
+        # Filter the lists based on the search text
+        self.filter_list(self.sr_type_list, self.sr_types, sr_type_search_text)
+        self.filter_list(self.group_list, self.group_descriptions, group_search_text)
+        self.filter_list(self.no_location_sr_type_list, self.sr_types, no_location_sr_type_search_text)
+        self.filter_list(self.no_location_group_list, self.group_descriptions, no_location_group_search_text)
+

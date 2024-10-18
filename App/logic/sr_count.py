@@ -1,5 +1,6 @@
 import pandas as pd
 from logic.logger_manager import LoggerManager  # Import the logger
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem
 import os
 from datetime import datetime
 
@@ -11,17 +12,41 @@ class SRReportGenerator:
 
     def generate_report(self, df: pd.DataFrame, selected_columns, start_date: datetime, end_date: datetime, sort_by=None, exclusions=None):
         """Generate the report by processing the DataFrame within the start and end date range, grouped by selected columns, and sort it."""
-
+        
         self.logger.log_info(f"Starting report generation: {start_date} to {end_date}")
         try:
-            # Exclude SR Type and Group based on the settings
+            # Apply SR Type and Group exclusions
             if exclusions:
+                # Exclude based on SR Type and Group
                 if exclusions['excluded_sr_type']:
-                    self.logger.log_info(f"Excluding SR Type: {exclusions['excluded_sr_type']}")
-                    df = df[df['Type Description'] != exclusions['excluded_sr_type']]
+                    self.logger.log_info(f"Excluding SR Types: {exclusions['excluded_sr_type']}")
+                    df = df[~df['Type Description'].isin(exclusions['excluded_sr_type'])]
+
                 if exclusions['excluded_group']:
-                    self.logger.log_info(f"Excluding Group: {exclusions['excluded_group']}")
-                    df = df[df['Group Description'] != exclusions['excluded_group']]
+                    self.logger.log_info(f"Excluding Groups: {exclusions['excluded_group']}")
+                    df = df[~df['Group Description'].isin(exclusions['excluded_group'])]
+
+                # Handle no location exclusions (SRs with 0,0 coordinates)
+                if exclusions['no_location_excluded_sr_type'] or exclusions['no_location_excluded_group']:
+                    self.logger.log_info("Applying no location exclusions.")
+                    
+                    # Filter rows where X Value and Y Value are 0,0 (no location)
+                    no_location_df = df[(df['X Value'] == 0) & (df['Y Value'] == 0)]
+                    
+                    # Exclude no location SR Types and Groups
+                    if exclusions['no_location_excluded_sr_type']:
+                        self.logger.log_info(f"Excluding No Location SR Types: {exclusions['no_location_excluded_sr_type']}")
+                        no_location_df = no_location_df[~no_location_df['Type Description'].isin(exclusions['no_location_excluded_sr_type'])]
+
+                    if exclusions['no_location_excluded_group']:
+                        self.logger.log_info(f"Excluding No Location Groups: {exclusions['no_location_excluded_group']}")
+                        no_location_df = no_location_df[~no_location_df['Group Description'].isin(exclusions['no_location_excluded_group'])]
+
+                    # Remove no location exclusions from the main DataFrame
+                    df = df[~((df['X Value'] == 0) & (df['Y Value'] == 0))]
+
+                    # Add filtered no location data back into the DataFrame
+                    df = pd.concat([df, no_location_df])
 
             # Ensure 'Created Date' is properly handled and convert to datetime if selected
             df['Created Date'] = pd.to_datetime(df['Created Date'], errors='coerce')
@@ -29,7 +54,7 @@ class SRReportGenerator:
             df = df[(df['Created Date'] >= start_date) & (df['Created Date'] <= end_date)]
 
             # Extract the month from 'Created Date'
-            df['Month'] = df['Created Date'].dt.month  # Extract month
+            df['Month'] = df['Created Date'].dt.month
 
             # Define month names
             all_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -37,8 +62,6 @@ class SRReportGenerator:
             # Filter the months based on the user-defined date range
             start_month = start_date.month
             end_month = end_date.month
-
-            # Dynamically include only the months within the date range
             included_months = all_months[start_month - 1:end_month]
 
             # Initialize combined data and grand totals
@@ -100,9 +123,10 @@ class SRReportGenerator:
             self.logger.log_error(f"Error during report generation: {e}")
             return None
 
+
     def show_report_preview(self, preview_df):
         """Display a preview of the report in a QDialog."""
-        from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem
+        
 
         self.logger.log_info("Displaying report preview")
         try:
