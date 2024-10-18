@@ -16,6 +16,8 @@ class SRCounterUI(QWidget):
     def __init__(self, parent):
         super().__init__(parent)
         self.main_window = parent  # Store the reference to the main window
+
+        self.df = None  # Initialize the DataFrame to None
         
         # Setup UI and get the progress bar from the main panel
         self.setup_ui()
@@ -168,10 +170,13 @@ class SRCounterUI(QWidget):
             with open(json_path, 'r') as f:
                 data = json.load(f)
 
-            sr_types = data.get("type_descriptions", {})
-            group_descriptions = data.get("group_descriptions", {})
+            self.sr_types = data.get("type_descriptions", {})
+            self.group_descriptions = data.get("group_descriptions", {})
 
-            dialog = SettingsDialog(self, sr_types, group_descriptions)
+            # print(f"SR Types: {self.sr_types}")
+            # print(f"Groups: {self.group_descriptions}")
+
+            dialog = SettingsDialog(self, sr_types=self.sr_types, group_descriptions=self.group_descriptions)
 
             if dialog.exec_():  # Show the dialog and wait for the user to press OK
                 # Ensure the correct structure for exclusions

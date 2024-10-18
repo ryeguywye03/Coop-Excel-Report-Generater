@@ -209,8 +209,18 @@ class SettingsDialog(QDialog):
         """Refresh the descriptions by reloading the data and repopulating the lists."""
         # Reload the data from the parent (or from an external source if needed)
         if self.parent():
-            self.sr_types = [sr["description"] for sr in self.parent().sr_types.values()]
-            self.group_descriptions = [group["description"] for group in self.parent().group_descriptions.values()]
+            try:
+
+                self.sr_types = [sr["description"] for sr in self.parent().sr_types.values()]
+            except Exception as e:
+                self.sr_types = []
+                print(f"Error loading SR Types: {e}")
+                
+            try:
+                self.group_descriptions = [group["description"] for group in self.parent().group_descriptions.values()]
+            except Exception as e:
+                self.group_descriptions = []
+                print(f"Error loading Group Descriptions: {e}")
 
         # Repopulate the lists with the refreshed data
         self.populate_list_with_checkboxes(self.sr_type_list, self.sr_types, self.saved_exclusions['excluded_sr_types'])

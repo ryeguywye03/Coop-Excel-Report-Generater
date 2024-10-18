@@ -8,13 +8,13 @@ import os
 import sys
 
 # Define AppDelegate before it's used in macOS-specific logic
-if platform.system() == "Darwin":  # macOS
-    from Foundation import NSObject
-    from AppKit import NSApp, NSApplication
+# if platform.system() == "Darwin":  # macOS
+#     from Foundation import NSObject
+#     from AppKit import NSApp, NSApplication
 
-    class AppDelegate(NSObject):
-        def applicationSupportsSecureRestorableState_(self, app):
-            return True
+#     class AppDelegate(NSObject):
+#         def applicationSupportsSecureRestorableState_(self, app):
+#             return True
 
 
 class ReportGeneratorApp(QMainWindow):
@@ -123,13 +123,13 @@ class ReportGeneratorApp(QMainWindow):
 
 if __name__ == "__main__":
     # For macOS
-    if platform.system() == "Darwin":
-        # Initialize the macOS application
-        app = NSApplication.sharedApplication()
-        delegate = AppDelegate.alloc().init()
+    # if platform.system() == "Darwin":
+    #     # Initialize the macOS application
+    #     app = NSApplication.sharedApplication()
+    #     delegate = AppDelegate.alloc().init()
 
-        if NSApp is not None:
-            NSApp.setDelegate_(delegate)
+    #     if NSApp is not None:
+    #         NSApp.setDelegate_(delegate)
 
     # Initialize the PyQt5 application
     app = QApplication(sys.argv)
