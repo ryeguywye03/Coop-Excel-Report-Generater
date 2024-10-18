@@ -1,3 +1,4 @@
+import platform
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget, QWidget, QGridLayout
 from ui.main_menu import MainMenuUI
 from ui.sr_counter_ui import SRCounterUI
@@ -5,13 +6,16 @@ from logic.logger_manager import LoggerManager
 from utils import resource_path  # Import from utils for file paths
 import os
 import sys
-from Foundation import NSObject
-from AppKit import NSApp
 
-# Define a custom subclass of NSApplicationDelegate
-class AppDelegate(NSObject):
-    def applicationSupportsSecureRestorableState_(self, app):
-        return True
+# Define AppDelegate before it's used in macOS-specific logic
+if platform.system() == "Darwin":  # macOS
+    from Foundation import NSObject
+    from AppKit import NSApp, NSApplication
+
+    class AppDelegate(NSObject):
+        def applicationSupportsSecureRestorableState_(self, app):
+            return True
+
 
 class ReportGeneratorApp(QMainWindow):
     def __init__(self):
@@ -110,14 +114,23 @@ class ReportGeneratorApp(QMainWindow):
 
 
 if __name__ == "__main__":
+    # For macOS
+    if platform.system() == "Darwin":
+        # Initialize the macOS application
+        app = NSApplication.sharedApplication()
+        delegate = AppDelegate.alloc().init()
+
+        if NSApp is not None:
+            NSApp.setDelegate_(delegate)
+
+    # Initialize the PyQt5 application
     app = QApplication(sys.argv)
 
-    # Set up the custom delegate for secure coding
-    delegate = AppDelegate.alloc().init()
-    NSApp.setDelegate_(delegate)
+    # Disable logging for production
+    logger_manager = LoggerManager(enable_logging=False)
 
-    logger_manager = LoggerManager(enable_logging=False)  # Disable logging for production
-
+    # Create and show the main window
     window = ReportGeneratorApp()
     window.show()
+
     sys.exit(app.exec_())
