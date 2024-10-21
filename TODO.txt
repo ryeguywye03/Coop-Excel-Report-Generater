@@ -1,0 +1,41 @@
+# TODO List for Excel Report Generator
+
+## Features to Implement
+- [ ] Generate Excel reports from data
+- [ ] Add support for multiple data formats (CSV, JSON, XML)
+- [ ] Implement data validation
+- [ ] Create user-friendly GUI
+- [ ] Add export options (PDF, Excel, CSV)
+
+## Codebase Changes
+- [ ] Look to update the structure of the overall app 
+
+## Bugs to Fix
+- [ ] Fix issue with data parsing in CSV files
+- [ ] Resolve crash when loading large datasets
+- [ ] Correct formatting issues in generated reports
+
+## Code Refactoring
+- [ ] Optimize data processing algorithms
+- [ ] Improve error handling and logging
+- [ ] Refactor GUI code for better maintainability
+
+## Documentation
+- [ ] Write user manual
+- [ ] Create API documentation
+- [ ] Add inline comments to complex functions
+
+## Testing
+- [ ] Write unit tests for data processing functions
+- [ ] Create integration tests for report generation
+- [ ] Perform user acceptance testing
+
+## Miscellaneous
+- [ ] Set up continuous integration pipeline
+- [ ] Research and integrate third-party libraries for advanced features
+- [ ] Plan and schedule project milestones
+
+
+## Organize
+- [ ] Module and Packages
+- [ ]
