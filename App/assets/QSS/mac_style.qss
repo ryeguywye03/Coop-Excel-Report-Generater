@@ -1,106 +1,127 @@
-/* General styling for the whole application */
+/* General QSS styling for macOS */
+
+/* Apply background and text colors */
 QWidget {
-    background-color: #2E2E3A;  /* Dark background */
-    color: white;
+    background-color: #2D2D2D;  /* Dark background */
+    color: #FFFFFF;             /* White text */
 }
 
-/* Sidebar styling */
-QWidget#sidebar {
-    background-color: #3A3A48;
-    border: 2px solid #555566;
-    border-radius: 15px;
+/* Main Sidebar Styles */
+QGroupBox#sidebar {
+    background-color: #333333;  /* Slightly darker background */
+    color: #0062A3;             /* Your main accent color */
+    border: 1px solid #0062A3;
+    font-size: 14px;
     padding: 10px;
 }
 
-/* Main panel styling */
-QWidget#mainpanel {
-    background-color: #2A2A37;
-    border: 2px solid #555566;
-    border-radius: 15px;
+/* Button Styles */
+QPushButton {
+    background-color: #0062A3;  /* Accent color */
+    color: #FFFFFF;
+    border-radius: 5px;
     padding: 10px;
+    font-size: 14px;
 }
 
-/* GroupBox styling */
-QGroupBox {
-    color: white;
-    border: 1px solid #3A3A48;
-    border-radius: 10px;
-    margin-top: 20px;
+QPushButton:hover {
+    background-color: #00578F;  /* Darker version of accent on hover */
+}
+
+QPushButton:pressed {
+    background-color: #004973;  /* Even darker when pressed */
+}
+
+/* Labels and Headers */
+QLabel {
+    font-size: 14px;
+    color: #0062A3;  /* Accent color for headings */
+    background-color: transparent; /* Match the parent container background */
+}
+
+/* Main panel for SR Counter */
+QGroupBox#mainpanel {
+    background-color: #2D2D2D;  /* Dark background for consistency */
+    color: #0062A3;             /* Accent color for headers */
+    border: 1px solid #0062A3;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 QGroupBox::title {
     subcontrol-origin: margin;
-    subcontrol-position: top left;
-    padding-left: 10px;
-    color: rgb(0, 98, 163);  /* Accent color */
+    subcontrol-position: top center; /* Center the title */
+    color: #0062A3;
 }
 
-/* ScrollArea styling */
-QScrollArea {
-    background-color: #40404F;
-    border: 2px solid #555566;
-    border-radius: 10px;
+/* Fix for checkbox labels and background */
+QCheckBox {
+    background-color: transparent;  /* Transparent background for checkboxes */
+    color: #FFFFFF;                 /* White text for checkboxes */
 }
 
+QGroupBox QCheckBox {
+    background-color: transparent;  /* Fix for nested checkbox styles */
+}
+
+/* Scrollbar */
 QScrollBar:vertical {
-    background: #50505F;
-    width: 10px;
-    margin: 15px 3px 15px 3px;
-    border-radius: 5px;
+    background-color: #2D2D2D;
+    width: 12px;
+    margin: 20px 0 20px 0;
+    border: 1px solid #0062A3;
 }
 
 QScrollBar::handle:vertical {
-    background: rgb(0, 98, 163);
-    min-height: 20px;
+    background-color: #0062A3; /* Accent color for scrollbar */
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background-color: #004973; /* Darker for arrows */
+}
+
+/* ComboBox Styling */
+QComboBox {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 5px;
+    border: 2px solid #0062A3;
     border-radius: 5px;
 }
 
-/* QPushButton styling */
+QComboBox:hover {
+    background-color: #2d2d2d;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    selection-background-color: #0062A3;
+    border-radius: 5px;
+}
+
+/* Button styling */
 QPushButton {
-    background-color: rgb(0, 98, 163);
+    background-color: #0062A3;
     color: white;
-    border-radius: 10px;
-    padding: 10px 20px;
-    border: 2px solid #40404F;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 QPushButton:hover {
-    background-color: rgb(0, 80, 133);
+    background-color: #004C85;
 }
 
-QPushButton:pressed {
-    background-color: rgb(0, 60, 100);
+/* Fix for main panel's nested box */
+QWidget#mainpanel {
+    background-color: #2D2D2D;   /* Consistent dark background */
+    border-radius: 8px;
+    border: 1px solid #0062A3;   /* Accent border */
+    padding: 15px;
 }
 
-/* QLabel styling */
-QLabel {
-    color: white;
-    background-color: transparent;
-    font-weight: bold;
-    padding: 2px;
-}
-
-/* QComboBox styling */
-QComboBox {
-    background-color: #3A3A48;
-    color: white;
-    border: 1px solid #5a5a5a;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-QComboBox::drop-down {
-    border-left: 1px solid #5a5a5a;
-}
-
-QComboBox::down-arrow {
-    image: url(down_arrow_mac.png);
-}
-
-/* Dialog styling */
-QDialog#settings_dialog {
-    background-color: #2E2E3A;
-    color: white;
-    border: 2px solid #555566;
-    border-radius: 10px;
+QWidget#welcome {
+    background-color: transparent; /* Remove extra inner box in the welcome page */
+    border: none;
 }

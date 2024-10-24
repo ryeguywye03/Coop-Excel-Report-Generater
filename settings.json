@@ -1,0 +1,11 @@
+{
+    "theme": "dark",
+    "window_size": {
+        "width": 1000,
+        "height": 600
+    },
+    "exclusions": {
+        "excluded_sr_type": [],
+        "excluded_group": []
+    }
+}

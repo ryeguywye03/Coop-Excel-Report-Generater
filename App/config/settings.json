@@ -1,5 +1,6 @@
 {
     "excluded_sr_types": [
+        "311 Texting",
         "Call Tracker"
     ],
     "excluded_groups": [],

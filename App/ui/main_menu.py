@@ -5,6 +5,7 @@ class MainMenuUI(QWidget):
         super().__init__(parent)
         self.main_window = parent  # Store the reference to the main window
         self.setup_ui()
+        print("MainMenuUI initialized")
 
     def setup_ui(self):
         self.setObjectName("mainpanel")  # Set object name for the main panel
@@ -12,14 +13,14 @@ class MainMenuUI(QWidget):
         self.main_layout = QGridLayout(self)
 
         # Sidebar with buttons
-        # sidebar_group = self.setup_sidebar()
-        # sidebar_group.setObjectName("sidebar")  # Set object name for sidebar
+        sidebar_group = self.setup_sidebar()
+        sidebar_group.setObjectName("sidebar")  # Set object name for sidebar
 
         # Main panel with welcome text
         welcome_panel = self.setup_main_panel()
 
         # Add sidebar and welcome panel to the main layout using grid
-        # self.main_layout.addWidget(sidebar_group, 0, 0, 1, 1)  # Sidebar on the left
+        self.main_layout.addWidget(sidebar_group, 0, 0, 1, 1)  # Sidebar on the left
         self.main_layout.addWidget(welcome_panel, 0, 1, 1, 2)  # Main panel on the right
 
         # Set stretch factors for columns
