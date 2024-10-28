@@ -1,0 +1,55 @@
+
+/* General Dark Theme Styling */
+QMainWindow {
+    background-color: #2E3B4E;
+    color: white;
+}
+
+/* Sidebar */
+QWidget#sidebar {
+    background-color: #1C2A39;
+    color: #E0E0E0;
+    border-right: 1px solid #455A64;
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* Button Styling */
+QPushButton {
+    background-color: #455A64;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+QPushButton:hover {
+    background-color: #607D8B;
+}
+QPushButton:pressed {
+    background-color: #78909C;
+}
+
+/* Report Preview Headers */
+QHeaderView::section {
+    background-color: #333333;  /* Darker header background */
+    color: #FFFFFF;             /* White text */
+    font-weight: bold;
+    border: 1px solid #455A64;
+}
+
+/* Main Panel */
+QWidget#mainpanel {
+    background-color: #2D2D2D;
+    color: white;
+}
+
+/* Accent and Text Colors */
+QWidget {
+    background-color: #2D2D2D;  /* Dark background */
+    color: #FFFFFF;             /* White text */
+}
+QGroupBox#sidebar {
+    background-color: #333333;
+    color: #0062A3;             /* Accent color */
+    border: 1px solid #0062A3;
+}

@@ -13,3 +13,10 @@ def resource_path(relative_path):
     final_path = os.path.join(base_path, relative_path)
     print(f"Final resource path: {final_path}")
     return final_path
+
+
+def get_settings_file_path():
+    # Adjust this path to your preferred location of settings.json
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    settings_path = os.path.join(base_path, '..', 'settings.json')  # Adjust this as needed
+    return settings_path

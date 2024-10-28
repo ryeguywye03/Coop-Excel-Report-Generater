@@ -1,0 +1,127 @@
+/* General QSS styling for Light Theme */
+
+/* Apply background and text colors */
+QWidget {
+    background-color: #F2F2F2;  /* Light background */
+    color: #333333;             /* Dark text */
+}
+
+/* Main Sidebar Styles */
+QGroupBox#sidebar {
+    background-color: #E0E0E0;  /* Light grey background */
+    color: #0062A3;             /* Your main accent color */
+    border: 1px solid #0062A3;
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* Button Styles */
+QPushButton {
+    background-color: #0062A3;  /* Accent color */
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #00578F;  /* Darker version of accent on hover */
+}
+
+QPushButton:pressed {
+    background-color: #004973;  /* Even darker when pressed */
+}
+
+/* Labels and Headers */
+QLabel {
+    font-size: 14px;
+    color: #0062A3;  /* Accent color for headings */
+    background-color: transparent; /* Match the parent container background */
+}
+
+/* Main panel for SR Counter */
+QGroupBox#mainpanel {
+    background-color: #FFFFFF;  /* White background for main panel */
+    color: #0062A3;             /* Accent color for headers */
+    border: 1px solid #0062A3;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* Center the title */
+    color: #0062A3;
+}
+
+/* Fix for checkbox labels and background */
+QCheckBox {
+    background-color: transparent;  /* Transparent background for checkboxes */
+    color: #333333;                 /* Dark text for checkboxes */
+}
+
+QGroupBox QCheckBox {
+    background-color: transparent;  /* Fix for nested checkbox styles */
+}
+
+/* Scrollbar */
+QScrollBar:vertical {
+    background-color: #F2F2F2;
+    width: 12px;
+    margin: 20px 0 20px 0;
+    border: 1px solid #0062A3;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #0062A3; /* Accent color for scrollbar */
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background-color: #004973; /* Darker for arrows */
+}
+
+/* ComboBox Styling */
+QComboBox {
+    background-color: #FFFFFF;
+    color: #333333;
+    padding: 5px;
+    border: 2px solid #0062A3;
+    border-radius: 5px;
+}
+
+QComboBox:hover {
+    background-color: #E6E6E6;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    color: #333333;
+    selection-background-color: #0062A3;
+    border-radius: 5px;
+}
+
+/* Button styling */
+QPushButton {
+    background-color: #0062A3;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: #00578F;
+}
+
+/* Fix for main panel's nested box */
+QWidget#mainpanel {
+    background-color: #FFFFFF;   /* Consistent light background */
+    border-radius: 8px;
+    border: 1px solid #0062A3;   /* Accent border */
+    padding: 15px;
+}
+
+QWidget#welcome {
+    background-color: transparent; /* Remove extra inner box in the welcome page */
+    border: none;
+}

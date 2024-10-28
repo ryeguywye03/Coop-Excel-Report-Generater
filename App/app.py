@@ -1,20 +1,25 @@
 import platform
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
-from ui.main_menu import MainMenuUI  # Import Main Menu UI
+from main_menu.main_menu import MainMenuUI  # Import Main Menu UI
 from sr_counter import SRCounterUI  # Import the SR Counter UI from the sr_counter package
-from utils import resource_path, LoggerManager  # Ensure utils has resource_path and LoggerManager
+from utils import resource_path, LoggerManager, AppSettings  # Ensure utils has resource_path and LoggerManager
 import os
 import sys
+import json
 
 class ReportGeneratorApp(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        # Initialize logger and log app start
+        self.logger = LoggerManager(enable_logging=True)
+        self.logger.log_info("App initialized")
+
+        # Initialize app settings
+        self.settings = AppSettings()  # Initialize settings here
+
         # Apply platform-specific stylesheet
         self.apply_stylesheet()
-
-        self.logger = LoggerManager()  # Initialize logger
-        self.logger.log_info("App initialized")
 
         # Get version number and set window title
         self.set_app_version()
@@ -25,26 +30,40 @@ class ReportGeneratorApp(QMainWindow):
         except Exception as e:
             self.logger.log_error(f"Error during UI setup: {e}")
 
+
     def apply_stylesheet(self):
-        """Applies the correct QSS file based on the platform."""
-        if platform.system() == "Darwin":  # macOS
-            qss_file = resource_path(os.path.join('assets', 'QSS', 'mac_style.qss'))
-        elif platform.system() == "Windows":  # Windows
-            qss_file = resource_path(os.path.join('assets', 'QSS', 'windows_style.qss'))
+        """Applies the stylesheet based on the current theme and platform."""
+        # Reload settings to get the latest theme
+        self.settings.reload_settings()
+        
+        theme = self.settings.get("theme", "dark").lower()
+        platform_name = platform.system().lower()
+
+        # Define QSS file based on platform and theme
+        if platform_name == "darwin":  # macOS
+            qss_file = resource_path(os.path.join('assets', 'QSS', 'mac', f'mac_{theme}_style.qss'))
+        elif platform_name == "windows":  # Windows
+            qss_file = resource_path(os.path.join('assets', 'QSS', 'windows', f'windows_{theme}_style.qss'))
         else:
             qss_file = resource_path(os.path.join('assets', 'QSS', 'default_style.qss'))
 
         try:
             with open(qss_file, "r") as file:
                 self.setStyleSheet(file.read())
+                self.logger.log_info(f"Applied stylesheet: {qss_file}")
         except FileNotFoundError:
-            print(f"Error: The file {qss_file} was not found.")
+            self.logger.log_error(f"Error: The file {qss_file} was not found.")
+
+    def reload_stylesheet(self):
+        """Reloads the stylesheet to reflect any theme changes."""
+        self.apply_stylesheet()
 
     def set_app_version(self):
         """Sets the app version number from a version.txt file."""
         try:
             version = self.get_version()
             self.setWindowTitle(f"Excel Report Generator - v{version}")
+            self.logger.log_info(f"App version set to v{version}")
         except FileNotFoundError:
             self.setWindowTitle("Excel Report Generator - Version not found")
             self.logger.log_error("version.txt not found")
@@ -57,6 +76,7 @@ class ReportGeneratorApp(QMainWindow):
         # Apply window size from settings (if available)
         window_size = self.get_window_size_from_settings()
         self.setMinimumSize(window_size["width"], window_size["height"])
+        self.logger.log_info(f"Window size set to {window_size['width']}x{window_size['height']}")
 
         # Initialize the Main Menu and SR Counter pages
         self.main_menu = MainMenuUI(self)
@@ -71,27 +91,27 @@ class ReportGeneratorApp(QMainWindow):
 
     def get_window_size_from_settings(self):
         """Read the window size from a settings file."""
-        # For demonstration purposes, let's assume a JSON settings file
-        import json
         default_size = {"width": 1000, "height": 600}  # Fallback size
         settings_file = os.path.join(os.path.dirname(__file__), '../settings.json')
         
         try:
             with open(settings_file, "r") as f:
                 settings = json.load(f)
+                self.logger.log_info("Settings loaded successfully")
                 return settings.get("window_size", default_size)
         except (FileNotFoundError, json.JSONDecodeError):
             self.logger.log_error(f"Error reading settings from {settings_file}")
             return default_size
 
-
     def switch_to_main_menu(self):
         """Switch to the Main Menu page."""
         self.central_widget.setCurrentWidget(self.main_menu)
+        self.logger.log_info("Switched to Main Menu")
 
     def switch_to_sr_counter(self):
         """Switch to the SR Counter page."""
         self.central_widget.setCurrentWidget(self.sr_counter)
+        self.logger.log_info("Switched to SR Counter")
 
     def get_version(self):
         """Reads the version number from the version.txt file."""
@@ -99,18 +119,15 @@ class ReportGeneratorApp(QMainWindow):
         try:
             with open(version_path) as version_file:
                 version = version_file.read().strip()
+                self.logger.log_info(f"Version read from {version_path}: {version}")
             return version
         except FileNotFoundError:
             self.logger.log_error(f"Error: version.txt not found at {version_path}")
         return "Version not found"
 
-
 if __name__ == "__main__":
     # Initialize the PyQt5 application
     app = QApplication(sys.argv)
-
-    # Disable logging for production
-    logger_manager = LoggerManager(enable_logging=False)
 
     # Create and show the main window
     window = ReportGeneratorApp()

@@ -1,6 +1,6 @@
 import pandas as pd
-from utils.logger_manager import LoggerManager  # Import the logger
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem, QScrollArea, QMessageBox
+from utils.logger_manager import LoggerManager
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem, QMessageBox
 import os
 from datetime import datetime
 
@@ -9,119 +9,88 @@ class ReportGenerator:
         self.progress_bar = progress_bar
         self.logger = LoggerManager()  # Initialize logger
         self.logger.log_info("ReportGenerator initialized")
+        self.included_months = []  # Initialize as an instance variable
 
     def generate_report(self, df: pd.DataFrame, selected_columns, start_date: datetime, end_date: datetime, sort_by=None, exclusions=None):
-        """Generate the report by processing the DataFrame within the start and end date range, grouped by selected columns, and sort it."""
+        """Generate the report by processing the DataFrame within the start and end date range, grouped by selected columns, and sorted if specified."""
         
-        self.logger.log_info(f"Starting report generation: {start_date} to {end_date}")
+        self.logger.log_info(f"Starting report generation from {start_date} to {end_date}")
+        self.logger.log_debug(f"Selected columns for grouping: {selected_columns}")
+        self.logger.log_debug(f"Sorting by column: {sort_by}")
+        
         try:
-            # Apply SR Type and Group exclusions
+            # Apply exclusions
             if exclusions:
-                # Exclude based on SR Type and Group
+                self.logger.log_info("Applying exclusions")
                 if exclusions['excluded_sr_type']:
-                    self.logger.log_info(f"Excluding SR Types: {exclusions['excluded_sr_type']}")
                     df = df[~df['Type Description'].isin(exclusions['excluded_sr_type'])]
-
+                    self.logger.log_debug(f"Excluded SR Types: {exclusions['excluded_sr_type']}")
+                
                 if exclusions['excluded_group']:
-                    self.logger.log_info(f"Excluding Groups: {exclusions['excluded_group']}")
                     df = df[~df['Group Description'].isin(exclusions['excluded_group'])]
+                    self.logger.log_debug(f"Excluded Groups: {exclusions['excluded_group']}")
 
-                # Handle no location exclusions (SRs with 0,0 coordinates)
+                # Handle no location exclusions
                 if exclusions['no_location_excluded_sr_type'] or exclusions['no_location_excluded_group']:
-                    self.logger.log_info("Applying no location exclusions.")
-                    
-                    # Filter rows where X Value and Y Value are 0,0 (no location)
                     no_location_df = df[(df['X Value'] == 0) & (df['Y Value'] == 0)]
-                    
-                    # Exclude no location SR Types and Groups
                     if exclusions['no_location_excluded_sr_type']:
-                        self.logger.log_info(f"Excluding No Location SR Types: {exclusions['no_location_excluded_sr_type']}")
                         no_location_df = no_location_df[~no_location_df['Type Description'].isin(exclusions['no_location_excluded_sr_type'])]
-
                     if exclusions['no_location_excluded_group']:
-                        self.logger.log_info(f"Excluding No Location Groups: {exclusions['no_location_excluded_group']}")
                         no_location_df = no_location_df[~no_location_df['Group Description'].isin(exclusions['no_location_excluded_group'])]
+                    df = pd.concat([df[~((df['X Value'] == 0) & (df['Y Value'] == 0))], no_location_df])
 
-                    # Remove no location exclusions from the main DataFrame
-                    df = df[~((df['X Value'] == 0) & (df['Y Value'] == 0))]
-
-                    # Add filtered no location data back into the DataFrame
-                    df = pd.concat([df, no_location_df])
-
-            # Ensure 'Created Date' is properly handled and convert to datetime if selected
+            # Date filtering
             df['Created Date'] = pd.to_datetime(df['Created Date'], errors='coerce')
             df = df.dropna(subset=['Created Date'])
             df = df[(df['Created Date'] >= start_date) & (df['Created Date'] <= end_date)]
-
-            # Extract the month from 'Created Date'
             df['Month'] = df['Created Date'].dt.month
 
-            # Define month names
+            # Define months to include
             all_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            self.included_months = all_months[start_date.month - 1:end_date.month]  # Set as an instance variable
 
-            # Filter the months based on the user-defined date range
-            start_month = start_date.month
-            end_month = end_date.month
-            included_months = all_months[start_month - 1:end_month]
-
-            # Initialize combined data and grand totals
             combined_data = []
-            grand_totals = {month: 0 for month in included_months}
+            grand_totals = {month: 0 for month in self.included_months}
             grand_totals['TOTAL'] = 0
 
-            # Validate that all selected columns exist before applying groupby
+            # Grouping
             valid_columns = [col for col in selected_columns if col in df.columns]
-            
             if not valid_columns:
-                QMessageBox.critical(self.parent, "Error", "No valid columns selected for grouping.")
+                self.logger.log_error("No valid columns selected for grouping.")
+                QMessageBox.critical(None, "Error", "No valid columns selected for grouping.")
                 return None
 
-            # Group data by the selected columns
             grouped = df.groupby(valid_columns)
-            group_count = len(grouped)
 
+            # Process each group
             for group_values, group_data in grouped:
-                # Monthly counts
-                monthly_counts = [
-                    group_data[group_data['Month'] == month].shape[0]
-                    for month in range(start_month, end_month + 1)
-                ]
-
+                monthly_counts = [group_data[group_data['Month'] == month].shape[0] for month in range(start_date.month, end_date.month + 1)]
                 total_count = sum(monthly_counts)
-
-                # Create row data for each group
                 row_data = {col: value for col, value in zip(selected_columns, group_values)}
-                row_data.update({
-                    **dict(zip(included_months, monthly_counts)),
-                    'TOTAL': total_count
-                })
+                row_data.update({**dict(zip(self.included_months, monthly_counts)), 'TOTAL': total_count})
                 combined_data.append(row_data)
 
-                # Update grand totals
-                for month_name, count in zip(included_months, monthly_counts):
+                for month_name, count in zip(self.included_months, monthly_counts):
                     grand_totals[month_name] += count
                 grand_totals['TOTAL'] += total_count
 
                 # Update progress bar
-                progress = int(len(combined_data) / max(group_count, 1) * 100)
+                progress = int(len(combined_data) / max(len(grouped), 1) * 100)
                 self.progress_bar.setValue(progress)
 
-            # Create DataFrame for the report
-            columns_order = selected_columns + included_months + ['TOTAL']
-            combined_report = pd.DataFrame(combined_data)[columns_order]
+            # Create DataFrame for combined data
+            combined_report = pd.DataFrame(combined_data)
+            combined_report = combined_report[valid_columns + self.included_months + ['TOTAL']]
 
-            # Sort the report by the selected field, if applicable
+            # Sorting
             if sort_by and sort_by in combined_report.columns:
-                self.logger.log_info(f"Sorting report by {sort_by}")
                 combined_report = combined_report.sort_values(by=sort_by)
+                self.logger.log_info(f"Sorted by {sort_by}")
 
-            # Append grand totals row **after sorting**, so it's at the bottom
+            # Append totals row only once
             total_row = {col: '' for col in selected_columns}
             total_row.update(grand_totals)
             combined_report = pd.concat([combined_report, pd.DataFrame([total_row])], ignore_index=True)
-
-            # Set progress bar to 100% when done
-            self.progress_bar.setValue(100)
 
             self.logger.log_info("Report generation completed")
             return combined_report
@@ -129,8 +98,6 @@ class ReportGenerator:
         except Exception as e:
             self.logger.log_error(f"Error during report generation: {e}")
             return None
-
-
 
     def show_report_preview(self, preview_df):
         """Display a preview of the report in a QDialog."""
@@ -154,46 +121,73 @@ class ReportGenerator:
             layout.addWidget(table)
             dialog.setLayout(layout)
             dialog.resize(800, 400)  # Set dialog size
+            table.resizeColumnsToContents()
+
             dialog.exec_()
 
         except Exception as e:
             self.logger.log_error(f"Error displaying report preview: {e}")
 
     def save_report(self, report_df):
-        """Save the generated report to an Excel file with formatting."""
+        """Save the generated report to an Excel file with enhanced formatting."""
         try:
             self.logger.log_info("Saving report to Excel file")
-            directory = os.path.expanduser("~/Desktop")
-            base_filename = "report_"
-            file_number = 1
-            while os.path.exists(os.path.join(directory, f"{base_filename}{file_number:03}.xlsx")):
-                file_number += 1
 
-            output_file = os.path.join(directory, f"{base_filename}{file_number:03}.xlsx")
+            # Generate filename with the required format
+            current_time = datetime.now()
+            filename = current_time.strftime("sr_count_report-%m-%d-%Y-%H:%M:%S.xlsx")
+            output_file = os.path.join(os.path.expanduser("~/Desktop"), filename)
 
             with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
                 report_df.to_excel(writer, sheet_name='Report', index=False)
-
-                # Access the workbook and worksheet objects
                 workbook = writer.book
                 worksheet = writer.sheets['Report']
 
-                # Apply autofit column width to all columns and set specific widths for month columns
-                for idx, col in enumerate(report_df.columns):
-                    if col in ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']:
-                        worksheet.set_column(idx, idx, 12)
-                    else:
-                        max_len = max(report_df[col].astype(str).map(len).max(), len(col)) + 2
-                        worksheet.set_column(idx, idx, max_len)
+                # Define formats
+                header_format = workbook.add_format({
+                    'bold': True,
+                    'font_color': 'white',
+                    'bg_color': '#4F81BD',
+                    'border': 1,
+                    'align': 'center',
+                    'valign': 'vcenter'
+                })
 
-                # Format the header: bold, background color
-                header_format = workbook.add_format({'bold': True, 'bg_color': '#D9EAD3', 'align': 'center'})
+                cell_format = workbook.add_format({
+                    'border': 1,
+                    'align': 'left',
+                    'valign': 'vcenter'
+                })
+
+                total_format = workbook.add_format({
+                    'bold': True,
+                    'bg_color': '#D9EAD3',
+                    'border': 1,
+                    'align': 'center'
+                })
+
+                vertical_total_format = workbook.add_format({
+                    'bold': True,
+                    'bg_color': '#D9EAD3',
+                    'border': 1,
+                    'align': 'center'
+                })
+
+                # Apply header format
                 for col_num, value in enumerate(report_df.columns):
                     worksheet.write(0, col_num, value, header_format)
 
-                # Bold the 'Total' row if needed
-                total_format = workbook.add_format({'bold': True})
-                worksheet.write(f'A{len(report_df)+1}', 'Total', total_format)
+                # Set all cells format except header
+                worksheet.set_column(0, len(report_df.columns) - 1, 15, cell_format)
+
+                # Apply total format to the last row
+                total_row_idx = len(report_df) - 1
+                for col_num in range(len(report_df.columns)):
+                    # Check if the column is in included_months or TOTAL, and apply the vertical total format
+                    if report_df.columns[col_num] in self.included_months or report_df.columns[col_num] == 'TOTAL':
+                        worksheet.write(total_row_idx, col_num, report_df.iloc[total_row_idx, col_num], vertical_total_format)
+                    else:
+                        worksheet.write(total_row_idx, col_num, report_df.iloc[total_row_idx, col_num], total_format)
 
             self.logger.log_info(f"Report saved at {output_file}")
             return output_file

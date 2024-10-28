@@ -1,40 +1,29 @@
-from PyQt5.QtWidgets import QCheckBox, QVBoxLayout, QScrollArea, QWidget
+from PyQt5.QtWidgets import QCheckBox, QVBoxLayout
 
 class CheckboxManager:
     def __init__(self, layout):
+        """Initialize CheckboxManager with the layout where checkboxes will be added."""
         self.layout = layout
-        self.checkboxes = {}
+        self.checkboxes = []
 
-    def populate_checkboxes(self, columns, selected_columns=[]):
-        """Populate the layout with checkboxes based on the provided column names."""
-        # Clear existing checkboxes
+    def populate_checkboxes(self, column_names):
+        """Dynamically create checkboxes for each column name."""
+        # Clear any existing checkboxes
         self.clear_checkboxes()
 
-        scroll_area = QScrollArea()
-        scroll_area.setWidgetResizable(True)
-
-        scroll_content = QWidget()
-        scroll_layout = QVBoxLayout(scroll_content)
-
-        # Add checkboxes for each column
-        for column in columns:
-            checkbox = QCheckBox(column)
-            if column in selected_columns:
-                checkbox.setChecked(True)
-            scroll_layout.addWidget(checkbox)
-            self.checkboxes[column] = checkbox
-
-        scroll_area.setWidget(scroll_content)
-        self.layout.addWidget(scroll_area)
+        # Add new checkboxes based on column names
+        for col in column_names:
+            checkbox = QCheckBox(col)
+            self.layout.addWidget(checkbox)
+            self.checkboxes.append(checkbox)
 
     def get_selected_columns(self):
-        """Return a list of selected (checked) columns."""
-        return [column for column, checkbox in self.checkboxes.items() if checkbox.isChecked()]
+        """Returns a list of selected columns based on checked checkboxes."""
+        return [checkbox.text() for checkbox in self.checkboxes if checkbox.isChecked()]
 
     def clear_checkboxes(self):
-        """Clear the current checkboxes from the layout."""
-        for i in reversed(range(self.layout.count())):
-            widget = self.layout.itemAt(i).widget()
-            if widget:
-                widget.deleteLater()
-        self.checkboxes.clear()
+        """Clear all checkboxes from the layout and reset the list."""
+        while self.checkboxes:
+            checkbox = self.checkboxes.pop()
+            self.layout.removeWidget(checkbox)
+            checkbox.deleteLater()
