@@ -87,6 +87,8 @@ class SRCounterUI(QWidget):
         sort_layout.addWidget(sort_label)
         sort_layout.addWidget(self.sort_by_dropdown)
         main_panel_layout.addLayout(sort_layout)
+        self.sort_by_dropdown.currentIndexChanged.connect(self.on_sort_by_changed)
+
 
         # Date range selectors
         date_layout = QHBoxLayout()
@@ -175,12 +177,17 @@ class SRCounterUI(QWidget):
         main_panel_layout.addLayout(sort_layout)
 
     def on_sort_by_changed(self):
-        """Slot to handle changes in the sort dropdown selection."""
+        """Updates the selected_sort_by variable when the dropdown selection changes."""
         self.selected_sort_by = self.sort_by_dropdown.currentText()
         self.logger.log_info(f"Sort By changed to: {self.selected_sort_by}")
 
+
+
     def generate_report(self):
-        """Calls the ReportGenerator to generate the report."""
+        """Generates the report based on selected sort column and other criteria."""
+        if not self.selected_sort_by:
+            self.selected_sort_by = self.sort_by_dropdown.currentText()
+
         selected_columns = self.checkbox_manager.get_selected_columns()
         start_date = self.start_date_input.dateTime().toPyDateTime()
         end_date = self.end_date_input.dateTime().toPyDateTime()
@@ -189,7 +196,6 @@ class SRCounterUI(QWidget):
             QMessageBox.warning(self, "Warning", "Please select columns for the report.")
             return
 
-        # Ensure the file loader has loaded data
         if not hasattr(self.file_loader, 'df') or self.file_loader.df is None:
             QMessageBox.warning(self, "No Data", "Please load an Excel file first before generating the report.")
             return
@@ -201,7 +207,6 @@ class SRCounterUI(QWidget):
                 self.file_loader.df, selected_columns, start_date, end_date, sort_by=self.selected_sort_by
             )
             
-            # Check if the report was successfully generated
             if report_df is not None:
                 output_file = self.report_generator.save_report(report_df)
                 if output_file:
@@ -215,8 +220,9 @@ class SRCounterUI(QWidget):
             self.logger.log_error(f"Error during report generation: {e}")
             QMessageBox.critical(self, "Error", f"Failed to generate report: {e}")
 
+
     def preview_report(self):
-        """Generates and shows a preview of the report."""
+        """Generates and shows a preview of the report based on current settings."""
         if not hasattr(self.file_loader, 'df') or self.file_loader.df is None:
             QMessageBox.warning(self, "No Data", "Please load an Excel file first before previewing the report.")
             return
@@ -234,10 +240,10 @@ class SRCounterUI(QWidget):
             QMessageBox.critical(self, "Error", "Start date cannot be after end date.")
             return
 
-        # Log debug information before generating preview
-        self.logger.log_info(f"Preview Report - Selected Columns: {selected_columns}")
+        if not self.selected_sort_by:
+            self.selected_sort_by = self.sort_by_dropdown.currentText()
+
         self.logger.log_info(f"Preview Report - Sort By: {self.selected_sort_by}")
-        self.logger.log_info(f"Preview Report - Start Date: {start_date}, End Date: {end_date}")
 
         try:
             report_df = self.report_generator.generate_report(
@@ -288,8 +294,9 @@ class SRCounterUI(QWidget):
             self.sort_by_dropdown.clear()
             self.sort_by_dropdown.addItems(self.file_loader.df.columns)  # Add columns dynamically
             self.sort_by_dropdown.setEnabled(True)
-            self.logger.log_info(f"Dropdown populated with columns: {self.file_loader.df.columns}")
-
+            self.sort_by_dropdown.setCurrentIndex(0)  # Set the first item as the default selection
+            self.selected_sort_by = self.sort_by_dropdown.currentText()
+            self.logger.log_info(f"Dropdown populated with columns: {self.file_loader.df.columns}, defaulted to: {self.selected_sort_by}")
 
     def open_settings_dialog(self):
         """Open the settings dialog by using the SettingsHandler."""

@@ -1,55 +1,73 @@
 
-/* General Dark Theme Styling */
+/* General Dark Mode Styling */
 QMainWindow {
-    background-color: #2E3B4E;
-    color: white;
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
 }
 
-/* Sidebar */
+/* Sidebar Styling */
 QWidget#sidebar {
-    background-color: #1C2A39;
-    color: #E0E0E0;
-    border-right: 1px solid #455A64;
-    font-size: 14px;
+    background-color: #333333;
+    color: #0062A3;
+    border: 1px solid #0062A3;
     padding: 10px;
+    font-size: 14px;
 }
 
-/* Button Styling */
+/* Sidebar Buttons */
 QPushButton {
-    background-color: #455A64;
+    background-color: #0062A3;
     color: white;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: bold;
 }
 QPushButton:hover {
-    background-color: #607D8B;
+    background-color: #00518C;
 }
 QPushButton:pressed {
-    background-color: #78909C;
+    background-color: #004078;
+}
+
+/* Main Content Panel */
+QWidget#mainpanel {
+    background-color: #2D2D2D;
+    color: white;
+    padding: 10px;
+    border: 1px solid #333333;
+}
+
+/* Title and Header Styling */
+QLabel#title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0062A3;
+    padding: 5px;
+    margin: 5px 0;
 }
 
 /* Report Preview Headers */
 QHeaderView::section {
-    background-color: #333333;  /* Darker header background */
-    color: #FFFFFF;             /* White text */
-    font-weight: bold;
-    border: 1px solid #455A64;
-}
-
-/* Main Panel */
-QWidget#mainpanel {
-    background-color: #2D2D2D;
-    color: white;
-}
-
-/* Accent and Text Colors */
-QWidget {
-    background-color: #2D2D2D;  /* Dark background */
-    color: #FFFFFF;             /* White text */
-}
-QGroupBox#sidebar {
     background-color: #333333;
-    color: #0062A3;             /* Accent color */
+    color: #FFFFFF;
+    font-weight: bold;
     border: 1px solid #0062A3;
+    padding: 5px;
+}
+
+/* General Widget Styling */
+QWidget {
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+}
+
+/* Group Box Styling */
+QGroupBox {
+    border: 1px solid #0062A3;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0062A3;
 }
