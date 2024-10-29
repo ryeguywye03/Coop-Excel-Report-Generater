@@ -1,6 +1,7 @@
 import pandas as pd
 from utils.logger_manager import LoggerManager
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem, QMessageBox
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem, QMessageBox, QFileDialog
+from PyQt5.QtCore import Qt
 import os
 from datetime import datetime
 
@@ -105,6 +106,7 @@ class ReportGenerator:
         try:
             dialog = QDialog()
             dialog.setWindowTitle("Report Preview")
+            dialog.setWindowFlag(Qt.WindowMaximizeButtonHint)  # Enable maximize button
             layout = QVBoxLayout(dialog)
 
             # Create table widget
@@ -133,12 +135,23 @@ class ReportGenerator:
         try:
             self.logger.log_info("Saving report to Excel file")
 
-            # Generate filename with the required format
+            # Generate default filename with the required format
             current_time = datetime.now()
-            filename = current_time.strftime("sr_count_report-%m-%d-%Y-%H:%M:%S.xlsx")
-            output_file = os.path.join(os.path.expanduser("~/Desktop"), filename)
+            default_filename = current_time.strftime("sr_count_report-%m-%d-%Y-%H-%M-%S.xlsx")
 
-            with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
+            # Prompt for file location with default filename
+            file_path, _ = QFileDialog.getSaveFileName(
+                None,
+                "Save Report",
+                os.path.join(os.path.expanduser("~/Desktop"), default_filename),
+                "Excel Files (*.xlsx)"
+            )
+
+            if not file_path:
+                self.logger.log_info("Save canceled by user.")
+                return None
+
+            with pd.ExcelWriter(file_path, engine='xlsxwriter') as writer:
                 report_df.to_excel(writer, sheet_name='Report', index=False)
                 workbook = writer.book
                 worksheet = writer.sheets['Report']
@@ -189,8 +202,8 @@ class ReportGenerator:
                     else:
                         worksheet.write(total_row_idx, col_num, report_df.iloc[total_row_idx, col_num], total_format)
 
-            self.logger.log_info(f"Report saved at {output_file}")
-            return output_file
+            self.logger.log_info(f"Report saved at {file_path}")
+            return file_path
 
         except Exception as e:
             self.logger.log_error(f"Failed to save report: {e}")
