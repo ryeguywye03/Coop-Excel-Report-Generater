@@ -13,6 +13,8 @@ QWidget#sidebar {
     border: 1px solid #0062A3;
     padding: 10px;
     font-size: 14px;
+    border-radius: 10px;
+    margin: 5px;
 }
 
 /* Sidebar Buttons */
@@ -20,9 +22,11 @@ QPushButton {
     background-color: #0062A3;
     color: white;
     padding: 8px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 12px;
     font-weight: bold;
+    border: none;
+    transition: background-color 0.2s ease;
 }
 QPushButton:hover {
     background-color: #00518C;
@@ -31,15 +35,17 @@ QPushButton:pressed {
     background-color: #004078;
 }
 QPushButton:!hover {
-    background-color: #0062A3; /* Force initial background color */
+    background-color: #0062A3;
 }
 
 /* Main Content Panel */
 QWidget#mainpanel {
     background-color: #FFFFFF;
     color: #333333;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #B0BEC5;
+    border-radius: 10px;
+    margin: 5px;
 }
 
 /* Title and Header Styling */
@@ -51,6 +57,17 @@ QLabel#title {
     margin: 5px 0;
 }
 
+/* Group Box Styling */
+QGroupBox {
+    background-color: #FFFFFF;
+    border: 1px solid #B0BEC5;
+    padding: 10px;
+    font-weight: bold;
+    color: #0062A3;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
 /* Report Preview Headers */
 QHeaderView::section {
     background-color: #E0E0E0;
@@ -58,6 +75,7 @@ QHeaderView::section {
     font-weight: bold;
     border: 1px solid #B0BEC5;
     padding: 5px;
+    border-radius: 4px;
 }
 
 /* General Widget Styling */
@@ -66,31 +84,64 @@ QWidget {
     color: #333333;
 }
 
-/* Group Box Styling */
-QGroupBox {
+/* QComboBox Styling */
+QComboBox {
     background-color: #FFFFFF;
-    border: 1px solid #0062A3;
-    padding: 10px;
-    font-weight: bold;
-    color: #0062A3;
-    margin-top: 10px;
+    color: #333333;
+    padding: 5px;
+    border: 1px solid #B0BEC5;
+    border-radius: 5px;
+}
+QComboBox:hover {
+    border-color: #00518C;
+}
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    selection-background-color: #B0BEC5;
+    color: #333333;
+    border-radius: 4px;
+    border: 1px solid #B0BEC5;
+    padding: 5px;
 }
 
-/* Additional Button Styling for Light Mode */
-QPushButton {
-    background-color: #0062A3;
-    color: white;
-    padding: 8px;
+/* Scroll Area Styling */
+QScrollArea {
+    border: 1px solid #B0BEC5;
     border-radius: 5px;
+    background-color: #FFFFFF;
+}
+QScrollBar:vertical {
+    width: 8px;
+    background: #E0E0E0;
+    margin: 0px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical {
+    background: #0062A3;
+    min-height: 20px;
+    border-radius: 4px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+/* QCheckBox Styling */
+QCheckBox {
+    spacing: 5px;
     font-size: 12px;
-    font-weight: bold;
+    color: #333333;
 }
-QPushButton:hover {
-    background-color: #00518C;
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
 }
-QPushButton:pressed {
-    background-color: #004078;
+QCheckBox::indicator:unchecked {
+    border: 1px solid #B0BEC5;
+    background-color: #FFFFFF;
+    border-radius: 4px;
 }
-QPushButton:!hover {
-    background-color: #0062A3; /* Force initial background color */
+QCheckBox::indicator:checked {
+    border: 1px solid #0062A3;
+    background-color: #0062A3;
+    border-radius: 4px;
 }
