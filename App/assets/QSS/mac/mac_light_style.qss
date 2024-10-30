@@ -64,14 +64,15 @@ QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroup
     font-weight: bold;
     color: #0062A3;
     margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
 /* Scroll Area Styling */
 QScrollArea#columnsScrollArea {
-    border: 1px solid #B0BEC5;
+    border: 1px solid #B0BEC5;  /* Use a lighter border color */
     border-radius: 5px;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF;   /* Use a white background for light mode */
 }
 
 /* Sort Label and Dropdown */
@@ -101,15 +102,24 @@ QGroupBox#columnsGroup {
 
 /* Progress Bar */
 QProgressBar#progressBar {
-    border: 1px solid #0062A3;
-    background: #E0E0E0;
+    border: 1px solid #0062A3; /* Border color */
+    background: #E0E0E0; /* Background color for the progress bar */
     height: 15px;
     border-radius: 7px;
+    text-align: center; /* Center the text */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
 }
 
 QProgressBar#progressBar::chunk {
-    background-color: #0062A3;
+    background-color: #0062A3; /* Color of the progress chunk */
     border-radius: 7px;
+}
+
+/* Set the text color */
+QProgressBar#progressBar::text {
+    color: #333333; /* Text color for light mode */
+    padding: 0; /* Optional: Remove padding around the text */
 }
 
 /* Report Buttons */

@@ -57,21 +57,38 @@ QLabel#welcomeLabel, QLabel#title {
 }
 
 /* Group Box Styling */
-QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup {
+QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroupBox#mainPanelGroup {
     background-color: #2D2D2D;
     border: 1px solid #0062A3;
     padding: 10px;
     font-weight: bold;
     color: #0062A3;
     margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
+}
+
+/* Make the title background transparent */
+QGroupBox::title {
+    background-color: transparent; /* Makes title background transparent */
+    color: #0062A3; /* Title text color */
+    padding: 5px; /* Adjust padding as needed */
+    margin: 0 0 5px 0; /* Adjust margin as needed */
 }
 
 /* Scroll Area Styling */
 QScrollArea#columnsScrollArea {
     border: 1px solid #333333;
     border-radius: 5px;
-    background-color: #2D2D2D;
+    background-color: #2D2D2D; /* Ensure background is dark */
+}
+
+/* Windows colour for the scroll area for the checkboxes */
+QWidget#scrollContent {
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: #2D2D2D; /* Ensure background is dark */
+    color: #FFFFFF;
 }
 
 /* Sort Label and Dropdown */
@@ -105,11 +122,20 @@ QProgressBar#progressBar {
     background: #333333;
     height: 15px;
     border-radius: 7px;
+    text-align: center; /* Center the text */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
 }
 
 QProgressBar#progressBar::chunk {
     background-color: #0062A3;
     border-radius: 7px;
+}
+
+/* Set the text color */
+QProgressBar#progressBar::text {
+    color: #FFFFFF; /* Text color */
+    padding: 0; /* Optional: Remove padding around the text */
 }
 
 /* Report Buttons */

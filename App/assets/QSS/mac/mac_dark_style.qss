@@ -54,6 +54,7 @@ QLabel#welcomeLabel, QLabel#title {
     color: #0062A3;  /* Blue label for consistency */
     padding: 5px;
     margin: 5px 0;
+    background-transparent
 }
 
 /* Group Box Styling */
@@ -64,6 +65,7 @@ QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroup
     font-weight: bold;
     color: #0062A3;
     margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
@@ -105,11 +107,20 @@ QProgressBar#progressBar {
     background: #333333;
     height: 15px;
     border-radius: 7px;
+    text-align: center; /* Center the text */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
 }
 
 QProgressBar#progressBar::chunk {
     background-color: #0062A3;
     border-radius: 7px;
+}
+
+/* Set the text color */
+QProgressBar#progressBar::text {
+    color: #FFFFFF; /* Text color */
+    padding: 0; /* Optional: Remove padding around the text */
 }
 
 /* Report Buttons */

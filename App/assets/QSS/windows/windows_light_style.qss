@@ -20,7 +20,7 @@ QWidget#sidebarGroup {
 /* Sidebar Buttons */
 QPushButton#loadExcelButton, QPushButton#clearExcelButton, QPushButton#settingsButton, QPushButton#backButton, QPushButton#srCounterButton {
     background-color: #0062A3;
-    color: white;
+    color: #FFFFFF;
     padding: 8px;
     border-radius: 8px;
     font-size: 12px;
@@ -57,21 +57,37 @@ QLabel#welcomeLabel, QLabel#title {
 }
 
 /* Group Box Styling */
-QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup {
+QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroupBox#mainPanelGroup {
     background-color: #FFFFFF;
     border: 1px solid #B0BEC5;
     padding: 10px;
     font-weight: bold;
     color: #0062A3;
     margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
+}
+
+/* Make the title background transparent */
+QGroupBox::title {
+    background-color: transparent; /* Makes title background transparent */
+    color: #0062A3; /* Title text color */
+    padding: 5px; /* Adjust padding as needed */
+    margin: 0 0 5px 0; /* Adjust margin as needed */
 }
 
 /* Scroll Area Styling */
 QScrollArea#columnsScrollArea {
+    border: 1px solid #B0BEC5;  /* Use a lighter border color */
+    border-radius: 5px;
+    background-color: #FFFFFF;   /* Use a white background for light mode */
+}
+
+/* Windows colour for the scroll area for the checkboxes */
+QWidget#scrollContent {
     border: 1px solid #B0BEC5;
     border-radius: 5px;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; /* Ensure background is dark */
 }
 
 /* Sort Label and Dropdown */
@@ -96,15 +112,24 @@ QGroupBox#columnsGroup {
 
 /* Progress Bar */
 QProgressBar#progressBar {
-    border: 1px solid #0062A3;
-    background: #E0E0E0;
+    border: 1px solid #0062A3; /* Border color */
+    background: #E0E0E0; /* Background color for the progress bar */
     height: 15px;
     border-radius: 7px;
+    text-align: center; /* Center the text */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
 }
 
 QProgressBar#progressBar::chunk {
-    background-color: #0062A3;
+    background-color: #0062A3; /* Color of the progress chunk */
     border-radius: 7px;
+}
+
+/* Set the text color */
+QProgressBar#progressBar::text {
+    color: #333333; /* Text color for light mode */
+    padding: 0; /* Optional: Remove padding around the text */
 }
 
 /* Report Buttons */
@@ -122,6 +147,7 @@ QPushButton#previewButton:hover, QPushButton#generateButton:hover {
 /* Calendar Styling */
 QCalendarWidget QWidget#qt_calendar_navigationbar { 
     color: #333333;
+    background-color: #E0E0E0;
 }
 
 QCalendarWidget QToolButton {
