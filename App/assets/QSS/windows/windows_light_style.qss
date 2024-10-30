@@ -20,7 +20,7 @@ QWidget#sidebarGroup {
 /* Sidebar Buttons */
 QPushButton#loadExcelButton, QPushButton#clearExcelButton, QPushButton#settingsButton, QPushButton#backButton, QPushButton#srCounterButton {
     background-color: #0062A3;
-    color: #FFFFFF;
+    color: white;
     padding: 8px;
     border-radius: 8px;
     font-size: 12px;
@@ -84,11 +84,6 @@ QComboBox#sortByDropdown, QDateTimeEdit#startDateInput, QDateTimeEdit#endDateInp
     color: #333333;
     border: 1px solid #B0BEC5;
     border-radius: 5px;
-    padding: 5px;
-}
-
-QComboBox#sortByDropdown:hover, QDateTimeEdit#startDateInput:hover, QDateTimeEdit#endDateInput:hover {
-    border-color: #00518C;
 }
 
 /* Column Selection Group */
@@ -118,22 +113,15 @@ QPushButton#previewButton, QPushButton#generateButton {
     color: #FFFFFF;
     padding: 10px;
     border-radius: 6px;
-    font-size: 12px;
-    font-weight: bold;
 }
 
 QPushButton#previewButton:hover, QPushButton#generateButton:hover {
     background-color: #00518C;
 }
 
-QPushButton#previewButton:pressed, QPushButton#generateButton:pressed {
-    background-color: #004078;
-}
-
 /* Calendar Styling */
 QCalendarWidget QWidget#qt_calendar_navigationbar { 
     color: #333333;
-    background-color: #E0E0E0;
 }
 
 QCalendarWidget QToolButton {

@@ -42,7 +42,7 @@ QWidget#mainPanelGroup {
     background-color: #2D2D2D;
     color: #FFFFFF;
     padding: 15px;
-    border: 1px solid #0062A3;
+    border: 1px solid #333333;
     border-radius: 10px;
     margin: 5px;
 }
@@ -118,16 +118,10 @@ QPushButton#previewButton, QPushButton#generateButton {
     color: #FFFFFF;
     padding: 10px;
     border-radius: 6px;
-    font-size: 12px;
-    font-weight: bold;
 }
 
 QPushButton#previewButton:hover, QPushButton#generateButton:hover {
     background-color: #00518C;
-}
-
-QPushButton#previewButton:pressed, QPushButton#generateButton:pressed {
-    background-color: #004078;
 }
 
 /* Calendar Styling */
