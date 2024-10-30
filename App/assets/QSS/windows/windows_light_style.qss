@@ -26,7 +26,6 @@ QPushButton {
     font-size: 12px;
     font-weight: bold;
     border: none;
-    transition: background-color 0.2s ease;
 }
 QPushButton:hover {
     background-color: #00518C;
@@ -146,10 +145,13 @@ QCheckBox::indicator:checked {
     border-radius: 4px;
 }
 
-/* Styling for top-level labels to make them appear consistent */
-QLabel#TopLevelLabel {
-    font-size: 14px;
+/* QHeaderView for Table Headers */
+QHeaderView::section {
+    background-color: #E0E0E0;
+    color: #333333;
     font-weight: bold;
-    color: #000000;
-    padding: 4px;
+    padding: 5px;
+    border: 1px solid #B0BEC5;
+    border-radius: 4px;
+    text-align: center;
 }

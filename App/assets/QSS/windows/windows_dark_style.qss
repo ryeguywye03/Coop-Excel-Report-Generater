@@ -26,7 +26,6 @@ QPushButton {
     font-size: 12px;
     font-weight: bold;
     border: none;
-    transition: background-color 0.2s ease;
 }
 QPushButton:hover {
     background-color: #00518C;
@@ -146,35 +145,39 @@ QCheckBox::indicator:checked {
     border-radius: 4px;
 }
 
+/* QHeaderView for Table Headers */
 QHeaderView::section {
-    background-color: #333333;  /* Dark background for contrast */
-    color: #FFFFFF;              /* White text for readability */
+    background-color: #333333;
+    color: #FFFFFF;
     font-weight: bold;
     padding: 5px;
     border: 1px solid #0062A3;
     border-radius: 4px;
-    text-align: center;          /* Center-align the header text */
+    text-align: center;
 }
 
-/* Styling for top-level labels to make them appear consistent */
-QLabel#TopLevelLabel {
-    font-size: 14px;
-    font-weight: bold;
-    color: #FFFFFF;
-    padding: 4px;
-}
-
-/* Calendar weekday label visibility in dark mode */
+/* QCalendarWidget Styling */
 QCalendarWidget QWidget#qt_calendar_navigationbar { 
-    color: #FFFFFF; /* Change to white for visibility in dark mode */
+    color: #FFFFFF;  /* Ensures navigation buttons and month text are white */
 }
 
-/* Adjust calendar weekday labels */
 QCalendarWidget QToolButton {
-    color: #FFFFFF; /* Ensure tool button text is visible */
+    color: #FFFFFF;  /* Ensure tool button text is visible */
+    background-color: #333333; /* Adds contrast for the navigation button background */
+    border: none;
+    padding: 5px;
 }
 
 QCalendarWidget QAbstractItemView {
     background-color: #2E2E2E; /* Dark background for calendar */
-    color: #FFFFFF; /* Text color for days */
+    color: #FFFFFF; /* Text color for dates */
 }
+
+/* Weekday Labels Styling */
+QCalendarWidget QHeaderView::section {
+    color: #A0A0A0; /* Gray color for weekday labels to ensure readability */
+    background-color: #2E2E2E; /* Dark background to match calendar */
+    font-weight: bold;
+    border: none;
+}
+
