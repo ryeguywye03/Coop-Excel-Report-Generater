@@ -1,5 +1,6 @@
 # Updated app.spec for Excel Report Generator project
 from PyInstaller.utils.hooks import collect_submodules
+from PyInstaller.building.datas import Analysis, PYZ, EXE, COLLECT, BUNDLE
 
 a = Analysis(
     ['App/app.py'],
@@ -37,12 +38,12 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='app',
+    name='Excel Report Generator',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=False,
+    console=False,  # Change to True if you want a console
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
@@ -57,12 +58,12 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='app',
+    name='Excel_Report_Generator',
 )
 
 app = BUNDLE(
     coll,
-    name='app.app',
+    name='Excel_Report_Generator.app',  # Set the name of the bundled app
     icon=None,
     bundle_identifier=None,
 )

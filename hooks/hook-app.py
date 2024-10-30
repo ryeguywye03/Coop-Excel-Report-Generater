@@ -12,19 +12,26 @@ datas += collect_data_files('assets/QSS')
 datas += collect_data_files('assets/Excel')
 
 # Include assets folder for JSON files
-datas += collect_data_files('assets/JSON')
+datas += collect_data_files('assets/json')  # Ensure correct casing (json vs JSON)
 
 # Include config folder
 datas += collect_data_files('config')
 
-# Include logic folder if it has any required data files
-datas += collect_data_files('logic')
+# Include src folder if it has any required data files
+datas += collect_data_files('src')
 
 # Include ui folder if it has any required data files
-datas += collect_data_files('ui')
+datas += collect_data_files('App/ui')  # Ensure you reference the correct path
 
 # Manually include extra files like version.txt, requirements.txt, README.md, and setup.py
-datas += [('version.txt', '.'), ('requirements.txt', '.'), ('README.md', '.'), ('setup.py', '.')]
+datas += [
+    ('version.txt', '.'), 
+    ('requirements.txt', '.'), 
+    ('README.md', '.'), 
+    ('setup.py', '.')
+]
 
 # Add the source code (App folder) so it's included in the package and accessible to users.
 datas += collect_data_files('App')
+
+# Optionally add any other necessary folders or files based on your app's requirements
