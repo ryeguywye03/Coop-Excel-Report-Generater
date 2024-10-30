@@ -88,6 +88,7 @@ QWidget#scrollContent {
     border: 1px solid #B0BEC5;
     border-radius: 5px;
     background-color: #FFFFFF; /* Ensure background is dark */
+
 }
 
 /* Sort Label and Dropdown */

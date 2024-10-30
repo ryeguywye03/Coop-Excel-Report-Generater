@@ -83,6 +83,14 @@ QScrollArea#columnsScrollArea {
     background-color: #2D2D2D; /* Ensure background is dark */
 }
 
+/* Windows colour for the scroll area for the checkboxes */
+QWidget#scrollContent {
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: #2D2D2D; /* Ensure background is dark */
+    color: #FFFFFF;
+}
+
 /* General Dark Mode Styling for Settings Dialog */
 QDialog#settings_dialog {
     background-color: #2D2D2D;  /* Background color for the dialog */
