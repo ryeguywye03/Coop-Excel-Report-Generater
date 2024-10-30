@@ -65,7 +65,6 @@ QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroup
     color: #0062A3; /* Blue text */
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 10px;
 }
 
 /* Make the title background transparent */
@@ -87,8 +86,7 @@ QScrollArea#columnsScrollArea {
 QWidget#scrollContent {
     border: 1px solid #B0BEC5;
     border-radius: 5px;
-    background-color: #FFFFFF; /* Ensure background is dark */
-
+    background-color: #FFFFFF; /* Ensure background is light */
 }
 
 /* General Light Mode Styling for Settings Dialog */
@@ -170,6 +168,29 @@ QComboBox#sortByDropdown, QDateTimeEdit#startDateInput, QDateTimeEdit#endDateInp
 
 QComboBox#sortByDropdown:hover, QDateTimeEdit#startDateInput:hover, QDateTimeEdit#endDateInput:hover {
     border-color: #00518C; /* Darker border on hover */
+}
+
+/* QComboBox Specific Styling */
+QComboBox {
+    background-color: #FFFFFF; /* White background for dropdown */
+    color: #000000; /* Black text */
+    border: 1px solid #0062A3; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding */
+}
+
+QComboBox::drop-down {
+    background-color: #FFFFFF; /* White background for dropdown button */
+    border: 1px solid #0062A3; /* Blue border */
+}
+
+QComboBox::item {
+    background-color: #FFFFFF; /* White background for items */
+    color: #000000; /* Black text */
+}
+
+QComboBox::item:selected {
+    background-color: #E0E0E0; /* Light gray background for selected item */
 }
 
 /* Column Selection Group */
