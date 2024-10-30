@@ -37,29 +37,37 @@ class SettingsDialog(QDialog):
         main_layout = QHBoxLayout(self)
 
         exclude_card = QGroupBox("Exclude SR Types and Groups")
+        exclude_card.setObjectName("excludeCard")  # Add ID for styling
         exclude_layout = QVBoxLayout(exclude_card)
 
         exclude_layout.addWidget(QLabel("Exclude SR Type Description:"))
         self.sr_type_search = QLineEdit(self)
+        self.sr_type_search.setObjectName("srTypeSearch");  # Add ID for styling
         self.sr_type_search.setPlaceholderText("Search SR Type Description...")
         self.sr_type_search.textChanged.connect(lambda: self.filter_list(self.sr_type_list, self.sr_types, self.sr_type_search.text()))
         exclude_layout.addWidget(self.sr_type_search)
+        
         self.sr_type_list = QListWidget()
+        self.sr_type_list.setObjectName("srTypeList");  # Add ID for styling
         self.populate_list_with_checkboxes(self.sr_type_list, self.sr_types, self.saved_exclusions['excluded_sr_type'])
         exclude_layout.addWidget(self.sr_type_list)
 
         exclude_layout.addWidget(QLabel("Exclude Group Description:"))
         self.group_search = QLineEdit(self)
+        self.group_search.setObjectName("groupSearch");  # Add ID for styling
         self.group_search.setPlaceholderText("Search Group Description...")
         self.group_search.textChanged.connect(lambda: self.filter_list(self.group_list, self.group_descriptions, self.group_search.text()))
         exclude_layout.addWidget(self.group_search)
+        
         self.group_list = QListWidget()
+        self.group_list.setObjectName("groupList");  # Add ID for styling
         self.populate_list_with_checkboxes(self.group_list, self.group_descriptions, self.saved_exclusions['excluded_group'])
         exclude_layout.addWidget(self.group_list)
 
         main_layout.addWidget(exclude_card)
 
         no_location_card = QGroupBox("No Location Exclusion (Exclude SRs with 0,0 coordinates)")
+        no_location_card.setObjectName("noLocationCard");  # Add ID for styling
         no_location_layout = QVBoxLayout(no_location_card)
 
         self.no_location_enabled_checkbox = QCheckBox("Enable No Location Exclusion")
@@ -69,19 +77,25 @@ class SettingsDialog(QDialog):
 
         no_location_layout.addWidget(QLabel("Exclude SR Type Description (No Location):"))
         self.no_location_sr_type_search = QLineEdit(self)
+        self.no_location_sr_type_search.setObjectName("noLocationSrTypeSearch");  # Add ID for styling
         self.no_location_sr_type_search.setPlaceholderText("Search SR Type Description (No Location)...")
         self.no_location_sr_type_search.textChanged.connect(lambda: self.filter_list(self.no_location_sr_type_list, self.sr_types, self.no_location_sr_type_search.text()))
         no_location_layout.addWidget(self.no_location_sr_type_search)
+        
         self.no_location_sr_type_list = QListWidget()
+        self.no_location_sr_type_list.setObjectName("noLocationSrTypeList");  # Add ID for styling
         self.populate_list_with_checkboxes(self.no_location_sr_type_list, self.sr_types, self.saved_exclusions['no_location_excluded_sr_type'])
         no_location_layout.addWidget(self.no_location_sr_type_list)
 
         no_location_layout.addWidget(QLabel("Exclude Group Description (No Location):"))
         self.no_location_group_search = QLineEdit(self)
+        self.no_location_group_search.setObjectName("noLocationGroupSearch");  # Add ID for styling
         self.no_location_group_search.setPlaceholderText("Search Group Description (No Location)...")
         self.no_location_group_search.textChanged.connect(lambda: self.filter_list(self.no_location_group_list, self.group_descriptions, self.no_location_group_search.text()))
         no_location_layout.addWidget(self.no_location_group_search)
+        
         self.no_location_group_list = QListWidget()
+        self.no_location_group_list.setObjectName("noLocationGroupList");  # Add ID for styling
         self.populate_list_with_checkboxes(self.no_location_group_list, self.group_descriptions, self.saved_exclusions['no_location_excluded_group'])
         no_location_layout.addWidget(self.no_location_group_list)
 
@@ -89,15 +103,18 @@ class SettingsDialog(QDialog):
 
         button_layout = QVBoxLayout()
         self.save_button = QPushButton("Save Settings")
+        self.save_button.setObjectName("saveButton");  # Add ID for styling
         self.save_button.clicked.connect(self.save_settings)
         button_layout.addWidget(self.save_button)
 
         self.refresh_button = QPushButton("Refresh Descriptions")
+        self.refresh_button.setObjectName("refreshButton");  # Add ID for styling
         self.refresh_button.clicked.connect(self.refresh_descriptions)
         button_layout.addWidget(self.refresh_button)
 
         main_layout.addLayout(button_layout)
         self.setLayout(main_layout)
+
 
     def toggle_no_location_exclusion(self, checked):
         self.no_location_sr_type_search.setEnabled(checked)

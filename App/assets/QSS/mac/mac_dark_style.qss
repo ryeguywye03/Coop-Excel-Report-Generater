@@ -54,7 +54,6 @@ QLabel#welcomeLabel, QLabel#title {
     color: #0062A3;  /* Blue label for consistency */
     padding: 5px;
     margin: 5px 0;
-    background-transparent
 }
 
 /* Group Box Styling */
@@ -69,11 +68,83 @@ QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroup
     border-radius: 10px;
 }
 
+/* Make the title background transparent */
+QGroupBox::title {
+    background-color: transparent; /* Makes title background transparent */
+    color: #0062A3; /* Title text color */
+    padding: 5px; /* Adjust padding as needed */
+    margin: 0 0 5px 0; /* Adjust margin as needed */
+}
+
 /* Scroll Area Styling */
 QScrollArea#columnsScrollArea {
     border: 1px solid #333333;
     border-radius: 5px;
-    background-color: #2D2D2D;
+    background-color: #2D2D2D; /* Ensure background is dark */
+}
+
+/* General Dark Mode Styling for Settings Dialog */
+QDialog#settings_dialog {
+    background-color: #2D2D2D;  /* Background color for the dialog */
+    color: #FFFFFF;              /* Default text color */
+    padding: 10px;               /* Add padding to the dialog */
+}
+
+/* QLabel Styling */
+QLabel {
+    color: #FFFFFF;              /* Set QLabel text color */
+}
+
+/* QLineEdit Styling */
+QLineEdit {
+    background-color: #333333;   /* Background color for input fields */
+    color: #FFFFFF;              /* Text color for input fields */
+    border: 1px solid #0062A3;  /* Border color */
+}
+
+/* QListWidget Styling */
+QListWidget {
+    background-color: #333333;   /* Background color for the list widget */
+    color: #FFFFFF;              /* Text color */
+    border: 1px solid #0062A3;  /* Border color */
+}
+
+/* QPushButton Styling for Settings Dialog */
+QPushButton#save_button, QPushButton#refresh_button {
+    background-color: #0062A3;   /* Background color for buttons */
+    color: #FFFFFF;              /* Text color for buttons */
+    border-radius: 8px;          /* Rounded corners for buttons */
+    padding: 12px;               /* Increase padding for larger buttons */
+    font-size: 14px;             /* Larger font size */
+    min-width: 150px;            /* Minimum width for buttons */
+    margin-top: 10px;            /* Add margin above the buttons */
+}
+
+QPushButton#save_button:hover, QPushButton#refresh_button:hover {
+    background-color: #00518C;   /* Hover state color */
+}
+
+QPushButton#save_button:pressed, QPushButton#refresh_button:pressed {
+    background-color: #004078;   /* Pressed state color */
+}
+
+/* QGroupBox Styling */
+QGroupBox {
+    background-color: #2D2D2D;   /* Background color for group boxes */
+    border: 1px solid #0062A3;  /* Border color */
+    color: #0062A3;              /* Text color */
+    margin-bottom: 15px;         /* Add space below each group box */
+}
+
+/* Checkbox Styling */
+QCheckBox {
+    color: #FFFFFF;              /* Checkbox text color */
+}
+
+/* Scroll Area Styling for Settings Dialog */
+QScrollArea {
+    border: 1px solid #333333;   /* Border color for scroll area */
+    background-color: #2D2D2D;   /* Background color */
 }
 
 /* Sort Label and Dropdown */
@@ -129,8 +200,6 @@ QPushButton#previewButton, QPushButton#generateButton {
     color: #FFFFFF;
     padding: 10px;
     border-radius: 6px;
-    font-size: 12px;
-    font-weight: bold;
 }
 
 QPushButton#previewButton:hover, QPushButton#generateButton:hover {
@@ -165,4 +234,15 @@ QCalendarWidget QHeaderView::section {
     background-color: #2E2E2E;
     font-weight: bold;
     border: none;
+}
+
+/* Group Box Styling */
+QGroupBox#excludeCard, QGroupBox#noLocationCard {
+    background-color: #2D2D2D;
+    border: 1px solid #0062A3;
+    padding: 10px;
+    font-weight: bold;
+    color: #0062A3;
+    margin-top: 10px;
+    margin-bottom: 15px; /* Space below each group box */
 }
