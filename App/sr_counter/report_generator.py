@@ -1,7 +1,7 @@
 import pandas as pd
 from utils.logger_manager import LoggerManager
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem, QMessageBox, QFileDialog
-from PyQt5.QtCore import Qt
+from PyQt6.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem, QMessageBox, QFileDialog
+from PyQt6.QtCore import Qt
 import os
 from datetime import datetime
 
@@ -106,7 +106,7 @@ class ReportGenerator:
         try:
             dialog = QDialog()
             dialog.setWindowTitle("Report Preview")
-            dialog.setWindowFlag(Qt.WindowMaximizeButtonHint)  # Enable maximize button
+            dialog.setWindowFlag(Qt.WindowType.WindowMaximizeButtonHint)  # Enable maximize button
             layout = QVBoxLayout(dialog)
 
             # Create table widget
@@ -125,7 +125,7 @@ class ReportGenerator:
             dialog.resize(800, 400)  # Set dialog size
             table.resizeColumnsToContents()
 
-            dialog.exec_()
+            dialog.exec()
 
         except Exception as e:
             self.logger.log_error(f"Error displaying report preview: {e}")

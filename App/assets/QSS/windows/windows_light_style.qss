@@ -7,7 +7,7 @@ QMainWindow {
 }
 
 /* Sidebar Styling */
-QWidget#sidebar {
+QWidget#sidebarGroup {
     background-color: #E0E0E0;
     color: #0062A3;
     border: 1px solid #0062A3;
@@ -18,27 +18,27 @@ QWidget#sidebar {
 }
 
 /* Sidebar Buttons */
-QPushButton {
+QPushButton#loadExcelButton, QPushButton#clearExcelButton, QPushButton#settingsButton, QPushButton#backButton, QPushButton#srCounterButton {
     background-color: #0062A3;
-    color: white;
+    color: #FFFFFF;
     padding: 8px;
     border-radius: 8px;
     font-size: 12px;
     font-weight: bold;
     border: none;
+    margin-top: 5px;
 }
-QPushButton:hover {
+
+QPushButton#loadExcelButton:hover, QPushButton#clearExcelButton:hover, QPushButton#settingsButton:hover, QPushButton#backButton:hover, QPushButton#srCounterButton:hover {
     background-color: #00518C;
 }
-QPushButton:pressed {
+
+QPushButton#loadExcelButton:pressed, QPushButton#clearExcelButton:pressed, QPushButton#settingsButton:pressed, QPushButton#backButton:pressed, QPushButton#srCounterButton:pressed {
     background-color: #004078;
-}
-QPushButton:!hover {
-    background-color: #0062A3;
 }
 
 /* Main Content Panel */
-QWidget#mainpanel {
+QWidget#mainPanelGroup {
     background-color: #FFFFFF;
     color: #333333;
     padding: 15px;
@@ -48,7 +48,7 @@ QWidget#mainpanel {
 }
 
 /* Title and Header Styling */
-QLabel#title {
+QLabel#welcomeLabel, QLabel#title {
     font-size: 16px;
     font-weight: bold;
     color: #0062A3;
@@ -57,7 +57,7 @@ QLabel#title {
 }
 
 /* Group Box Styling */
-QGroupBox {
+QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup {
     background-color: #FFFFFF;
     border: 1px solid #B0BEC5;
     padding: 10px;
@@ -67,91 +67,91 @@ QGroupBox {
     border-radius: 10px;
 }
 
-/* Report Preview Headers */
-QHeaderView::section {
-    background-color: #E0E0E0;
-    color: #333333;
-    font-weight: bold;
-    border: 1px solid #B0BEC5;
-    padding: 5px;
-    border-radius: 4px;
-}
-
-/* General Widget Styling */
-QWidget {
-    background-color: #F2F2F2;
-    color: #333333;
-}
-
-/* QComboBox Styling */
-QComboBox {
-    background-color: #FFFFFF;
-    color: #333333;
-    padding: 5px;
+/* Scroll Area Styling */
+QScrollArea#columnsScrollArea {
     border: 1px solid #B0BEC5;
     border-radius: 5px;
+    background-color: #FFFFFF;
 }
-QComboBox:hover {
+
+/* Sort Label and Dropdown */
+QLabel#sortLabel, QLabel#startDateLabel, QLabel#endDateLabel {
+    color: #333333;
+}
+
+QComboBox#sortByDropdown, QDateTimeEdit#startDateInput, QDateTimeEdit#endDateInput {
+    background-color: #FFFFFF;
+    color: #333333;
+    border: 1px solid #B0BEC5;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QComboBox#sortByDropdown:hover, QDateTimeEdit#startDateInput:hover, QDateTimeEdit#endDateInput:hover {
     border-color: #00518C;
 }
-QComboBox QAbstractItemView {
+
+/* Column Selection Group */
+QGroupBox#columnsGroup {
     background-color: #FFFFFF;
-    selection-background-color: #B0BEC5;
-    color: #333333;
-    border-radius: 4px;
     border: 1px solid #B0BEC5;
-    padding: 5px;
+    border-radius: 8px;
+    padding: 10px;
 }
 
-/* Scroll Area Styling */
-QScrollArea {
-    border: 1px solid #B0BEC5;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-}
-QScrollBar:vertical {
-    width: 8px;
-    background: #E0E0E0;
-    margin: 0px;
-    border-radius: 4px;
-}
-QScrollBar::handle:vertical {
-    background: #0062A3;
-    min-height: 20px;
-    border-radius: 4px;
-}
-QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
-    height: 0px;
-}
-
-/* QCheckBox Styling */
-QCheckBox {
-    spacing: 5px;
-    font-size: 12px;
-    color: #333333;
-}
-QCheckBox::indicator {
-    width: 16px;
-    height: 16px;
-}
-QCheckBox::indicator:unchecked {
-    border: 1px solid #B0BEC5;
-    background-color: #FFFFFF;
-    border-radius: 4px;
-}
-QCheckBox::indicator:checked {
+/* Progress Bar */
+QProgressBar#progressBar {
     border: 1px solid #0062A3;
-    background-color: #0062A3;
-    border-radius: 4px;
+    background: #E0E0E0;
+    height: 15px;
+    border-radius: 7px;
 }
 
-/* QHeaderView for Table Headers */
-QHeaderView::section {
-    background-color: #E0E0E0;
-    color: #333333;
+QProgressBar#progressBar::chunk {
+    background-color: #0062A3;
+    border-radius: 7px;
+}
+
+/* Report Buttons */
+QPushButton#previewButton, QPushButton#generateButton {
+    background-color: #0062A3;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
     font-weight: bold;
+}
+
+QPushButton#previewButton:hover, QPushButton#generateButton:hover {
+    background-color: #00518C;
+}
+
+QPushButton#previewButton:pressed, QPushButton#generateButton:pressed {
+    background-color: #004078;
+}
+
+/* Calendar Styling */
+QCalendarWidget QWidget#qt_calendar_navigationbar { 
+    color: #333333;
+    background-color: #E0E0E0;
+}
+
+QCalendarWidget QToolButton {
+    color: #333333;
+    background-color: #E0E0E0;
+    border: none;
     padding: 5px;
-    border: 1px solid #B0BEC5;
-    border-radius: 4px;
-    text-align: center;
+}
+
+QCalendarWidget QAbstractItemView {
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+/* Weekday Labels Styling */
+QCalendarWidget QHeaderView::section {
+    color: #707070;
+    background-color: #F2F2F2;
+    font-weight: bold;
+    border: none;
 }

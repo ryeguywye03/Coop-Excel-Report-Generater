@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel, QPushButton, QComboBox
+from PyQt6.QtWidgets import QDialog, QVBoxLayout, QLabel, QPushButton, QComboBox
 from utils.app_settings import AppSettings
 
 class SettingsHandler(QDialog):
@@ -11,12 +11,6 @@ class SettingsHandler(QDialog):
 
         # Access the app settings
         self.settings = AppSettings()
-        self.changed_settings = []
-
-        # Access the app settings
-        self.settings = AppSettings()
-        
-        # Track changed settings
         self.changed_settings = []
 
         # Setup the UI components
@@ -67,4 +61,3 @@ class SettingsHandler(QDialog):
             self.main_app.logger.log_info("Theme not changed; it remains as " + current_theme)
 
         self.accept()  # Close the dialog after saving
-

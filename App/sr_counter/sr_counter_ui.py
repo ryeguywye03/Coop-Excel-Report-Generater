@@ -1,6 +1,8 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QGridLayout, QGroupBox, QProgressBar, QPushButton, QLabel, QDateTimeEdit, QComboBox, QScrollArea, QHBoxLayout, QMessageBox
-from PyQt5.QtCore import QDateTime
-from PyQt5.QtCore import QTime
+from PyQt6.QtWidgets import (
+    QWidget, QVBoxLayout, QGridLayout, QGroupBox, QProgressBar, QPushButton, QLabel,
+    QDateTimeEdit, QComboBox, QScrollArea, QHBoxLayout, QMessageBox
+)
+from PyQt6.QtCore import QDateTime, QTime, Qt
 from utils import LoggerManager
 from utils.app_settings import AppSettings  # Use AppSettings for unified configuration
 from .file_loader import FileLoader
@@ -33,7 +35,7 @@ class SRCounterUI(QWidget):
 
     def setup_ui(self):
         """Set up the UI layout."""
-        self.setObjectName("mainpanel")  # Set object name for the main panel
+        self.setObjectName("mainPanel")  # Main panel object name
         self.main_layout = QGridLayout(self)
         
         # Set up the sidebar and main panel
@@ -47,20 +49,25 @@ class SRCounterUI(QWidget):
     def setup_sidebar(self):
         """Set up the sidebar specific to SR Counter."""
         sidebar_group = QGroupBox("SR Counter Options")
+        sidebar_group.setObjectName("sidebarGroup")
         sidebar_layout = QVBoxLayout()
 
         # Example buttons for the sidebar
         load_excel_button = QPushButton("Load Excel")
+        load_excel_button.setObjectName("loadExcelButton")
         load_excel_button.clicked.connect(self.load_excel)
 
-        clear_excel_button = QPushButton("Clear Excel")  # Clear Excel button
+        clear_excel_button = QPushButton("Clear Excel")
+        clear_excel_button.setObjectName("clearExcelButton")
         clear_excel_button.clicked.connect(self.clear_excel)
 
         settings_button = QPushButton("Settings")
+        settings_button.setObjectName("settingsButton")
         settings_button.clicked.connect(self.open_settings_dialog)
 
         back_button = QPushButton("Back to Main Menu")
-        back_button.clicked.connect(self.main_window.switch_to_main_menu)  # Correctly reference the parent
+        back_button.setObjectName("backButton")
+        back_button.clicked.connect(self.main_window.switch_to_main_menu)
 
         # Add buttons to the sidebar layout
         sidebar_layout.addWidget(load_excel_button)
@@ -77,34 +84,40 @@ class SRCounterUI(QWidget):
     def setup_main_panel(self):
         """Set up the main content area for SR Counter UI."""
         sr_counter_group = QGroupBox("SR Counter")
+        sr_counter_group.setObjectName("srCounterGroup")
         main_panel_layout = QVBoxLayout()
 
         # Sort dropdown
         sort_layout = QHBoxLayout()
         sort_label = QLabel("Sort By:")
+        sort_label.setObjectName("sortLabel")
         self.sort_by_dropdown = QComboBox()
+        self.sort_by_dropdown.setObjectName("sortByDropdown")
         self.sort_by_dropdown.addItems(["Type Description", "Group Description", "Created Date"])
         sort_layout.addWidget(sort_label)
         sort_layout.addWidget(self.sort_by_dropdown)
         main_panel_layout.addLayout(sort_layout)
         self.sort_by_dropdown.currentIndexChanged.connect(self.on_sort_by_changed)
 
-
         # Date range selectors
         date_layout = QHBoxLayout()
         start_date_label = QLabel("Start Date:")
+        start_date_label.setObjectName("startDateLabel")
         self.start_date_input = QDateTimeEdit()
+        self.start_date_input.setObjectName("startDateInput")
         self.start_date_input.setCalendarPopup(True)
         start_date_time = QDateTime.currentDateTime().addMonths(-1)
-        start_date_time.setTime(QTime(8, 0))  # Ensure the time is set separately
+        start_date_time.setTime(QTime(8, 0))
         self.start_date_input.setDateTime(start_date_time)
         self.start_date_input.dateTimeChanged.connect(self.set_start_time)
 
         end_date_label = QLabel("End Date:")
+        end_date_label.setObjectName("endDateLabel")
         self.end_date_input = QDateTimeEdit()
+        self.end_date_input.setObjectName("endDateInput")
         self.end_date_input.setCalendarPopup(True)
         end_date_time = QDateTime.currentDateTime()
-        end_date_time.setTime(QTime(16, 0))  # Ensure the time is set separately
+        end_date_time.setTime(QTime(16, 0))
         self.end_date_input.setDateTime(end_date_time)
         self.end_date_input.dateTimeChanged.connect(self.set_end_time)
 
@@ -116,14 +129,15 @@ class SRCounterUI(QWidget):
 
         # Column checkboxes in a scrollable area
         columns_group = QGroupBox("Select Columns")
-        columns_group.setStyleSheet("QGroupBox { border-radius: 8px; padding: 10px; font-weight: bold; }")  # Rounded and styled
-
+        columns_group.setObjectName("columnsGroup")
         scroll_area = QScrollArea()
+        scroll_area.setObjectName("columnsScrollArea")
         scroll_area.setWidgetResizable(True)
-        scroll_area.setFixedHeight(200)  # Height to fit approximately 8 checkboxes
+        scroll_area.setFixedHeight(200)
 
         # Create a widget for the checkboxes and add it to the scroll area
         scroll_content = QWidget()
+        scroll_content.setObjectName("scrollContent")
         self.columns_layout = QVBoxLayout(scroll_content)
         scroll_content.setLayout(self.columns_layout)
         scroll_area.setWidget(scroll_content)
@@ -133,20 +147,23 @@ class SRCounterUI(QWidget):
         main_panel_layout.addWidget(columns_group)
 
         # Initialize CheckboxManager without predefined columns
-        self.checkbox_manager = CheckboxManager(self.columns_layout)  # Pass columns_layout to CheckboxManager
+        self.checkbox_manager = CheckboxManager(self.columns_layout)
 
         # Progress bar
         self.progress_bar = QProgressBar()
+        self.progress_bar.setObjectName("progressBar")
         self.progress_bar.setValue(0)
         main_panel_layout.addWidget(self.progress_bar)
 
         # Buttons for generating the report
         button_layout = QHBoxLayout()
         preview_button = QPushButton("Preview Report")
-        preview_button.clicked.connect(self.preview_report)  # Ensure connection is correct
+        preview_button.setObjectName("previewButton")
+        preview_button.clicked.connect(self.preview_report)
 
         generate_button = QPushButton("Generate Report")
-        generate_button.clicked.connect(self.generate_report)  # Ensure connection is correct
+        generate_button.setObjectName("generateButton")
+        generate_button.clicked.connect(self.generate_report)
 
         button_layout.addWidget(preview_button)
         button_layout.addWidget(generate_button)
@@ -156,32 +173,10 @@ class SRCounterUI(QWidget):
         sr_counter_group.setLayout(main_panel_layout)
         return sr_counter_group
 
-    def setup_sort_dropdown(self, main_panel_layout):
-        """Creates a dropdown to allow the user to select a column to sort the report by."""
-        sort_layout = QHBoxLayout()
-        sort_label = QLabel("Sort By:")
-        sort_label.setObjectName("sort_by_label")
-
-        self.sort_by_dropdown = QComboBox(self)
-        self.sort_by_dropdown.setObjectName("sort_by_dropdown")
-        self.sort_by_dropdown.setEnabled(False)
-
-        # Populate dropdown options
-        self.sort_by_dropdown.addItems(["Type Description", "Group Description", "Created Date"])
-
-        # Connect the dropdown to a slot
-        self.sort_by_dropdown.currentIndexChanged.connect(self.on_sort_by_changed)
-
-        sort_layout.addWidget(sort_label)
-        sort_layout.addWidget(self.sort_by_dropdown)
-        main_panel_layout.addLayout(sort_layout)
-
     def on_sort_by_changed(self):
         """Updates the selected_sort_by variable when the dropdown selection changes."""
         self.selected_sort_by = self.sort_by_dropdown.currentText()
         self.logger.log_info(f"Sort By changed to: {self.selected_sort_by}")
-
-
 
     def generate_report(self):
         """Generates the report based on selected sort column and other criteria."""

@@ -1,5 +1,5 @@
 import pandas as pd
-from PyQt5.QtWidgets import QFileDialog, QMessageBox
+from PyQt6.QtWidgets import QFileDialog, QMessageBox
 
 class FileLoader:
     def __init__(self, parent):

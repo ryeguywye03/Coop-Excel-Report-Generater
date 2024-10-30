@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QCheckBox, QVBoxLayout
+from PyQt6.QtWidgets import QCheckBox, QVBoxLayout
 
 class CheckboxManager:
     def __init__(self, layout):

@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QGroupBox, QPushButton, QLabel, QGridLayout
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QGroupBox, QPushButton, QLabel, QGridLayout
+from PyQt6.QtCore import Qt  # Ensure Qt namespace for enums and flags in PyQt6
 from utils import LoggerManager
 from utils.app_settings import AppSettings
 from .settings_handler import SettingsHandler
@@ -20,7 +21,7 @@ class MainMenuUI(QWidget):
 
     def setup_ui(self):
         """Set up the UI layout."""
-        self.setObjectName("mainpanel")  # Set object name for the main panel
+        self.setObjectName("mainPanel")  # Set object name for the main panel
         self.main_layout = QGridLayout(self)
         
         # Set up the sidebar and main panel
@@ -34,13 +35,16 @@ class MainMenuUI(QWidget):
     def setup_sidebar(self):
         """Set up the sidebar for the Main Menu."""
         sidebar_group = QGroupBox("Navigation")
+        sidebar_group.setObjectName("sidebarGroup")
         sidebar_layout = QVBoxLayout()
 
         # Button to go to SR Counter page
         sr_counter_button = QPushButton("SR Counter")
+        sr_counter_button.setObjectName("srCounterButton")
         sr_counter_button.clicked.connect(self.main_window.switch_to_sr_counter)
 
         settings_button = QPushButton('Settings')
+        settings_button.setObjectName("settingsButton")
         settings_button.clicked.connect(self.open_settings_dialog)
 
         sidebar_layout.addWidget(sr_counter_button)
@@ -53,9 +57,11 @@ class MainMenuUI(QWidget):
     def setup_main_panel(self):
         """Set up the main content area for the welcome screen."""
         main_panel_group = QGroupBox("Welcome")
+        main_panel_group.setObjectName("mainPanelGroup")
         main_panel_layout = QVBoxLayout()
 
         welcome_label = QLabel("Welcome to the Excel Report Generator!")
+        welcome_label.setObjectName("welcomeLabel")
         main_panel_layout.addWidget(welcome_label)
 
         main_panel_group.setLayout(main_panel_layout)
@@ -64,6 +70,4 @@ class MainMenuUI(QWidget):
     def open_settings_dialog(self):
         """Open the settings dialog for the main menu."""
         dialog = SettingsHandler(main_app=self.main_window)
-        dialog.exec_()  # Show the dialog as a modal
-
-
+        dialog.exec()  # In PyQt6, use exec() instead of exec_()

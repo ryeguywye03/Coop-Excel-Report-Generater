@@ -1,5 +1,5 @@
 import platform
-from PyQt5.QtWidgets import QApplication, QMainWindow, QStackedWidget
+from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from main_menu.main_menu import MainMenuUI  # Import Main Menu UI
 from sr_counter import SRCounterUI  # Import the SR Counter UI from the sr_counter package
 from utils import resource_path, LoggerManager, AppSettings  # Ensure utils has resource_path and LoggerManager
@@ -30,7 +30,6 @@ class ReportGeneratorApp(QMainWindow):
         except Exception as e:
             self.logger.log_error(f"Error during UI setup: {e}")
 
-
     def apply_stylesheet(self):
         """Applies the stylesheet based on the current theme and platform."""
         # Reload settings to get the latest theme
@@ -50,7 +49,6 @@ class ReportGeneratorApp(QMainWindow):
         try:
             with open(qss_file, "r") as file:
                 self.setStyleSheet(file.read())
-                self.logger.log_info(f"Applied stylesheet: {qss_file}")
         except FileNotFoundError:
             self.logger.log_error(f"Error: The file {qss_file} was not found.")
 
@@ -133,4 +131,4 @@ if __name__ == "__main__":
     window = ReportGeneratorApp()
     window.show()
 
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

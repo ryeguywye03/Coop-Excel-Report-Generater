@@ -1,6 +1,6 @@
 import json
 import os
-from PyQt5.QtWidgets import QMessageBox
+from PyQt6.QtWidgets import QMessageBox
 from utils import resource_path
 from dialogs.settings_dialog import SettingsDialog
 from utils.app_settings import AppSettings  # Import the global AppSettings
@@ -22,7 +22,7 @@ class SettingsHandler:
             
             # Pass data to the SettingsDialog
             dialog = SettingsDialog(self.parent, sr_types, group_descriptions)
-            if dialog.exec_():  # If user clicked OK (Dialog accepted)
+            if dialog.exec():  # If user clicked OK (Dialog accepted)
                 exclusions = dialog.get_exclusions()  # Get exclusions from the dialog
                 self.save_exclusion_settings(
                     exclusions['excluded_sr_type'], 

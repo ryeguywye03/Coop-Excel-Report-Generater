@@ -1,9 +1,9 @@
 import json
-from PyQt5.QtWidgets import (
+from PyQt6.QtWidgets import (
     QDialog, QVBoxLayout, QLabel, QListWidget, QPushButton, QListWidgetItem, QCheckBox, 
     QLineEdit, QGroupBox, QHBoxLayout, QScrollArea, QWidget
 )
-from PyQt5.QtCore import Qt
+from PyQt6.QtCore import Qt
 from utils.app_settings import AppSettings  # Use the centralized AppSettings
 
 class SettingsDialog(QDialog):
