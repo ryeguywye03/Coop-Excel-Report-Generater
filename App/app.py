@@ -40,11 +40,11 @@ class ReportGeneratorApp(QMainWindow):
 
         # Define QSS file based on platform and theme
         if platform_name == "darwin":  # macOS
-            qss_file = resource_path(os.path.join('assets', 'QSS', 'mac', f'mac_{theme}_style.qss'))
+            qss_file = resource_path(os.path.join('app','assets', 'QSS', 'mac', f'mac_{theme}_style.qss'))
         elif platform_name == "windows":  # Windows
-            qss_file = resource_path(os.path.join('assets', 'QSS', 'windows', f'windows_{theme}_style.qss'))
+            qss_file = resource_path(os.path.join('app','assets', 'QSS', 'windows', f'windows_{theme}_style.qss'))
         else:
-            qss_file = resource_path(os.path.join('assets', 'QSS', 'default_style.qss'))
+            qss_file = resource_path(os.path.join('app','assets', 'QSS', 'default_style.qss'))
 
         try:
             with open(qss_file, "r") as file:
