@@ -1,27 +1,37 @@
-# Updated app.spec for Excel Report Generator project
-from PyInstaller.utils.hooks import collect_submodules
+from PyInstaller.utils.hooks import collect_submodules, collect_data_files
+import os
+
+def get_app_data_paths():
+    """Dynamically collect data file paths from the App directory."""
+    app_data_paths = []
+    base_path = os.path.join('App', 'assets')
+
+    # Collect paths for assets
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'Excel')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'json')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'QSS/mac')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'QSS/windows')))
+    app_data_paths.extend(collect_data_files('App/dialogs'))
+    app_data_paths.extend(collect_data_files('App/main_menu'))
+    app_data_paths.extend(collect_data_files('App/sr_counter'))
+    app_data_paths.extend(collect_data_files('App/utils'))
+    app_data_paths.append(('App/logs', 'app/logs'))
+    app_data_paths.append(('App/config', 'app/config'))
+    
+    # Include other necessary files
+    app_data_paths.append(('version.txt', 'app/'))
+    app_data_paths.append(('requirements.txt', 'app/'))
+    app_data_paths.append(('README.md', 'app/'))
+    app_data_paths.append(('setup.py', 'app/'))
+
+    return app_data_paths
 
 a = Analysis(
     ['App/app.py'],
     pathex=[],
     binaries=[],
-    datas=[
-        ('App/assets/Excel', 'app/assets/Excel'),  # Include Excel assets
-        ('App/assets/json', 'app/assets/json'),  # Include JSON assets
-        ('App/assets/QSS/mac', 'app/assets/QSS/mac'),  # Mac QSS files
-        ('App/assets/QSS/windows', 'app/assets/QSS/windows'),  # Windows QSS files
-        ('App/dialogs', 'app/dialogs'),  # Place dialogs in the app folder
-        ('App/main_menu', 'app/main_menu'),  # Place main_menu in the app folder
-        ('App/sr_counter', 'app/sr_counter'),  # Place sr_counter in the app folder
-        ('App/utils', 'app/utils'),  # Place utils in the app folder
-        ('logs', 'app/logs'),  # Log files
-        ('config', 'app/config'),  # Place config in the app folder
-        ('version.txt', 'app/'),  # Place version.txt in root
-        ('requirements.txt', 'app/'),  # Place requirements.txt in root
-        ('README.md', 'app/'),  # Place README.md in root
-        ('setup.py', 'app/'),  # Place setup.py in root
-    ],
-    hiddenimports=collect_submodules('App'),  # Collect all submodules under App
+    datas=get_app_data_paths(),  # Use the dynamic function here
+    hiddenimports=collect_submodules('App'),
     hookspath=['hooks'],
     runtime_hooks=[],
     excludes=[],

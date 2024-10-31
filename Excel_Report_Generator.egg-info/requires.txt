@@ -13,4 +13,3 @@ tzdata==2024.2
 XlsxWriter==3.2.0
 pyinstaller
 setuptools
-wheel

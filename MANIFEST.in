@@ -1,0 +1,11 @@
+# Include all files in the app directory
+recursive-include App *
+
+# Include version.txt file
+include version.txt
+
+# Include requirements.txt file
+include requirements.txt
+
+# Include README.md file
+include README.md

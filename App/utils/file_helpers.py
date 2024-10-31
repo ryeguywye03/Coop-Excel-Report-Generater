@@ -3,9 +3,19 @@ import os
 
 class FileHelper:
     @staticmethod
-    def environment_check():
-        """Check if the application is running in a bundled state or not."""
-        return 'bundle' if getattr(sys, 'frozen', False) else 'development'
+    def environment_check(print_env=True):
+        """Check if the application is running in a bundled state or not.
+   
+        Args:
+            print_env (bool): If True, print the current environment.
+   
+        Returns:
+            str: 'bundle' if running in a bundled state, otherwise 'development'.
+        """
+        env = 'bundle' if getattr(sys, 'frozen', False) else 'development'
+        if print_env:
+            print(f"Current environment: {env}")
+        return env
 
     @staticmethod
     def resource_path(relative_path):
@@ -14,16 +24,23 @@ class FileHelper:
             # If running in a bundle (PyInstaller)
             # Set base path to the directory of the executable
             base_path = os.path.dirname(sys.executable)
-            print(f"Using PyInstaller base path: {base_path}")
+            # Navigate to the _internal/app directory
+            internal_path = os.path.join(base_path, '_internal', 'app')
+            print(f"Using PyInstaller base path: {internal_path}")
+            
+            # Ensure the relative path is structured correctly within the internal directory
+            final_path = os.path.join(internal_path, relative_path)
         else:
             # If running in a script (development)
             base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
             print(f"Using development base path: {base_path}")
+            
+            # Ensure the relative path is structured correctly
+            final_path = os.path.join(base_path, relative_path)
 
-        # Ensure the relative path is structured correctly
-        final_path = os.path.join(base_path, relative_path)
         print(f"Final resource path: {final_path}")
         return final_path
+
 
     @staticmethod
     def get_settings_file_path():
@@ -39,11 +56,11 @@ class FileHelper:
     def get_json_file_path(filename):
         """Get the path to a JSON file in the assets/json folder."""
         return FileHelper.resource_path(os.path.join('assets', 'json', filename))
-    
+
     @staticmethod
     def get_version_file_path(filename):
-        """Get the path to a JSON file in the assets/json folder."""
-        return FileHelper.resource_path(os.path.join('..',filename))
+        """Get the path to the version.txt file."""
+        return FileHelper.resource_path('version.txt')
 
     @staticmethod
     def get_qss_file_path(theme, platform):

@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: Excel-Report-Generator
+Version: 1.0.32
+Summary: An app to generate Excel reports
+Home-page: https://github.com/ryeguywye03/Coop-Excel-Report-Generater.git
+Requires-Python: >=3.11.6

@@ -2,6 +2,8 @@ import logging
 import os
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
+import sys  # Import sys for environment check
+from utils.file_helpers import FileHelper  # Ensure FileHelper is imported
 
 class LoggerManager:
     _instance = None  # To enforce singleton pattern
@@ -22,10 +24,11 @@ class LoggerManager:
             return
 
         print("Initializing LoggerManager...")
-        # Import FileHelper here to avoid circular import
-        from utils.file_helpers import FileHelper
-
         self.log_dir = FileHelper.resource_path(log_dir)  # Use resource_path to find the log directory
+        
+        # Call environment check and print the current environment
+        self.current_environment = FileHelper.environment_check(print_env=True)
+        
         self.logger = logging.getLogger("AppLogger")  # Use "AppLogger" as the name
         self.logger.setLevel(logging.DEBUG)
         self.enable_logging = enable_logging
