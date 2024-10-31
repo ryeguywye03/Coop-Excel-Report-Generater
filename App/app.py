@@ -2,8 +2,7 @@ import platform
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from main_menu.main_menu import MainMenuUI  # Import Main Menu UI
 from sr_counter import SRCounterUI  # Import the SR Counter UI from the sr_counter package
-from utils import LoggerManager, AppSettings  # Ensure utils has resource_path and LoggerManager
-from utils.file_helpers import *
+from utils import LoggerManager, AppSettings, FileHelper  # Ensure FileHelper is imported
 import os
 import sys
 import json
@@ -40,7 +39,7 @@ class ReportGeneratorApp(QMainWindow):
         platform_name = platform.system().lower()
 
         # Get the QSS file path using the helper method
-        qss_file = get_qss_file_path(theme, platform_name)
+        qss_file = FileHelper.get_qss_file_path(theme, platform_name)
 
         if qss_file is None:
             self.logger.log_error(f"Error: No QSS file found for theme '{theme}' on platform '{platform_name}'.")
@@ -52,17 +51,18 @@ class ReportGeneratorApp(QMainWindow):
         except FileNotFoundError:
             self.logger.log_error(f"Error: The file {qss_file} was not found.")
 
-
     def reload_stylesheet(self):
         """Reloads the stylesheet to reflect any theme changes."""
         self.apply_stylesheet()
 
     def set_app_version(self):
         """Sets the app version number from a version.txt file."""
+        version_path = FileHelper.get_resource_file_path('version.txt')
         try:
-            version = self.get_version()
-            self.setWindowTitle(f"Excel Report Generator - v{version}")
-            self.logger.log_info(f"App version set to v{version}")
+            with open(version_path) as version_file:
+                version = version_file.read().strip()
+                self.setWindowTitle(f"Excel Report Generator - v{version}")
+                self.logger.log_info(f"App version set to v{version}")
         except FileNotFoundError:
             self.setWindowTitle("Excel Report Generator - Version not found")
             self.logger.log_error("version.txt not found")
@@ -89,17 +89,16 @@ class ReportGeneratorApp(QMainWindow):
         self.switch_to_main_menu()
 
     def get_window_size_from_settings(self):
-        """Read the window size from a settings file."""
+        """Fetches the window size from settings or returns default."""
         default_size = {"width": 1000, "height": 600}  # Fallback size
-        settings_file = os.path.join(os.path.dirname(__file__), '../settings.json')
-        
         try:
+            settings_file = FileHelper.get_settings_file_path()  # Use FileHelper to get settings path
             with open(settings_file, "r") as f:
                 settings = json.load(f)
                 self.logger.log_info("Settings loaded successfully")
                 return settings.get("window_size", default_size)
-        except (FileNotFoundError, json.JSONDecodeError):
-            self.logger.log_error(f"Error reading settings from {settings_file}")
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            self.logger.log_error(f"Error reading settings from {settings_file}: {e}")
             return default_size
 
     def switch_to_main_menu(self):
@@ -114,8 +113,7 @@ class ReportGeneratorApp(QMainWindow):
 
     def get_version(self):
         """Reads the version number from the version.txt file."""
-        # Use resource_path to get the correct path for both development and packaged environments
-        version_path = resource_path(os.path.join('..', 'version.txt'))
+        version_path = FileHelper.get_resource_file_path('version.txt')  # Use FileHelper to get version path
         try:
             with open(version_path) as version_file:
                 version = version_file.read().strip()
@@ -127,7 +125,7 @@ class ReportGeneratorApp(QMainWindow):
 
 
 if __name__ == "__main__":
-    # Initialize the PyQt5 application
+    # Initialize the PyQt6 application
     app = QApplication(sys.argv)
 
     # Create and show the main window

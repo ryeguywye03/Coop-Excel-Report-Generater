@@ -1,20 +1,19 @@
-import json
-import os
+import json, os
 from PyQt6.QtWidgets import QMessageBox
-from utils import resource_path
 from dialogs.settings_dialog import SettingsDialog
 from utils.app_settings import AppSettings  # Import the global AppSettings
+from utils.file_helpers import FileHelper  # Import the FileHelper class
 
 class SettingsHandler:
     def __init__(self, parent):
         self.parent = parent
-        self.config_path = resource_path(os.path.join('settings.json'))
+        self.config_path = FileHelper.resource_path('settings.json')  # Use FileHelper to get the config path
         self.app_settings = AppSettings()  # Instantiate the global AppSettings
 
     def open_settings_dialog(self):
         """Open the settings dialog related to SR Counter exclusions."""
         try:
-            json_path = resource_path(os.path.join('app','assets', 'json', 'type_group_exclusion.json'))
+            json_path = FileHelper.get_json_file_path('type_group_exclusion.json')
             with open(json_path, 'r') as f:
                 data = json.load(f)
             sr_types = data.get("type_descriptions", {})

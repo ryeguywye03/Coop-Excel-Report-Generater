@@ -2,7 +2,6 @@ import logging
 import os
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
-from utils import resource_path  # Ensure utils has resource_path method
 
 class LoggerManager:
     _instance = None  # To enforce singleton pattern
@@ -23,7 +22,10 @@ class LoggerManager:
             return
 
         print("Initializing LoggerManager...")
-        self.log_dir = resource_path(log_dir)  # Use resource_path to find the log directory
+        # Import FileHelper here to avoid circular import
+        from utils.file_helpers import FileHelper
+
+        self.log_dir = FileHelper.resource_path(log_dir)  # Use resource_path to find the log directory
         self.logger = logging.getLogger("AppLogger")  # Use "AppLogger" as the name
         self.logger.setLevel(logging.DEBUG)
         self.enable_logging = enable_logging
@@ -70,14 +72,14 @@ class LoggerManager:
             os.makedirs(self.log_dir)
 
         # General log file handler with rotation
-        general_log_file = resource_path(os.path.join(self.log_dir, "app_general.log"))
+        general_log_file = os.path.join(self.log_dir, "app_general.log")
         general_handler = RotatingFileHandler(general_log_file, maxBytes=5 * 1024 * 1024, backupCount=5)
         general_handler.setLevel(logging.INFO)
         general_format = logging.Formatter('%(asctime)s - AppLogger - %(levelname)s - %(message)s')
         general_handler.setFormatter(general_format)
 
         # Error log file handler with rotation
-        error_log_file = resource_path(os.path.join(self.log_dir, "app_errors.log"))
+        error_log_file = os.path.join(self.log_dir, "app_errors.log")
         error_handler = RotatingFileHandler(error_log_file, maxBytes=5 * 1024 * 1024, backupCount=3)
         error_handler.setLevel(logging.ERROR)
         error_format = logging.Formatter('%(asctime)s - AppLogger - %(levelname)s - %(message)s')
