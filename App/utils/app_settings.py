@@ -1,7 +1,7 @@
 import json
 import os
 import sys
-from utils import LoggerManager  # Make sure LoggerManager is correctly imported
+from utils import LoggerManager, resource_path, get_settings_file_path  # Importing necessary helpers
 
 class AppSettings:
     def __init__(self, config_filename="settings.json"):
@@ -10,14 +10,15 @@ class AppSettings:
 
         # Define the base path for the config file based on whether the code is run from the executable or in development
         if getattr(sys, 'frozen', False):
-            # If running in a bundle
+            # If running in a bundle, use the location of the executable
             self.base_path = os.path.dirname(sys.executable)
         else:
-            # If running in a script
-            self.base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+            # If running in a script, use the directory of this file
+            self.base_path = os.path.abspath(os.path.dirname(__file__))
 
+        # Set the config directory and file path using the helper methods
         self.config_dir = os.path.join(self.base_path, 'config')
-        self.config_file = os.path.join(self.config_dir, config_filename)
+        self.config_file = get_settings_file_path()  # Use the helper method to get the config file path
 
         # Ensure the config directory and file are ready
         self.prepare_config_file()

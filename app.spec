@@ -14,8 +14,8 @@ a = Analysis(
         ('App/main_menu', 'app/main_menu'),  # Place main_menu in the app folder
         ('App/sr_counter', 'app/sr_counter'),  # Place sr_counter in the app folder
         ('App/utils', 'app/utils'),  # Place utils in the app folder
-        ('logs', 'app/'),
-        ('config', 'app/'),  # Place config in the app folder
+        ('logs', 'app/logs'),  # Log files
+        ('config', 'app/config'),  # Place config in the app folder
         ('version.txt', 'app/'),  # Place version.txt in root
         ('requirements.txt', 'app/'),  # Place requirements.txt in root
         ('README.md', 'app/'),  # Place README.md in root
