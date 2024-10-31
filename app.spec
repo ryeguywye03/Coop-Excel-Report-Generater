@@ -14,11 +14,12 @@ a = Analysis(
         ('App/main_menu', 'app/main_menu'),  # Place main_menu in the app folder
         ('App/sr_counter', 'app/sr_counter'),  # Place sr_counter in the app folder
         ('App/utils', 'app/utils'),  # Place utils in the app folder
-        ('App/config', 'app/config'),  # Place config in the app folder
-        ('version.txt', '.'),  # Place version.txt in root
-        ('requirements.txt', '.'),  # Place requirements.txt in root
-        ('README.md', '.'),  # Place README.md in root
-        ('setup.py', '.'),  # Place setup.py in root
+        ('logs', 'app/'),
+        ('config', 'app/'),  # Place config in the app folder
+        ('version.txt', 'app/'),  # Place version.txt in root
+        ('requirements.txt', 'app/'),  # Place requirements.txt in root
+        ('README.md', 'app/'),  # Place README.md in root
+        ('setup.py', 'app/'),  # Place setup.py in root
     ],
     hiddenimports=collect_submodules('App'),  # Collect all submodules under App
     hookspath=['hooks'],

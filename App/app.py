@@ -2,7 +2,8 @@ import platform
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from main_menu.main_menu import MainMenuUI  # Import Main Menu UI
 from sr_counter import SRCounterUI  # Import the SR Counter UI from the sr_counter package
-from utils import resource_path, LoggerManager, AppSettings  # Ensure utils has resource_path and LoggerManager
+from utils import LoggerManager, AppSettings  # Ensure utils has resource_path and LoggerManager
+from utils.file_helpers import *
 import os
 import sys
 import json
@@ -38,19 +39,19 @@ class ReportGeneratorApp(QMainWindow):
         theme = self.settings.get("theme", "dark").lower()
         platform_name = platform.system().lower()
 
-        # Define QSS file based on platform and theme
-        if platform_name == "darwin":  # macOS
-            qss_file = resource_path(os.path.join('app','assets', 'QSS', 'mac', f'mac_{theme}_style.qss'))
-        elif platform_name == "windows":  # Windows
-            qss_file = resource_path(os.path.join('app','assets', 'QSS', 'windows', f'windows_{theme}_style.qss'))
-        else:
-            qss_file = resource_path(os.path.join('app','assets', 'QSS', 'default_style.qss'))
+        # Get the QSS file path using the helper method
+        qss_file = get_qss_file_path(theme, platform_name)
+
+        if qss_file is None:
+            self.logger.log_error(f"Error: No QSS file found for theme '{theme}' on platform '{platform_name}'.")
+            return  # Exit if no file found
 
         try:
             with open(qss_file, "r") as file:
                 self.setStyleSheet(file.read())
         except FileNotFoundError:
             self.logger.log_error(f"Error: The file {qss_file} was not found.")
+
 
     def reload_stylesheet(self):
         """Reloads the stylesheet to reflect any theme changes."""
@@ -113,7 +114,8 @@ class ReportGeneratorApp(QMainWindow):
 
     def get_version(self):
         """Reads the version number from the version.txt file."""
-        version_path = os.path.join(os.path.dirname(__file__), '../version.txt')
+        # Use resource_path to get the correct path for both development and packaged environments
+        version_path = resource_path(os.path.join('..', 'version.txt'))
         try:
             with open(version_path) as version_file:
                 version = version_file.read().strip()
@@ -122,6 +124,7 @@ class ReportGeneratorApp(QMainWindow):
         except FileNotFoundError:
             self.logger.log_error(f"Error: version.txt not found at {version_path}")
         return "Version not found"
+
 
 if __name__ == "__main__":
     # Initialize the PyQt5 application

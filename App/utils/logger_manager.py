@@ -2,6 +2,7 @@ import logging
 import os
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
+from utils import resource_path  # Ensure utils has resource_path method
 
 class LoggerManager:
     _instance = None  # To enforce singleton pattern
@@ -22,10 +23,15 @@ class LoggerManager:
             return
 
         print("Initializing LoggerManager...")
-        self.log_dir = log_dir
+        self.log_dir = resource_path(log_dir)  # Use resource_path to find the log directory
         self.logger = logging.getLogger("AppLogger")  # Use "AppLogger" as the name
         self.logger.setLevel(logging.DEBUG)
         self.enable_logging = enable_logging
+
+        # Check if log directory is writable before setting up logging
+        if not self.check_log_directory():
+            print("Log directory is not writable. Logging will be disabled.")
+            self.enable_logging = False  # Disable logging if directory is not writable
 
         # Ensure setup_logging runs
         self.setup_logging()
@@ -34,20 +40,44 @@ class LoggerManager:
         print("Logger initialized:", self.enable_logging)
         print("Handlers added:", bool(self.logger.handlers))
 
+    def check_log_directory(self):
+        """Check if the log directory is writable."""
+        if not os.path.exists(self.log_dir):
+            try:
+                os.makedirs(self.log_dir)
+                print(f"Created log directory at {self.log_dir}")
+            except OSError as e:
+                print(f"Failed to create log directory {self.log_dir}: {e}")
+                return False  # Return False if directory can't be created
+
+        # Test write permission by attempting to create a temporary file
+        test_file_path = os.path.join(self.log_dir, 'test.log')
+        try:
+            with open(test_file_path, 'w') as test_file:
+                test_file.write("Test write permission.")
+            os.remove(test_file_path)  # Remove the test file
+            return True  # Write permission is granted
+        except Exception as e:
+            print(f"Write permission check failed for {self.log_dir}: {e}")
+            return False  # Return False if write permission is denied
+
     def setup_logging(self):
         """Sets up separate file handlers for general and error logs, plus console output."""
+        if not self.enable_logging:  # Skip if logging is disabled
+            return
+
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
 
         # General log file handler with rotation
-        general_log_file = os.path.join(self.log_dir, "app_general.log")
+        general_log_file = resource_path(os.path.join(self.log_dir, "app_general.log"))
         general_handler = RotatingFileHandler(general_log_file, maxBytes=5 * 1024 * 1024, backupCount=5)
         general_handler.setLevel(logging.INFO)
         general_format = logging.Formatter('%(asctime)s - AppLogger - %(levelname)s - %(message)s')
         general_handler.setFormatter(general_format)
 
         # Error log file handler with rotation
-        error_log_file = os.path.join(self.log_dir, "app_errors.log")
+        error_log_file = resource_path(os.path.join(self.log_dir, "app_errors.log"))
         error_handler = RotatingFileHandler(error_log_file, maxBytes=5 * 1024 * 1024, backupCount=3)
         error_handler.setLevel(logging.ERROR)
         error_format = logging.Formatter('%(asctime)s - AppLogger - %(levelname)s - %(message)s')

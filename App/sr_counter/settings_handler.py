@@ -14,7 +14,7 @@ class SettingsHandler:
     def open_settings_dialog(self):
         """Open the settings dialog related to SR Counter exclusions."""
         try:
-            json_path = resource_path(os.path.join('assets', 'json', 'type_group_exclusion.json'))
+            json_path = resource_path(os.path.join('app','assets', 'json', 'type_group_exclusion.json'))
             with open(json_path, 'r') as f:
                 data = json.load(f)
             sr_types = data.get("type_descriptions", {})

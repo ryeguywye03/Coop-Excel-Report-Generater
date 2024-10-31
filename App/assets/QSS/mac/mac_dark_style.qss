@@ -43,8 +43,16 @@ QWidget#mainPanelGroup {
     color: #FFFFFF;
     padding: 15px;
     border: 1px solid #0062A3;  /* Blue border for consistency */
-    border-radius: 10px;
+    border-radius: 15px; /* Increased radius for a more rounded appearance */
     margin: 5px;
+}
+
+/* SR Counter Panel Styling */
+QWidget#srCounterPanel {
+    background-color: #2D2D2D;
+    border: 1px solid #0062A3; /* Blue border */
+    border-radius: 15px; /* Round corners */
+    padding: 10px; /* Add padding for spacing */
 }
 
 /* Title and Header Styling */
@@ -65,14 +73,7 @@ QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroup
     color: #0062A3;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-/* Make the title background transparent */
-QGroupBox::title {
-    background-color: transparent; /* Makes title background transparent */
-    color: #0062A3; /* Title text color */
-    padding: 5px; /* Adjust padding as needed */
-    margin: 0 0 5px 0; /* Adjust margin as needed */
+    border-radius: 10px; /* Round corners */
 }
 
 /* Scroll Area Styling */

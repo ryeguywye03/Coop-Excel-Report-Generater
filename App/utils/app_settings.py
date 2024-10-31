@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 from utils import LoggerManager  # Make sure LoggerManager is correctly imported
 
 class AppSettings:
@@ -7,8 +8,14 @@ class AppSettings:
         # Initialize logger
         self.logger = LoggerManager()
 
-        # Define the base path for the config file in the 'config' directory
-        self.base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+        # Define the base path for the config file based on whether the code is run from the executable or in development
+        if getattr(sys, 'frozen', False):
+            # If running in a bundle
+            self.base_path = os.path.dirname(sys.executable)
+        else:
+            # If running in a script
+            self.base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
         self.config_dir = os.path.join(self.base_path, 'config')
         self.config_file = os.path.join(self.config_dir, config_filename)
 
