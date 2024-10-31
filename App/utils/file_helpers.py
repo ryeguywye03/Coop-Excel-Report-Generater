@@ -60,7 +60,7 @@ class FileHelper:
     @staticmethod
     def get_version_file_path(filename):
         """Get the path to the version.txt file."""
-        return FileHelper.resource_path('version.txt')
+        return FileHelper.resource_path(os.path.join('..','version.txt'))
 
     @staticmethod
     def get_qss_file_path(theme, platform):

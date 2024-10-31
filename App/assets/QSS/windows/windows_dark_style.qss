@@ -58,6 +58,7 @@ QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroup
     color: #0062A3;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: 10px; /* Round corners */
 }
 /* Make the title background transparent */
 QGroupBox::title {

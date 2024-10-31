@@ -1,22 +1,22 @@
-from PyInstaller.utils.hooks import collect_submodules, collect_data_files
+from PyInstaller.utils.hooks import collect_submodules
 import os
 
 def get_app_data_paths():
     """Dynamically collect data file paths from the App directory."""
     app_data_paths = []
-    base_path = os.path.join('App', 'assets')
+    base_path = 'App/assets'
 
-    # Collect paths for assets
-    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'Excel')))
-    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'json')))
-    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'QSS/mac')))
-    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'QSS/windows')))
-    app_data_paths.extend(collect_data_files('App/dialogs'))
-    app_data_paths.extend(collect_data_files('App/main_menu'))
-    app_data_paths.extend(collect_data_files('App/sr_counter'))
-    app_data_paths.extend(collect_data_files('App/utils'))
-    app_data_paths.append(('App/logs', 'app/logs'))
-    app_data_paths.append(('App/config', 'app/config'))
+    # Directly specify paths for assets
+    app_data_paths.append(('App/assets/Excel', 'app/assets/Excel'))
+    app_data_paths.append(('App/assets/json', 'app/assets/json'))
+    app_data_paths.append(('App/assets/QSS/mac', 'app/assets/QSS/mac'))
+    app_data_paths.append(('App/assets/QSS/windows', 'app/assets/QSS/windows'))
+    app_data_paths.append(('App/dialogs', 'app/dialogs'))
+    app_data_paths.append(('App/main_menu', 'app/main_menu'))
+    app_data_paths.append(('App/sr_counter', 'app/sr_counter'))
+    app_data_paths.append(('App/utils', 'app/utils'))
+    app_data_paths.append(('App/logs', 'app/logs'))  # Ensure logs are added
+    app_data_paths.append(('App/config', 'app/config'))  # Ensure config is added
     
     # Include other necessary files
     app_data_paths.append(('version.txt', 'app/'))
