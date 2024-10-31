@@ -12,6 +12,7 @@ class FileHelper:
         """Get the absolute path to a resource. Works for dev and for PyInstaller."""
         if FileHelper.environment_check() == 'bundle':
             # If running in a bundle (PyInstaller)
+            # Set base path to the directory of the executable
             base_path = os.path.dirname(sys.executable)
             print(f"Using PyInstaller base path: {base_path}")
         else:
@@ -26,22 +27,27 @@ class FileHelper:
 
     @staticmethod
     def get_settings_file_path():
-        """ Get the path to the settings.json file. """
-        return FileHelper.resource_path('config/settings.json')  # Assuming settings.json is in a config folder
+        """Get the path to the settings.json file."""
+        return FileHelper.resource_path('config/settings.json')  # Adjust path as needed
 
     @staticmethod
     def get_excel_file_path(filename):
-        """ Get the path to an Excel file in the assets folder. """
+        """Get the path to an Excel file in the assets folder."""
         return FileHelper.resource_path(os.path.join('assets', 'Excel', filename))
 
     @staticmethod
     def get_json_file_path(filename):
-        """ Get the path to a JSON file in the assets/json folder. """
+        """Get the path to a JSON file in the assets/json folder."""
         return FileHelper.resource_path(os.path.join('assets', 'json', filename))
+    
+    @staticmethod
+    def get_version_file_path(filename):
+        """Get the path to a JSON file in the assets/json folder."""
+        return FileHelper.resource_path(os.path.join('..',filename))
 
     @staticmethod
     def get_qss_file_path(theme, platform):
-        """ Get the path to the QSS file based on the theme and platform. """
+        """Get the path to the QSS file based on the theme and platform."""
         if platform.lower() == "darwin":  # macOS
             return FileHelper.resource_path(os.path.join('assets', 'QSS', 'mac', f'mac_{theme}_style.qss'))
         elif platform.lower() == "windows":  # Windows
@@ -51,5 +57,5 @@ class FileHelper:
 
     @staticmethod
     def get_resource_file_path(relative_path):
-        """ Get resource paths relative to the app folder. """
+        """Get resource paths relative to the app folder."""
         return FileHelper.resource_path(os.path.join('assets', relative_path))

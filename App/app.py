@@ -57,7 +57,7 @@ class ReportGeneratorApp(QMainWindow):
 
     def set_app_version(self):
         """Sets the app version number from a version.txt file."""
-        version_path = FileHelper.get_resource_file_path('version.txt')
+        version_path = FileHelper.get_version_file_path('version.txt')
         try:
             with open(version_path) as version_file:
                 version = version_file.read().strip()
