@@ -1,31 +1,31 @@
-from PyInstaller.utils.hooks import collect_submodules
+from PyInstaller.utils.hooks import collect_submodules, collect_data_files
 import os
 
 def get_app_data_paths():
-    """Dynamically collect data file paths from the App directory."""
     app_data_paths = []
-    base_path = 'App/assets'
+    base_path = 'App'
 
-    # Directly specify paths for assets
-    app_data_paths.append(('App/assets/Excel', 'app/assets/Excel'))
-    app_data_paths.append(('App/assets/json', 'app/assets/json'))
-    app_data_paths.append(('App/assets/QSS/mac', 'app/assets/QSS/mac'))
-    app_data_paths.append(('App/assets/QSS/windows', 'app/assets/QSS/windows'))
-    app_data_paths.append(('App/dialogs', 'app/dialogs'))
-    app_data_paths.append(('App/main_menu', 'app/main_menu'))
-    app_data_paths.append(('App/sr_counter', 'app/sr_counter'))
-    app_data_paths.append(('App/utils', 'app/utils'))
-    app_data_paths.append(('App/logs', 'app/logs'))  # Ensure logs are added
-    app_data_paths.append(('App/config', 'app/config'))  # Ensure config is added
+    # Collecting relevant directories
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'assets', 'Excel')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'assets', 'json')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'assets', 'QSS', 'mac')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'assets', 'QSS', 'windows')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'dialogs')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'main_menu')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'sr_counter')))
+    app_data_paths.extend(collect_data_files(os.path.join(base_path, 'utils')))
+    app_data_paths.append((os.path.join(base_path, 'logs'), 'logs'))
+    app_data_paths.append((os.path.join(base_path, 'config'), 'config'))
     
     # Include other necessary files
-    app_data_paths.append(('version.txt', 'app/'))
-    app_data_paths.append(('requirements.txt', 'app/'))
-    app_data_paths.append(('README.md', 'app/'))
-    app_data_paths.append(('setup.py', 'app/'))
+    app_data_paths.append(('version.txt', ''))
+    app_data_paths.append(('requirements.txt', ''))
+    app_data_paths.append(('README.md', ''))
+    app_data_paths.append(('setup.py', ''))
 
     return app_data_paths
 
+# In the Analysis call:
 a = Analysis(
     ['App/app.py'],
     pathex=[],
@@ -38,6 +38,7 @@ a = Analysis(
     noarchive=False,
     optimize=0,
 )
+
 
 pyz = PYZ(a.pure)
 

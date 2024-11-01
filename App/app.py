@@ -1,6 +1,6 @@
 import platform
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedWidget
-from main_menu.main_menu import MainMenuUI  # Import Main Menu UI
+from main_menu import MainMenuUI  # Import Main Menu UI
 from sr_counter import SRCounterUI  # Import the SR Counter UI from the sr_counter package
 from utils import LoggerManager, AppSettings, FileHelper  # Ensure FileHelper is imported
 import os
