@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 from utils import LoggerManager, FileHelper  # Ensure LoggerManager and resource_path are imported
 
 class AppSettings:
@@ -45,7 +44,10 @@ class AppSettings:
                     return settings
             except json.JSONDecodeError:
                 self.logger.log_error(f"JSON decode error in {self.config_file}. Reverting to default settings.")
-                return self.default_settings()
+                os.remove(self.config_file)  # Remove the corrupt file
+                self.settings = self.default_settings()
+                self.save_settings(self.settings)  # Recreate the file with default settings
+                return self.settings
         else:
             self.logger.log_debug(f"No settings file found. Creating default settings at {self.config_file}.")
             return self.default_settings()
@@ -59,7 +61,9 @@ class AppSettings:
                 "excluded_sr_type": [],
                 "excluded_group": [],
                 "no_location_excluded_sr_type": [],
-                "no_location_excluded_group": []
+                "no_location_excluded_group": [],
+                "no_location_included_sr_type": [],  # New for inclusion
+                "no_location_included_group": []     # New for inclusion
             }
         }
         return default
@@ -107,3 +111,11 @@ class AppSettings:
     def reload_settings(self):
         """Reload settings from the JSON file."""
         self.settings = self.load_settings()
+
+    def check_version_file(self):
+        """Check if version.txt exists and log an error if it doesn’t."""
+        version_file_path = FileHelper.get_version_file_path('version.txt')
+        if not os.path.exists(version_file_path):
+            self.logger.log_error("version.txt not found test2")
+        else:
+            self.logger.log_info("version.txt found successfully.")

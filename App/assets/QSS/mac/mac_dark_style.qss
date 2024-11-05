@@ -268,7 +268,7 @@ QCalendarWidget QHeaderView::section {
 }
 
 /* Group Box Styling */
-QGroupBox#excludeCard, QGroupBox#noLocationCard {
+QGroupBox#excludeCard, QGroupBox#noLocationCard, QGroupBox#inclusionCard {
     background-color: #2D2D2D;
     border: 1px solid #0062A3;
     padding: 10px;

@@ -18,26 +18,33 @@ class ReportGenerator:
         self.logger.log_info(f"Starting report generation from {start_date} to {end_date}")
         self.logger.log_debug(f"Selected columns for grouping: {selected_columns}")
         self.logger.log_debug(f"Sorting by column: {sort_by}")
-        
+
         try:
             # Apply exclusions
             if exclusions:
                 self.logger.log_info("Applying exclusions")
-                if exclusions['excluded_sr_type']:
+                self.logger.log_debug(f"Current exclusions: {exclusions}")  # Log exclusions for debugging
+
+                # Exclude SR Types
+                if 'excluded_sr_type' in exclusions and exclusions['excluded_sr_type']:
                     df = df[~df['Type Description'].isin(exclusions['excluded_sr_type'])]
                     self.logger.log_debug(f"Excluded SR Types: {exclusions['excluded_sr_type']}")
-                
-                if exclusions['excluded_group']:
+
+                # Exclude Groups
+                if 'excluded_group' in exclusions and exclusions['excluded_group']:
                     df = df[~df['Group Description'].isin(exclusions['excluded_group'])]
                     self.logger.log_debug(f"Excluded Groups: {exclusions['excluded_group']}")
 
                 # Handle no location exclusions
-                if exclusions['no_location_excluded_sr_type'] or exclusions['no_location_excluded_group']:
+                if ('no_location_excluded_sr_type' in exclusions and exclusions['no_location_excluded_sr_type']) or \
+                ('no_location_excluded_group' in exclusions and exclusions['no_location_excluded_group']):
                     no_location_df = df[(df['X Value'] == 0) & (df['Y Value'] == 0)]
-                    if exclusions['no_location_excluded_sr_type']:
+                    
+                    if 'no_location_excluded_sr_type' in exclusions:
                         no_location_df = no_location_df[~no_location_df['Type Description'].isin(exclusions['no_location_excluded_sr_type'])]
-                    if exclusions['no_location_excluded_group']:
+                    if 'no_location_excluded_group' in exclusions:
                         no_location_df = no_location_df[~no_location_df['Group Description'].isin(exclusions['no_location_excluded_group'])]
+                    
                     df = pd.concat([df[~((df['X Value'] == 0) & (df['Y Value'] == 0))], no_location_df])
 
             # Date filtering
@@ -99,6 +106,7 @@ class ReportGenerator:
         except Exception as e:
             self.logger.log_error(f"Error during report generation: {e}")
             return None
+
 
     def show_report_preview(self, preview_df):
         """Display a preview of the report in a QDialog."""

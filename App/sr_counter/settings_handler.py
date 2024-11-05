@@ -1,4 +1,5 @@
-import json, os
+import json
+import os
 from PyQt6.QtWidgets import QMessageBox
 from dialogs.settings_dialog import SettingsDialog
 from utils.app_settings import AppSettings  # Import the global AppSettings
@@ -16,6 +17,7 @@ class SettingsHandler:
             json_path = FileHelper.get_json_file_path('type_group_exclusion.json')
             with open(json_path, 'r') as f:
                 data = json.load(f)
+
             sr_types = data.get("type_descriptions", {})
             group_descriptions = data.get("group_descriptions", {})
             
@@ -26,22 +28,26 @@ class SettingsHandler:
                 self.save_exclusion_settings(
                     exclusions['excluded_sr_type'], 
                     exclusions['excluded_group'], 
-                    exclusions.get('no_location_sr_type', []), 
-                    exclusions.get('no_location_group', [])
+                    exclusions.get('no_location_excluded_sr_type', []),  # Updated for inclusion
+                    exclusions.get('no_location_excluded_group', []),  # Updated for inclusion
+                    exclusions.get('no_location_included_sr_type', []),  # New for inclusion
+                    exclusions.get('no_location_included_group', [])   # New for inclusion
                 )
         except Exception as e:
             QMessageBox.critical(self.parent, "Error", f"Error loading JSON: {e}")
 
-    def save_exclusion_settings(self, sr_type_exclusions, group_exclusions, no_location_sr_exclusions, no_location_group_exclusions):
-        """Saves exclusion settings for SR types and groups without overwriting other settings."""
+    def save_exclusion_settings(self, sr_type_exclusions, group_exclusions, no_location_sr_exclusions, no_location_group_exclusions, no_location_included_sr_exclusions, no_location_included_group_exclusions):
+        """Saves exclusion settings for SR types, groups, and new no location settings without overwriting other settings."""
         # Use global AppSettings to retrieve and save the current settings
         current_settings = self.app_settings.load_settings()
 
         # Update the exclusions part of the settings
         current_settings["exclusions"]["excluded_sr_type"] = sr_type_exclusions
         current_settings["exclusions"]["excluded_group"] = group_exclusions
-        current_settings["exclusions"]["no_location_sr_type"] = no_location_sr_exclusions
-        current_settings["exclusions"]["no_location_group"] = no_location_group_exclusions
+        current_settings["exclusions"]["no_location_excluded_sr_type"] = no_location_sr_exclusions
+        current_settings["exclusions"]["no_location_excluded_group"] = no_location_group_exclusions
+        current_settings["exclusions"]["no_location_included_sr_type"] = no_location_included_sr_exclusions  # New for inclusion
+        current_settings["exclusions"]["no_location_included_group"] = no_location_included_group_exclusions  # New for inclusion
 
         # Save the updated settings back to the file
         self.app_settings.save_settings(current_settings)

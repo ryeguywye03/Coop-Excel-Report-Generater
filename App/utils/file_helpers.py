@@ -58,9 +58,9 @@ class FileHelper:
         return FileHelper.resource_path(os.path.join('assets', 'json', filename))
 
     @staticmethod
-    def get_version_file_path(filename):
+    def get_version_file_path():
         """Get the path to the version.txt file."""
-        return FileHelper.resource_path(os.path.join('..','version.txt'))
+        return FileHelper.resource_path(os.path.join('..', 'version.txt'))
 
     @staticmethod
     def get_qss_file_path(theme, platform):
