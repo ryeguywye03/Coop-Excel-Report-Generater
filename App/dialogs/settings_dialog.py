@@ -1,10 +1,12 @@
 import json
 from PyQt6.QtWidgets import (
     QDialog, QVBoxLayout, QLabel, QListWidget, QPushButton, QListWidgetItem, QCheckBox, 
-    QLineEdit, QGroupBox, QHBoxLayout, QScrollArea, QWidget
+    QLineEdit, QGroupBox, QHBoxLayout, QWidget
 )
 from PyQt6.QtCore import Qt
+from functools import partial
 from utils.app_settings import AppSettings  # Use the centralized AppSettings
+from utils import LoggerManager  # Ensure LoggerManager is imported
 
 class SettingsDialog(QDialog):
     def __init__(self, parent, sr_types=None, group_descriptions=None):
@@ -13,8 +15,11 @@ class SettingsDialog(QDialog):
         self.setObjectName("settings_dialog")
         self.setMinimumWidth(800)
 
-        # Use centralized AppSettings for exclusions and config path
+        # Initialize Logger and AppSettings
+        self.logger = LoggerManager(enable_logging=True)
         self.app_settings = AppSettings()
+        
+        # Retrieve exclusions from settings or set defaults
         self.exclusions = self.app_settings.get('exclusions', {
             'excluded_sr_type': [],
             'excluded_group': [],
@@ -24,220 +29,213 @@ class SettingsDialog(QDialog):
             'no_location_included_group': []
         })
 
-        # Setup types and groups data
-        self.sr_types = [sr["description"] for sr in sr_types.values()] if sr_types else []
-        self.group_descriptions = [group["description"] for group in group_descriptions.values()] if group_descriptions else []
+        # Store selections using IDs for each section
+        self.temp_selected_excluded_sr_types = {str(id): False for id in sr_types.keys()}
+        self.temp_selected_excluded_groups = {str(id): False for id in group_descriptions.keys()}
+        self.temp_selected_no_location_excluded_sr_types = {str(id): False for id in sr_types.keys()}
+        self.temp_selected_no_location_excluded_groups = {str(id): False for id in group_descriptions.keys()}
+        self.temp_selected_no_location_included_sr_types = {str(id): False for id in sr_types.keys()}
+        self.temp_selected_no_location_included_groups = {str(id): False for id in group_descriptions.keys()}
 
-        # Load the saved exclusions from AppSettings
-        self.saved_exclusions = self.exclusions
+        # Load saved selections to the temporary state
+        self.load_selected_exclusions()
 
-        # Initialize the UI
-        self.setup_ui()
+        # Initialize UI components
+        self.setup_ui(sr_types, group_descriptions)
 
-    def setup_ui(self):
-        """Initialize the settings UI."""
+    def load_selected_exclusions(self):
+        """Load saved exclusions and store them in the temporary state dictionaries."""
+        for item_id in self.exclusions.get('excluded_sr_type', []):
+            if item_id in self.temp_selected_excluded_sr_types:
+                self.temp_selected_excluded_sr_types[item_id] = True
+        for item_id in self.exclusions.get('excluded_group', []):
+            if item_id in self.temp_selected_excluded_groups:
+                self.temp_selected_excluded_groups[item_id] = True
+        for item_id in self.exclusions.get('no_location_excluded_sr_type', []):
+            if item_id in self.temp_selected_no_location_excluded_sr_types:
+                self.temp_selected_no_location_excluded_sr_types[item_id] = True
+        for item_id in self.exclusions.get('no_location_excluded_group', []):
+            if item_id in self.temp_selected_no_location_excluded_groups:
+                self.temp_selected_no_location_excluded_groups[item_id] = True
+        for item_id in self.exclusions.get('no_location_included_sr_type', []):
+            if item_id in self.temp_selected_no_location_included_sr_types:
+                self.temp_selected_no_location_included_sr_types[item_id] = True
+        for item_id in self.exclusions.get('no_location_included_group', []):
+            if item_id in self.temp_selected_no_location_included_groups:
+                self.temp_selected_no_location_included_groups[item_id] = True
+
+    def setup_ui(self, sr_types, group_descriptions):
+        """Initialize the settings UI with exclusion/inclusion lists and search functionality."""
         main_layout = QHBoxLayout(self)
 
-        exclude_card = QGroupBox("Exclude SR Types and Groups")
-        exclude_card.setObjectName("excludeCard")  # Add ID for styling
-        exclude_layout = QVBoxLayout(exclude_card)
-
-        exclude_layout.addWidget(QLabel("Exclude SR Type Description:"))
-        self.sr_type_search = QLineEdit(self)
-        self.sr_type_search.setObjectName("srTypeSearch")  # Add ID for styling
-        self.sr_type_search.setPlaceholderText("Search SR Type Description...")
-        self.sr_type_search.textChanged.connect(lambda: self.filter_list(self.sr_type_list, self.sr_types, self.sr_type_search.text()))
-        exclude_layout.addWidget(self.sr_type_search)
-        
-        self.sr_type_list = QListWidget()
-        self.sr_type_list.setObjectName("srTypeList")  # Add ID for styling
-        self.populate_list_with_checkboxes(self.sr_type_list, self.sr_types, self.saved_exclusions['excluded_sr_type'])
-        exclude_layout.addWidget(self.sr_type_list)
-
-        exclude_layout.addWidget(QLabel("Exclude Group Description:"))
-        self.group_search = QLineEdit(self)
-        self.group_search.setObjectName("groupSearch")  # Add ID for styling
-        self.group_search.setPlaceholderText("Search Group Description...")
-        self.group_search.textChanged.connect(lambda: self.filter_list(self.group_list, self.group_descriptions, self.group_search.text()))
-        exclude_layout.addWidget(self.group_search)
-        
-        self.group_list = QListWidget()
-        self.group_list.setObjectName("groupList")  # Add ID for styling
-        self.populate_list_with_checkboxes(self.group_list, self.group_descriptions, self.saved_exclusions['excluded_group'])
-        exclude_layout.addWidget(self.group_list)
-
+        # Create exclusion card for SR types and groups
+        exclude_card = self.create_exclusion_card("Exclude SR Types and Groups",
+                                                  sr_types, group_descriptions,
+                                                  self.temp_selected_excluded_sr_types, self.temp_selected_excluded_groups)
         main_layout.addWidget(exclude_card)
 
-        no_location_card = QGroupBox("No Location Exclusion (Exclude SRs with 0,0 coordinates)")
-        no_location_card.setObjectName("noLocationCard")  # Add ID for styling
-        no_location_layout = QVBoxLayout(no_location_card)
+        # Create No Location Exclusion card with enable toggle
+        no_location_exclude_card = self.create_exclusion_card("No Location Exclusion (Exclude SRs with 0,0 coordinates)",
+                                                              sr_types, group_descriptions,
+                                                              self.temp_selected_no_location_excluded_sr_types, 
+                                                              self.temp_selected_no_location_excluded_groups,
+                                                              enable_toggle=True)
+        main_layout.addWidget(no_location_exclude_card)
 
-        self.no_location_enabled_checkbox = QCheckBox("Enable No Location Exclusion")
-        self.no_location_enabled_checkbox.setChecked(False)
-        self.no_location_enabled_checkbox.toggled.connect(self.toggle_no_location_exclusion)
-        no_location_layout.addWidget(self.no_location_enabled_checkbox)
+        # Create No Location Inclusion card with enable toggle
+        no_location_include_card = self.create_exclusion_card("No Location Inclusion (Include SRs with 0,0 coordinates)",
+                                                              sr_types, group_descriptions,
+                                                              self.temp_selected_no_location_included_sr_types, 
+                                                              self.temp_selected_no_location_included_groups,
+                                                              enable_toggle=True)
+        main_layout.addWidget(no_location_include_card)
 
-        no_location_layout.addWidget(QLabel("Exclude SR Type Description (No Location):"))
-        self.no_location_sr_type_search = QLineEdit(self)
-        self.no_location_sr_type_search.setObjectName("noLocationSrTypeSearch")  # Add ID for styling
-        self.no_location_sr_type_search.setPlaceholderText("Search SR Type Description (No Location)...")
-        self.no_location_sr_type_search.textChanged.connect(lambda: self.filter_list(self.no_location_sr_type_list, self.sr_types, self.no_location_sr_type_search.text()))
-        no_location_layout.addWidget(self.no_location_sr_type_search)
-        
-        self.no_location_sr_type_list = QListWidget()
-        self.no_location_sr_type_list.setObjectName("noLocationSrTypeList")  # Add ID for styling
-        self.populate_list_with_checkboxes(self.no_location_sr_type_list, self.sr_types, self.saved_exclusions['no_location_excluded_sr_type'])
-        no_location_layout.addWidget(self.no_location_sr_type_list)
-
-        no_location_layout.addWidget(QLabel("Exclude Group Description (No Location):"))
-        self.no_location_group_search = QLineEdit(self)
-        self.no_location_group_search.setObjectName("noLocationGroupSearch")  # Add ID for styling
-        self.no_location_group_search.setPlaceholderText("Search Group Description (No Location)...")
-        self.no_location_group_search.textChanged.connect(lambda: self.filter_list(self.no_location_group_list, self.group_descriptions, self.no_location_group_search.text()))
-        no_location_layout.addWidget(self.no_location_group_search)
-        
-        self.no_location_group_list = QListWidget()
-        self.no_location_group_list.setObjectName("noLocationGroupList")  # Add ID for styling
-        self.populate_list_with_checkboxes(self.no_location_group_list, self.group_descriptions, self.saved_exclusions['no_location_excluded_group'])
-        no_location_layout.addWidget(self.no_location_group_list)
-
-        main_layout.addWidget(no_location_card)
-
-        # New Section for No Location Inclusion
-        inclusion_card = QGroupBox("No Location Inclusion (Include SRs with 0,0 coordinates)")
-        inclusion_card.setObjectName("inclusionCard")  # Add ID for styling
-        inclusion_layout = QVBoxLayout(inclusion_card)
-
-        self.no_location_included_checkbox = QCheckBox("Enable No Location Inclusion")
-        self.no_location_included_checkbox.setChecked(False)
-        self.no_location_included_checkbox.toggled.connect(self.toggle_no_location_inclusion)
-        inclusion_layout.addWidget(self.no_location_included_checkbox)
-
-        # Include SR Type Section
-        inclusion_layout.addWidget(QLabel("Include SR Type Description (No Location):"))
-        self.no_location_included_sr_type_search = QLineEdit(self)
-        self.no_location_included_sr_type_search.setObjectName("noLocationIncludedSrTypeSearch")  # Add ID for styling
-        self.no_location_included_sr_type_search.setPlaceholderText("Search SR Type Description (Include No Location)...")
-        self.no_location_included_sr_type_search.textChanged.connect(
-            lambda: self.filter_list(self.no_location_included_sr_type_list, self.sr_types, self.no_location_included_sr_type_search.text())
-        )
-        inclusion_layout.addWidget(self.no_location_included_sr_type_search)
-
-        self.no_location_included_sr_type_list = QListWidget()
-        self.no_location_included_sr_type_list.setObjectName("noLocationIncludedSrTypeList")  # Add ID for styling
-        self.populate_list_with_checkboxes(self.no_location_included_sr_type_list, self.sr_types, self.saved_exclusions['no_location_included_sr_type'])
-        inclusion_layout.addWidget(self.no_location_included_sr_type_list)
-
-        # Include Group Section
-        inclusion_layout.addWidget(QLabel("Include Group Description (No Location):"))
-        self.no_location_included_group_search = QLineEdit(self)
-        self.no_location_included_group_search.setObjectName("noLocationIncludedGroupSearch")  # Add ID for styling
-        self.no_location_included_group_search.setPlaceholderText("Search Group Description (Include No Location)...")
-        self.no_location_included_group_search.textChanged.connect(
-            lambda: self.filter_list(self.no_location_included_group_list, self.group_descriptions, self.no_location_included_group_search.text())
-        )
-        inclusion_layout.addWidget(self.no_location_included_group_search)
-
-        self.no_location_included_group_list = QListWidget()
-        self.no_location_included_group_list.setObjectName("noLocationIncludedGroupList")  # Add ID for styling
-        self.populate_list_with_checkboxes(self.no_location_included_group_list, self.group_descriptions, self.saved_exclusions['no_location_included_group'])
-        inclusion_layout.addWidget(self.no_location_included_group_list)
-
-        # Add the inclusion card to the main layout
-        main_layout.addWidget(inclusion_card)
-
+        # Buttons for saving and refreshing
         button_layout = QVBoxLayout()
         self.save_button = QPushButton("Save Settings")
-        self.save_button.setObjectName("saveButton")  # Add ID for styling
         self.save_button.clicked.connect(self.save_settings)
         button_layout.addWidget(self.save_button)
 
         self.refresh_button = QPushButton("Refresh Descriptions")
-        self.refresh_button.setObjectName("refreshButton")  # Add ID for styling
         self.refresh_button.clicked.connect(self.refresh_descriptions)
         button_layout.addWidget(self.refresh_button)
 
         main_layout.addLayout(button_layout)
         self.setLayout(main_layout)
 
-    def toggle_no_location_exclusion(self, checked):
-        self.no_location_sr_type_search.setEnabled(checked)
-        self.no_location_group_search.setEnabled(checked)
-        self.no_location_sr_type_list.setEnabled(checked)
-        self.no_location_group_list.setEnabled(checked)
+    def create_exclusion_card(self, title, sr_types, group_descriptions, selected_sr_dict, selected_group_dict, enable_toggle=False):
+        """Helper to create an exclusion/inclusion card with checkboxes, search functionality, and an optional enable toggle."""
+        card = QGroupBox(title)
+        layout = QVBoxLayout(card)
 
-    def toggle_no_location_inclusion(self, checked):
-        self.no_location_included_sr_type_search.setEnabled(checked)
-        self.no_location_included_group_search.setEnabled(checked)
-        self.no_location_included_sr_type_list.setEnabled(checked)
-        self.no_location_included_group_list.setEnabled(checked)
+        # Add an enable checkbox at the top if specified
+        if enable_toggle:
+            enable_checkbox = QCheckBox(f"Enable {title}")
+            enable_checkbox.setChecked(False)  # Default unchecked
+            layout.addWidget(enable_checkbox)
+            # Connect the toggle to enable or disable the rest of the card's widgets
+            enable_checkbox.toggled.connect(lambda checked: self.toggle_card_widgets(card, checked))
 
-    def save_settings(self):
-        """Saves the exclusions settings to the JSON file through AppSettings."""
-        self.exclusions = {
-            'excluded_sr_type': self.get_selected_items(self.sr_type_list),
-            'excluded_group': self.get_selected_items(self.group_list),
-            'no_location_excluded_sr_type': self.get_selected_items(self.no_location_sr_type_list) if self.no_location_enabled_checkbox.isChecked() else [],
-            'no_location_excluded_group': self.get_selected_items(self.no_location_group_list) if self.no_location_enabled_checkbox.isChecked() else [],
-            'no_location_included_sr_type': self.get_selected_items(self.no_location_included_sr_type_list) if self.no_location_included_checkbox.isChecked() else [],
-            'no_location_included_group': self.get_selected_items(self.no_location_included_group_list) if self.no_location_included_checkbox.isChecked() else []
-        }
+        # SR Type section
+        layout.addWidget(QLabel("SR Type Description:"))
+        sr_type_search = QLineEdit()
+        sr_type_search.setPlaceholderText("Search SR Type Description...")
+        layout.addWidget(sr_type_search)
 
-        # Update settings globally through AppSettings
-        self.app_settings.save_settings({"exclusions": self.exclusions})
+        sr_type_list_widget = QListWidget()
+        self.populate_list_with_checkboxes(sr_type_list_widget, sr_types, selected_sr_dict, "SR Type")
+        layout.addWidget(sr_type_list_widget)
 
-        # Close dialog after saving
-        self.accept()
+        sr_type_search.textChanged.connect(partial(self.filter_list, sr_type_list_widget, sr_types, selected_sr_dict, "SR Type"))
 
-    def get_exclusions(self):
-        """Return the current exclusion settings."""
-        return self.exclusions
+        # Group section
+        layout.addWidget(QLabel("Group Description:"))
+        group_search = QLineEdit()
+        group_search.setPlaceholderText("Search Group Description...")
+        layout.addWidget(group_search)
 
-    def populate_list_with_checkboxes(self, list_widget, items, selected_items=[]):
+        group_list_widget = QListWidget()
+        self.populate_list_with_checkboxes(group_list_widget, group_descriptions, selected_group_dict, "Group")
+        layout.addWidget(group_list_widget)
+
+        group_search.textChanged.connect(partial(self.filter_list, group_list_widget, group_descriptions, selected_group_dict, "Group"))
+
+        return card
+
+    def toggle_card_widgets(self, card, enabled):
+        """Enable or disable all widgets within a card."""
+        for widget in card.findChildren(QWidget):
+            widget.setEnabled(enabled)
+
+    def populate_list_with_checkboxes(self, list_widget, items, selected_dict, item_type="Item"):
+        """Populate the list widget with checkboxes, setting their initial state based on selected_dict."""
         list_widget.clear()
-        for item in items:
+        for item_id, item_data in items.items():
             list_item = QListWidgetItem(list_widget)
-            checkbox = QCheckBox(item)
-            if item in selected_items:
-                checkbox.setChecked(True)
+            checkbox = QCheckBox(item_data["description"])
+            checkbox.setChecked(selected_dict.get(item_id, False))
+
+            # Connect state change to update the temporary selection state and save partially
+            checkbox.stateChanged.connect(partial(self.update_selected_items, item_id=item_id, selected_dict=selected_dict, description=item_data["description"], item_type=item_type))
+            
             list_widget.addItem(list_item)
             list_widget.setItemWidget(list_item, checkbox)
 
-    def get_selected_items(self, list_widget):
-        selected_items = []
-        for i in range(list_widget.count()):
-            item_widget = list_widget.itemWidget(list_widget.item(i))
-            if item_widget and item_widget.isChecked():
-                selected_items.append(item_widget.text())
-        return selected_items
+    def update_selected_items(self, state, item_id, selected_dict, description, item_type):
+        """Update temporary state based on checkbox interaction, log action, and partially save selection."""
+        selected = self.sender().isChecked()  # Use isChecked() to check the checkbox state directly
+        selected_dict[item_id] = selected
 
-    def filter_list(self, list_widget, items, search_text):
-        filtered_items = [item for item in items if search_text.lower() in item.lower()]
-        self.populate_list_with_checkboxes(list_widget, filtered_items)
+        # Log the checkbox interaction
+        status = "Checked" if selected else "Unchecked"
+        self.logger.log_info(f"{item_type} '{description}' ({item_id}) is {status}")
+
+        # Partially save the current selection state to AppSettings
+        self.save_partial_settings()
+
+
+    def save_partial_settings(self):
+        """Partially save the current selection states to persist selections even during searches."""
+        exclusions = {
+            'excluded_sr_type': [item_id for item_id, selected in self.temp_selected_excluded_sr_types.items() if selected],
+            'excluded_group': [item_id for item_id, selected in self.temp_selected_excluded_groups.items() if selected],
+            'no_location_excluded_sr_type': [item_id for item_id, selected in self.temp_selected_no_location_excluded_sr_types.items() if selected],
+            'no_location_excluded_group': [item_id for item_id, selected in self.temp_selected_no_location_excluded_groups.items() if selected],
+            'no_location_included_sr_type': [item_id for item_id, selected in self.temp_selected_no_location_included_sr_types.items() if selected],
+            'no_location_included_group': [item_id for item_id, selected in self.temp_selected_no_location_included_groups.items() if selected]
+        }
+
+        # Update only exclusions in AppSettings without saving other settings
+        current_settings = self.app_settings.load_settings()
+        current_settings["exclusions"] = exclusions
+        self.app_settings.save_settings(current_settings)
+
+    def filter_list(self, list_widget, items, selected_dict, item_type, search_text):
+        """Filter the list based on search text and repopulate checkboxes with saved states."""
+        filtered_items = {item_id: data for item_id, data in items.items() if search_text.lower() in data["description"].lower()}
+        self.populate_list_with_checkboxes(list_widget, filtered_items, selected_dict, item_type)
+
+    def save_settings(self):
+        """Save the current state of selections to the settings JSON file through AppSettings."""
+        # Prepare the exclusions dictionary based on temporary selections
+        self.exclusions = {
+            'excluded_sr_type': [item_id for item_id, selected in self.temp_selected_excluded_sr_types.items() if selected],
+            'excluded_group': [item_id for item_id, selected in self.temp_selected_excluded_groups.items() if selected],
+            'no_location_excluded_sr_type': [item_id for item_id, selected in self.temp_selected_no_location_excluded_sr_types.items() if selected],
+            'no_location_excluded_group': [item_id for item_id, selected in self.temp_selected_no_location_excluded_groups.items() if selected],
+            'no_location_included_sr_type': [item_id for item_id, selected in self.temp_selected_no_location_included_sr_types.items() if selected],
+            'no_location_included_group': [item_id for item_id, selected in self.temp_selected_no_location_included_groups.items() if selected]
+        }
+
+        # Load current settings and update exclusions
+        current_settings = self.app_settings.load_settings()
+        current_settings["exclusions"] = self.exclusions
+        self.app_settings.save_settings(current_settings)
+
+        # Close the dialog
+        self.accept()
 
     def refresh_descriptions(self):
-        """Refresh the descriptions by reloading the data and repopulating the lists."""
+        """Refresh the SR Type and Group descriptions, updating the lists."""
+        # Re-fetch the data if available from the parent or reload source
         if self.parent():
             try:
-                self.sr_types = [sr["description"] for sr in self.parent().sr_types.values()]
+                self.sr_types = {str(key): val for key, val in self.parent().sr_types.items()}
+                self.group_descriptions = {str(key): val for key, val in self.parent().group_descriptions.items()}
             except Exception as e:
-                self.sr_types = []
-                print(f"Error loading SR Types: {e}")
+                self.sr_types = {}
+                self.group_descriptions = {}
+                print(f"Error loading SR Types or Group Descriptions: {e}")
 
-            try:
-                self.group_descriptions = [group["description"] for group in self.parent().group_descriptions.values()]
-            except Exception as e:
-                self.group_descriptions = []
-                print(f"Error loading Group Descriptions: {e}")
+        # Repopulate checkboxes with refreshed data and maintain current selection states
+        self.populate_list_with_checkboxes(self.sr_type_list, self.sr_types, self.temp_selected_excluded_sr_types, "SR Type")
+        self.populate_list_with_checkboxes(self.group_list, self.group_descriptions, self.temp_selected_excluded_groups, "Group")
+        self.populate_list_with_checkboxes(self.no_location_sr_type_list, self.sr_types, self.temp_selected_no_location_excluded_sr_types, "SR Type")
+        self.populate_list_with_checkboxes(self.no_location_group_list, self.group_descriptions, self.temp_selected_no_location_excluded_groups, "Group")
+        self.populate_list_with_checkboxes(self.no_location_included_sr_type_list, self.sr_types, self.temp_selected_no_location_included_sr_types, "SR Type")
+        self.populate_list_with_checkboxes(self.no_location_included_group_list, self.group_descriptions, self.temp_selected_no_location_included_groups, "Group")
 
-        self.populate_list_with_checkboxes(self.sr_type_list, self.sr_types, self.saved_exclusions['excluded_sr_type'])
-        self.populate_list_with_checkboxes(self.group_list, self.group_descriptions, self.saved_exclusions['excluded_group'])
-        self.populate_list_with_checkboxes(self.no_location_sr_type_list, self.sr_types, self.saved_exclusions['no_location_excluded_sr_type'])
-        self.populate_list_with_checkboxes(self.no_location_group_list, self.group_descriptions, self.saved_exclusions['no_location_excluded_group'])
-        self.populate_list_with_checkboxes(self.no_location_included_sr_type_list, self.sr_types, self.saved_exclusions['no_location_included_sr_type'])
-        self.populate_list_with_checkboxes(self.no_location_included_group_list, self.group_descriptions, self.saved_exclusions['no_location_included_group'])
-        
-        # Optionally reset the search fields after refresh
+        # Optionally clear search fields after refreshing
         self.sr_type_search.clear()
         self.group_search.clear()
         self.no_location_sr_type_search.clear()

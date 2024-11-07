@@ -20,7 +20,7 @@ class SettingsHandler:
 
             sr_types = data.get("type_descriptions", {})
             group_descriptions = data.get("group_descriptions", {})
-            
+
             # Pass data to the SettingsDialog
             dialog = SettingsDialog(self.parent, sr_types, group_descriptions)
             if dialog.exec():  # If user clicked OK (Dialog accepted)
@@ -37,19 +37,30 @@ class SettingsHandler:
             QMessageBox.critical(self.parent, "Error", f"Error loading JSON: {e}")
 
     def save_exclusion_settings(self, sr_type_exclusions, group_exclusions, no_location_sr_exclusions, no_location_group_exclusions, no_location_included_sr_exclusions, no_location_included_group_exclusions):
-        """Saves exclusion settings for SR types, groups, and new no location settings without overwriting other settings."""
+        """Saves exclusion settings for SR types, groups, and new no location settings with IDs without overwriting other settings."""
         # Use global AppSettings to retrieve and save the current settings
         current_settings = self.app_settings.load_settings()
 
-        # Update the exclusions part of the settings
-        current_settings["exclusions"]["excluded_sr_type"] = sr_type_exclusions
-        current_settings["exclusions"]["excluded_group"] = group_exclusions
-        current_settings["exclusions"]["no_location_excluded_sr_type"] = no_location_sr_exclusions
-        current_settings["exclusions"]["no_location_excluded_group"] = no_location_group_exclusions
-        current_settings["exclusions"]["no_location_included_sr_type"] = no_location_included_sr_exclusions  # New for inclusion
-        current_settings["exclusions"]["no_location_included_group"] = no_location_included_group_exclusions  # New for inclusion
+        # Update only non-empty values to avoid overwriting existing settings unintentionally
+        exclusions = current_settings.get("exclusions", {})
+
+        # Map exclusions to use IDs
+        if sr_type_exclusions:
+            exclusions["excluded_sr_type"] = [{"id": sr_id, "description": description} for sr_id, description in sr_type_exclusions.items()]
+        if group_exclusions:
+            exclusions["excluded_group"] = [{"id": group_id, "description": description} for group_id, description in group_exclusions.items()]
+        if no_location_sr_exclusions:
+            exclusions["no_location_excluded_sr_type"] = [{"id": sr_id, "description": description} for sr_id, description in no_location_sr_exclusions.items()]
+        if no_location_group_exclusions:
+            exclusions["no_location_excluded_group"] = [{"id": group_id, "description": description} for group_id, description in no_location_group_exclusions.items()]
+        if no_location_included_sr_exclusions:
+            exclusions["no_location_included_sr_type"] = [{"id": sr_id, "description": description} for sr_id, description in no_location_included_sr_exclusions.items()]
+        if no_location_included_group_exclusions:
+            exclusions["no_location_included_group"] = [{"id": group_id, "description": description} for group_id, description in no_location_included_group_exclusions.items()]
+
+        # Assign the updated exclusions back to the settings
+        current_settings["exclusions"] = exclusions
 
         # Save the updated settings back to the file
         self.app_settings.save_settings(current_settings)
-
         print("Exclusion settings updated successfully.")

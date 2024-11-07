@@ -42,12 +42,15 @@ class AppSettings:
                         return self.default_settings()
                     self.logger.log_info("Settings loaded successfully.")
                     return settings
-            except json.JSONDecodeError:
-                self.logger.log_error(f"JSON decode error in {self.config_file}. Reverting to default settings.")
+            except json.JSONDecodeError as e:
+                self.logger.log_error(f"JSON decode error in {self.config_file}: {e}. Reverting to default settings.")
                 os.remove(self.config_file)  # Remove the corrupt file
                 self.settings = self.default_settings()
                 self.save_settings(self.settings)  # Recreate the file with default settings
                 return self.settings
+            except IOError as e:
+                self.logger.log_error(f"Error reading settings file {self.config_file}: {e}")
+                return self.default_settings()
         else:
             self.logger.log_debug(f"No settings file found. Creating default settings at {self.config_file}.")
             return self.default_settings()
@@ -84,9 +87,28 @@ class AppSettings:
         try:
             with open(self.config_file, 'w') as f:
                 json.dump(self.settings, f, indent=4)
-                self.logger.log_debug(f"Settings saved to {self.config_file}")
+                self.logger.log_debug(f"Settings saved to {self.config_file}: {self.settings}")
         except IOError as e:
             self.logger.log_error(f"Error writing to settings file {self.config_file}: {e}")
+
+    def save_exclusions_partial(self, exclusions):
+        """Save only the exclusions part of settings."""
+        current_settings = self.load_settings()
+        current_settings["exclusions"] = exclusions
+        self.save_settings(current_settings)
+
+    def update_exclusions(self, key, item_id, selected):
+        """Update a single item in exclusions and save it immediately."""
+        exclusions = self.settings.get("exclusions", {})
+        if selected:
+            if item_id not in exclusions[key]:
+                exclusions[key].append(item_id)
+        else:
+            if item_id in exclusions[key]:
+                exclusions[key].remove(item_id)
+        
+        # Partially save only exclusions
+        self.save_exclusions_partial(exclusions)
 
     def get_window_size_from_settings(self):
         """Fetches the window size from settings or returns default."""
@@ -100,7 +122,9 @@ class AppSettings:
 
     def get(self, key, default=None):
         """Gets a setting value by key."""
-        return self.settings.get(key, default)
+        value = self.settings.get(key, default)
+        self.logger.log_debug(f"Retrieved setting for key '{key}': {value}")
+        return value
 
     def set(self, key, value):
         """Sets a setting value and saves it immediately."""
@@ -111,11 +135,12 @@ class AppSettings:
     def reload_settings(self):
         """Reload settings from the JSON file."""
         self.settings = self.load_settings()
+        self.logger.log_debug("Settings reloaded.")
 
     def check_version_file(self):
         """Check if version.txt exists and log an error if it doesn’t."""
         version_file_path = FileHelper.get_version_file_path('version.txt')
         if not os.path.exists(version_file_path):
-            self.logger.log_error("version.txt not found test2")
+            self.logger.log_error("version.txt not found")
         else:
             self.logger.log_info("version.txt found successfully.")

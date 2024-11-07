@@ -1,12 +1,10 @@
 import logging
 import os
-from datetime import datetime
 from logging.handlers import RotatingFileHandler
-import sys  # Import sys for environment check
 from utils.file_helpers import FileHelper  # Ensure FileHelper is imported
 
 class LoggerManager:
-    _instance = None  # To enforce singleton pattern
+    _instance = None  # Singleton instance
 
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
@@ -20,30 +18,25 @@ class LoggerManager:
     def __init__(self, log_dir="logs", enable_logging=True):
         """Initializes the logger, setting up file and console handlers."""
         if self._initialized:  # Prevent reinitialization
-            print("LoggerManager already initialized, skipping setup.")
             return
 
         print("Initializing LoggerManager...")
-        self.log_dir = FileHelper.resource_path(log_dir)  # Use resource_path to find the log directory
-        
-        # Call environment check and print the current environment
-        self.current_environment = FileHelper.environment_check(print_env=True)
-        
+        self.log_dir = FileHelper.resource_path(log_dir)
         self.logger = logging.getLogger("AppLogger")  # Use "AppLogger" as the name
         self.logger.setLevel(logging.DEBUG)
         self.enable_logging = enable_logging
 
-        # Check if log directory is writable before setting up logging
+        # Check if the log directory is writable
         if not self.check_log_directory():
-            print("Log directory is not writable. Logging will be disabled.")
-            self.enable_logging = False  # Disable logging if directory is not writable
+            print("Log directory is not writable. Disabling logging.")
+            self.enable_logging = False
 
-        # Ensure setup_logging runs
+        # Set up logging handlers
         self.setup_logging()
         
+        # Mark as initialized
         self._initialized = True
-        print("Logger initialized:", self.enable_logging)
-        print("Handlers added:", bool(self.logger.handlers))
+        print("LoggerManager initialized successfully")
 
     def check_log_directory(self):
         """Check if the log directory is writable."""
@@ -53,26 +46,23 @@ class LoggerManager:
                 print(f"Created log directory at {self.log_dir}")
             except OSError as e:
                 print(f"Failed to create log directory {self.log_dir}: {e}")
-                return False  # Return False if directory can't be created
+                return False
 
         # Test write permission by attempting to create a temporary file
         test_file_path = os.path.join(self.log_dir, 'test.log')
         try:
             with open(test_file_path, 'w') as test_file:
                 test_file.write("Test write permission.")
-            os.remove(test_file_path)  # Remove the test file
-            return True  # Write permission is granted
+            os.remove(test_file_path)  # Clean up
+            return True
         except Exception as e:
             print(f"Write permission check failed for {self.log_dir}: {e}")
-            return False  # Return False if write permission is denied
+            return False
 
     def setup_logging(self):
         """Sets up separate file handlers for general and error logs, plus console output."""
         if not self.enable_logging:  # Skip if logging is disabled
             return
-
-        if not os.path.exists(self.log_dir):
-            os.makedirs(self.log_dir)
 
         # General log file handler with rotation
         general_log_file = os.path.join(self.log_dir, "app_general.log")
@@ -94,8 +84,9 @@ class LoggerManager:
         console_format = logging.Formatter('%(levelname)s: %(message)s')
         console_handler.setFormatter(console_format)
 
-        # Clear existing handlers to avoid duplicate logs if reinitializing
-        self.logger.handlers.clear()
+        # Clear existing handlers to avoid duplicates
+        if self.logger.hasHandlers():
+            self.logger.handlers.clear()
 
         # Add the handlers to the logger
         self.logger.addHandler(general_handler)
