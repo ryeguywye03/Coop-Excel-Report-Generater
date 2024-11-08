@@ -173,7 +173,6 @@ class SettingsDialog(QDialog):
         # Partially save the current selection state to AppSettings
         self.save_partial_settings()
 
-
     def save_partial_settings(self):
         """Partially save the current selection states to persist selections even during searches."""
         exclusions = {
@@ -214,6 +213,10 @@ class SettingsDialog(QDialog):
 
         # Close the dialog
         self.accept()
+
+    def get_exclusions(self):
+        """Return the current exclusions set in the dialog for use in SettingsHandler."""
+        return self.exclusions
 
     def refresh_descriptions(self):
         """Refresh the SR Type and Group descriptions, updating the lists."""

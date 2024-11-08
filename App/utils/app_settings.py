@@ -65,11 +65,18 @@ class AppSettings:
                 "excluded_group": [],
                 "no_location_excluded_sr_type": [],
                 "no_location_excluded_group": [],
-                "no_location_included_sr_type": [],  # New for inclusion
-                "no_location_included_group": []     # New for inclusion
+                "no_location_included_sr_type": [],
+                "no_location_included_group": [],
+                "enable_excluded_sr_type": False,
+                "enable_excluded_group": False,
+                "enable_no_location_excluded_sr_type": False,
+                "enable_no_location_excluded_group": False,
+                "enable_no_location_included_sr_type": False,
+                "enable_no_location_included_group": False
             }
         }
         return default
+
 
     def save_settings(self, new_settings=None):
         """Saves the settings to the JSON file, ensuring necessary directories are created."""

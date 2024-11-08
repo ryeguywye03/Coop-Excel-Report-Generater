@@ -24,19 +24,27 @@ class SettingsHandler:
             # Pass data to the SettingsDialog
             dialog = SettingsDialog(self.parent, sr_types, group_descriptions)
             if dialog.exec():  # If user clicked OK (Dialog accepted)
-                exclusions = dialog.get_exclusions()  # Get exclusions from the dialog
+                exclusions = dialog.get_exclusions()  # Get exclusions and enable states from the dialog
                 self.save_exclusion_settings(
                     exclusions['excluded_sr_type'], 
                     exclusions['excluded_group'], 
-                    exclusions.get('no_location_excluded_sr_type', []),  # Updated for inclusion
-                    exclusions.get('no_location_excluded_group', []),  # Updated for inclusion
-                    exclusions.get('no_location_included_sr_type', []),  # New for inclusion
-                    exclusions.get('no_location_included_group', [])   # New for inclusion
+                    exclusions.get('no_location_excluded_sr_type', []), 
+                    exclusions.get('no_location_excluded_group', []), 
+                    exclusions.get('no_location_included_sr_type', []), 
+                    exclusions.get('no_location_included_group', []), 
+                    enable_states={
+                        "enable_excluded_sr_type": exclusions.get('enable_excluded_sr_type', False),
+                        "enable_excluded_group": exclusions.get('enable_excluded_group', False),
+                        "enable_no_location_excluded_sr_type": exclusions.get('enable_no_location_excluded_sr_type', False),
+                        "enable_no_location_excluded_group": exclusions.get('enable_no_location_excluded_group', False),
+                        "enable_no_location_included_sr_type": exclusions.get('enable_no_location_included_sr_type', False),
+                        "enable_no_location_included_group": exclusions.get('enable_no_location_included_group', False),
+                    }
                 )
         except Exception as e:
             QMessageBox.critical(self.parent, "Error", f"Error loading JSON: {e}")
 
-    def save_exclusion_settings(self, sr_type_exclusions, group_exclusions, no_location_sr_exclusions, no_location_group_exclusions, no_location_included_sr_exclusions, no_location_included_group_exclusions):
+    def save_exclusion_settings(self, sr_type_exclusions, group_exclusions, no_location_sr_exclusions, no_location_group_exclusions, no_location_included_sr_exclusions, no_location_included_group_exclusions, enable_states):
         """Saves exclusion settings for SR types, groups, and new no location settings with IDs without overwriting other settings."""
         # Use global AppSettings to retrieve and save the current settings
         current_settings = self.app_settings.load_settings()
@@ -57,6 +65,9 @@ class SettingsHandler:
             exclusions["no_location_included_sr_type"] = [{"id": sr_id, "description": description} for sr_id, description in no_location_included_sr_exclusions.items()]
         if no_location_included_group_exclusions:
             exclusions["no_location_included_group"] = [{"id": group_id, "description": description} for group_id, description in no_location_included_group_exclusions.items()]
+
+        # Add enable states to exclusions
+        exclusions.update(enable_states)
 
         # Assign the updated exclusions back to the settings
         current_settings["exclusions"] = exclusions

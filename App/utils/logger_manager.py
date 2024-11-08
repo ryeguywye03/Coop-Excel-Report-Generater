@@ -1,6 +1,7 @@
 import logging
 import os
 from logging.handlers import RotatingFileHandler
+from PyQt6 import QtCore
 from utils.file_helpers import FileHelper  # Ensure FileHelper is imported
 
 class LoggerManager:
@@ -59,26 +60,43 @@ class LoggerManager:
             print(f"Write permission check failed for {self.log_dir}: {e}")
             return False
 
+    def qt_message_handler(self, mode, context, message):
+        """Custom Qt message handler to direct Qt messages to Python's logging system."""
+        if mode == QtCore.QtMsgType.QtDebugMsg:
+            level = logging.DEBUG
+        elif mode == QtCore.QtMsgType.QtInfoMsg:
+            level = logging.INFO
+        elif mode == QtCore.QtMsgType.QtWarningMsg:
+            level = logging.WARNING
+        elif mode == QtCore.QtMsgType.QtCriticalMsg:
+            level = logging.CRITICAL
+        else:
+            level = logging.ERROR
+
+        # Log the message using Python's logging module
+        self.logger.log(level, message)
+
     def setup_logging(self):
         """Sets up separate file handlers for general and error logs, plus console output."""
         if not self.enable_logging:  # Skip if logging is disabled
             return
 
-        # General log file handler with rotation
+        # Install the Qt message handler
+        QtCore.qInstallMessageHandler(self.qt_message_handler)
+
+        # Configure Python's logging module with file and console handlers
         general_log_file = os.path.join(self.log_dir, "app_general.log")
         general_handler = RotatingFileHandler(general_log_file, maxBytes=5 * 1024 * 1024, backupCount=5)
         general_handler.setLevel(logging.INFO)
         general_format = logging.Formatter('%(asctime)s - AppLogger - %(levelname)s - %(message)s')
         general_handler.setFormatter(general_format)
 
-        # Error log file handler with rotation
         error_log_file = os.path.join(self.log_dir, "app_errors.log")
         error_handler = RotatingFileHandler(error_log_file, maxBytes=5 * 1024 * 1024, backupCount=3)
         error_handler.setLevel(logging.ERROR)
         error_format = logging.Formatter('%(asctime)s - AppLogger - %(levelname)s - %(message)s')
         error_handler.setFormatter(error_format)
 
-        # Console handler for real-time log output
         console_handler = logging.StreamHandler()
         console_handler.setLevel(logging.INFO)
         console_format = logging.Formatter('%(levelname)s: %(message)s')
