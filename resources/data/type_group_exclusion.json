@@ -1,0 +1,1096 @@
+{
+  "type_descriptions": {
+    "1": {
+      "description": "1 Survey for KB Calls"
+    },
+    "2": {
+      "description": "3 Day Parking Infraction"
+    },
+    "3": {
+      "description": "311 Request for Custom Map"
+    },
+    "4": {
+      "description": "311 Request for Custom Report"
+    },
+    "5": {
+      "description": "311 Texting"
+    },
+    "6": {
+      "description": "Abandoned Vehicle"
+    },
+    "7": {
+      "description": "Accessibility Concerns - Buildings"
+    },
+    "8": {
+      "description": "Accessible Alternate Format Document Request"
+    },
+    "9": {
+      "description": "Accessible Customer Service Feedback"
+    },
+    "10": {
+      "description": "Accessible Parking Spot Removal (On-Street)"
+    },
+    "11": {
+      "description": "Adult Entertainment Parlour"
+    },
+    "12": {
+      "description": "Alley or Laneway Naming"
+    },
+    "13": {
+      "description": "Alley Repair / Flooding"
+    },
+    "14": {
+      "description": "AMANDA Yard Conditions"
+    },
+    "15": {
+      "description": "Anniversary Letter Request"
+    },
+    "16": {
+      "description": "Antique Metal - Old Gold"
+    },
+    "17": {
+      "description": "Auctioneer"
+    },
+    "18": {
+      "description": "Automobile Service Station"
+    },
+    "19": {
+      "description": "Barking Dog Complaint (Proactive)"
+    },
+    "20": {
+      "description": "Basement Flooding"
+    },
+    "21": {
+      "description": "Bed & Breakfast/Guest House"
+    },
+    "22": {
+      "description": "Bill Distributor"
+    },
+    "23": {
+      "description": "Bingos & Charities"
+    },
+    "24": {
+      "description": "Birthday Letter Request"
+    },
+    "25": {
+      "description": "Body Modification"
+    },
+    "26": {
+      "description": "Body Rub Parlour"
+    },
+    "27": {
+      "description": "Building / Land - Improper Use"
+    },
+    "28": {
+      "description": "Building Condition Complaint"
+    },
+    "29": {
+      "description": "Bulk Item Not Collected"
+    },
+    "30": {
+      "description": "Bulk Item Pick-Up (Furniture)"
+    },
+    "31": {
+      "description": "Call Centre Technical Issues Log"
+    },
+    "32": {
+      "description": "Call Tracker"
+    },
+    "33": {
+      "description": "Cannabis Odour"
+    },
+    "34": {
+      "description": "Carnival & Circus"
+    },
+    "35": {
+      "description": "Cat Voucher - Feral Cats"
+    },
+    "36": {
+      "description": "Cat Voucher - Owned Cats"
+    },
+    "37": {
+      "description": "City Owned Property Sale - Inquiry"
+    },
+    "38": {
+      "description": "Clean Sweep Registration"
+    },
+    "39": {
+      "description": "Collection Calendar Request"
+    },
+    "40": {
+      "description": "Commercial Parking Issues (On-Street)"
+    },
+    "41": {
+      "description": "Construction Site Conditions"
+    },
+    "42": {
+      "description": "Construction Site Issues"
+    },
+    "43": {
+      "description": "Council Secretariat"
+    },
+    "44": {
+      "description": "Council Services Inquiry"
+    },
+    "45": {
+      "description": "Curb Complaint"
+    },
+    "46": {
+      "description": "Customer Service Feedback"
+    },
+    "47": {
+      "description": "Damage - Garbage - Collection Containers"
+    },
+    "48": {
+      "description": "Damage - Property - Env. Services"
+    },
+    "49": {
+      "description": "Damage - Recycle - Collection Containers"
+    },
+    "50": {
+      "description": "Damage - Recycle - Property"
+    },
+    "51": {
+      "description": "Damage Report - Garbage/Recycle"
+    },
+    "52": {
+      "description": "Dead Animal Removal"
+    },
+    "53": {
+      "description": "Dead Cat or Dog"
+    },
+    "54": {
+      "description": "Dilapidated Vehicles Complaint (Proactive)"
+    },
+    "55": {
+      "description": "Dirty Alley Complaint"
+    },
+    "56": {
+      "description": "Dirty Yard / Alley"
+    },
+    "57": {
+      "description": "Ditch Cutting"
+    },
+    "58": {
+      "description": "Ditch Fill"
+    },
+    "59": {
+      "description": "DO NOT USE - Radar Trailer (Speed Limit Device)"
+    },
+    "60": {
+      "description": "Document / Form Request"
+    },
+    "61": {
+      "description": "Dog - Excrement (Proactive)"
+    },
+    "62": {
+      "description": "Dog - Unlicensed (Proactive)"
+    },
+    "63": {
+      "description": "Dog Bite"
+    },
+    "64": {
+      "description": "Dog Complaint"
+    },
+    "65": {
+      "description": "Donation Bin Issue"
+    },
+    "66": {
+      "description": "Downspout Disconnect Service"
+    },
+    "67": {
+      "description": "Drainage"
+    },
+    "68": {
+      "description": "Driveway Damage"
+    },
+    "69": {
+      "description": "Driveway Permit Issues"
+    },
+    "70": {
+      "description": "Elected Officials Feedback"
+    },
+    "71": {
+      "description": "Employee/Dept SF - CAO"
+    },
+    "72": {
+      "description": "Employee/Dept SF - Community Services"
+    },
+    "73": {
+      "description": "Employee/Dept SF - Corporate Services"
+    },
+    "74": {
+      "description": "Employee/Dept SF - Economic Development"
+    },
+    "75": {
+      "description": "Employee/Dept SF - Finance and City Treasurer"
+    },
+    "76": {
+      "description": "Employee/Dept SF - Health and Human Services"
+    },
+    "77": {
+      "description": "Employee/Dept SF - Infrastructure Services and City Engineer"
+    },
+    "78": {
+      "description": "Entertainment Lounge"
+    },
+    "79": {
+      "description": "Environmental Contracted Services Feedback"
+    },
+    "80": {
+      "description": "E-Scooter Concerns/Issues"
+    },
+    "81": {
+      "description": "Escorts"
+    },
+    "82": {
+      "description": "EZ Tool - Manage Citizen App SR Type Configuration"
+    },
+    "83": {
+      "description": "Facilities Maintenance"
+    },
+    "84": {
+      "description": "Feeding of Wildlife"
+    },
+    "85": {
+      "description": "Fence & Hedge Complaint - Bylaw"
+    },
+    "86": {
+      "description": "Fence / Hedge Concerns"
+    },
+    "87": {
+      "description": "Fence Repairs on City Property"
+    },
+    "88": {
+      "description": "Feral Animal"
+    },
+    "89": {
+      "description": "Fire Overcrowding / Multiple Units"
+    },
+    "90": {
+      "description": "Fireworks Complaint"
+    },
+    "91": {
+      "description": "Food Store"
+    },
+    "92": {
+      "description": "Garbage Not Collected"
+    },
+    "93": {
+      "description": "Garbage Preparation Issues"
+    },
+    "94": {
+      "description": "Graffiti Complaint"
+    },
+    "95": {
+      "description": "Grass-Weeds on Private Property (Proactive)"
+    },
+    "96": {
+      "description": "Guard Rail Repair"
+    },
+    "97": {
+      "description": "Handi Transit"
+    },
+    "98": {
+      "description": "Hawker - Peddler"
+    },
+    "99": {
+      "description": "Heating Work - HVAC"
+    },
+    "100": {
+      "description": "Holistic Centre"
+    },
+    "101": {
+      "description": "Holistic Practitioner"
+    },
+    "102": {
+      "description": "Homelessness Report"
+    },
+    "103": {
+      "description": "Horticulture Request"
+    },
+    "104": {
+      "description": "Hospitality"
+    },
+    "105": {
+      "description": "Idling Complaint"
+    },
+    "106": {
+      "description": "Illegal Dumping Public Property"
+    },
+    "107": {
+      "description": "Inappropriate or Labour Intensive Calls"
+    },
+    "108": {
+      "description": "KB Changes"
+    },
+    "109": {
+      "description": "KB Mapping Changes"
+    },
+    "110": {
+      "description": "Keeping of Animals"
+    },
+    "111": {
+      "description": "KSTEST"
+    },
+    "112": {
+      "description": "Lakes / Ponds Issues"
+    },
+    "113": {
+      "description": "Lighting Issues - City Facilities"
+    },
+    "114": {
+      "description": "Litter Bin - Request for New Bin"
+    },
+    "115": {
+      "description": "Litter Bin Request for Service"
+    },
+    "116": {
+      "description": "Livery Driver Complaint"
+    },
+    "117": {
+      "description": "Livery Vehicle Complaint"
+    },
+    "118": {
+      "description": "Lodging House Complaint"
+    },
+    "119": {
+      "description": "Mask Order Enforcement"
+    },
+    "120": {
+      "description": "Mobile Sign Lesser"
+    },
+    "121": {
+      "description": "Mobile Vendor of Food"
+    },
+    "122": {
+      "description": "Municipal Licensing Inquiry"
+    },
+    "123": {
+      "description": "Municipal Parking Garage Issues"
+    },
+    "124": {
+      "description": "Municipal Parking Lot Issues"
+    },
+    "125": {
+      "description": "Needle / Syringe / Sharps - Report"
+    },
+    "126": {
+      "description": "Needle Bin Service"
+    },
+    "127": {
+      "description": "New Development Issues"
+    },
+    "128": {
+      "description": "Newspaper Bundle Concerns"
+    },
+    "129": {
+      "description": "No Building Permit"
+    },
+    "130": {
+      "description": "No Heating Permit"
+    },
+    "131": {
+      "description": "No Permit"
+    },
+    "132": {
+      "description": "No Plumbing Permit"
+    },
+    "133": {
+      "description": "No Pool Permit"
+    },
+    "134": {
+      "description": "No Sewer Permit"
+    },
+    "135": {
+      "description": "No Sign Permit"
+    },
+    "136": {
+      "description": "Noise Complaint"
+    },
+    "137": {
+      "description": "Odours from Sewers"
+    },
+    "138": {
+      "description": "Other - Report Concern Not Listed"
+    },
+    "139": {
+      "description": "Overland Flooding"
+    },
+    "140": {
+      "description": "Pandemic Enforcement"
+    },
+    "141": {
+      "description": "Parking Contracted Services Feedback"
+    },
+    "142": {
+      "description": "Parking Issues - On-Street"
+    },
+    "143": {
+      "description": "Parking Meter Issues"
+    },
+    "144": {
+      "description": "Parks - CW Property Maintenance"
+    },
+    "145": {
+      "description": "Parks - Life Preserver Concerns"
+    },
+    "146": {
+      "description": "Parks - Playground Issues"
+    },
+    "147": {
+      "description": "Parks Development Projects - Feedback or Issue"
+    },
+    "148": {
+      "description": "Parks Maintenance"
+    },
+    "149": {
+      "description": "Pawn Brokers"
+    },
+    "150": {
+      "description": "Pedestrian Crossover (Crosswalk) Request"
+    },
+    "151": {
+      "description": "Personal Service Agent"
+    },
+    "152": {
+      "description": "Pet Shops"
+    },
+    "153": {
+      "description": "Pitbull Complaint"
+    },
+    "154": {
+      "description": "Playground Inspection"
+    },
+    "155": {
+      "description": "Plumber"
+    },
+    "156": {
+      "description": "Pothole on Road"
+    },
+    "157": {
+      "description": "PPO - Building Structures"
+    },
+    "158": {
+      "description": "PPO - Capital Works Projects"
+    },
+    "159": {
+      "description": "PPO - Construction Material/Equip"
+    },
+    "160": {
+      "description": "PPO - Construction Signs/Barricades"
+    },
+    "161": {
+      "description": "PPO - Dumpster/Garbage Bins"
+    },
+    "162": {
+      "description": "PPO - Emergency"
+    },
+    "163": {
+      "description": "PPO - Fence/Hedge"
+    },
+    "164": {
+      "description": "PPO - Landscaping Material"
+    },
+    "165": {
+      "description": "PPO - Sidewalk Cafe"
+    },
+    "166": {
+      "description": "PPO - Sign Complaint ROW"
+    },
+    "167": {
+      "description": "PPO - Sports Equipment"
+    },
+    "168": {
+      "description": "PPO - Utility Damage"
+    },
+    "169": {
+      "description": "Private Parking Lots"
+    },
+    "170": {
+      "description": "Private Parking Lots - Illegal Use"
+    },
+    "171": {
+      "description": "Property Evacuation Report"
+    },
+    "172": {
+      "description": "Property Flooding/Grading Complaint"
+    },
+    "173": {
+      "description": "Protection of Parks"
+    },
+    "174": {
+      "description": "Public Feedback"
+    },
+    "175": {
+      "description": "Public Hall"
+    },
+    "176": {
+      "description": "Public Parking Lots"
+    },
+    "177": {
+      "description": "Pump Station Issues"
+    },
+    "178": {
+      "description": "QA - Christina Forsyth"
+    },
+    "179": {
+      "description": "QA - Christina Leung"
+    },
+    "180": {
+      "description": "QA - Christine Dalpe"
+    },
+    "181": {
+      "description": "QA - Elizabeth Ryan"
+    },
+    "182": {
+      "description": "QA - Katie Skene"
+    },
+    "183": {
+      "description": "QA - Kirk Osborne"
+    },
+    "184": {
+      "description": "QA - Leigh Ann Dixon"
+    },
+    "185": {
+      "description": "QA - Lori Martin"
+    },
+    "186": {
+      "description": "QA - Maria Tosti"
+    },
+    "187": {
+      "description": "QA - Sandra Yacoub"
+    },
+    "188": {
+      "description": "QATEST"
+    },
+    "189": {
+      "description": "QP - Casslyn Heil"
+    },
+    "190": {
+      "description": "QP - Christina Forsyth"
+    },
+    "191": {
+      "description": "QP - Christina Leung"
+    },
+    "192": {
+      "description": "QP - Christine Dalpe"
+    },
+    "193": {
+      "description": "QP - David Verbora"
+    },
+    "194": {
+      "description": "QP - Deanna Evans"
+    },
+    "195": {
+      "description": "QP - Elizabeth Ryan"
+    },
+    "196": {
+      "description": "QP - Katie Skene"
+    },
+    "197": {
+      "description": "QP - Kirk Osborne"
+    },
+    "198": {
+      "description": "QP - Leigh Ann Dixon"
+    },
+    "199": {
+      "description": "QP - Lori Martin"
+    },
+    "200": {
+      "description": "QP - Maria Tosti"
+    },
+    "201": {
+      "description": "QP - Sandra Yacoub"
+    },
+    "202": {
+      "description": "QP - Sara Zuccato"
+    },
+    "203": {
+      "description": "Reassign Engineering"
+    },
+    "204": {
+      "description": "REC Client and Pin # Request"
+    },
+    "205": {
+      "description": "REC Program Information Inquiry"
+    },
+    "206": {
+      "description": "REC Registration Request"
+    },
+    "207": {
+      "description": "REC Rental Facility Search"
+    },
+    "208": {
+      "description": "Recreation Facility Feedback"
+    },
+    "209": {
+      "description": "Recycling Not Collected"
+    },
+    "210": {
+      "description": "Residential Parking Issues (On-Street)"
+    },
+    "211": {
+      "description": "Residential Rental Licence"
+    },
+    "212": {
+      "description": "Residents Requesting Assistance"
+    },
+    "213": {
+      "description": "Retail - Resale"
+    },
+    "214": {
+      "description": "River / Stream Issues"
+    },
+    "215": {
+      "description": "Road Cave-In"
+    },
+    "216": {
+      "description": "Road Cleanup"
+    },
+    "217": {
+      "description": "Road Maintenance"
+    },
+    "218": {
+      "description": "Rodent Extermination Program"
+    },
+    "219": {
+      "description": "Rodent Extermination Program - Animal Poisoning Report"
+    },
+    "220": {
+      "description": "RSVP"
+    },
+    "221": {
+      "description": "Salvage Yard"
+    },
+    "222": {
+      "description": "Sewer Issues / Road Flooding"
+    },
+    "223": {
+      "description": "Sewer Project Complaint"
+    },
+    "224": {
+      "description": "Sewer Project Issues"
+    },
+    "225": {
+      "description": "Sewer Project Restoration Complaint"
+    },
+    "226": {
+      "description": "Sewer Project Restoration Issues"
+    },
+    "227": {
+      "description": "Short Term Rental Issues"
+    },
+    "228": {
+      "description": "Shoulder Repairs & Service"
+    },
+    "229": {
+      "description": "Sidewalk Cleanup"
+    },
+    "230": {
+      "description": "Sidewalk Repair"
+    },
+    "231": {
+      "description": "Sign Complaint - Building"
+    },
+    "232": {
+      "description": "Sign Complaint - Portable"
+    },
+    "233": {
+      "description": "Skunk Inspection"
+    },
+    "234": {
+      "description": "Smoking Complaint"
+    },
+    "235": {
+      "description": "Smoking Complaint - Health Unit"
+    },
+    "236": {
+      "description": "Snow - Transit Bus Stops"
+    },
+    "237": {
+      "description": "Snow and Ice - Dumping on Road or Alley"
+    },
+    "238": {
+      "description": "Snow and Ice Removal Complaint - Sidewalks"
+    },
+    "239": {
+      "description": "Snow Angels Volunteer Registration"
+    },
+    "240": {
+      "description": "Snow Angels Waiting List"
+    },
+    "241": {
+      "description": "Snow Plow Damage"
+    },
+    "242": {
+      "description": "Snow Plowing and Salting Request"
+    },
+    "243": {
+      "description": "Snow Removal - Emergency"
+    },
+    "244": {
+      "description": "Special Garbage Collection - Flood"
+    },
+    "245": {
+      "description": "Special Sales"
+    },
+    "246": {
+      "description": "SR Configuration Defaults"
+    },
+    "247": {
+      "description": "Standing Water on Public Property"
+    },
+    "248": {
+      "description": "Stop Sign Request / Issue"
+    },
+    "249": {
+      "description": "Street Sweeping Request"
+    },
+    "250": {
+      "description": "Streetlight Issue"
+    },
+    "251": {
+      "description": "Strengthen the Core"
+    },
+    "252": {
+      "description": "Sump Pump Grant"
+    },
+    "253": {
+      "description": "Swimming Pool"
+    },
+    "254": {
+      "description": "Swimming Pool Concerns"
+    },
+    "255": {
+      "description": "Swimming Pool Issue"
+    },
+    "256": {
+      "description": "Tax Account Spelling Correction"
+    },
+    "257": {
+      "description": "Tax Inquiry"
+    },
+    "258": {
+      "description": "Tax Receipt Request"
+    },
+    "259": {
+      "description": "Tax Statement Request"
+    },
+    "260": {
+      "description": "Taxi Cab Driver"
+    },
+    "261": {
+      "description": "Taxi Cab Vehicle"
+    },
+    "262": {
+      "description": "TEMPLATE - QA SRs"
+    },
+    "263": {
+      "description": "TEMPLATE Employee/Department SF"
+    },
+    "264": {
+      "description": "TEMPLATE Quantitative Performance"
+    },
+    "265": {
+      "description": "TEMPLATE TC Speed Hump Survey"
+    },
+    "266": {
+      "description": "TEMPLATE Traffic Calming Survey"
+    },
+    "267": {
+      "description": "Tobacconist"
+    },
+    "268": {
+      "description": "Tow Truck Concerns"
+    },
+    "269": {
+      "description": "Tow Truck Driver Concerns"
+    },
+    "270": {
+      "description": "Traffic - Speed Concerns/Radar Trailer"
+    },
+    "271": {
+      "description": "Traffic Call - General"
+    },
+    "272": {
+      "description": "Traffic Calming Request"
+    },
+    "273": {
+      "description": "Traffic Sign Issues"
+    },
+    "274": {
+      "description": "Traffic Signal - Pedestrian Light"
+    },
+    "275": {
+      "description": "Traffic Signal Flashing"
+    },
+    "276": {
+      "description": "Traffic Signal Light Out"
+    },
+    "277": {
+      "description": "Traffic Signal Not Changing"
+    },
+    "278": {
+      "description": "Transit Windsor"
+    },
+    "279": {
+      "description": "Tree Maintenance"
+    },
+    "280": {
+      "description": "Tree Planting"
+    },
+    "281": {
+      "description": "Tree Planting Follow Up"
+    },
+    "282": {
+      "description": "TREE STORM"
+    },
+    "283": {
+      "description": "Utility Damage - on Public ROW"
+    },
+    "284": {
+      "description": "Vacant Home Tax"
+    },
+    "285": {
+      "description": "Vehicles Leaking Fluids"
+    },
+    "286": {
+      "description": "Vital Statistics Inquiry"
+    },
+    "287": {
+      "description": "Volunteer Registration"
+    },
+    "288": {
+      "description": "Walkways / Pedestrian Overpass"
+    },
+    "289": {
+      "description": "Ward/Council"
+    },
+    "290": {
+      "description": "Waste Disposal - Liquid"
+    },
+    "291": {
+      "description": "Website/Eservices Issues"
+    },
+    "292": {
+      "description": "West Nile Virus Program on Public Property"
+    },
+    "293": {
+      "description": "Willistead Inquiry"
+    },
+    "294": {
+      "description": "XX Quantitative Performance - Casslyn Heil"
+    },
+    "295": {
+      "description": "Yard Condition Complaints"
+    },
+    "296": {
+      "description": "Yard Waste Not Collected"
+    },
+    "297": {
+      "description": "Zalev Scrap Yard Concerns"
+    },
+    "298": {
+      "description": "Zoning Complaints - By-Law"
+    },
+    "299": {
+      "description": "ztest_SR"
+    },
+    "300": {
+      "description": "ZZ Moto Pothole Test"
+    },
+    "301": {
+      "description": "zzz location_test"
+    }
+  },
+  "group_descriptions": {
+    "1": {
+      "description": "211 Call Centre"
+    },
+    "2": {
+      "description": "Wuc"
+    },
+    "3": {
+      "description": "Crime Prevention"
+    },
+    "4": {
+      "description": "Public Works - Administration"
+    },
+    "5": {
+      "description": "Transit Windsor"
+    },
+    "6": {
+      "description": "Parks and Recreation"
+    },
+    "7": {
+      "description": "Community and Protective Services - Administration"
+    },
+    "8": {
+      "description": "Call Centre Group"
+    },
+    "9": {
+      "description": "Health Unit"
+    },
+    "10": {
+      "description": "Parks Development"
+    },
+    "11": {
+      "description": "Finance and City Treasurer"
+    },
+    "12": {
+      "description": "Community Services"
+    },
+    "13": {
+      "description": "Facilities"
+    },
+    "14": {
+      "description": "Information Technology"
+    },
+    "15": {
+      "description": "Chief Administrative Office"
+    },
+    "16": {
+      "description": "Community Development & Health"
+    },
+    "17": {
+      "description": "Economic Development"
+    },
+    "18": {
+      "description": "Council Services"
+    },
+    "19": {
+      "description": "Legal and Real Estate Services"
+    },
+    "20": {
+      "description": "Homelessness and Housing Support"
+    },
+    "21": {
+      "description": "Strategic Services - Administration"
+    },
+    "22": {
+      "description": "Forestry and Natural Areas"
+    },
+    "23": {
+      "description": "Contracts, Field Services and Maintenance"
+    },
+    "24": {
+      "description": "Parks Operations"
+    },
+    "25": {
+      "description": "Mayor's Office"
+    },
+    "26": {
+      "description": "Environmental Services"
+    },
+    "27": {
+      "description": "Customer Contact Centre"
+    },
+    "28": {
+      "description": "Children Services"
+    },
+    "29": {
+      "description": "City Clerk"
+    },
+    "30": {
+      "description": "Social Support Services"
+    },
+    "31": {
+      "description": "Huron Lodge"
+    },
+    "32": {
+      "description": "Social Services - Administration"
+    },
+    "33": {
+      "description": "Communication and Customer Service"
+    },
+    "34": {
+      "description": "CSR System Internal Group"
+    },
+    "35": {
+      "description": "Policy, Gaming, Licencing and Bylaw Enforcement"
+    },
+    "36": {
+      "description": "Powerlines"
+    },
+    "37": {
+      "description": "Purchasing & Risk Management"
+    },
+    "38": {
+      "description": "Humane Society"
+    },
+    "39": {
+      "description": "Hospitality and Facility Management"
+    },
+    "40": {
+      "description": "Clean City"
+    },
+    "41": {
+      "description": "Admin Data Group"
+    },
+    "42": {
+      "description": "Health and Human Services"
+    },
+    "43": {
+      "description": "Housing and Children Services"
+    },
+    "44": {
+      "description": "Horticulture"
+    },
+    "45": {
+      "description": "Taxation and Financial Projects"
+    },
+    "46": {
+      "description": "Pollution Control"
+    },
+    "47": {
+      "description": "Parking Enforcement"
+    },
+    "48": {
+      "description": "Transportation Planning"
+    },
+    "49": {
+      "description": "Infrastructure Services and City Engineer"
+    },
+    "50": {
+      "description": "Building Inspections"
+    },
+    "51": {
+      "description": "Corporate Services - Admin"
+    },
+    "52": {
+      "description": "Windsor Public Library"
+    },
+    "53": {
+      "description": "Building Services"
+    },
+    "54": {
+      "description": "Recreation and Culture"
+    },
+    "55": {
+      "description": "Corporate Services"
+    },
+    "56": {
+      "description": "Traffic"
+    },
+    "57": {
+      "description": "Human Resources and Employee Relations"
+    },
+    "58": {
+      "description": "Planning"
+    },
+    "59": {
+      "description": "Public Works Operations"
+    },
+    "60": {
+      "description": "Operations"
+    },
+    "61": {
+      "description": "Fire and Rescue Services"
+    }
+  },
+  "last_modified_times": {
+    "types": 1728998013.9266016,
+    "groups": 1728997982.3752809
+  }
+}

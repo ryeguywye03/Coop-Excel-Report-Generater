@@ -1,0 +1,42 @@
+2024-11-13 10:24:55,127 - AppLogger - ERROR - Error loading JSON: 'SettingsDialog' object has no attribute 'filter_list'
+2024-11-13 10:24:59,010 - AppLogger - ERROR - Error loading JSON: 'SettingsDialog' object has no attribute 'filter_list'
+2024-11-13 10:49:32,937 - AppLogger - ERROR - Error loading JSON: 'SettingsDialog' object has no attribute 'get_exclusions'
+2024-11-13 11:08:23,240 - AppLogger - ERROR - Error loading JSON: 'SettingsDialog' object has no attribute 'get_exclusions'
+2024-11-13 11:15:55,685 - AppLogger - ERROR - Error loading JSON: 'list' object has no attribute 'items'
+2024-11-13 11:17:45,793 - AppLogger - ERROR - Error loading JSON: 'list' object has no attribute 'items'
+2024-11-13 11:20:33,902 - AppLogger - ERROR - Error loading JSON: 'list' object has no attribute 'items'
+2024-11-13 11:22:02,435 - AppLogger - ERROR - Error loading JSON: 'list' object has no attribute 'items'
+2024-11-13 11:27:13,570 - AppLogger - ERROR - sr_type_exclusions is not a dictionary.
+2024-11-13 11:27:13,571 - AppLogger - ERROR - group_exclusions is not a dictionary.
+2024-11-13 11:27:13,571 - AppLogger - ERROR - no_location_sr_exclusions is not a dictionary.
+2024-11-13 11:27:13,571 - AppLogger - ERROR - no_location_group_exclusions is not a dictionary.
+2024-11-13 11:27:13,571 - AppLogger - ERROR - no_location_included_sr_exclusions is not a dictionary.
+2024-11-13 11:27:13,571 - AppLogger - ERROR - no_location_included_group_exclusions is not a dictionary.
+2024-11-13 11:29:29,904 - AppLogger - ERROR - sr_type_exclusions is not a dictionary.
+2024-11-13 11:29:29,904 - AppLogger - ERROR - group_exclusions is not a dictionary.
+2024-11-13 11:29:29,904 - AppLogger - ERROR - no_location_sr_exclusions is not a dictionary.
+2024-11-13 11:29:29,904 - AppLogger - ERROR - no_location_group_exclusions is not a dictionary.
+2024-11-13 11:29:29,904 - AppLogger - ERROR - no_location_included_sr_exclusions is not a dictionary.
+2024-11-13 11:29:29,904 - AppLogger - ERROR - no_location_included_group_exclusions is not a dictionary.
+2024-11-13 11:53:40,995 - AppLogger - ERROR - Error loading JSON: 'SettingsDialog' object has no attribute 'populate_list_with_checkboxes'
+2024-11-13 13:24:29,698 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/settings_dialog.py", line 265, in save_settings
+    'enable_no_location_included': self.no_location_include_card.isChecked(),  # Replace with actual enable checkbox reference
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SettingsDialog' object has no attribute 'no_location_include_card'
+2024-11-13 13:31:34,317 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/settings_dialog.py", line 262, in save_settings
+    'enable_excluded': self.exclude_enable_checkbox.isChecked(),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'isChecked'
+2024-11-13 15:10:35,221 - AppLogger - ERROR - Failed to save report: name 'grand_totals' is not defined
+2024-11-13 21:21:29,974 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/settings_handler.py", line 59, in save_settings
+    self.main_app.reload_stylesheet()  # Apply the new theme immediately
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'reload_stylesheet'. Did you mean: 'apply_stylesheet'?
+2024-11-13 21:22:15,164 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/settings_handler.py", line 59, in save_settings
+    self.main_app.reload_stylesheet()  # Apply the new theme immediately
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'reload_stylesheet'. Did you mean: 'apply_stylesheet'?
