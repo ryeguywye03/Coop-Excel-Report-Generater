@@ -54,9 +54,12 @@ class SettingsHandler(QDialog):
         current_theme = self.settings.get("theme", "dark")
 
         if current_theme != selected_theme:
-            self.settings.set("theme", selected_theme)
-            self.main_app.logger.log_info(f"Theme changed to {selected_theme}")
-            self.main_app.apply_stylesheet()  # Apply the new theme immediately
+            # Assuming `self.main_app` is the MainWindow instance
+            new_theme = "dark" if current_theme == "light" else "light"
+            self.main_app.settings.set("theme", new_theme)  # Save the theme to settings
+            self.main_app.apply_stylesheet(force=True)  # Apply the theme immediately with force
+            self.main_app.logger.log_info(f"Theme changed to {new_theme}")
+
 
         else:
             self.main_app.logger.log_info("Theme not changed; it remains as " + current_theme)

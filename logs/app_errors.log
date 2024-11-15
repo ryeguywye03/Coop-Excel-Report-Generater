@@ -40,3 +40,37 @@ AttributeError: 'MainWindow' object has no attribute 'reload_stylesheet'. Did yo
     self.main_app.reload_stylesheet()  # Apply the new theme immediately
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'MainWindow' object has no attribute 'reload_stylesheet'. Did you mean: 'apply_stylesheet'?
+2024-11-14 09:37:39,157 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 257, in load_excel
+    def load_excel(self):
+
+KeyboardInterrupt
+2024-11-14 10:37:17,113 - AppLogger - ERROR - Error during report generation: 'Month'
+2024-11-14 11:47:01,625 - AppLogger - ERROR - Error generating preview: 'ReportGenerator' object has no attribute 'show_report_preview'
+2024-11-14 12:37:34,418 - AppLogger - ERROR - Failed to save report: name 'total_format' is not defined
+2024-11-14 12:50:06,092 - AppLogger - ERROR - Error during report generation: 'ReportGenerator' object has no attribute 'is_totals_row_present'
+2024-11-14 14:03:58,585 - AppLogger - ERROR - Error during report generation: 'Jan'
+2024-11-14 14:13:52,128 - AppLogger - ERROR - Error during report generation: 'Jan'
+2024-11-14 14:48:02,005 - AppLogger - ERROR - Error during report generation: ReportGenerator.generate_report() got an unexpected keyword argument 'sort_by'
+2024-11-14 14:53:31,551 - AppLogger - ERROR - Preview report has not been generated.
+2024-11-14 14:53:38,769 - AppLogger - ERROR - Error generating preview: ReportGenerator.generate_report() got an unexpected keyword argument 'sort_by'
+2024-11-14 14:54:40,220 - AppLogger - ERROR - Error generating preview: ReportGenerator.generate_report() got an unexpected keyword argument 'sort_by'
+2024-11-14 15:03:07,552 - AppLogger - ERROR - Error during report generation: ReportGenerator.generate_report() got an unexpected keyword argument 'sort_by'
+2024-11-14 15:05:37,416 - AppLogger - ERROR - Error during report generation: 'ReportGenerator' object has no attribute 'report_generator'
+2024-11-14 15:05:37,419 - AppLogger - ERROR - Error during report generation: critical(parent: Optional[QWidget], title: Optional[str], text: Optional[str], buttons: QMessageBox.StandardButton = QMessageBox.Ok, defaultButton: QMessageBox.StandardButton = QMessageBox.NoButton): argument 1 has unexpected type 'ReportGenerator'
+2024-11-14 15:06:02,700 - AppLogger - ERROR - Error during report generation: 'ReportGenerator' object has no attribute 'report_generator'
+2024-11-14 15:06:02,701 - AppLogger - ERROR - Error during report generation: critical(parent: Optional[QWidget], title: Optional[str], text: Optional[str], buttons: QMessageBox.StandardButton = QMessageBox.Ok, defaultButton: QMessageBox.StandardButton = QMessageBox.NoButton): argument 1 has unexpected type 'ReportGenerator'
+2024-11-14 15:08:31,817 - AppLogger - ERROR - Error during report generation: 'ReportGenerator' object has no attribute 'report_generator'
+2024-11-14 15:08:31,819 - AppLogger - ERROR - Error during report generation: critical(parent: Optional[QWidget], title: Optional[str], text: Optional[str], buttons: QMessageBox.StandardButton = QMessageBox.Ok, defaultButton: QMessageBox.StandardButton = QMessageBox.NoButton): argument 1 has unexpected type 'ReportGenerator'
+2024-11-14 15:13:32,026 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 93, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 29, in __init__
+    self.report_generator = ReportGenerator(self.progress_bar)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ReportGenerator.__init__() missing 1 required positional argument: 'progress_bar'
+2024-11-14 15:16:12,782 - AppLogger - ERROR - Error during report generation: 'ReportGenerator' object has no attribute 'report_generator'
+2024-11-14 15:16:12,784 - AppLogger - ERROR - Error during report generation: critical(parent: Optional[QWidget], title: Optional[str], text: Optional[str], buttons: QMessageBox.StandardButton = QMessageBox.Ok, defaultButton: QMessageBox.StandardButton = QMessageBox.NoButton): argument 1 has unexpected type 'ReportGenerator'
+2024-11-15 08:10:07,925 - AppLogger - ERROR - Error generating report: 'Month'
+2024-11-15 11:12:40,659 - AppLogger - ERROR - Error generating report: 'ReportGenerator' object has no attribute '_append_totals'

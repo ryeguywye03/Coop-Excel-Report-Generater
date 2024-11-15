@@ -18,22 +18,26 @@ class MainWindow(QMainWindow):
 
         self.setup_ui()
 
-    def apply_stylesheet(self):
+    def apply_stylesheet(self, force=False):
         current_theme = self.settings.get("theme", "dark").lower()
         platform_name = platform.system().lower()
         qss_file = FileHelper.get_qss_file_path(current_theme, platform_name)
-        
-        # Only apply stylesheet if the theme has changed
-        if hasattr(self, "_last_applied_theme") and self._last_applied_theme == current_theme:
-            return  # Skip if the theme is already applied
 
-        if qss_file:
-            try:
-                with open(qss_file, "r") as file:
-                    self.setStyleSheet(file.read())
-                self._last_applied_theme = current_theme
-            except FileNotFoundError:
-                self.logger.log_error(f"Stylesheet file not found: {qss_file}")
+        # Only apply stylesheet if the theme has changed or if forced
+        if force or not hasattr(self, "_last_applied_theme") or self._last_applied_theme != current_theme:
+            if qss_file:
+                try:
+                    with open(qss_file, "r") as file:
+                        self.setStyleSheet(file.read())
+                    self._last_applied_theme = current_theme
+                    self.logger.log_info(f"Theme applied: {current_theme}")
+                except FileNotFoundError:
+                    self.logger.log_error(f"Stylesheet file not found: {qss_file}")
+            else:
+                self.logger.log_error(f"QSS file path not found for theme: {current_theme}")
+        else:
+            self.logger.log_debug("Theme not changed; it remains as {current_theme}")
+
 
 
     def set_app_version(self):
