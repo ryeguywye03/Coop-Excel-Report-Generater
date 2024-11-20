@@ -22490,3 +22490,34 @@ TypeError: 'builtin_function_or_method' object is not iterable
 2024-11-20 12:46:34,640 - AppLogger - INFO - Settings loaded successfully.
 2024-11-20 12:46:34,792 - AppLogger - INFO - Switched to Main Menu
 2024-11-20 12:46:35,891 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 13:20:16,358 - AppLogger - INFO - App initialized
+2024-11-20 13:52:54,318 - AppLogger - INFO - App initialized
+2024-11-20 13:52:54,322 - AppLogger - INFO - App initialized
+2024-11-20 13:52:54,322 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 13:52:54,325 - AppLogger - INFO - Theme applied: dark
+2024-11-20 13:52:54,327 - AppLogger - INFO - Settings loaded successfully
+2024-11-20 13:52:54,328 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 13:52:54,457 - AppLogger - INFO - Switched to Main Menu
+2024-11-20 13:52:54,457 - AppLogger - INFO - App version set to v1.0.45
+2024-11-20 13:52:54,457 - AppLogger - INFO - Checking for updates...
+2024-11-20 13:53:07,254 - AppLogger - INFO - App initialized
+2024-11-20 13:53:07,255 - AppLogger - INFO - App initialized
+2024-11-20 13:53:07,255 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 13:53:07,256 - AppLogger - INFO - Theme applied: dark
+2024-11-20 13:53:07,256 - AppLogger - INFO - Settings loaded successfully
+2024-11-20 13:53:07,257 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 13:53:07,372 - AppLogger - INFO - Switched to Main Menu
+2024-11-20 13:53:07,372 - AppLogger - INFO - App version set to v1.0.45
+2024-11-20 13:53:07,372 - AppLogger - INFO - Checking for updates...
+2024-11-20 13:53:24,513 - AppLogger - INFO - You are using the latest version.
+2024-11-20 13:56:14,357 - AppLogger - INFO - App initialized
+2024-11-20 13:56:14,358 - AppLogger - INFO - App initialized
+2024-11-20 13:56:14,358 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 13:56:14,359 - AppLogger - INFO - Theme applied: dark
+2024-11-20 13:56:14,359 - AppLogger - INFO - Settings loaded successfully
+2024-11-20 13:56:14,361 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 13:56:14,476 - AppLogger - INFO - Switched to Main Menu
+2024-11-20 13:56:14,476 - AppLogger - INFO - App version set to v1.0.45
+2024-11-20 13:56:14,476 - AppLogger - INFO - Checking for updates...
+2024-11-20 13:56:15,046 - AppLogger - INFO - Fetched version from URL: v1.0.45
+2024-11-20 13:56:15,047 - AppLogger - INFO - You are using the latest version.

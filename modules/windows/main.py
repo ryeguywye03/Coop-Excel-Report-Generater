@@ -14,7 +14,7 @@ class MainWindow(QMainWindow):
 
         self.settings = AppSettings()
         self.apply_stylesheet()
-        self.set_app_version()
+        
 
         self.setup_ui()
 
@@ -38,22 +38,6 @@ class MainWindow(QMainWindow):
         else:
             self.logger.log_debug("Theme not changed; it remains as {current_theme}")
 
-
-
-    def set_app_version(self):
-        version_path = FileHelper.get_version_file_path()
-        
-        # Log the directory from where the version file is expected to be found
-        self.logger.log_info(f"Looking for version file at: {version_path}")
-
-        try:
-            with open(version_path) as version_file:
-                version = version_file.read().strip()
-                self.setWindowTitle(f"Excel Report Generator - v{version}")
-                self.logger.log_info(f"App version set to v{version}")
-        except FileNotFoundError:
-            self.setWindowTitle("Excel Report Generator - Version not found")
-            self.logger.log_error("version.txt not found")
 
 
     def setup_ui(self):
