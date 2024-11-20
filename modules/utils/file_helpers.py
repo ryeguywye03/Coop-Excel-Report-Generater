@@ -43,6 +43,11 @@ class FileHelper:
     def get_excel_file_path(filename):
         """Get the path to an Excel file in the resources/Excel folder."""
         return FileHelper.resource_path(os.path.join('resources', 'Excel', filename))
+    
+    @staticmethod
+    def get_excel_type_path():
+        """Get the path to an Excel file in the resources/Excel folder."""
+        return FileHelper.resource_path(os.path.join('resources', 'Excel', filename))
 
     @staticmethod
     def get_json_file_path(filename):
@@ -60,7 +65,7 @@ class FileHelper:
         if platform.lower() == "darwin":  # macOS
             path = FileHelper.resource_path(os.path.join('resources', 'styles', 'mac', f'mac_{theme}_style.qss'))
         elif platform.lower() == "windows":  # Windows
-            path = FileHelper.resource_path(os.path.join('resources', 'styles', 'windows', f'modified_windows_{theme}_style.qss'))
+            path = FileHelper.resource_path(os.path.join('resources', 'styles', 'windows', f'windows_{theme}_style.qss'))
         else:
             path = None  # Handle other platforms as needed
         if FileHelper.PRINT_ENABLED:
@@ -89,21 +94,26 @@ class FileHelper:
 
     @staticmethod
     def read_excel(file_path):
-        """Read data from an Excel file and return it as a dictionary."""
+        """Read data from an Excel file and return it as a pandas DataFrame, handling both .xls and .xlsx formats."""
         if not os.path.exists(file_path):
             if FileHelper.PRINT_ENABLED:
                 print(f"Excel file not found: {file_path}")
             return None
         try:
-            df = pd.read_excel(file_path)
-            data = df.to_dict(orient='index')  # Convert DataFrame to a dictionary by index
+            # Use different engines based on file extension
+            if file_path.endswith('.xls'):
+                df = pd.read_excel(file_path, engine='xlrd')
+            else:
+                df = pd.read_excel(file_path, engine='openpyxl')
+            
             if FileHelper.PRINT_ENABLED:
-                print(f"Read data from {file_path}: {data}")
-            return data
+                print(f"Read data from {file_path}:\n{df}")
+            return df  # Return DataFrame directly
         except Exception as e:
             if FileHelper.PRINT_ENABLED:
                 print(f"Error reading Excel file {file_path}: {e}")
             return None
+
 
     @staticmethod
     def json_file_exists(json_path):

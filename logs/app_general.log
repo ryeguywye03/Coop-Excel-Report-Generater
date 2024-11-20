@@ -21159,3 +21159,1334 @@ TypeError: ReportGenerator.__init__() missing 1 required positional argument: 'p
 2024-11-15 11:44:48,444 - AppLogger - INFO - Report generation completed successfully.
 2024-11-15 11:44:48,445 - AppLogger - INFO - Saving report to Excel
 2024-11-15 11:44:49,940 - AppLogger - INFO - Report saved to /Users/ryanwybenga/Desktop/sr_count_report-11-15-2024-11-44-48.xlsx
+2024-11-15 12:40:41,145 - AppLogger - INFO - App initialized
+2024-11-15 12:40:41,149 - AppLogger - INFO - App initialized
+2024-11-15 12:40:41,149 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 12:40:41,154 - AppLogger - INFO - Theme applied: dark
+2024-11-15 12:40:41,154 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 12:40:41,154 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 12:40:41,157 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 12:40:41,158 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 12:40:41,289 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 12:48:25,464 - AppLogger - INFO - App initialized
+2024-11-15 12:48:25,467 - AppLogger - INFO - App initialized
+2024-11-15 12:48:25,468 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 12:48:25,472 - AppLogger - INFO - Theme applied: dark
+2024-11-15 12:48:25,472 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 12:48:25,472 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 12:48:25,474 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 12:48:25,475 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 12:48:25,598 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 12:48:27,191 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 12:48:27,215 - AppLogger - INFO - ReportGenerator initialized
+2024-11-15 12:48:27,216 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 12:48:27,220 - AppLogger - INFO - Switched to SR Counter
+2024-11-15 12:48:28,676 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 12:48:29,389 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 12:49:54,994 - AppLogger - INFO - Switched to SR Counter
+2024-11-15 12:52:57,830 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 12:52:58,464 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:06:50,569 - AppLogger - INFO - App initialized
+2024-11-15 13:06:50,573 - AppLogger - INFO - App initialized
+2024-11-15 13:06:50,573 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:06:50,578 - AppLogger - INFO - Theme applied: dark
+2024-11-15 13:06:50,578 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 13:06:50,578 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 13:06:50,580 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 13:06:50,584 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:06:50,722 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:06:53,209 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/main_menu_ui.py", line 72, in open_settings_dialog
+    dialog = SettingsHandler(main_app=self.main_window)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/settings_handler.py", line 110, in __init__
+    self.settings = AppSettings()
+                    ^^^^^^^^^^^
+NameError: name 'AppSettings' is not defined
+2024-11-15 13:11:57,144 - AppLogger - INFO - App initialized
+2024-11-15 13:11:57,147 - AppLogger - INFO - App initialized
+2024-11-15 13:11:57,147 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:11:57,151 - AppLogger - INFO - Theme applied: dark
+2024-11-15 13:11:57,151 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 13:11:57,151 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 13:11:57,154 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 13:11:57,156 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:11:57,282 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:12:03,351 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:14:23,950 - AppLogger - INFO - App initialized
+2024-11-15 13:14:23,951 - AppLogger - INFO - App initialized
+2024-11-15 13:14:23,952 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:14:23,952 - AppLogger - INFO - Theme applied: dark
+2024-11-15 13:14:23,952 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 13:14:23,952 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 13:14:23,953 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 13:14:23,955 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:14:24,074 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:14:26,319 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:14:28,568 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/settings_handler.py", line 70, in open_groups_dialog
+    dialog = EditableTableDialog(self.groups_data, ["Group"], self)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EditableTableDialog.__init__() takes from 2 to 3 positional arguments but 4 were given
+2024-11-15 13:15:54,918 - AppLogger - INFO - App initialized
+2024-11-15 13:15:54,921 - AppLogger - INFO - App initialized
+2024-11-15 13:15:54,922 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:15:54,925 - AppLogger - INFO - Theme applied: dark
+2024-11-15 13:15:54,925 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 13:15:54,925 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 13:15:54,927 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 13:15:54,928 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:15:55,052 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:15:56,518 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:20:52,565 - AppLogger - INFO - App initialized
+2024-11-15 13:20:52,568 - AppLogger - INFO - App initialized
+2024-11-15 13:20:52,568 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:20:52,573 - AppLogger - INFO - Theme applied: dark
+2024-11-15 13:20:52,573 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 13:20:52,573 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 13:20:52,576 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 13:20:52,578 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:20:52,702 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:20:53,956 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:20:55,522 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/settings_handler.py", line 57, in open_types_dialog
+    dialog = EditableTableDialog(["Type"], "311_GIS_Type_Descriptions.xlsx", self)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 19, in __init__
+    self.data = self.load_data_from_excel()  # Load data on initialization
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 69, in load_data_from_excel
+    return [tuple(row) for row in data.values] if data is not None else []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'builtin_function_or_method' object is not iterable
+2024-11-15 13:23:57,242 - AppLogger - INFO - App initialized
+2024-11-15 13:23:57,245 - AppLogger - INFO - App initialized
+2024-11-15 13:23:57,245 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:23:57,249 - AppLogger - INFO - Theme applied: dark
+2024-11-15 13:23:57,249 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 13:23:57,249 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 13:23:57,251 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 13:23:57,253 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:23:57,379 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:23:58,624 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:29:31,087 - AppLogger - INFO - App initialized
+2024-11-15 13:29:31,088 - AppLogger - INFO - App initialized
+2024-11-15 13:29:31,088 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:29:31,089 - AppLogger - INFO - Theme applied: dark
+2024-11-15 13:29:31,089 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 13:29:31,089 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 13:29:31,089 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 13:29:31,091 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:29:31,205 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:29:32,377 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:29:32,390 - AppLogger - INFO - ReportGenerator initialized
+2024-11-15 13:29:32,390 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:29:32,393 - AppLogger - INFO - Switched to SR Counter
+2024-11-15 13:29:40,216 - AppLogger - INFO - Excel file loaded successfully.
+2024-11-15 13:29:40,216 - AppLogger - INFO - Sort By changed to: 
+2024-11-15 13:29:40,216 - AppLogger - INFO - Sort By changed to: FID
+2024-11-15 13:29:40,216 - AppLogger - INFO - Dropdown populated with columns: Index(['FID', 'Service Request Number', 'Type Description', 'Created Date',
+       'Status_Des', 'Group Description', 'X Value', 'Y Value'],
+      dtype='object'), defaulted to: FID
+2024-11-15 13:29:43,627 - AppLogger - INFO - Sort By changed to: Group Description
+2024-11-15 13:29:52,312 - AppLogger - INFO - Preview Report - Sort By: Group Description
+2024-11-15 13:29:52,312 - AppLogger - INFO - Starting report generation from 2024-10-15 08:00:00 to 2024-10-31 16:00:00
+2024-11-15 13:29:52,348 - AppLogger - INFO - Sorted by Group Description
+2024-11-15 13:29:52,349 - AppLogger - INFO - Totals row appended successfully.
+2024-11-15 13:29:52,349 - AppLogger - INFO - Report generation completed successfully.
+2024-11-15 13:29:52,349 - AppLogger - INFO - Displaying report preview
+2024-11-15 13:30:15,811 - AppLogger - INFO - Preview Report - Sort By: Group Description
+2024-11-15 13:30:15,811 - AppLogger - INFO - Starting report generation from 2024-01-01 08:00:00 to 2024-10-31 16:00:00
+2024-11-15 13:30:16,034 - AppLogger - INFO - Sorted by Group Description
+2024-11-15 13:30:16,034 - AppLogger - INFO - Totals row appended successfully.
+2024-11-15 13:30:16,034 - AppLogger - INFO - Report generation completed successfully.
+2024-11-15 13:30:16,034 - AppLogger - INFO - Displaying report preview
+2024-11-15 13:30:25,279 - AppLogger - INFO - Generating report with sort column: Group Description
+2024-11-15 13:30:25,280 - AppLogger - INFO - Starting report generation from 2024-01-01 08:00:00 to 2024-10-31 16:00:00
+2024-11-15 13:30:25,501 - AppLogger - INFO - Sorted by Group Description
+2024-11-15 13:30:25,502 - AppLogger - INFO - Totals row appended successfully.
+2024-11-15 13:30:25,502 - AppLogger - INFO - Report generation completed successfully.
+2024-11-15 13:30:25,502 - AppLogger - INFO - Saving report to Excel
+2024-11-15 13:30:27,381 - AppLogger - INFO - Report saved to /Users/ryanwybenga/Desktop/sr_count_report-11-15-2024-13-30-25.xlsx
+2024-11-15 13:32:37,932 - AppLogger - INFO - App initialized
+2024-11-15 13:32:37,935 - AppLogger - INFO - App initialized
+2024-11-15 13:32:37,935 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:32:37,939 - AppLogger - INFO - Theme applied: dark
+2024-11-15 13:32:37,939 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 13:32:37,940 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 13:32:37,942 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 13:32:37,943 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:32:38,072 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:32:39,563 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:32:39,585 - AppLogger - INFO - ReportGenerator initialized
+2024-11-15 13:32:39,586 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:32:39,589 - AppLogger - INFO - Switched to SR Counter
+2024-11-15 13:32:47,018 - AppLogger - INFO - Excel file loaded successfully.
+2024-11-15 13:32:47,018 - AppLogger - INFO - Sort By changed to: 
+2024-11-15 13:32:47,019 - AppLogger - INFO - Sort By changed to: FID
+2024-11-15 13:32:47,019 - AppLogger - INFO - Dropdown populated with columns: Index(['FID', 'Service Request Number', 'Type Description', 'Created Date',
+       'Status_Des', 'Group Description', 'X Value', 'Y Value'],
+      dtype='object'), defaulted to: FID
+2024-11-15 13:32:59,312 - AppLogger - INFO - Sort By changed to: Group Description
+2024-11-15 13:33:00,680 - AppLogger - INFO - Preview Report - Sort By: Group Description
+2024-11-15 13:33:00,681 - AppLogger - INFO - Starting report generation from 2024-01-01 08:00:00 to 2024-10-31 16:00:00
+2024-11-15 13:33:00,895 - AppLogger - INFO - Sorted by Group Description
+2024-11-15 13:33:00,896 - AppLogger - INFO - Totals row appended successfully.
+2024-11-15 13:33:00,896 - AppLogger - INFO - Report generation completed successfully.
+2024-11-15 13:33:00,896 - AppLogger - INFO - Displaying report preview
+2024-11-15 13:33:09,180 - AppLogger - INFO - Sort By changed to: 
+2024-11-15 13:33:09,181 - AppLogger - INFO - Excel file cleared.
+2024-11-15 13:33:10,565 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:33:10,566 - AppLogger - INFO - Initial state for enable checkbox 'Exclude SR Types and Groups': Unchecked
+2024-11-15 13:33:10,569 - AppLogger - INFO - Initial state for SR Type '1 Survey for KB Calls' (1): Unchecked
+2024-11-15 13:33:10,570 - AppLogger - INFO - Initial state for SR Type '3 Day Parking Infraction' (2): Unchecked
+2024-11-15 13:33:10,570 - AppLogger - INFO - Initial state for SR Type '311 Request for Custom Map' (3): Unchecked
+2024-11-15 13:33:10,570 - AppLogger - INFO - Initial state for SR Type '311 Request for Custom Report' (4): Unchecked
+2024-11-15 13:33:10,570 - AppLogger - INFO - Initial state for SR Type '311 Texting' (5): Unchecked
+2024-11-15 13:33:10,570 - AppLogger - INFO - Initial state for SR Type 'Abandoned Vehicle' (6): Unchecked
+2024-11-15 13:33:10,571 - AppLogger - INFO - Initial state for SR Type 'Accessibility Concerns - Buildings' (7): Unchecked
+2024-11-15 13:33:10,571 - AppLogger - INFO - Initial state for SR Type 'Accessible Alternate Format Document Request' (8): Unchecked
+2024-11-15 13:33:10,571 - AppLogger - INFO - Initial state for SR Type 'Accessible Customer Service Feedback' (9): Unchecked
+2024-11-15 13:33:10,571 - AppLogger - INFO - Initial state for SR Type 'Accessible Parking Spot Removal (On-Street)' (10): Unchecked
+2024-11-15 13:33:10,572 - AppLogger - INFO - Initial state for SR Type 'Adult Entertainment Parlour' (11): Unchecked
+2024-11-15 13:33:10,572 - AppLogger - INFO - Initial state for SR Type 'Alley or Laneway Naming' (12): Unchecked
+2024-11-15 13:33:10,572 - AppLogger - INFO - Initial state for SR Type 'Alley Repair / Flooding' (13): Unchecked
+2024-11-15 13:33:10,572 - AppLogger - INFO - Initial state for SR Type 'AMANDA Yard Conditions' (14): Unchecked
+2024-11-15 13:33:10,572 - AppLogger - INFO - Initial state for SR Type 'Anniversary Letter Request' (15): Unchecked
+2024-11-15 13:33:10,572 - AppLogger - INFO - Initial state for SR Type 'Antique Metal - Old Gold' (16): Unchecked
+2024-11-15 13:33:10,572 - AppLogger - INFO - Initial state for SR Type 'Auctioneer' (17): Unchecked
+2024-11-15 13:33:10,572 - AppLogger - INFO - Initial state for SR Type 'Automobile Service Station' (18): Unchecked
+2024-11-15 13:33:10,573 - AppLogger - INFO - Initial state for SR Type 'Barking Dog Complaint (Proactive)' (19): Unchecked
+2024-11-15 13:33:10,573 - AppLogger - INFO - Initial state for SR Type 'Basement Flooding' (20): Unchecked
+2024-11-15 13:33:10,573 - AppLogger - INFO - Initial state for SR Type 'Bed & Breakfast/Guest House' (21): Unchecked
+2024-11-15 13:33:10,573 - AppLogger - INFO - Initial state for SR Type 'Bill Distributor' (22): Unchecked
+2024-11-15 13:33:10,573 - AppLogger - INFO - Initial state for SR Type 'Bingos & Charities' (23): Unchecked
+2024-11-15 13:33:10,573 - AppLogger - INFO - Initial state for SR Type 'Birthday Letter Request' (24): Unchecked
+2024-11-15 13:33:10,573 - AppLogger - INFO - Initial state for SR Type 'Body Modification' (25): Unchecked
+2024-11-15 13:33:10,573 - AppLogger - INFO - Initial state for SR Type 'Body Rub Parlour' (26): Unchecked
+2024-11-15 13:33:10,573 - AppLogger - INFO - Initial state for SR Type 'Building / Land - Improper Use' (27): Unchecked
+2024-11-15 13:33:10,574 - AppLogger - INFO - Initial state for SR Type 'Building Condition Complaint' (28): Unchecked
+2024-11-15 13:33:10,574 - AppLogger - INFO - Initial state for SR Type 'Bulk Item Not Collected' (29): Unchecked
+2024-11-15 13:33:10,574 - AppLogger - INFO - Initial state for SR Type 'Bulk Item Pick-Up (Furniture)' (30): Unchecked
+2024-11-15 13:33:10,574 - AppLogger - INFO - Initial state for SR Type 'Call Centre Technical Issues Log' (31): Unchecked
+2024-11-15 13:33:10,574 - AppLogger - INFO - Initial state for SR Type 'Call Tracker' (32): Unchecked
+2024-11-15 13:33:10,575 - AppLogger - INFO - Initial state for SR Type 'Cannabis Odour' (33): Unchecked
+2024-11-15 13:33:10,575 - AppLogger - INFO - Initial state for SR Type 'Carnival & Circus' (34): Unchecked
+2024-11-15 13:33:10,575 - AppLogger - INFO - Initial state for SR Type 'Cat Voucher - Feral Cats' (35): Unchecked
+2024-11-15 13:33:10,575 - AppLogger - INFO - Initial state for SR Type 'Cat Voucher - Owned Cats' (36): Unchecked
+2024-11-15 13:33:10,575 - AppLogger - INFO - Initial state for SR Type 'City Owned Property Sale - Inquiry' (37): Unchecked
+2024-11-15 13:33:10,575 - AppLogger - INFO - Initial state for SR Type 'Clean Sweep Registration' (38): Unchecked
+2024-11-15 13:33:10,575 - AppLogger - INFO - Initial state for SR Type 'Collection Calendar Request' (39): Unchecked
+2024-11-15 13:33:10,575 - AppLogger - INFO - Initial state for SR Type 'Commercial Parking Issues (On-Street)' (40): Unchecked
+2024-11-15 13:33:10,576 - AppLogger - INFO - Initial state for SR Type 'Construction Site Conditions' (41): Unchecked
+2024-11-15 13:33:10,576 - AppLogger - INFO - Initial state for SR Type 'Construction Site Issues' (42): Unchecked
+2024-11-15 13:33:10,576 - AppLogger - INFO - Initial state for SR Type 'Council Secretariat' (43): Unchecked
+2024-11-15 13:33:10,576 - AppLogger - INFO - Initial state for SR Type 'Council Services Inquiry' (44): Unchecked
+2024-11-15 13:33:10,576 - AppLogger - INFO - Initial state for SR Type 'Curb Complaint' (45): Unchecked
+2024-11-15 13:33:10,576 - AppLogger - INFO - Initial state for SR Type 'Customer Service Feedback' (46): Unchecked
+2024-11-15 13:33:10,576 - AppLogger - INFO - Initial state for SR Type 'Damage - Garbage - Collection Containers' (47): Unchecked
+2024-11-15 13:33:10,576 - AppLogger - INFO - Initial state for SR Type 'Damage - Property - Env. Services' (48): Unchecked
+2024-11-15 13:33:10,576 - AppLogger - INFO - Initial state for SR Type 'Damage - Recycle - Collection Containers' (49): Unchecked
+2024-11-15 13:33:10,577 - AppLogger - INFO - Initial state for SR Type 'Damage - Recycle - Property' (50): Unchecked
+2024-11-15 13:33:10,577 - AppLogger - INFO - Initial state for SR Type 'Damage Report - Garbage/Recycle' (51): Unchecked
+2024-11-15 13:33:10,577 - AppLogger - INFO - Initial state for SR Type 'Dead Animal Removal' (52): Unchecked
+2024-11-15 13:33:10,577 - AppLogger - INFO - Initial state for SR Type 'Dead Cat or Dog' (53): Unchecked
+2024-11-15 13:33:10,577 - AppLogger - INFO - Initial state for SR Type 'Dilapidated Vehicles Complaint (Proactive)' (54): Unchecked
+2024-11-15 13:33:10,577 - AppLogger - INFO - Initial state for SR Type 'Dirty Alley Complaint' (55): Unchecked
+2024-11-15 13:33:10,577 - AppLogger - INFO - Initial state for SR Type 'Dirty Yard / Alley' (56): Unchecked
+2024-11-15 13:33:10,577 - AppLogger - INFO - Initial state for SR Type 'Ditch Cutting' (57): Unchecked
+2024-11-15 13:33:10,577 - AppLogger - INFO - Initial state for SR Type 'Ditch Fill' (58): Unchecked
+2024-11-15 13:33:10,578 - AppLogger - INFO - Initial state for SR Type 'DO NOT USE - Radar Trailer (Speed Limit Device)' (59): Unchecked
+2024-11-15 13:33:10,578 - AppLogger - INFO - Initial state for SR Type 'Document / Form Request' (60): Unchecked
+2024-11-15 13:33:10,578 - AppLogger - INFO - Initial state for SR Type 'Dog - Excrement (Proactive)' (61): Unchecked
+2024-11-15 13:33:10,578 - AppLogger - INFO - Initial state for SR Type 'Dog - Unlicensed (Proactive)' (62): Unchecked
+2024-11-15 13:33:10,578 - AppLogger - INFO - Initial state for SR Type 'Dog Bite' (63): Unchecked
+2024-11-15 13:33:10,578 - AppLogger - INFO - Initial state for SR Type 'Dog Complaint' (64): Unchecked
+2024-11-15 13:33:10,578 - AppLogger - INFO - Initial state for SR Type 'Donation Bin Issue' (65): Unchecked
+2024-11-15 13:33:10,578 - AppLogger - INFO - Initial state for SR Type 'Downspout Disconnect Service' (66): Unchecked
+2024-11-15 13:33:10,579 - AppLogger - INFO - Initial state for SR Type 'Drainage' (67): Unchecked
+2024-11-15 13:33:10,579 - AppLogger - INFO - Initial state for SR Type 'Driveway Damage' (68): Unchecked
+2024-11-15 13:33:10,579 - AppLogger - INFO - Initial state for SR Type 'Driveway Permit Issues' (69): Unchecked
+2024-11-15 13:33:10,579 - AppLogger - INFO - Initial state for SR Type 'Elected Officials Feedback' (70): Unchecked
+2024-11-15 13:33:10,579 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - CAO' (71): Unchecked
+2024-11-15 13:33:10,579 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Community Services' (72): Unchecked
+2024-11-15 13:33:10,579 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Corporate Services' (73): Unchecked
+2024-11-15 13:33:10,579 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Economic Development' (74): Unchecked
+2024-11-15 13:33:10,580 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Finance and City Treasurer' (75): Unchecked
+2024-11-15 13:33:10,580 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Health and Human Services' (76): Unchecked
+2024-11-15 13:33:10,580 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Infrastructure Services and City Engineer' (77): Unchecked
+2024-11-15 13:33:10,580 - AppLogger - INFO - Initial state for SR Type 'Entertainment Lounge' (78): Unchecked
+2024-11-15 13:33:10,580 - AppLogger - INFO - Initial state for SR Type 'Environmental Contracted Services Feedback' (79): Unchecked
+2024-11-15 13:33:10,580 - AppLogger - INFO - Initial state for SR Type 'E-Scooter Concerns/Issues' (80): Unchecked
+2024-11-15 13:33:10,580 - AppLogger - INFO - Initial state for SR Type 'Escorts' (81): Unchecked
+2024-11-15 13:33:10,580 - AppLogger - INFO - Initial state for SR Type 'EZ Tool - Manage Citizen App SR Type Configuration' (82): Unchecked
+2024-11-15 13:33:10,581 - AppLogger - INFO - Initial state for SR Type 'Facilities Maintenance' (83): Unchecked
+2024-11-15 13:33:10,581 - AppLogger - INFO - Initial state for SR Type 'Feeding of Wildlife' (84): Unchecked
+2024-11-15 13:33:10,581 - AppLogger - INFO - Initial state for SR Type 'Fence & Hedge Complaint - Bylaw' (85): Unchecked
+2024-11-15 13:33:10,581 - AppLogger - INFO - Initial state for SR Type 'Fence / Hedge Concerns' (86): Unchecked
+2024-11-15 13:33:10,581 - AppLogger - INFO - Initial state for SR Type 'Fence Repairs on City Property' (87): Unchecked
+2024-11-15 13:33:10,581 - AppLogger - INFO - Initial state for SR Type 'Feral Animal' (88): Unchecked
+2024-11-15 13:33:10,581 - AppLogger - INFO - Initial state for SR Type 'Fire Overcrowding / Multiple Units' (89): Unchecked
+2024-11-15 13:33:10,581 - AppLogger - INFO - Initial state for SR Type 'Fireworks Complaint' (90): Unchecked
+2024-11-15 13:33:10,581 - AppLogger - INFO - Initial state for SR Type 'Food Store' (91): Unchecked
+2024-11-15 13:33:10,582 - AppLogger - INFO - Initial state for SR Type 'Garbage Not Collected' (92): Unchecked
+2024-11-15 13:33:10,582 - AppLogger - INFO - Initial state for SR Type 'Garbage Preparation Issues' (93): Unchecked
+2024-11-15 13:33:10,582 - AppLogger - INFO - Initial state for SR Type 'Graffiti Complaint' (94): Unchecked
+2024-11-15 13:33:10,582 - AppLogger - INFO - Initial state for SR Type 'Grass-Weeds on Private Property (Proactive)' (95): Unchecked
+2024-11-15 13:33:10,582 - AppLogger - INFO - Initial state for SR Type 'Guard Rail Repair' (96): Unchecked
+2024-11-15 13:33:10,582 - AppLogger - INFO - Initial state for SR Type 'Handi Transit' (97): Unchecked
+2024-11-15 13:33:10,582 - AppLogger - INFO - Initial state for SR Type 'Hawker - Peddler' (98): Unchecked
+2024-11-15 13:33:10,582 - AppLogger - INFO - Initial state for SR Type 'Heating Work - HVAC' (99): Unchecked
+2024-11-15 13:33:10,583 - AppLogger - INFO - Initial state for SR Type 'Holistic Centre' (100): Unchecked
+2024-11-15 13:33:10,583 - AppLogger - INFO - Initial state for SR Type 'Holistic Practitioner' (101): Unchecked
+2024-11-15 13:33:10,583 - AppLogger - INFO - Initial state for SR Type 'Homelessness Report' (102): Unchecked
+2024-11-15 13:33:10,583 - AppLogger - INFO - Initial state for SR Type 'Horticulture Request' (103): Unchecked
+2024-11-15 13:33:10,583 - AppLogger - INFO - Initial state for SR Type 'Hospitality' (104): Unchecked
+2024-11-15 13:33:10,583 - AppLogger - INFO - Initial state for SR Type 'Idling Complaint' (105): Unchecked
+2024-11-15 13:33:10,583 - AppLogger - INFO - Initial state for SR Type 'Illegal Dumping Public Property' (106): Unchecked
+2024-11-15 13:33:10,583 - AppLogger - INFO - Initial state for SR Type 'Inappropriate or Labour Intensive Calls' (107): Unchecked
+2024-11-15 13:33:10,584 - AppLogger - INFO - Initial state for SR Type 'KB Changes' (108): Unchecked
+2024-11-15 13:33:10,584 - AppLogger - INFO - Initial state for SR Type 'KB Mapping Changes' (109): Unchecked
+2024-11-15 13:33:10,596 - AppLogger - INFO - Initial state for SR Type 'Keeping of Animals' (110): Unchecked
+2024-11-15 13:33:10,597 - AppLogger - INFO - Initial state for SR Type 'KSTEST' (111): Unchecked
+2024-11-15 13:33:10,597 - AppLogger - INFO - Initial state for SR Type 'Lakes / Ponds Issues' (112): Unchecked
+2024-11-15 13:33:10,597 - AppLogger - INFO - Initial state for SR Type 'Lighting Issues - City Facilities' (113): Unchecked
+2024-11-15 13:33:10,597 - AppLogger - INFO - Initial state for SR Type 'Litter Bin - Request for New Bin' (114): Unchecked
+2024-11-15 13:33:10,597 - AppLogger - INFO - Initial state for SR Type 'Litter Bin Request for Service' (115): Unchecked
+2024-11-15 13:33:10,597 - AppLogger - INFO - Initial state for SR Type 'Livery Driver Complaint' (116): Unchecked
+2024-11-15 13:33:10,597 - AppLogger - INFO - Initial state for SR Type 'Livery Vehicle Complaint' (117): Unchecked
+2024-11-15 13:33:10,597 - AppLogger - INFO - Initial state for SR Type 'Lodging House Complaint' (118): Unchecked
+2024-11-15 13:33:10,598 - AppLogger - INFO - Initial state for SR Type 'Mask Order Enforcement' (119): Unchecked
+2024-11-15 13:33:10,598 - AppLogger - INFO - Initial state for SR Type 'Mobile Sign Lesser' (120): Unchecked
+2024-11-15 13:33:10,598 - AppLogger - INFO - Initial state for SR Type 'Mobile Vendor of Food' (121): Unchecked
+2024-11-15 13:33:10,598 - AppLogger - INFO - Initial state for SR Type 'Municipal Licensing Inquiry' (122): Unchecked
+2024-11-15 13:33:10,598 - AppLogger - INFO - Initial state for SR Type 'Municipal Parking Garage Issues' (123): Unchecked
+2024-11-15 13:33:10,598 - AppLogger - INFO - Initial state for SR Type 'Municipal Parking Lot Issues' (124): Unchecked
+2024-11-15 13:33:10,598 - AppLogger - INFO - Initial state for SR Type 'Needle / Syringe / Sharps - Report' (125): Unchecked
+2024-11-15 13:33:10,598 - AppLogger - INFO - Initial state for SR Type 'Needle Bin Service' (126): Unchecked
+2024-11-15 13:33:10,599 - AppLogger - INFO - Initial state for SR Type 'New Development Issues' (127): Unchecked
+2024-11-15 13:33:10,599 - AppLogger - INFO - Initial state for SR Type 'Newspaper Bundle Concerns' (128): Unchecked
+2024-11-15 13:33:10,599 - AppLogger - INFO - Initial state for SR Type 'No Building Permit' (129): Unchecked
+2024-11-15 13:33:10,599 - AppLogger - INFO - Initial state for SR Type 'No Heating Permit' (130): Unchecked
+2024-11-15 13:33:10,599 - AppLogger - INFO - Initial state for SR Type 'No Permit' (131): Unchecked
+2024-11-15 13:33:10,599 - AppLogger - INFO - Initial state for SR Type 'No Plumbing Permit' (132): Unchecked
+2024-11-15 13:33:10,599 - AppLogger - INFO - Initial state for SR Type 'No Pool Permit' (133): Unchecked
+2024-11-15 13:33:10,599 - AppLogger - INFO - Initial state for SR Type 'No Sewer Permit' (134): Unchecked
+2024-11-15 13:33:10,600 - AppLogger - INFO - Initial state for SR Type 'No Sign Permit' (135): Unchecked
+2024-11-15 13:33:10,600 - AppLogger - INFO - Initial state for SR Type 'Noise Complaint' (136): Unchecked
+2024-11-15 13:33:10,600 - AppLogger - INFO - Initial state for SR Type 'Odours from Sewers' (137): Unchecked
+2024-11-15 13:33:10,600 - AppLogger - INFO - Initial state for SR Type 'Other - Report Concern Not Listed' (138): Unchecked
+2024-11-15 13:33:10,600 - AppLogger - INFO - Initial state for SR Type 'Overland Flooding' (139): Unchecked
+2024-11-15 13:33:10,600 - AppLogger - INFO - Initial state for SR Type 'Pandemic Enforcement' (140): Unchecked
+2024-11-15 13:33:10,600 - AppLogger - INFO - Initial state for SR Type 'Parking Contracted Services Feedback' (141): Unchecked
+2024-11-15 13:33:10,601 - AppLogger - INFO - Initial state for SR Type 'Parking Issues - On-Street' (142): Unchecked
+2024-11-15 13:33:10,601 - AppLogger - INFO - Initial state for SR Type 'Parking Meter Issues' (143): Unchecked
+2024-11-15 13:33:10,601 - AppLogger - INFO - Initial state for SR Type 'Parks - CW Property Maintenance' (144): Unchecked
+2024-11-15 13:33:10,601 - AppLogger - INFO - Initial state for SR Type 'Parks - Life Preserver Concerns' (145): Unchecked
+2024-11-15 13:33:10,601 - AppLogger - INFO - Initial state for SR Type 'Parks - Playground Issues' (146): Unchecked
+2024-11-15 13:33:10,601 - AppLogger - INFO - Initial state for SR Type 'Parks Development Projects - Feedback or Issue' (147): Unchecked
+2024-11-15 13:33:10,601 - AppLogger - INFO - Initial state for SR Type 'Parks Maintenance' (148): Unchecked
+2024-11-15 13:33:10,601 - AppLogger - INFO - Initial state for SR Type 'Pawn Brokers' (149): Unchecked
+2024-11-15 13:33:10,602 - AppLogger - INFO - Initial state for SR Type 'Pedestrian Crossover (Crosswalk) Request' (150): Unchecked
+2024-11-15 13:33:10,602 - AppLogger - INFO - Initial state for SR Type 'Personal Service Agent' (151): Unchecked
+2024-11-15 13:33:10,602 - AppLogger - INFO - Initial state for SR Type 'Pet Shops' (152): Unchecked
+2024-11-15 13:33:10,602 - AppLogger - INFO - Initial state for SR Type 'Pitbull Complaint' (153): Unchecked
+2024-11-15 13:33:10,602 - AppLogger - INFO - Initial state for SR Type 'Playground Inspection' (154): Unchecked
+2024-11-15 13:33:10,602 - AppLogger - INFO - Initial state for SR Type 'Plumber' (155): Unchecked
+2024-11-15 13:33:10,602 - AppLogger - INFO - Initial state for SR Type 'Pothole on Road' (156): Unchecked
+2024-11-15 13:33:10,602 - AppLogger - INFO - Initial state for SR Type 'PPO - Building Structures' (157): Unchecked
+2024-11-15 13:33:10,603 - AppLogger - INFO - Initial state for SR Type 'PPO - Capital Works Projects' (158): Unchecked
+2024-11-15 13:33:10,603 - AppLogger - INFO - Initial state for SR Type 'PPO - Construction Material/Equip' (159): Unchecked
+2024-11-15 13:33:10,603 - AppLogger - INFO - Initial state for SR Type 'PPO - Construction Signs/Barricades' (160): Unchecked
+2024-11-15 13:33:10,603 - AppLogger - INFO - Initial state for SR Type 'PPO - Dumpster/Garbage Bins' (161): Unchecked
+2024-11-15 13:33:10,603 - AppLogger - INFO - Initial state for SR Type 'PPO - Emergency' (162): Unchecked
+2024-11-15 13:33:10,603 - AppLogger - INFO - Initial state for SR Type 'PPO - Fence/Hedge' (163): Unchecked
+2024-11-15 13:33:10,603 - AppLogger - INFO - Initial state for SR Type 'PPO - Landscaping Material' (164): Unchecked
+2024-11-15 13:33:10,603 - AppLogger - INFO - Initial state for SR Type 'PPO - Sidewalk Cafe' (165): Unchecked
+2024-11-15 13:33:10,604 - AppLogger - INFO - Initial state for SR Type 'PPO - Sign Complaint ROW' (166): Unchecked
+2024-11-15 13:33:10,604 - AppLogger - INFO - Initial state for SR Type 'PPO - Sports Equipment' (167): Unchecked
+2024-11-15 13:33:10,604 - AppLogger - INFO - Initial state for SR Type 'PPO - Utility Damage' (168): Unchecked
+2024-11-15 13:33:10,604 - AppLogger - INFO - Initial state for SR Type 'Private Parking Lots' (169): Unchecked
+2024-11-15 13:33:10,604 - AppLogger - INFO - Initial state for SR Type 'Private Parking Lots - Illegal Use' (170): Unchecked
+2024-11-15 13:33:10,604 - AppLogger - INFO - Initial state for SR Type 'Property Evacuation Report' (171): Unchecked
+2024-11-15 13:33:10,604 - AppLogger - INFO - Initial state for SR Type 'Property Flooding/Grading Complaint' (172): Unchecked
+2024-11-15 13:33:10,605 - AppLogger - INFO - Initial state for SR Type 'Protection of Parks' (173): Unchecked
+2024-11-15 13:33:10,605 - AppLogger - INFO - Initial state for SR Type 'Public Feedback' (174): Unchecked
+2024-11-15 13:33:10,605 - AppLogger - INFO - Initial state for SR Type 'Public Hall' (175): Unchecked
+2024-11-15 13:33:10,605 - AppLogger - INFO - Initial state for SR Type 'Public Parking Lots' (176): Unchecked
+2024-11-15 13:33:10,605 - AppLogger - INFO - Initial state for SR Type 'Pump Station Issues' (177): Unchecked
+2024-11-15 13:33:10,605 - AppLogger - INFO - Initial state for SR Type 'QA - Christina Forsyth' (178): Unchecked
+2024-11-15 13:33:10,605 - AppLogger - INFO - Initial state for SR Type 'QA - Christina Leung' (179): Unchecked
+2024-11-15 13:33:10,605 - AppLogger - INFO - Initial state for SR Type 'QA - Christine Dalpe' (180): Unchecked
+2024-11-15 13:33:10,605 - AppLogger - INFO - Initial state for SR Type 'QA - Elizabeth Ryan' (181): Unchecked
+2024-11-15 13:33:10,606 - AppLogger - INFO - Initial state for SR Type 'QA - Katie Skene' (182): Unchecked
+2024-11-15 13:33:10,606 - AppLogger - INFO - Initial state for SR Type 'QA - Kirk Osborne' (183): Unchecked
+2024-11-15 13:33:10,606 - AppLogger - INFO - Initial state for SR Type 'QA - Leigh Ann Dixon' (184): Unchecked
+2024-11-15 13:33:10,606 - AppLogger - INFO - Initial state for SR Type 'QA - Lori Martin' (185): Unchecked
+2024-11-15 13:33:10,606 - AppLogger - INFO - Initial state for SR Type 'QA - Maria Tosti' (186): Unchecked
+2024-11-15 13:33:10,606 - AppLogger - INFO - Initial state for SR Type 'QA - Sandra Yacoub' (187): Unchecked
+2024-11-15 13:33:10,606 - AppLogger - INFO - Initial state for SR Type 'QATEST' (188): Unchecked
+2024-11-15 13:33:10,606 - AppLogger - INFO - Initial state for SR Type 'QP - Casslyn Heil' (189): Unchecked
+2024-11-15 13:33:10,607 - AppLogger - INFO - Initial state for SR Type 'QP - Christina Forsyth' (190): Unchecked
+2024-11-15 13:33:10,607 - AppLogger - INFO - Initial state for SR Type 'QP - Christina Leung' (191): Unchecked
+2024-11-15 13:33:10,607 - AppLogger - INFO - Initial state for SR Type 'QP - Christine Dalpe' (192): Unchecked
+2024-11-15 13:33:10,607 - AppLogger - INFO - Initial state for SR Type 'QP - David Verbora' (193): Unchecked
+2024-11-15 13:33:10,607 - AppLogger - INFO - Initial state for SR Type 'QP - Deanna Evans' (194): Unchecked
+2024-11-15 13:33:10,607 - AppLogger - INFO - Initial state for SR Type 'QP - Elizabeth Ryan' (195): Unchecked
+2024-11-15 13:33:10,607 - AppLogger - INFO - Initial state for SR Type 'QP - Katie Skene' (196): Unchecked
+2024-11-15 13:33:10,607 - AppLogger - INFO - Initial state for SR Type 'QP - Kirk Osborne' (197): Unchecked
+2024-11-15 13:33:10,608 - AppLogger - INFO - Initial state for SR Type 'QP - Leigh Ann Dixon' (198): Unchecked
+2024-11-15 13:33:10,608 - AppLogger - INFO - Initial state for SR Type 'QP - Lori Martin' (199): Unchecked
+2024-11-15 13:33:10,608 - AppLogger - INFO - Initial state for SR Type 'QP - Maria Tosti' (200): Unchecked
+2024-11-15 13:33:10,608 - AppLogger - INFO - Initial state for SR Type 'QP - Sandra Yacoub' (201): Unchecked
+2024-11-15 13:33:10,608 - AppLogger - INFO - Initial state for SR Type 'QP - Sara Zuccato' (202): Unchecked
+2024-11-15 13:33:10,608 - AppLogger - INFO - Initial state for SR Type 'Reassign Engineering' (203): Unchecked
+2024-11-15 13:33:10,608 - AppLogger - INFO - Initial state for SR Type 'REC Client and Pin # Request' (204): Unchecked
+2024-11-15 13:33:10,608 - AppLogger - INFO - Initial state for SR Type 'REC Program Information Inquiry' (205): Unchecked
+2024-11-15 13:33:10,609 - AppLogger - INFO - Initial state for SR Type 'REC Registration Request' (206): Unchecked
+2024-11-15 13:33:10,609 - AppLogger - INFO - Initial state for SR Type 'REC Rental Facility Search' (207): Unchecked
+2024-11-15 13:33:10,609 - AppLogger - INFO - Initial state for SR Type 'Recreation Facility Feedback' (208): Unchecked
+2024-11-15 13:33:10,609 - AppLogger - INFO - Initial state for SR Type 'Recycling Not Collected' (209): Unchecked
+2024-11-15 13:33:10,609 - AppLogger - INFO - Initial state for SR Type 'Residential Parking Issues (On-Street)' (210): Unchecked
+2024-11-15 13:33:10,609 - AppLogger - INFO - Initial state for SR Type 'Residential Rental Licence' (211): Unchecked
+2024-11-15 13:33:10,610 - AppLogger - INFO - Initial state for SR Type 'Residents Requesting Assistance' (212): Unchecked
+2024-11-15 13:33:10,610 - AppLogger - INFO - Initial state for SR Type 'Retail - Resale' (213): Unchecked
+2024-11-15 13:33:10,610 - AppLogger - INFO - Initial state for SR Type 'River / Stream Issues' (214): Unchecked
+2024-11-15 13:33:10,610 - AppLogger - INFO - Initial state for SR Type 'Road Cave-In' (215): Unchecked
+2024-11-15 13:33:10,610 - AppLogger - INFO - Initial state for SR Type 'Road Cleanup' (216): Unchecked
+2024-11-15 13:33:10,610 - AppLogger - INFO - Initial state for SR Type 'Road Maintenance' (217): Unchecked
+2024-11-15 13:33:10,610 - AppLogger - INFO - Initial state for SR Type 'Rodent Extermination Program' (218): Unchecked
+2024-11-15 13:33:10,610 - AppLogger - INFO - Initial state for SR Type 'Rodent Extermination Program - Animal Poisoning Report' (219): Unchecked
+2024-11-15 13:33:10,611 - AppLogger - INFO - Initial state for SR Type 'RSVP' (220): Unchecked
+2024-11-15 13:33:10,611 - AppLogger - INFO - Initial state for SR Type 'Salvage Yard' (221): Unchecked
+2024-11-15 13:33:10,611 - AppLogger - INFO - Initial state for SR Type 'Sewer Issues / Road Flooding' (222): Unchecked
+2024-11-15 13:33:10,611 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Complaint' (223): Unchecked
+2024-11-15 13:33:10,611 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Issues' (224): Unchecked
+2024-11-15 13:33:10,611 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Restoration Complaint' (225): Unchecked
+2024-11-15 13:33:10,611 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Restoration Issues' (226): Unchecked
+2024-11-15 13:33:10,611 - AppLogger - INFO - Initial state for SR Type 'Short Term Rental Issues' (227): Unchecked
+2024-11-15 13:33:10,612 - AppLogger - INFO - Initial state for SR Type 'Shoulder Repairs & Service' (228): Unchecked
+2024-11-15 13:33:10,612 - AppLogger - INFO - Initial state for SR Type 'Sidewalk Cleanup' (229): Unchecked
+2024-11-15 13:33:10,612 - AppLogger - INFO - Initial state for SR Type 'Sidewalk Repair' (230): Unchecked
+2024-11-15 13:33:10,612 - AppLogger - INFO - Initial state for SR Type 'Sign Complaint - Building' (231): Unchecked
+2024-11-15 13:33:10,612 - AppLogger - INFO - Initial state for SR Type 'Sign Complaint - Portable' (232): Unchecked
+2024-11-15 13:33:10,612 - AppLogger - INFO - Initial state for SR Type 'Skunk Inspection' (233): Unchecked
+2024-11-15 13:33:10,612 - AppLogger - INFO - Initial state for SR Type 'Smoking Complaint' (234): Unchecked
+2024-11-15 13:33:10,613 - AppLogger - INFO - Initial state for SR Type 'Smoking Complaint - Health Unit' (235): Unchecked
+2024-11-15 13:33:10,613 - AppLogger - INFO - Initial state for SR Type 'Snow - Transit Bus Stops' (236): Unchecked
+2024-11-15 13:33:10,613 - AppLogger - INFO - Initial state for SR Type 'Snow and Ice - Dumping on Road or Alley' (237): Unchecked
+2024-11-15 13:33:10,613 - AppLogger - INFO - Initial state for SR Type 'Snow and Ice Removal Complaint - Sidewalks' (238): Unchecked
+2024-11-15 13:33:10,613 - AppLogger - INFO - Initial state for SR Type 'Snow Angels Volunteer Registration' (239): Unchecked
+2024-11-15 13:33:10,613 - AppLogger - INFO - Initial state for SR Type 'Snow Angels Waiting List' (240): Unchecked
+2024-11-15 13:33:10,613 - AppLogger - INFO - Initial state for SR Type 'Snow Plow Damage' (241): Unchecked
+2024-11-15 13:33:10,613 - AppLogger - INFO - Initial state for SR Type 'Snow Plowing and Salting Request' (242): Unchecked
+2024-11-15 13:33:10,614 - AppLogger - INFO - Initial state for SR Type 'Snow Removal - Emergency' (243): Unchecked
+2024-11-15 13:33:10,614 - AppLogger - INFO - Initial state for SR Type 'Special Garbage Collection - Flood' (244): Unchecked
+2024-11-15 13:33:10,614 - AppLogger - INFO - Initial state for SR Type 'Special Sales' (245): Unchecked
+2024-11-15 13:33:10,614 - AppLogger - INFO - Initial state for SR Type 'SR Configuration Defaults' (246): Unchecked
+2024-11-15 13:33:10,614 - AppLogger - INFO - Initial state for SR Type 'Standing Water on Public Property' (247): Unchecked
+2024-11-15 13:33:10,614 - AppLogger - INFO - Initial state for SR Type 'Stop Sign Request / Issue' (248): Unchecked
+2024-11-15 13:33:10,615 - AppLogger - INFO - Initial state for SR Type 'Street Sweeping Request' (249): Unchecked
+2024-11-15 13:33:10,615 - AppLogger - INFO - Initial state for SR Type 'Streetlight Issue' (250): Unchecked
+2024-11-15 13:33:10,615 - AppLogger - INFO - Initial state for SR Type 'Strengthen the Core' (251): Unchecked
+2024-11-15 13:33:10,615 - AppLogger - INFO - Initial state for SR Type 'Sump Pump Grant' (252): Unchecked
+2024-11-15 13:33:10,615 - AppLogger - INFO - Initial state for SR Type 'Swimming Pool' (253): Unchecked
+2024-11-15 13:33:10,615 - AppLogger - INFO - Initial state for SR Type 'Swimming Pool Concerns' (254): Unchecked
+2024-11-15 13:33:10,615 - AppLogger - INFO - Initial state for SR Type 'Swimming Pool Issue' (255): Unchecked
+2024-11-15 13:33:10,616 - AppLogger - INFO - Initial state for SR Type 'Tax Account Spelling Correction' (256): Unchecked
+2024-11-15 13:33:10,616 - AppLogger - INFO - Initial state for SR Type 'Tax Inquiry' (257): Unchecked
+2024-11-15 13:33:10,616 - AppLogger - INFO - Initial state for SR Type 'Tax Receipt Request' (258): Unchecked
+2024-11-15 13:33:10,616 - AppLogger - INFO - Initial state for SR Type 'Tax Statement Request' (259): Unchecked
+2024-11-15 13:33:10,616 - AppLogger - INFO - Initial state for SR Type 'Taxi Cab Driver' (260): Unchecked
+2024-11-15 13:33:10,616 - AppLogger - INFO - Initial state for SR Type 'Taxi Cab Vehicle' (261): Unchecked
+2024-11-15 13:33:10,616 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE - QA SRs' (262): Unchecked
+2024-11-15 13:33:10,616 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE Employee/Department SF' (263): Unchecked
+2024-11-15 13:33:10,617 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE Quantitative Performance' (264): Unchecked
+2024-11-15 13:33:10,617 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE TC Speed Hump Survey' (265): Unchecked
+2024-11-15 13:33:10,617 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE Traffic Calming Survey' (266): Unchecked
+2024-11-15 13:33:10,617 - AppLogger - INFO - Initial state for SR Type 'Tobacconist' (267): Unchecked
+2024-11-15 13:33:10,617 - AppLogger - INFO - Initial state for SR Type 'Tow Truck Concerns' (268): Unchecked
+2024-11-15 13:33:10,617 - AppLogger - INFO - Initial state for SR Type 'Tow Truck Driver Concerns' (269): Unchecked
+2024-11-15 13:33:10,617 - AppLogger - INFO - Initial state for SR Type 'Traffic - Speed Concerns/Radar Trailer' (270): Unchecked
+2024-11-15 13:33:10,618 - AppLogger - INFO - Initial state for SR Type 'Traffic Call - General' (271): Unchecked
+2024-11-15 13:33:10,618 - AppLogger - INFO - Initial state for SR Type 'Traffic Calming Request' (272): Unchecked
+2024-11-15 13:33:10,618 - AppLogger - INFO - Initial state for SR Type 'Traffic Sign Issues' (273): Unchecked
+2024-11-15 13:33:10,618 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal - Pedestrian Light' (274): Unchecked
+2024-11-15 13:33:10,618 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal Flashing' (275): Unchecked
+2024-11-15 13:33:10,618 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal Light Out' (276): Unchecked
+2024-11-15 13:33:10,618 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal Not Changing' (277): Unchecked
+2024-11-15 13:33:10,619 - AppLogger - INFO - Initial state for SR Type 'Transit Windsor' (278): Unchecked
+2024-11-15 13:33:10,619 - AppLogger - INFO - Initial state for SR Type 'Tree Maintenance' (279): Unchecked
+2024-11-15 13:33:10,619 - AppLogger - INFO - Initial state for SR Type 'Tree Planting' (280): Unchecked
+2024-11-15 13:33:10,619 - AppLogger - INFO - Initial state for SR Type 'Tree Planting Follow Up' (281): Unchecked
+2024-11-15 13:33:10,619 - AppLogger - INFO - Initial state for SR Type 'TREE STORM' (282): Unchecked
+2024-11-15 13:33:10,619 - AppLogger - INFO - Initial state for SR Type 'Utility Damage - on Public ROW' (283): Unchecked
+2024-11-15 13:33:10,620 - AppLogger - INFO - Initial state for SR Type 'Vacant Home Tax' (284): Unchecked
+2024-11-15 13:33:10,620 - AppLogger - INFO - Initial state for SR Type 'Vehicles Leaking Fluids' (285): Unchecked
+2024-11-15 13:33:10,620 - AppLogger - INFO - Initial state for SR Type 'Vital Statistics Inquiry' (286): Unchecked
+2024-11-15 13:33:10,620 - AppLogger - INFO - Initial state for SR Type 'Volunteer Registration' (287): Unchecked
+2024-11-15 13:33:10,620 - AppLogger - INFO - Initial state for SR Type 'Walkways / Pedestrian Overpass' (288): Unchecked
+2024-11-15 13:33:10,620 - AppLogger - INFO - Initial state for SR Type 'Ward/Council' (289): Unchecked
+2024-11-15 13:33:10,620 - AppLogger - INFO - Initial state for SR Type 'Waste Disposal - Liquid' (290): Unchecked
+2024-11-15 13:33:10,621 - AppLogger - INFO - Initial state for SR Type 'Website/Eservices Issues' (291): Unchecked
+2024-11-15 13:33:10,621 - AppLogger - INFO - Initial state for SR Type 'West Nile Virus Program on Public Property' (292): Unchecked
+2024-11-15 13:33:10,621 - AppLogger - INFO - Initial state for SR Type 'Willistead Inquiry' (293): Unchecked
+2024-11-15 13:33:10,621 - AppLogger - INFO - Initial state for SR Type 'XX Quantitative Performance - Casslyn Heil' (294): Unchecked
+2024-11-15 13:33:10,621 - AppLogger - INFO - Initial state for SR Type 'Yard Condition Complaints' (295): Unchecked
+2024-11-15 13:33:10,621 - AppLogger - INFO - Initial state for SR Type 'Yard Waste Not Collected' (296): Unchecked
+2024-11-15 13:33:10,621 - AppLogger - INFO - Initial state for SR Type 'Zalev Scrap Yard Concerns' (297): Unchecked
+2024-11-15 13:33:10,622 - AppLogger - INFO - Initial state for SR Type 'Zoning Complaints - By-Law' (298): Unchecked
+2024-11-15 13:33:10,622 - AppLogger - INFO - Initial state for SR Type 'ztest_SR' (299): Unchecked
+2024-11-15 13:33:10,622 - AppLogger - INFO - Initial state for SR Type 'ZZ Moto Pothole Test' (300): Unchecked
+2024-11-15 13:33:10,622 - AppLogger - INFO - Initial state for SR Type 'zzz location_test' (301): Unchecked
+2024-11-15 13:33:10,623 - AppLogger - INFO - Initial state for Group '211 Call Centre' (1): Unchecked
+2024-11-15 13:33:10,623 - AppLogger - INFO - Initial state for Group 'Wuc' (2): Unchecked
+2024-11-15 13:33:10,623 - AppLogger - INFO - Initial state for Group 'Crime Prevention' (3): Unchecked
+2024-11-15 13:33:10,623 - AppLogger - INFO - Initial state for Group 'Public Works - Administration' (4): Unchecked
+2024-11-15 13:33:10,623 - AppLogger - INFO - Initial state for Group 'Transit Windsor' (5): Unchecked
+2024-11-15 13:33:10,623 - AppLogger - INFO - Initial state for Group 'Parks and Recreation' (6): Unchecked
+2024-11-15 13:33:10,623 - AppLogger - INFO - Initial state for Group 'Community and Protective Services - Administration' (7): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Call Centre Group' (8): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Health Unit' (9): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Parks Development' (10): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Finance and City Treasurer' (11): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Community Services' (12): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Facilities' (13): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Information Technology' (14): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Chief Administrative Office' (15): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Community Development & Health' (16): Unchecked
+2024-11-15 13:33:10,624 - AppLogger - INFO - Initial state for Group 'Economic Development' (17): Unchecked
+2024-11-15 13:33:10,625 - AppLogger - INFO - Initial state for Group 'Council Services' (18): Unchecked
+2024-11-15 13:33:10,625 - AppLogger - INFO - Initial state for Group 'Legal and Real Estate Services' (19): Unchecked
+2024-11-15 13:33:10,625 - AppLogger - INFO - Initial state for Group 'Homelessness and Housing Support' (20): Unchecked
+2024-11-15 13:33:10,625 - AppLogger - INFO - Initial state for Group 'Strategic Services - Administration' (21): Unchecked
+2024-11-15 13:33:10,625 - AppLogger - INFO - Initial state for Group 'Forestry and Natural Areas' (22): Unchecked
+2024-11-15 13:33:10,625 - AppLogger - INFO - Initial state for Group 'Contracts, Field Services and Maintenance' (23): Unchecked
+2024-11-15 13:33:10,625 - AppLogger - INFO - Initial state for Group 'Parks Operations' (24): Unchecked
+2024-11-15 13:33:10,625 - AppLogger - INFO - Initial state for Group 'Mayor's Office' (25): Unchecked
+2024-11-15 13:33:10,626 - AppLogger - INFO - Initial state for Group 'Environmental Services' (26): Unchecked
+2024-11-15 13:33:10,626 - AppLogger - INFO - Initial state for Group 'Customer Contact Centre' (27): Unchecked
+2024-11-15 13:33:10,626 - AppLogger - INFO - Initial state for Group 'Children Services' (28): Unchecked
+2024-11-15 13:33:10,626 - AppLogger - INFO - Initial state for Group 'City Clerk' (29): Unchecked
+2024-11-15 13:33:10,626 - AppLogger - INFO - Initial state for Group 'Social Support Services' (30): Unchecked
+2024-11-15 13:33:10,626 - AppLogger - INFO - Initial state for Group 'Huron Lodge' (31): Unchecked
+2024-11-15 13:33:10,626 - AppLogger - INFO - Initial state for Group 'Social Services - Administration' (32): Unchecked
+2024-11-15 13:33:10,626 - AppLogger - INFO - Initial state for Group 'Communication and Customer Service' (33): Unchecked
+2024-11-15 13:33:10,626 - AppLogger - INFO - Initial state for Group 'CSR System Internal Group' (34): Unchecked
+2024-11-15 13:33:10,627 - AppLogger - INFO - Initial state for Group 'Policy, Gaming, Licencing and Bylaw Enforcement' (35): Unchecked
+2024-11-15 13:33:10,627 - AppLogger - INFO - Initial state for Group 'Powerlines' (36): Unchecked
+2024-11-15 13:33:10,627 - AppLogger - INFO - Initial state for Group 'Purchasing & Risk Management' (37): Unchecked
+2024-11-15 13:33:10,627 - AppLogger - INFO - Initial state for Group 'Humane Society' (38): Unchecked
+2024-11-15 13:33:10,627 - AppLogger - INFO - Initial state for Group 'Hospitality and Facility Management' (39): Unchecked
+2024-11-15 13:33:10,627 - AppLogger - INFO - Initial state for Group 'Clean City' (40): Unchecked
+2024-11-15 13:33:10,627 - AppLogger - INFO - Initial state for Group 'Admin Data Group' (41): Unchecked
+2024-11-15 13:33:10,627 - AppLogger - INFO - Initial state for Group 'Health and Human Services' (42): Unchecked
+2024-11-15 13:33:10,627 - AppLogger - INFO - Initial state for Group 'Housing and Children Services' (43): Unchecked
+2024-11-15 13:33:10,628 - AppLogger - INFO - Initial state for Group 'Horticulture' (44): Unchecked
+2024-11-15 13:33:10,628 - AppLogger - INFO - Initial state for Group 'Taxation and Financial Projects' (45): Unchecked
+2024-11-15 13:33:10,628 - AppLogger - INFO - Initial state for Group 'Pollution Control' (46): Unchecked
+2024-11-15 13:33:10,628 - AppLogger - INFO - Initial state for Group 'Parking Enforcement' (47): Unchecked
+2024-11-15 13:33:10,628 - AppLogger - INFO - Initial state for Group 'Transportation Planning' (48): Unchecked
+2024-11-15 13:33:10,628 - AppLogger - INFO - Initial state for Group 'Infrastructure Services and City Engineer' (49): Unchecked
+2024-11-15 13:33:10,628 - AppLogger - INFO - Initial state for Group 'Building Inspections' (50): Unchecked
+2024-11-15 13:33:10,628 - AppLogger - INFO - Initial state for Group 'Corporate Services - Admin' (51): Unchecked
+2024-11-15 13:33:10,628 - AppLogger - INFO - Initial state for Group 'Windsor Public Library' (52): Unchecked
+2024-11-15 13:33:10,629 - AppLogger - INFO - Initial state for Group 'Building Services' (53): Unchecked
+2024-11-15 13:33:10,629 - AppLogger - INFO - Initial state for Group 'Recreation and Culture' (54): Unchecked
+2024-11-15 13:33:10,629 - AppLogger - INFO - Initial state for Group 'Corporate Services' (55): Unchecked
+2024-11-15 13:33:10,629 - AppLogger - INFO - Initial state for Group 'Traffic' (56): Unchecked
+2024-11-15 13:33:10,629 - AppLogger - INFO - Initial state for Group 'Human Resources and Employee Relations' (57): Unchecked
+2024-11-15 13:33:10,629 - AppLogger - INFO - Initial state for Group 'Planning' (58): Unchecked
+2024-11-15 13:33:10,629 - AppLogger - INFO - Initial state for Group 'Public Works Operations' (59): Unchecked
+2024-11-15 13:33:10,629 - AppLogger - INFO - Initial state for Group 'Operations' (60): Unchecked
+2024-11-15 13:33:10,629 - AppLogger - INFO - Initial state for Group 'Fire and Rescue Services' (61): Unchecked
+2024-11-15 13:33:10,639 - AppLogger - INFO - Initial state for enable checkbox 'No Location Exclusion (Exclude SRs with 0,0 coordinates)': Unchecked
+2024-11-15 13:33:10,640 - AppLogger - INFO - Initial state for SR Type '1 Survey for KB Calls' (1): Unchecked
+2024-11-15 13:33:10,640 - AppLogger - INFO - Initial state for SR Type '3 Day Parking Infraction' (2): Unchecked
+2024-11-15 13:33:10,640 - AppLogger - INFO - Initial state for SR Type '311 Request for Custom Map' (3): Unchecked
+2024-11-15 13:33:10,640 - AppLogger - INFO - Initial state for SR Type '311 Request for Custom Report' (4): Unchecked
+2024-11-15 13:33:10,640 - AppLogger - INFO - Initial state for SR Type '311 Texting' (5): Unchecked
+2024-11-15 13:33:10,640 - AppLogger - INFO - Initial state for SR Type 'Abandoned Vehicle' (6): Unchecked
+2024-11-15 13:33:10,640 - AppLogger - INFO - Initial state for SR Type 'Accessibility Concerns - Buildings' (7): Unchecked
+2024-11-15 13:33:10,640 - AppLogger - INFO - Initial state for SR Type 'Accessible Alternate Format Document Request' (8): Unchecked
+2024-11-15 13:33:10,641 - AppLogger - INFO - Initial state for SR Type 'Accessible Customer Service Feedback' (9): Unchecked
+2024-11-15 13:33:10,641 - AppLogger - INFO - Initial state for SR Type 'Accessible Parking Spot Removal (On-Street)' (10): Unchecked
+2024-11-15 13:33:10,641 - AppLogger - INFO - Initial state for SR Type 'Adult Entertainment Parlour' (11): Unchecked
+2024-11-15 13:33:10,641 - AppLogger - INFO - Initial state for SR Type 'Alley or Laneway Naming' (12): Unchecked
+2024-11-15 13:33:10,641 - AppLogger - INFO - Initial state for SR Type 'Alley Repair / Flooding' (13): Unchecked
+2024-11-15 13:33:10,641 - AppLogger - INFO - Initial state for SR Type 'AMANDA Yard Conditions' (14): Unchecked
+2024-11-15 13:33:10,641 - AppLogger - INFO - Initial state for SR Type 'Anniversary Letter Request' (15): Unchecked
+2024-11-15 13:33:10,641 - AppLogger - INFO - Initial state for SR Type 'Antique Metal - Old Gold' (16): Unchecked
+2024-11-15 13:33:10,642 - AppLogger - INFO - Initial state for SR Type 'Auctioneer' (17): Unchecked
+2024-11-15 13:33:10,642 - AppLogger - INFO - Initial state for SR Type 'Automobile Service Station' (18): Unchecked
+2024-11-15 13:33:10,642 - AppLogger - INFO - Initial state for SR Type 'Barking Dog Complaint (Proactive)' (19): Unchecked
+2024-11-15 13:33:10,642 - AppLogger - INFO - Initial state for SR Type 'Basement Flooding' (20): Unchecked
+2024-11-15 13:33:10,642 - AppLogger - INFO - Initial state for SR Type 'Bed & Breakfast/Guest House' (21): Unchecked
+2024-11-15 13:33:10,642 - AppLogger - INFO - Initial state for SR Type 'Bill Distributor' (22): Unchecked
+2024-11-15 13:33:10,642 - AppLogger - INFO - Initial state for SR Type 'Bingos & Charities' (23): Unchecked
+2024-11-15 13:33:10,642 - AppLogger - INFO - Initial state for SR Type 'Birthday Letter Request' (24): Unchecked
+2024-11-15 13:33:10,642 - AppLogger - INFO - Initial state for SR Type 'Body Modification' (25): Unchecked
+2024-11-15 13:33:10,643 - AppLogger - INFO - Initial state for SR Type 'Body Rub Parlour' (26): Unchecked
+2024-11-15 13:33:10,643 - AppLogger - INFO - Initial state for SR Type 'Building / Land - Improper Use' (27): Unchecked
+2024-11-15 13:33:10,643 - AppLogger - INFO - Initial state for SR Type 'Building Condition Complaint' (28): Unchecked
+2024-11-15 13:33:10,643 - AppLogger - INFO - Initial state for SR Type 'Bulk Item Not Collected' (29): Unchecked
+2024-11-15 13:33:10,643 - AppLogger - INFO - Initial state for SR Type 'Bulk Item Pick-Up (Furniture)' (30): Unchecked
+2024-11-15 13:33:10,643 - AppLogger - INFO - Initial state for SR Type 'Call Centre Technical Issues Log' (31): Unchecked
+2024-11-15 13:33:10,643 - AppLogger - INFO - Initial state for SR Type 'Call Tracker' (32): Unchecked
+2024-11-15 13:33:10,643 - AppLogger - INFO - Initial state for SR Type 'Cannabis Odour' (33): Unchecked
+2024-11-15 13:33:10,643 - AppLogger - INFO - Initial state for SR Type 'Carnival & Circus' (34): Unchecked
+2024-11-15 13:33:10,644 - AppLogger - INFO - Initial state for SR Type 'Cat Voucher - Feral Cats' (35): Unchecked
+2024-11-15 13:33:10,644 - AppLogger - INFO - Initial state for SR Type 'Cat Voucher - Owned Cats' (36): Unchecked
+2024-11-15 13:33:10,644 - AppLogger - INFO - Initial state for SR Type 'City Owned Property Sale - Inquiry' (37): Unchecked
+2024-11-15 13:33:10,644 - AppLogger - INFO - Initial state for SR Type 'Clean Sweep Registration' (38): Unchecked
+2024-11-15 13:33:10,644 - AppLogger - INFO - Initial state for SR Type 'Collection Calendar Request' (39): Unchecked
+2024-11-15 13:33:10,644 - AppLogger - INFO - Initial state for SR Type 'Commercial Parking Issues (On-Street)' (40): Unchecked
+2024-11-15 13:33:10,644 - AppLogger - INFO - Initial state for SR Type 'Construction Site Conditions' (41): Unchecked
+2024-11-15 13:33:10,644 - AppLogger - INFO - Initial state for SR Type 'Construction Site Issues' (42): Unchecked
+2024-11-15 13:33:10,645 - AppLogger - INFO - Initial state for SR Type 'Council Secretariat' (43): Unchecked
+2024-11-15 13:33:10,645 - AppLogger - INFO - Initial state for SR Type 'Council Services Inquiry' (44): Unchecked
+2024-11-15 13:33:10,645 - AppLogger - INFO - Initial state for SR Type 'Curb Complaint' (45): Unchecked
+2024-11-15 13:33:10,645 - AppLogger - INFO - Initial state for SR Type 'Customer Service Feedback' (46): Unchecked
+2024-11-15 13:33:10,645 - AppLogger - INFO - Initial state for SR Type 'Damage - Garbage - Collection Containers' (47): Unchecked
+2024-11-15 13:33:10,645 - AppLogger - INFO - Initial state for SR Type 'Damage - Property - Env. Services' (48): Unchecked
+2024-11-15 13:33:10,645 - AppLogger - INFO - Initial state for SR Type 'Damage - Recycle - Collection Containers' (49): Unchecked
+2024-11-15 13:33:10,645 - AppLogger - INFO - Initial state for SR Type 'Damage - Recycle - Property' (50): Unchecked
+2024-11-15 13:33:10,645 - AppLogger - INFO - Initial state for SR Type 'Damage Report - Garbage/Recycle' (51): Unchecked
+2024-11-15 13:33:10,646 - AppLogger - INFO - Initial state for SR Type 'Dead Animal Removal' (52): Unchecked
+2024-11-15 13:33:10,646 - AppLogger - INFO - Initial state for SR Type 'Dead Cat or Dog' (53): Unchecked
+2024-11-15 13:33:10,646 - AppLogger - INFO - Initial state for SR Type 'Dilapidated Vehicles Complaint (Proactive)' (54): Unchecked
+2024-11-15 13:33:10,646 - AppLogger - INFO - Initial state for SR Type 'Dirty Alley Complaint' (55): Unchecked
+2024-11-15 13:33:10,646 - AppLogger - INFO - Initial state for SR Type 'Dirty Yard / Alley' (56): Unchecked
+2024-11-15 13:33:10,646 - AppLogger - INFO - Initial state for SR Type 'Ditch Cutting' (57): Unchecked
+2024-11-15 13:33:10,646 - AppLogger - INFO - Initial state for SR Type 'Ditch Fill' (58): Unchecked
+2024-11-15 13:33:10,646 - AppLogger - INFO - Initial state for SR Type 'DO NOT USE - Radar Trailer (Speed Limit Device)' (59): Unchecked
+2024-11-15 13:33:10,646 - AppLogger - INFO - Initial state for SR Type 'Document / Form Request' (60): Unchecked
+2024-11-15 13:33:10,647 - AppLogger - INFO - Initial state for SR Type 'Dog - Excrement (Proactive)' (61): Unchecked
+2024-11-15 13:33:10,647 - AppLogger - INFO - Initial state for SR Type 'Dog - Unlicensed (Proactive)' (62): Unchecked
+2024-11-15 13:33:10,647 - AppLogger - INFO - Initial state for SR Type 'Dog Bite' (63): Unchecked
+2024-11-15 13:33:10,647 - AppLogger - INFO - Initial state for SR Type 'Dog Complaint' (64): Unchecked
+2024-11-15 13:33:10,647 - AppLogger - INFO - Initial state for SR Type 'Donation Bin Issue' (65): Unchecked
+2024-11-15 13:33:10,647 - AppLogger - INFO - Initial state for SR Type 'Downspout Disconnect Service' (66): Unchecked
+2024-11-15 13:33:10,647 - AppLogger - INFO - Initial state for SR Type 'Drainage' (67): Unchecked
+2024-11-15 13:33:10,647 - AppLogger - INFO - Initial state for SR Type 'Driveway Damage' (68): Unchecked
+2024-11-15 13:33:10,648 - AppLogger - INFO - Initial state for SR Type 'Driveway Permit Issues' (69): Unchecked
+2024-11-15 13:33:10,648 - AppLogger - INFO - Initial state for SR Type 'Elected Officials Feedback' (70): Unchecked
+2024-11-15 13:33:10,648 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - CAO' (71): Unchecked
+2024-11-15 13:33:10,648 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Community Services' (72): Unchecked
+2024-11-15 13:33:10,648 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Corporate Services' (73): Unchecked
+2024-11-15 13:33:10,648 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Economic Development' (74): Unchecked
+2024-11-15 13:33:10,648 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Finance and City Treasurer' (75): Unchecked
+2024-11-15 13:33:10,648 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Health and Human Services' (76): Unchecked
+2024-11-15 13:33:10,648 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Infrastructure Services and City Engineer' (77): Unchecked
+2024-11-15 13:33:10,649 - AppLogger - INFO - Initial state for SR Type 'Entertainment Lounge' (78): Unchecked
+2024-11-15 13:33:10,649 - AppLogger - INFO - Initial state for SR Type 'Environmental Contracted Services Feedback' (79): Unchecked
+2024-11-15 13:33:10,649 - AppLogger - INFO - Initial state for SR Type 'E-Scooter Concerns/Issues' (80): Unchecked
+2024-11-15 13:33:10,649 - AppLogger - INFO - Initial state for SR Type 'Escorts' (81): Unchecked
+2024-11-15 13:33:10,649 - AppLogger - INFO - Initial state for SR Type 'EZ Tool - Manage Citizen App SR Type Configuration' (82): Unchecked
+2024-11-15 13:33:10,649 - AppLogger - INFO - Initial state for SR Type 'Facilities Maintenance' (83): Unchecked
+2024-11-15 13:33:10,649 - AppLogger - INFO - Initial state for SR Type 'Feeding of Wildlife' (84): Unchecked
+2024-11-15 13:33:10,649 - AppLogger - INFO - Initial state for SR Type 'Fence & Hedge Complaint - Bylaw' (85): Unchecked
+2024-11-15 13:33:10,650 - AppLogger - INFO - Initial state for SR Type 'Fence / Hedge Concerns' (86): Unchecked
+2024-11-15 13:33:10,650 - AppLogger - INFO - Initial state for SR Type 'Fence Repairs on City Property' (87): Unchecked
+2024-11-15 13:33:10,650 - AppLogger - INFO - Initial state for SR Type 'Feral Animal' (88): Unchecked
+2024-11-15 13:33:10,650 - AppLogger - INFO - Initial state for SR Type 'Fire Overcrowding / Multiple Units' (89): Unchecked
+2024-11-15 13:33:10,650 - AppLogger - INFO - Initial state for SR Type 'Fireworks Complaint' (90): Unchecked
+2024-11-15 13:33:10,650 - AppLogger - INFO - Initial state for SR Type 'Food Store' (91): Unchecked
+2024-11-15 13:33:10,650 - AppLogger - INFO - Initial state for SR Type 'Garbage Not Collected' (92): Unchecked
+2024-11-15 13:33:10,650 - AppLogger - INFO - Initial state for SR Type 'Garbage Preparation Issues' (93): Unchecked
+2024-11-15 13:33:10,650 - AppLogger - INFO - Initial state for SR Type 'Graffiti Complaint' (94): Unchecked
+2024-11-15 13:33:10,651 - AppLogger - INFO - Initial state for SR Type 'Grass-Weeds on Private Property (Proactive)' (95): Unchecked
+2024-11-15 13:33:10,651 - AppLogger - INFO - Initial state for SR Type 'Guard Rail Repair' (96): Unchecked
+2024-11-15 13:33:10,651 - AppLogger - INFO - Initial state for SR Type 'Handi Transit' (97): Unchecked
+2024-11-15 13:33:10,651 - AppLogger - INFO - Initial state for SR Type 'Hawker - Peddler' (98): Unchecked
+2024-11-15 13:33:10,651 - AppLogger - INFO - Initial state for SR Type 'Heating Work - HVAC' (99): Unchecked
+2024-11-15 13:33:10,651 - AppLogger - INFO - Initial state for SR Type 'Holistic Centre' (100): Unchecked
+2024-11-15 13:33:10,651 - AppLogger - INFO - Initial state for SR Type 'Holistic Practitioner' (101): Unchecked
+2024-11-15 13:33:10,651 - AppLogger - INFO - Initial state for SR Type 'Homelessness Report' (102): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'Horticulture Request' (103): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'Hospitality' (104): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'Idling Complaint' (105): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'Illegal Dumping Public Property' (106): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'Inappropriate or Labour Intensive Calls' (107): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'KB Changes' (108): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'KB Mapping Changes' (109): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'Keeping of Animals' (110): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'KSTEST' (111): Unchecked
+2024-11-15 13:33:10,652 - AppLogger - INFO - Initial state for SR Type 'Lakes / Ponds Issues' (112): Unchecked
+2024-11-15 13:33:10,653 - AppLogger - INFO - Initial state for SR Type 'Lighting Issues - City Facilities' (113): Unchecked
+2024-11-15 13:33:10,653 - AppLogger - INFO - Initial state for SR Type 'Litter Bin - Request for New Bin' (114): Unchecked
+2024-11-15 13:33:10,653 - AppLogger - INFO - Initial state for SR Type 'Litter Bin Request for Service' (115): Unchecked
+2024-11-15 13:33:10,653 - AppLogger - INFO - Initial state for SR Type 'Livery Driver Complaint' (116): Unchecked
+2024-11-15 13:33:10,653 - AppLogger - INFO - Initial state for SR Type 'Livery Vehicle Complaint' (117): Unchecked
+2024-11-15 13:33:10,653 - AppLogger - INFO - Initial state for SR Type 'Lodging House Complaint' (118): Unchecked
+2024-11-15 13:33:10,653 - AppLogger - INFO - Initial state for SR Type 'Mask Order Enforcement' (119): Unchecked
+2024-11-15 13:33:10,653 - AppLogger - INFO - Initial state for SR Type 'Mobile Sign Lesser' (120): Unchecked
+2024-11-15 13:33:10,654 - AppLogger - INFO - Initial state for SR Type 'Mobile Vendor of Food' (121): Unchecked
+2024-11-15 13:33:10,654 - AppLogger - INFO - Initial state for SR Type 'Municipal Licensing Inquiry' (122): Unchecked
+2024-11-15 13:33:10,654 - AppLogger - INFO - Initial state for SR Type 'Municipal Parking Garage Issues' (123): Unchecked
+2024-11-15 13:33:10,654 - AppLogger - INFO - Initial state for SR Type 'Municipal Parking Lot Issues' (124): Unchecked
+2024-11-15 13:33:10,654 - AppLogger - INFO - Initial state for SR Type 'Needle / Syringe / Sharps - Report' (125): Unchecked
+2024-11-15 13:33:10,654 - AppLogger - INFO - Initial state for SR Type 'Needle Bin Service' (126): Unchecked
+2024-11-15 13:33:10,654 - AppLogger - INFO - Initial state for SR Type 'New Development Issues' (127): Unchecked
+2024-11-15 13:33:10,654 - AppLogger - INFO - Initial state for SR Type 'Newspaper Bundle Concerns' (128): Unchecked
+2024-11-15 13:33:10,655 - AppLogger - INFO - Initial state for SR Type 'No Building Permit' (129): Unchecked
+2024-11-15 13:33:10,655 - AppLogger - INFO - Initial state for SR Type 'No Heating Permit' (130): Unchecked
+2024-11-15 13:33:10,655 - AppLogger - INFO - Initial state for SR Type 'No Permit' (131): Unchecked
+2024-11-15 13:33:10,655 - AppLogger - INFO - Initial state for SR Type 'No Plumbing Permit' (132): Unchecked
+2024-11-15 13:33:10,655 - AppLogger - INFO - Initial state for SR Type 'No Pool Permit' (133): Unchecked
+2024-11-15 13:33:10,655 - AppLogger - INFO - Initial state for SR Type 'No Sewer Permit' (134): Unchecked
+2024-11-15 13:33:10,655 - AppLogger - INFO - Initial state for SR Type 'No Sign Permit' (135): Unchecked
+2024-11-15 13:33:10,655 - AppLogger - INFO - Initial state for SR Type 'Noise Complaint' (136): Unchecked
+2024-11-15 13:33:10,656 - AppLogger - INFO - Initial state for SR Type 'Odours from Sewers' (137): Unchecked
+2024-11-15 13:33:10,656 - AppLogger - INFO - Initial state for SR Type 'Other - Report Concern Not Listed' (138): Unchecked
+2024-11-15 13:33:10,656 - AppLogger - INFO - Initial state for SR Type 'Overland Flooding' (139): Unchecked
+2024-11-15 13:33:10,656 - AppLogger - INFO - Initial state for SR Type 'Pandemic Enforcement' (140): Unchecked
+2024-11-15 13:33:10,656 - AppLogger - INFO - Initial state for SR Type 'Parking Contracted Services Feedback' (141): Unchecked
+2024-11-15 13:33:10,656 - AppLogger - INFO - Initial state for SR Type 'Parking Issues - On-Street' (142): Unchecked
+2024-11-15 13:33:10,656 - AppLogger - INFO - Initial state for SR Type 'Parking Meter Issues' (143): Unchecked
+2024-11-15 13:33:10,656 - AppLogger - INFO - Initial state for SR Type 'Parks - CW Property Maintenance' (144): Unchecked
+2024-11-15 13:33:10,657 - AppLogger - INFO - Initial state for SR Type 'Parks - Life Preserver Concerns' (145): Unchecked
+2024-11-15 13:33:10,657 - AppLogger - INFO - Initial state for SR Type 'Parks - Playground Issues' (146): Unchecked
+2024-11-15 13:33:10,657 - AppLogger - INFO - Initial state for SR Type 'Parks Development Projects - Feedback or Issue' (147): Unchecked
+2024-11-15 13:33:10,657 - AppLogger - INFO - Initial state for SR Type 'Parks Maintenance' (148): Unchecked
+2024-11-15 13:33:10,657 - AppLogger - INFO - Initial state for SR Type 'Pawn Brokers' (149): Unchecked
+2024-11-15 13:33:10,657 - AppLogger - INFO - Initial state for SR Type 'Pedestrian Crossover (Crosswalk) Request' (150): Unchecked
+2024-11-15 13:33:10,657 - AppLogger - INFO - Initial state for SR Type 'Personal Service Agent' (151): Unchecked
+2024-11-15 13:33:10,657 - AppLogger - INFO - Initial state for SR Type 'Pet Shops' (152): Unchecked
+2024-11-15 13:33:10,658 - AppLogger - INFO - Initial state for SR Type 'Pitbull Complaint' (153): Unchecked
+2024-11-15 13:33:10,658 - AppLogger - INFO - Initial state for SR Type 'Playground Inspection' (154): Unchecked
+2024-11-15 13:33:10,658 - AppLogger - INFO - Initial state for SR Type 'Plumber' (155): Unchecked
+2024-11-15 13:33:10,658 - AppLogger - INFO - Initial state for SR Type 'Pothole on Road' (156): Unchecked
+2024-11-15 13:33:10,658 - AppLogger - INFO - Initial state for SR Type 'PPO - Building Structures' (157): Unchecked
+2024-11-15 13:33:10,658 - AppLogger - INFO - Initial state for SR Type 'PPO - Capital Works Projects' (158): Unchecked
+2024-11-15 13:33:10,658 - AppLogger - INFO - Initial state for SR Type 'PPO - Construction Material/Equip' (159): Unchecked
+2024-11-15 13:33:10,658 - AppLogger - INFO - Initial state for SR Type 'PPO - Construction Signs/Barricades' (160): Unchecked
+2024-11-15 13:33:10,659 - AppLogger - INFO - Initial state for SR Type 'PPO - Dumpster/Garbage Bins' (161): Unchecked
+2024-11-15 13:33:10,659 - AppLogger - INFO - Initial state for SR Type 'PPO - Emergency' (162): Unchecked
+2024-11-15 13:33:10,659 - AppLogger - INFO - Initial state for SR Type 'PPO - Fence/Hedge' (163): Unchecked
+2024-11-15 13:33:10,659 - AppLogger - INFO - Initial state for SR Type 'PPO - Landscaping Material' (164): Unchecked
+2024-11-15 13:33:10,659 - AppLogger - INFO - Initial state for SR Type 'PPO - Sidewalk Cafe' (165): Unchecked
+2024-11-15 13:33:10,659 - AppLogger - INFO - Initial state for SR Type 'PPO - Sign Complaint ROW' (166): Unchecked
+2024-11-15 13:33:10,659 - AppLogger - INFO - Initial state for SR Type 'PPO - Sports Equipment' (167): Unchecked
+2024-11-15 13:33:10,659 - AppLogger - INFO - Initial state for SR Type 'PPO - Utility Damage' (168): Unchecked
+2024-11-15 13:33:10,660 - AppLogger - INFO - Initial state for SR Type 'Private Parking Lots' (169): Unchecked
+2024-11-15 13:33:10,660 - AppLogger - INFO - Initial state for SR Type 'Private Parking Lots - Illegal Use' (170): Unchecked
+2024-11-15 13:33:10,660 - AppLogger - INFO - Initial state for SR Type 'Property Evacuation Report' (171): Unchecked
+2024-11-15 13:33:10,660 - AppLogger - INFO - Initial state for SR Type 'Property Flooding/Grading Complaint' (172): Unchecked
+2024-11-15 13:33:10,660 - AppLogger - INFO - Initial state for SR Type 'Protection of Parks' (173): Unchecked
+2024-11-15 13:33:10,660 - AppLogger - INFO - Initial state for SR Type 'Public Feedback' (174): Unchecked
+2024-11-15 13:33:10,660 - AppLogger - INFO - Initial state for SR Type 'Public Hall' (175): Unchecked
+2024-11-15 13:33:10,660 - AppLogger - INFO - Initial state for SR Type 'Public Parking Lots' (176): Unchecked
+2024-11-15 13:33:10,661 - AppLogger - INFO - Initial state for SR Type 'Pump Station Issues' (177): Unchecked
+2024-11-15 13:33:10,661 - AppLogger - INFO - Initial state for SR Type 'QA - Christina Forsyth' (178): Unchecked
+2024-11-15 13:33:10,661 - AppLogger - INFO - Initial state for SR Type 'QA - Christina Leung' (179): Unchecked
+2024-11-15 13:33:10,661 - AppLogger - INFO - Initial state for SR Type 'QA - Christine Dalpe' (180): Unchecked
+2024-11-15 13:33:10,661 - AppLogger - INFO - Initial state for SR Type 'QA - Elizabeth Ryan' (181): Unchecked
+2024-11-15 13:33:10,661 - AppLogger - INFO - Initial state for SR Type 'QA - Katie Skene' (182): Unchecked
+2024-11-15 13:33:10,661 - AppLogger - INFO - Initial state for SR Type 'QA - Kirk Osborne' (183): Unchecked
+2024-11-15 13:33:10,661 - AppLogger - INFO - Initial state for SR Type 'QA - Leigh Ann Dixon' (184): Unchecked
+2024-11-15 13:33:10,662 - AppLogger - INFO - Initial state for SR Type 'QA - Lori Martin' (185): Unchecked
+2024-11-15 13:33:10,662 - AppLogger - INFO - Initial state for SR Type 'QA - Maria Tosti' (186): Unchecked
+2024-11-15 13:33:10,662 - AppLogger - INFO - Initial state for SR Type 'QA - Sandra Yacoub' (187): Unchecked
+2024-11-15 13:33:10,662 - AppLogger - INFO - Initial state for SR Type 'QATEST' (188): Unchecked
+2024-11-15 13:33:10,662 - AppLogger - INFO - Initial state for SR Type 'QP - Casslyn Heil' (189): Unchecked
+2024-11-15 13:33:10,662 - AppLogger - INFO - Initial state for SR Type 'QP - Christina Forsyth' (190): Unchecked
+2024-11-15 13:33:10,662 - AppLogger - INFO - Initial state for SR Type 'QP - Christina Leung' (191): Unchecked
+2024-11-15 13:33:10,662 - AppLogger - INFO - Initial state for SR Type 'QP - Christine Dalpe' (192): Unchecked
+2024-11-15 13:33:10,663 - AppLogger - INFO - Initial state for SR Type 'QP - David Verbora' (193): Unchecked
+2024-11-15 13:33:10,663 - AppLogger - INFO - Initial state for SR Type 'QP - Deanna Evans' (194): Unchecked
+2024-11-15 13:33:10,663 - AppLogger - INFO - Initial state for SR Type 'QP - Elizabeth Ryan' (195): Unchecked
+2024-11-15 13:33:10,663 - AppLogger - INFO - Initial state for SR Type 'QP - Katie Skene' (196): Unchecked
+2024-11-15 13:33:10,663 - AppLogger - INFO - Initial state for SR Type 'QP - Kirk Osborne' (197): Unchecked
+2024-11-15 13:33:10,663 - AppLogger - INFO - Initial state for SR Type 'QP - Leigh Ann Dixon' (198): Unchecked
+2024-11-15 13:33:10,663 - AppLogger - INFO - Initial state for SR Type 'QP - Lori Martin' (199): Unchecked
+2024-11-15 13:33:10,663 - AppLogger - INFO - Initial state for SR Type 'QP - Maria Tosti' (200): Unchecked
+2024-11-15 13:33:10,664 - AppLogger - INFO - Initial state for SR Type 'QP - Sandra Yacoub' (201): Unchecked
+2024-11-15 13:33:10,664 - AppLogger - INFO - Initial state for SR Type 'QP - Sara Zuccato' (202): Unchecked
+2024-11-15 13:33:10,664 - AppLogger - INFO - Initial state for SR Type 'Reassign Engineering' (203): Unchecked
+2024-11-15 13:33:10,664 - AppLogger - INFO - Initial state for SR Type 'REC Client and Pin # Request' (204): Unchecked
+2024-11-15 13:33:10,664 - AppLogger - INFO - Initial state for SR Type 'REC Program Information Inquiry' (205): Unchecked
+2024-11-15 13:33:10,664 - AppLogger - INFO - Initial state for SR Type 'REC Registration Request' (206): Unchecked
+2024-11-15 13:33:10,664 - AppLogger - INFO - Initial state for SR Type 'REC Rental Facility Search' (207): Unchecked
+2024-11-15 13:33:10,664 - AppLogger - INFO - Initial state for SR Type 'Recreation Facility Feedback' (208): Unchecked
+2024-11-15 13:33:10,665 - AppLogger - INFO - Initial state for SR Type 'Recycling Not Collected' (209): Unchecked
+2024-11-15 13:33:10,665 - AppLogger - INFO - Initial state for SR Type 'Residential Parking Issues (On-Street)' (210): Unchecked
+2024-11-15 13:33:10,665 - AppLogger - INFO - Initial state for SR Type 'Residential Rental Licence' (211): Unchecked
+2024-11-15 13:33:10,665 - AppLogger - INFO - Initial state for SR Type 'Residents Requesting Assistance' (212): Unchecked
+2024-11-15 13:33:10,665 - AppLogger - INFO - Initial state for SR Type 'Retail - Resale' (213): Unchecked
+2024-11-15 13:33:10,665 - AppLogger - INFO - Initial state for SR Type 'River / Stream Issues' (214): Unchecked
+2024-11-15 13:33:10,665 - AppLogger - INFO - Initial state for SR Type 'Road Cave-In' (215): Unchecked
+2024-11-15 13:33:10,666 - AppLogger - INFO - Initial state for SR Type 'Road Cleanup' (216): Unchecked
+2024-11-15 13:33:10,666 - AppLogger - INFO - Initial state for SR Type 'Road Maintenance' (217): Unchecked
+2024-11-15 13:33:10,666 - AppLogger - INFO - Initial state for SR Type 'Rodent Extermination Program' (218): Unchecked
+2024-11-15 13:33:10,666 - AppLogger - INFO - Initial state for SR Type 'Rodent Extermination Program - Animal Poisoning Report' (219): Unchecked
+2024-11-15 13:33:10,666 - AppLogger - INFO - Initial state for SR Type 'RSVP' (220): Unchecked
+2024-11-15 13:33:10,666 - AppLogger - INFO - Initial state for SR Type 'Salvage Yard' (221): Unchecked
+2024-11-15 13:33:10,666 - AppLogger - INFO - Initial state for SR Type 'Sewer Issues / Road Flooding' (222): Unchecked
+2024-11-15 13:33:10,667 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Complaint' (223): Unchecked
+2024-11-15 13:33:10,667 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Issues' (224): Unchecked
+2024-11-15 13:33:10,667 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Restoration Complaint' (225): Unchecked
+2024-11-15 13:33:10,667 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Restoration Issues' (226): Unchecked
+2024-11-15 13:33:10,667 - AppLogger - INFO - Initial state for SR Type 'Short Term Rental Issues' (227): Unchecked
+2024-11-15 13:33:10,667 - AppLogger - INFO - Initial state for SR Type 'Shoulder Repairs & Service' (228): Unchecked
+2024-11-15 13:33:10,667 - AppLogger - INFO - Initial state for SR Type 'Sidewalk Cleanup' (229): Unchecked
+2024-11-15 13:33:10,667 - AppLogger - INFO - Initial state for SR Type 'Sidewalk Repair' (230): Unchecked
+2024-11-15 13:33:10,668 - AppLogger - INFO - Initial state for SR Type 'Sign Complaint - Building' (231): Unchecked
+2024-11-15 13:33:10,668 - AppLogger - INFO - Initial state for SR Type 'Sign Complaint - Portable' (232): Unchecked
+2024-11-15 13:33:10,668 - AppLogger - INFO - Initial state for SR Type 'Skunk Inspection' (233): Unchecked
+2024-11-15 13:33:10,668 - AppLogger - INFO - Initial state for SR Type 'Smoking Complaint' (234): Unchecked
+2024-11-15 13:33:10,668 - AppLogger - INFO - Initial state for SR Type 'Smoking Complaint - Health Unit' (235): Unchecked
+2024-11-15 13:33:10,668 - AppLogger - INFO - Initial state for SR Type 'Snow - Transit Bus Stops' (236): Unchecked
+2024-11-15 13:33:10,668 - AppLogger - INFO - Initial state for SR Type 'Snow and Ice - Dumping on Road or Alley' (237): Unchecked
+2024-11-15 13:33:10,668 - AppLogger - INFO - Initial state for SR Type 'Snow and Ice Removal Complaint - Sidewalks' (238): Unchecked
+2024-11-15 13:33:10,669 - AppLogger - INFO - Initial state for SR Type 'Snow Angels Volunteer Registration' (239): Unchecked
+2024-11-15 13:33:10,669 - AppLogger - INFO - Initial state for SR Type 'Snow Angels Waiting List' (240): Unchecked
+2024-11-15 13:33:10,669 - AppLogger - INFO - Initial state for SR Type 'Snow Plow Damage' (241): Unchecked
+2024-11-15 13:33:10,669 - AppLogger - INFO - Initial state for SR Type 'Snow Plowing and Salting Request' (242): Unchecked
+2024-11-15 13:33:10,669 - AppLogger - INFO - Initial state for SR Type 'Snow Removal - Emergency' (243): Unchecked
+2024-11-15 13:33:10,669 - AppLogger - INFO - Initial state for SR Type 'Special Garbage Collection - Flood' (244): Unchecked
+2024-11-15 13:33:10,670 - AppLogger - INFO - Initial state for SR Type 'Special Sales' (245): Unchecked
+2024-11-15 13:33:10,670 - AppLogger - INFO - Initial state for SR Type 'SR Configuration Defaults' (246): Unchecked
+2024-11-15 13:33:10,670 - AppLogger - INFO - Initial state for SR Type 'Standing Water on Public Property' (247): Unchecked
+2024-11-15 13:33:10,670 - AppLogger - INFO - Initial state for SR Type 'Stop Sign Request / Issue' (248): Unchecked
+2024-11-15 13:33:10,670 - AppLogger - INFO - Initial state for SR Type 'Street Sweeping Request' (249): Unchecked
+2024-11-15 13:33:10,670 - AppLogger - INFO - Initial state for SR Type 'Streetlight Issue' (250): Unchecked
+2024-11-15 13:33:10,670 - AppLogger - INFO - Initial state for SR Type 'Strengthen the Core' (251): Unchecked
+2024-11-15 13:33:10,670 - AppLogger - INFO - Initial state for SR Type 'Sump Pump Grant' (252): Unchecked
+2024-11-15 13:33:10,671 - AppLogger - INFO - Initial state for SR Type 'Swimming Pool' (253): Unchecked
+2024-11-15 13:33:10,671 - AppLogger - INFO - Initial state for SR Type 'Swimming Pool Concerns' (254): Unchecked
+2024-11-15 13:33:10,671 - AppLogger - INFO - Initial state for SR Type 'Swimming Pool Issue' (255): Unchecked
+2024-11-15 13:33:10,671 - AppLogger - INFO - Initial state for SR Type 'Tax Account Spelling Correction' (256): Unchecked
+2024-11-15 13:33:10,671 - AppLogger - INFO - Initial state for SR Type 'Tax Inquiry' (257): Unchecked
+2024-11-15 13:33:10,671 - AppLogger - INFO - Initial state for SR Type 'Tax Receipt Request' (258): Unchecked
+2024-11-15 13:33:10,671 - AppLogger - INFO - Initial state for SR Type 'Tax Statement Request' (259): Unchecked
+2024-11-15 13:33:10,672 - AppLogger - INFO - Initial state for SR Type 'Taxi Cab Driver' (260): Unchecked
+2024-11-15 13:33:10,672 - AppLogger - INFO - Initial state for SR Type 'Taxi Cab Vehicle' (261): Unchecked
+2024-11-15 13:33:10,672 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE - QA SRs' (262): Unchecked
+2024-11-15 13:33:10,672 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE Employee/Department SF' (263): Unchecked
+2024-11-15 13:33:10,672 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE Quantitative Performance' (264): Unchecked
+2024-11-15 13:33:10,672 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE TC Speed Hump Survey' (265): Unchecked
+2024-11-15 13:33:10,672 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE Traffic Calming Survey' (266): Unchecked
+2024-11-15 13:33:10,672 - AppLogger - INFO - Initial state for SR Type 'Tobacconist' (267): Unchecked
+2024-11-15 13:33:10,673 - AppLogger - INFO - Initial state for SR Type 'Tow Truck Concerns' (268): Unchecked
+2024-11-15 13:33:10,673 - AppLogger - INFO - Initial state for SR Type 'Tow Truck Driver Concerns' (269): Unchecked
+2024-11-15 13:33:10,673 - AppLogger - INFO - Initial state for SR Type 'Traffic - Speed Concerns/Radar Trailer' (270): Unchecked
+2024-11-15 13:33:10,673 - AppLogger - INFO - Initial state for SR Type 'Traffic Call - General' (271): Unchecked
+2024-11-15 13:33:10,673 - AppLogger - INFO - Initial state for SR Type 'Traffic Calming Request' (272): Unchecked
+2024-11-15 13:33:10,673 - AppLogger - INFO - Initial state for SR Type 'Traffic Sign Issues' (273): Unchecked
+2024-11-15 13:33:10,673 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal - Pedestrian Light' (274): Unchecked
+2024-11-15 13:33:10,674 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal Flashing' (275): Unchecked
+2024-11-15 13:33:10,674 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal Light Out' (276): Unchecked
+2024-11-15 13:33:10,674 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal Not Changing' (277): Unchecked
+2024-11-15 13:33:10,674 - AppLogger - INFO - Initial state for SR Type 'Transit Windsor' (278): Unchecked
+2024-11-15 13:33:10,674 - AppLogger - INFO - Initial state for SR Type 'Tree Maintenance' (279): Unchecked
+2024-11-15 13:33:10,674 - AppLogger - INFO - Initial state for SR Type 'Tree Planting' (280): Unchecked
+2024-11-15 13:33:10,674 - AppLogger - INFO - Initial state for SR Type 'Tree Planting Follow Up' (281): Unchecked
+2024-11-15 13:33:10,675 - AppLogger - INFO - Initial state for SR Type 'TREE STORM' (282): Unchecked
+2024-11-15 13:33:10,675 - AppLogger - INFO - Initial state for SR Type 'Utility Damage - on Public ROW' (283): Unchecked
+2024-11-15 13:33:10,675 - AppLogger - INFO - Initial state for SR Type 'Vacant Home Tax' (284): Unchecked
+2024-11-15 13:33:10,675 - AppLogger - INFO - Initial state for SR Type 'Vehicles Leaking Fluids' (285): Unchecked
+2024-11-15 13:33:10,675 - AppLogger - INFO - Initial state for SR Type 'Vital Statistics Inquiry' (286): Unchecked
+2024-11-15 13:33:10,675 - AppLogger - INFO - Initial state for SR Type 'Volunteer Registration' (287): Unchecked
+2024-11-15 13:33:10,675 - AppLogger - INFO - Initial state for SR Type 'Walkways / Pedestrian Overpass' (288): Unchecked
+2024-11-15 13:33:10,676 - AppLogger - INFO - Initial state for SR Type 'Ward/Council' (289): Unchecked
+2024-11-15 13:33:10,676 - AppLogger - INFO - Initial state for SR Type 'Waste Disposal - Liquid' (290): Unchecked
+2024-11-15 13:33:10,676 - AppLogger - INFO - Initial state for SR Type 'Website/Eservices Issues' (291): Unchecked
+2024-11-15 13:33:10,676 - AppLogger - INFO - Initial state for SR Type 'West Nile Virus Program on Public Property' (292): Unchecked
+2024-11-15 13:33:10,676 - AppLogger - INFO - Initial state for SR Type 'Willistead Inquiry' (293): Unchecked
+2024-11-15 13:33:10,676 - AppLogger - INFO - Initial state for SR Type 'XX Quantitative Performance - Casslyn Heil' (294): Unchecked
+2024-11-15 13:33:10,676 - AppLogger - INFO - Initial state for SR Type 'Yard Condition Complaints' (295): Unchecked
+2024-11-15 13:33:10,677 - AppLogger - INFO - Initial state for SR Type 'Yard Waste Not Collected' (296): Unchecked
+2024-11-15 13:33:10,677 - AppLogger - INFO - Initial state for SR Type 'Zalev Scrap Yard Concerns' (297): Unchecked
+2024-11-15 13:33:10,677 - AppLogger - INFO - Initial state for SR Type 'Zoning Complaints - By-Law' (298): Unchecked
+2024-11-15 13:33:10,677 - AppLogger - INFO - Initial state for SR Type 'ztest_SR' (299): Unchecked
+2024-11-15 13:33:10,677 - AppLogger - INFO - Initial state for SR Type 'ZZ Moto Pothole Test' (300): Unchecked
+2024-11-15 13:33:10,677 - AppLogger - INFO - Initial state for SR Type 'zzz location_test' (301): Unchecked
+2024-11-15 13:33:10,678 - AppLogger - INFO - Initial state for Group '211 Call Centre' (1): Unchecked
+2024-11-15 13:33:10,678 - AppLogger - INFO - Initial state for Group 'Wuc' (2): Unchecked
+2024-11-15 13:33:10,678 - AppLogger - INFO - Initial state for Group 'Crime Prevention' (3): Unchecked
+2024-11-15 13:33:10,678 - AppLogger - INFO - Initial state for Group 'Public Works - Administration' (4): Unchecked
+2024-11-15 13:33:10,678 - AppLogger - INFO - Initial state for Group 'Transit Windsor' (5): Unchecked
+2024-11-15 13:33:10,678 - AppLogger - INFO - Initial state for Group 'Parks and Recreation' (6): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Community and Protective Services - Administration' (7): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Call Centre Group' (8): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Health Unit' (9): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Parks Development' (10): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Finance and City Treasurer' (11): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Community Services' (12): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Facilities' (13): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Information Technology' (14): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Chief Administrative Office' (15): Unchecked
+2024-11-15 13:33:10,679 - AppLogger - INFO - Initial state for Group 'Community Development & Health' (16): Unchecked
+2024-11-15 13:33:10,680 - AppLogger - INFO - Initial state for Group 'Economic Development' (17): Unchecked
+2024-11-15 13:33:10,680 - AppLogger - INFO - Initial state for Group 'Council Services' (18): Unchecked
+2024-11-15 13:33:10,680 - AppLogger - INFO - Initial state for Group 'Legal and Real Estate Services' (19): Unchecked
+2024-11-15 13:33:10,680 - AppLogger - INFO - Initial state for Group 'Homelessness and Housing Support' (20): Unchecked
+2024-11-15 13:33:10,680 - AppLogger - INFO - Initial state for Group 'Strategic Services - Administration' (21): Unchecked
+2024-11-15 13:33:10,680 - AppLogger - INFO - Initial state for Group 'Forestry and Natural Areas' (22): Unchecked
+2024-11-15 13:33:10,680 - AppLogger - INFO - Initial state for Group 'Contracts, Field Services and Maintenance' (23): Unchecked
+2024-11-15 13:33:10,680 - AppLogger - INFO - Initial state for Group 'Parks Operations' (24): Unchecked
+2024-11-15 13:33:10,680 - AppLogger - INFO - Initial state for Group 'Mayor's Office' (25): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'Environmental Services' (26): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'Customer Contact Centre' (27): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'Children Services' (28): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'City Clerk' (29): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'Social Support Services' (30): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'Huron Lodge' (31): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'Social Services - Administration' (32): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'Communication and Customer Service' (33): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'CSR System Internal Group' (34): Unchecked
+2024-11-15 13:33:10,681 - AppLogger - INFO - Initial state for Group 'Policy, Gaming, Licencing and Bylaw Enforcement' (35): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Powerlines' (36): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Purchasing & Risk Management' (37): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Humane Society' (38): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Hospitality and Facility Management' (39): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Clean City' (40): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Admin Data Group' (41): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Health and Human Services' (42): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Housing and Children Services' (43): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Horticulture' (44): Unchecked
+2024-11-15 13:33:10,682 - AppLogger - INFO - Initial state for Group 'Taxation and Financial Projects' (45): Unchecked
+2024-11-15 13:33:10,683 - AppLogger - INFO - Initial state for Group 'Pollution Control' (46): Unchecked
+2024-11-15 13:33:10,683 - AppLogger - INFO - Initial state for Group 'Parking Enforcement' (47): Unchecked
+2024-11-15 13:33:10,683 - AppLogger - INFO - Initial state for Group 'Transportation Planning' (48): Unchecked
+2024-11-15 13:33:10,683 - AppLogger - INFO - Initial state for Group 'Infrastructure Services and City Engineer' (49): Unchecked
+2024-11-15 13:33:10,683 - AppLogger - INFO - Initial state for Group 'Building Inspections' (50): Unchecked
+2024-11-15 13:33:10,683 - AppLogger - INFO - Initial state for Group 'Corporate Services - Admin' (51): Unchecked
+2024-11-15 13:33:10,683 - AppLogger - INFO - Initial state for Group 'Windsor Public Library' (52): Unchecked
+2024-11-15 13:33:10,683 - AppLogger - INFO - Initial state for Group 'Building Services' (53): Unchecked
+2024-11-15 13:33:10,683 - AppLogger - INFO - Initial state for Group 'Recreation and Culture' (54): Unchecked
+2024-11-15 13:33:10,684 - AppLogger - INFO - Initial state for Group 'Corporate Services' (55): Unchecked
+2024-11-15 13:33:10,684 - AppLogger - INFO - Initial state for Group 'Traffic' (56): Unchecked
+2024-11-15 13:33:10,684 - AppLogger - INFO - Initial state for Group 'Human Resources and Employee Relations' (57): Unchecked
+2024-11-15 13:33:10,684 - AppLogger - INFO - Initial state for Group 'Planning' (58): Unchecked
+2024-11-15 13:33:10,684 - AppLogger - INFO - Initial state for Group 'Public Works Operations' (59): Unchecked
+2024-11-15 13:33:10,684 - AppLogger - INFO - Initial state for Group 'Operations' (60): Unchecked
+2024-11-15 13:33:10,684 - AppLogger - INFO - Initial state for Group 'Fire and Rescue Services' (61): Unchecked
+2024-11-15 13:33:10,694 - AppLogger - INFO - Initial state for enable checkbox 'No Location Inclusion (Include SRs with 0,0 coordinates)': Unchecked
+2024-11-15 13:33:10,694 - AppLogger - INFO - Initial state for SR Type '1 Survey for KB Calls' (1): Unchecked
+2024-11-15 13:33:10,695 - AppLogger - INFO - Initial state for SR Type '3 Day Parking Infraction' (2): Unchecked
+2024-11-15 13:33:10,695 - AppLogger - INFO - Initial state for SR Type '311 Request for Custom Map' (3): Unchecked
+2024-11-15 13:33:10,695 - AppLogger - INFO - Initial state for SR Type '311 Request for Custom Report' (4): Unchecked
+2024-11-15 13:33:10,695 - AppLogger - INFO - Initial state for SR Type '311 Texting' (5): Unchecked
+2024-11-15 13:33:10,695 - AppLogger - INFO - Initial state for SR Type 'Abandoned Vehicle' (6): Unchecked
+2024-11-15 13:33:10,695 - AppLogger - INFO - Initial state for SR Type 'Accessibility Concerns - Buildings' (7): Unchecked
+2024-11-15 13:33:10,695 - AppLogger - INFO - Initial state for SR Type 'Accessible Alternate Format Document Request' (8): Unchecked
+2024-11-15 13:33:10,695 - AppLogger - INFO - Initial state for SR Type 'Accessible Customer Service Feedback' (9): Unchecked
+2024-11-15 13:33:10,695 - AppLogger - INFO - Initial state for SR Type 'Accessible Parking Spot Removal (On-Street)' (10): Unchecked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'Adult Entertainment Parlour' (11): Unchecked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'Alley or Laneway Naming' (12): Checked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'Alley Repair / Flooding' (13): Unchecked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'AMANDA Yard Conditions' (14): Unchecked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'Anniversary Letter Request' (15): Unchecked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'Antique Metal - Old Gold' (16): Unchecked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'Auctioneer' (17): Unchecked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'Automobile Service Station' (18): Unchecked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'Barking Dog Complaint (Proactive)' (19): Unchecked
+2024-11-15 13:33:10,696 - AppLogger - INFO - Initial state for SR Type 'Basement Flooding' (20): Unchecked
+2024-11-15 13:33:10,697 - AppLogger - INFO - Initial state for SR Type 'Bed & Breakfast/Guest House' (21): Unchecked
+2024-11-15 13:33:10,697 - AppLogger - INFO - Initial state for SR Type 'Bill Distributor' (22): Unchecked
+2024-11-15 13:33:10,697 - AppLogger - INFO - Initial state for SR Type 'Bingos & Charities' (23): Unchecked
+2024-11-15 13:33:10,697 - AppLogger - INFO - Initial state for SR Type 'Birthday Letter Request' (24): Unchecked
+2024-11-15 13:33:10,697 - AppLogger - INFO - Initial state for SR Type 'Body Modification' (25): Unchecked
+2024-11-15 13:33:10,697 - AppLogger - INFO - Initial state for SR Type 'Body Rub Parlour' (26): Unchecked
+2024-11-15 13:33:10,697 - AppLogger - INFO - Initial state for SR Type 'Building / Land - Improper Use' (27): Unchecked
+2024-11-15 13:33:10,697 - AppLogger - INFO - Initial state for SR Type 'Building Condition Complaint' (28): Unchecked
+2024-11-15 13:33:10,697 - AppLogger - INFO - Initial state for SR Type 'Bulk Item Not Collected' (29): Unchecked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'Bulk Item Pick-Up (Furniture)' (30): Unchecked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'Call Centre Technical Issues Log' (31): Unchecked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'Call Tracker' (32): Unchecked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'Cannabis Odour' (33): Unchecked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'Carnival & Circus' (34): Unchecked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'Cat Voucher - Feral Cats' (35): Unchecked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'Cat Voucher - Owned Cats' (36): Unchecked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'City Owned Property Sale - Inquiry' (37): Checked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'Clean Sweep Registration' (38): Checked
+2024-11-15 13:33:10,698 - AppLogger - INFO - Initial state for SR Type 'Collection Calendar Request' (39): Unchecked
+2024-11-15 13:33:10,699 - AppLogger - INFO - Initial state for SR Type 'Commercial Parking Issues (On-Street)' (40): Unchecked
+2024-11-15 13:33:10,699 - AppLogger - INFO - Initial state for SR Type 'Construction Site Conditions' (41): Unchecked
+2024-11-15 13:33:10,699 - AppLogger - INFO - Initial state for SR Type 'Construction Site Issues' (42): Unchecked
+2024-11-15 13:33:10,699 - AppLogger - INFO - Initial state for SR Type 'Council Secretariat' (43): Unchecked
+2024-11-15 13:33:10,699 - AppLogger - INFO - Initial state for SR Type 'Council Services Inquiry' (44): Unchecked
+2024-11-15 13:33:10,699 - AppLogger - INFO - Initial state for SR Type 'Curb Complaint' (45): Unchecked
+2024-11-15 13:33:10,699 - AppLogger - INFO - Initial state for SR Type 'Customer Service Feedback' (46): Unchecked
+2024-11-15 13:33:10,699 - AppLogger - INFO - Initial state for SR Type 'Damage - Garbage - Collection Containers' (47): Unchecked
+2024-11-15 13:33:10,699 - AppLogger - INFO - Initial state for SR Type 'Damage - Property - Env. Services' (48): Unchecked
+2024-11-15 13:33:10,700 - AppLogger - INFO - Initial state for SR Type 'Damage - Recycle - Collection Containers' (49): Unchecked
+2024-11-15 13:33:10,700 - AppLogger - INFO - Initial state for SR Type 'Damage - Recycle - Property' (50): Unchecked
+2024-11-15 13:33:10,700 - AppLogger - INFO - Initial state for SR Type 'Damage Report - Garbage/Recycle' (51): Unchecked
+2024-11-15 13:33:10,700 - AppLogger - INFO - Initial state for SR Type 'Dead Animal Removal' (52): Unchecked
+2024-11-15 13:33:10,700 - AppLogger - INFO - Initial state for SR Type 'Dead Cat or Dog' (53): Unchecked
+2024-11-15 13:33:10,700 - AppLogger - INFO - Initial state for SR Type 'Dilapidated Vehicles Complaint (Proactive)' (54): Unchecked
+2024-11-15 13:33:10,700 - AppLogger - INFO - Initial state for SR Type 'Dirty Alley Complaint' (55): Unchecked
+2024-11-15 13:33:10,700 - AppLogger - INFO - Initial state for SR Type 'Dirty Yard / Alley' (56): Unchecked
+2024-11-15 13:33:10,700 - AppLogger - INFO - Initial state for SR Type 'Ditch Cutting' (57): Unchecked
+2024-11-15 13:33:10,701 - AppLogger - INFO - Initial state for SR Type 'Ditch Fill' (58): Unchecked
+2024-11-15 13:33:10,701 - AppLogger - INFO - Initial state for SR Type 'DO NOT USE - Radar Trailer (Speed Limit Device)' (59): Unchecked
+2024-11-15 13:33:10,701 - AppLogger - INFO - Initial state for SR Type 'Document / Form Request' (60): Unchecked
+2024-11-15 13:33:10,701 - AppLogger - INFO - Initial state for SR Type 'Dog - Excrement (Proactive)' (61): Unchecked
+2024-11-15 13:33:10,701 - AppLogger - INFO - Initial state for SR Type 'Dog - Unlicensed (Proactive)' (62): Unchecked
+2024-11-15 13:33:10,701 - AppLogger - INFO - Initial state for SR Type 'Dog Bite' (63): Unchecked
+2024-11-15 13:33:10,701 - AppLogger - INFO - Initial state for SR Type 'Dog Complaint' (64): Unchecked
+2024-11-15 13:33:10,701 - AppLogger - INFO - Initial state for SR Type 'Donation Bin Issue' (65): Unchecked
+2024-11-15 13:33:10,701 - AppLogger - INFO - Initial state for SR Type 'Downspout Disconnect Service' (66): Unchecked
+2024-11-15 13:33:10,702 - AppLogger - INFO - Initial state for SR Type 'Drainage' (67): Unchecked
+2024-11-15 13:33:10,702 - AppLogger - INFO - Initial state for SR Type 'Driveway Damage' (68): Unchecked
+2024-11-15 13:33:10,702 - AppLogger - INFO - Initial state for SR Type 'Driveway Permit Issues' (69): Unchecked
+2024-11-15 13:33:10,702 - AppLogger - INFO - Initial state for SR Type 'Elected Officials Feedback' (70): Checked
+2024-11-15 13:33:10,702 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - CAO' (71): Unchecked
+2024-11-15 13:33:10,702 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Community Services' (72): Unchecked
+2024-11-15 13:33:10,702 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Corporate Services' (73): Unchecked
+2024-11-15 13:33:10,702 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Economic Development' (74): Unchecked
+2024-11-15 13:33:10,702 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Finance and City Treasurer' (75): Unchecked
+2024-11-15 13:33:10,703 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Health and Human Services' (76): Unchecked
+2024-11-15 13:33:10,703 - AppLogger - INFO - Initial state for SR Type 'Employee/Dept SF - Infrastructure Services and City Engineer' (77): Unchecked
+2024-11-15 13:33:10,703 - AppLogger - INFO - Initial state for SR Type 'Entertainment Lounge' (78): Unchecked
+2024-11-15 13:33:10,703 - AppLogger - INFO - Initial state for SR Type 'Environmental Contracted Services Feedback' (79): Unchecked
+2024-11-15 13:33:10,703 - AppLogger - INFO - Initial state for SR Type 'E-Scooter Concerns/Issues' (80): Unchecked
+2024-11-15 13:33:10,703 - AppLogger - INFO - Initial state for SR Type 'Escorts' (81): Unchecked
+2024-11-15 13:33:10,703 - AppLogger - INFO - Initial state for SR Type 'EZ Tool - Manage Citizen App SR Type Configuration' (82): Unchecked
+2024-11-15 13:33:10,703 - AppLogger - INFO - Initial state for SR Type 'Facilities Maintenance' (83): Unchecked
+2024-11-15 13:33:10,704 - AppLogger - INFO - Initial state for SR Type 'Feeding of Wildlife' (84): Unchecked
+2024-11-15 13:33:10,704 - AppLogger - INFO - Initial state for SR Type 'Fence & Hedge Complaint - Bylaw' (85): Unchecked
+2024-11-15 13:33:10,704 - AppLogger - INFO - Initial state for SR Type 'Fence / Hedge Concerns' (86): Unchecked
+2024-11-15 13:33:10,704 - AppLogger - INFO - Initial state for SR Type 'Fence Repairs on City Property' (87): Unchecked
+2024-11-15 13:33:10,704 - AppLogger - INFO - Initial state for SR Type 'Feral Animal' (88): Unchecked
+2024-11-15 13:33:10,704 - AppLogger - INFO - Initial state for SR Type 'Fire Overcrowding / Multiple Units' (89): Unchecked
+2024-11-15 13:33:10,704 - AppLogger - INFO - Initial state for SR Type 'Fireworks Complaint' (90): Unchecked
+2024-11-15 13:33:10,704 - AppLogger - INFO - Initial state for SR Type 'Food Store' (91): Unchecked
+2024-11-15 13:33:10,704 - AppLogger - INFO - Initial state for SR Type 'Garbage Not Collected' (92): Unchecked
+2024-11-15 13:33:10,705 - AppLogger - INFO - Initial state for SR Type 'Garbage Preparation Issues' (93): Unchecked
+2024-11-15 13:33:10,705 - AppLogger - INFO - Initial state for SR Type 'Graffiti Complaint' (94): Unchecked
+2024-11-15 13:33:10,705 - AppLogger - INFO - Initial state for SR Type 'Grass-Weeds on Private Property (Proactive)' (95): Unchecked
+2024-11-15 13:33:10,705 - AppLogger - INFO - Initial state for SR Type 'Guard Rail Repair' (96): Unchecked
+2024-11-15 13:33:10,705 - AppLogger - INFO - Initial state for SR Type 'Handi Transit' (97): Unchecked
+2024-11-15 13:33:10,705 - AppLogger - INFO - Initial state for SR Type 'Hawker - Peddler' (98): Unchecked
+2024-11-15 13:33:10,705 - AppLogger - INFO - Initial state for SR Type 'Heating Work - HVAC' (99): Unchecked
+2024-11-15 13:33:10,705 - AppLogger - INFO - Initial state for SR Type 'Holistic Centre' (100): Unchecked
+2024-11-15 13:33:10,705 - AppLogger - INFO - Initial state for SR Type 'Holistic Practitioner' (101): Unchecked
+2024-11-15 13:33:10,706 - AppLogger - INFO - Initial state for SR Type 'Homelessness Report' (102): Unchecked
+2024-11-15 13:33:10,706 - AppLogger - INFO - Initial state for SR Type 'Horticulture Request' (103): Unchecked
+2024-11-15 13:33:10,706 - AppLogger - INFO - Initial state for SR Type 'Hospitality' (104): Unchecked
+2024-11-15 13:33:10,706 - AppLogger - INFO - Initial state for SR Type 'Idling Complaint' (105): Unchecked
+2024-11-15 13:33:10,706 - AppLogger - INFO - Initial state for SR Type 'Illegal Dumping Public Property' (106): Unchecked
+2024-11-15 13:33:10,706 - AppLogger - INFO - Initial state for SR Type 'Inappropriate or Labour Intensive Calls' (107): Unchecked
+2024-11-15 13:33:10,706 - AppLogger - INFO - Initial state for SR Type 'KB Changes' (108): Unchecked
+2024-11-15 13:33:10,706 - AppLogger - INFO - Initial state for SR Type 'KB Mapping Changes' (109): Unchecked
+2024-11-15 13:33:10,706 - AppLogger - INFO - Initial state for SR Type 'Keeping of Animals' (110): Unchecked
+2024-11-15 13:33:10,707 - AppLogger - INFO - Initial state for SR Type 'KSTEST' (111): Unchecked
+2024-11-15 13:33:10,707 - AppLogger - INFO - Initial state for SR Type 'Lakes / Ponds Issues' (112): Checked
+2024-11-15 13:33:10,707 - AppLogger - INFO - Initial state for SR Type 'Lighting Issues - City Facilities' (113): Unchecked
+2024-11-15 13:33:10,707 - AppLogger - INFO - Initial state for SR Type 'Litter Bin - Request for New Bin' (114): Unchecked
+2024-11-15 13:33:10,707 - AppLogger - INFO - Initial state for SR Type 'Litter Bin Request for Service' (115): Unchecked
+2024-11-15 13:33:10,707 - AppLogger - INFO - Initial state for SR Type 'Livery Driver Complaint' (116): Unchecked
+2024-11-15 13:33:10,707 - AppLogger - INFO - Initial state for SR Type 'Livery Vehicle Complaint' (117): Unchecked
+2024-11-15 13:33:10,707 - AppLogger - INFO - Initial state for SR Type 'Lodging House Complaint' (118): Unchecked
+2024-11-15 13:33:10,707 - AppLogger - INFO - Initial state for SR Type 'Mask Order Enforcement' (119): Unchecked
+2024-11-15 13:33:10,708 - AppLogger - INFO - Initial state for SR Type 'Mobile Sign Lesser' (120): Unchecked
+2024-11-15 13:33:10,708 - AppLogger - INFO - Initial state for SR Type 'Mobile Vendor of Food' (121): Unchecked
+2024-11-15 13:33:10,708 - AppLogger - INFO - Initial state for SR Type 'Municipal Licensing Inquiry' (122): Unchecked
+2024-11-15 13:33:10,708 - AppLogger - INFO - Initial state for SR Type 'Municipal Parking Garage Issues' (123): Checked
+2024-11-15 13:33:10,708 - AppLogger - INFO - Initial state for SR Type 'Municipal Parking Lot Issues' (124): Checked
+2024-11-15 13:33:10,708 - AppLogger - INFO - Initial state for SR Type 'Needle / Syringe / Sharps - Report' (125): Unchecked
+2024-11-15 13:33:10,708 - AppLogger - INFO - Initial state for SR Type 'Needle Bin Service' (126): Unchecked
+2024-11-15 13:33:10,708 - AppLogger - INFO - Initial state for SR Type 'New Development Issues' (127): Unchecked
+2024-11-15 13:33:10,709 - AppLogger - INFO - Initial state for SR Type 'Newspaper Bundle Concerns' (128): Unchecked
+2024-11-15 13:33:10,709 - AppLogger - INFO - Initial state for SR Type 'No Building Permit' (129): Unchecked
+2024-11-15 13:33:10,709 - AppLogger - INFO - Initial state for SR Type 'No Heating Permit' (130): Unchecked
+2024-11-15 13:33:10,709 - AppLogger - INFO - Initial state for SR Type 'No Permit' (131): Unchecked
+2024-11-15 13:33:10,709 - AppLogger - INFO - Initial state for SR Type 'No Plumbing Permit' (132): Unchecked
+2024-11-15 13:33:10,709 - AppLogger - INFO - Initial state for SR Type 'No Pool Permit' (133): Unchecked
+2024-11-15 13:33:10,709 - AppLogger - INFO - Initial state for SR Type 'No Sewer Permit' (134): Unchecked
+2024-11-15 13:33:10,709 - AppLogger - INFO - Initial state for SR Type 'No Sign Permit' (135): Unchecked
+2024-11-15 13:33:10,710 - AppLogger - INFO - Initial state for SR Type 'Noise Complaint' (136): Unchecked
+2024-11-15 13:33:10,710 - AppLogger - INFO - Initial state for SR Type 'Odours from Sewers' (137): Unchecked
+2024-11-15 13:33:10,710 - AppLogger - INFO - Initial state for SR Type 'Other - Report Concern Not Listed' (138): Unchecked
+2024-11-15 13:33:10,710 - AppLogger - INFO - Initial state for SR Type 'Overland Flooding' (139): Unchecked
+2024-11-15 13:33:10,710 - AppLogger - INFO - Initial state for SR Type 'Pandemic Enforcement' (140): Unchecked
+2024-11-15 13:33:10,710 - AppLogger - INFO - Initial state for SR Type 'Parking Contracted Services Feedback' (141): Unchecked
+2024-11-15 13:33:10,710 - AppLogger - INFO - Initial state for SR Type 'Parking Issues - On-Street' (142): Unchecked
+2024-11-15 13:33:10,710 - AppLogger - INFO - Initial state for SR Type 'Parking Meter Issues' (143): Unchecked
+2024-11-15 13:33:10,711 - AppLogger - INFO - Initial state for SR Type 'Parks - CW Property Maintenance' (144): Unchecked
+2024-11-15 13:33:10,711 - AppLogger - INFO - Initial state for SR Type 'Parks - Life Preserver Concerns' (145): Unchecked
+2024-11-15 13:33:10,711 - AppLogger - INFO - Initial state for SR Type 'Parks - Playground Issues' (146): Unchecked
+2024-11-15 13:33:10,711 - AppLogger - INFO - Initial state for SR Type 'Parks Development Projects - Feedback or Issue' (147): Unchecked
+2024-11-15 13:33:10,711 - AppLogger - INFO - Initial state for SR Type 'Parks Maintenance' (148): Unchecked
+2024-11-15 13:33:10,711 - AppLogger - INFO - Initial state for SR Type 'Pawn Brokers' (149): Unchecked
+2024-11-15 13:33:10,711 - AppLogger - INFO - Initial state for SR Type 'Pedestrian Crossover (Crosswalk) Request' (150): Unchecked
+2024-11-15 13:33:10,711 - AppLogger - INFO - Initial state for SR Type 'Personal Service Agent' (151): Unchecked
+2024-11-15 13:33:10,711 - AppLogger - INFO - Initial state for SR Type 'Pet Shops' (152): Unchecked
+2024-11-15 13:33:10,712 - AppLogger - INFO - Initial state for SR Type 'Pitbull Complaint' (153): Unchecked
+2024-11-15 13:33:10,712 - AppLogger - INFO - Initial state for SR Type 'Playground Inspection' (154): Unchecked
+2024-11-15 13:33:10,712 - AppLogger - INFO - Initial state for SR Type 'Plumber' (155): Unchecked
+2024-11-15 13:33:10,712 - AppLogger - INFO - Initial state for SR Type 'Pothole on Road' (156): Unchecked
+2024-11-15 13:33:10,712 - AppLogger - INFO - Initial state for SR Type 'PPO - Building Structures' (157): Unchecked
+2024-11-15 13:33:10,712 - AppLogger - INFO - Initial state for SR Type 'PPO - Capital Works Projects' (158): Unchecked
+2024-11-15 13:33:10,712 - AppLogger - INFO - Initial state for SR Type 'PPO - Construction Material/Equip' (159): Unchecked
+2024-11-15 13:33:10,712 - AppLogger - INFO - Initial state for SR Type 'PPO - Construction Signs/Barricades' (160): Unchecked
+2024-11-15 13:33:10,713 - AppLogger - INFO - Initial state for SR Type 'PPO - Dumpster/Garbage Bins' (161): Unchecked
+2024-11-15 13:33:10,713 - AppLogger - INFO - Initial state for SR Type 'PPO - Emergency' (162): Unchecked
+2024-11-15 13:33:10,713 - AppLogger - INFO - Initial state for SR Type 'PPO - Fence/Hedge' (163): Unchecked
+2024-11-15 13:33:10,713 - AppLogger - INFO - Initial state for SR Type 'PPO - Landscaping Material' (164): Unchecked
+2024-11-15 13:33:10,713 - AppLogger - INFO - Initial state for SR Type 'PPO - Sidewalk Cafe' (165): Unchecked
+2024-11-15 13:33:10,713 - AppLogger - INFO - Initial state for SR Type 'PPO - Sign Complaint ROW' (166): Unchecked
+2024-11-15 13:33:10,713 - AppLogger - INFO - Initial state for SR Type 'PPO - Sports Equipment' (167): Unchecked
+2024-11-15 13:33:10,713 - AppLogger - INFO - Initial state for SR Type 'PPO - Utility Damage' (168): Unchecked
+2024-11-15 13:33:10,714 - AppLogger - INFO - Initial state for SR Type 'Private Parking Lots' (169): Unchecked
+2024-11-15 13:33:10,714 - AppLogger - INFO - Initial state for SR Type 'Private Parking Lots - Illegal Use' (170): Unchecked
+2024-11-15 13:33:10,714 - AppLogger - INFO - Initial state for SR Type 'Property Evacuation Report' (171): Unchecked
+2024-11-15 13:33:10,714 - AppLogger - INFO - Initial state for SR Type 'Property Flooding/Grading Complaint' (172): Unchecked
+2024-11-15 13:33:10,714 - AppLogger - INFO - Initial state for SR Type 'Protection of Parks' (173): Unchecked
+2024-11-15 13:33:10,714 - AppLogger - INFO - Initial state for SR Type 'Public Feedback' (174): Checked
+2024-11-15 13:33:10,715 - AppLogger - INFO - Initial state for SR Type 'Public Hall' (175): Unchecked
+2024-11-15 13:33:10,715 - AppLogger - INFO - Initial state for SR Type 'Public Parking Lots' (176): Unchecked
+2024-11-15 13:33:10,715 - AppLogger - INFO - Initial state for SR Type 'Pump Station Issues' (177): Checked
+2024-11-15 13:33:10,715 - AppLogger - INFO - Initial state for SR Type 'QA - Christina Forsyth' (178): Unchecked
+2024-11-15 13:33:10,715 - AppLogger - INFO - Initial state for SR Type 'QA - Christina Leung' (179): Unchecked
+2024-11-15 13:33:10,715 - AppLogger - INFO - Initial state for SR Type 'QA - Christine Dalpe' (180): Unchecked
+2024-11-15 13:33:10,715 - AppLogger - INFO - Initial state for SR Type 'QA - Elizabeth Ryan' (181): Unchecked
+2024-11-15 13:33:10,715 - AppLogger - INFO - Initial state for SR Type 'QA - Katie Skene' (182): Unchecked
+2024-11-15 13:33:10,716 - AppLogger - INFO - Initial state for SR Type 'QA - Kirk Osborne' (183): Unchecked
+2024-11-15 13:33:10,716 - AppLogger - INFO - Initial state for SR Type 'QA - Leigh Ann Dixon' (184): Unchecked
+2024-11-15 13:33:10,716 - AppLogger - INFO - Initial state for SR Type 'QA - Lori Martin' (185): Unchecked
+2024-11-15 13:33:10,716 - AppLogger - INFO - Initial state for SR Type 'QA - Maria Tosti' (186): Unchecked
+2024-11-15 13:33:10,716 - AppLogger - INFO - Initial state for SR Type 'QA - Sandra Yacoub' (187): Unchecked
+2024-11-15 13:33:10,716 - AppLogger - INFO - Initial state for SR Type 'QATEST' (188): Unchecked
+2024-11-15 13:33:10,716 - AppLogger - INFO - Initial state for SR Type 'QP - Casslyn Heil' (189): Unchecked
+2024-11-15 13:33:10,716 - AppLogger - INFO - Initial state for SR Type 'QP - Christina Forsyth' (190): Unchecked
+2024-11-15 13:33:10,716 - AppLogger - INFO - Initial state for SR Type 'QP - Christina Leung' (191): Unchecked
+2024-11-15 13:33:10,717 - AppLogger - INFO - Initial state for SR Type 'QP - Christine Dalpe' (192): Unchecked
+2024-11-15 13:33:10,717 - AppLogger - INFO - Initial state for SR Type 'QP - David Verbora' (193): Unchecked
+2024-11-15 13:33:10,717 - AppLogger - INFO - Initial state for SR Type 'QP - Deanna Evans' (194): Unchecked
+2024-11-15 13:33:10,717 - AppLogger - INFO - Initial state for SR Type 'QP - Elizabeth Ryan' (195): Unchecked
+2024-11-15 13:33:10,717 - AppLogger - INFO - Initial state for SR Type 'QP - Katie Skene' (196): Unchecked
+2024-11-15 13:33:10,717 - AppLogger - INFO - Initial state for SR Type 'QP - Kirk Osborne' (197): Unchecked
+2024-11-15 13:33:10,717 - AppLogger - INFO - Initial state for SR Type 'QP - Leigh Ann Dixon' (198): Unchecked
+2024-11-15 13:33:10,717 - AppLogger - INFO - Initial state for SR Type 'QP - Lori Martin' (199): Unchecked
+2024-11-15 13:33:10,718 - AppLogger - INFO - Initial state for SR Type 'QP - Maria Tosti' (200): Unchecked
+2024-11-15 13:33:10,718 - AppLogger - INFO - Initial state for SR Type 'QP - Sandra Yacoub' (201): Unchecked
+2024-11-15 13:33:10,718 - AppLogger - INFO - Initial state for SR Type 'QP - Sara Zuccato' (202): Unchecked
+2024-11-15 13:33:10,718 - AppLogger - INFO - Initial state for SR Type 'Reassign Engineering' (203): Unchecked
+2024-11-15 13:33:10,718 - AppLogger - INFO - Initial state for SR Type 'REC Client and Pin # Request' (204): Unchecked
+2024-11-15 13:33:10,718 - AppLogger - INFO - Initial state for SR Type 'REC Program Information Inquiry' (205): Unchecked
+2024-11-15 13:33:10,718 - AppLogger - INFO - Initial state for SR Type 'REC Registration Request' (206): Unchecked
+2024-11-15 13:33:10,719 - AppLogger - INFO - Initial state for SR Type 'REC Rental Facility Search' (207): Unchecked
+2024-11-15 13:33:10,719 - AppLogger - INFO - Initial state for SR Type 'Recreation Facility Feedback' (208): Unchecked
+2024-11-15 13:33:10,719 - AppLogger - INFO - Initial state for SR Type 'Recycling Not Collected' (209): Unchecked
+2024-11-15 13:33:10,719 - AppLogger - INFO - Initial state for SR Type 'Residential Parking Issues (On-Street)' (210): Unchecked
+2024-11-15 13:33:10,719 - AppLogger - INFO - Initial state for SR Type 'Residential Rental Licence' (211): Unchecked
+2024-11-15 13:33:10,719 - AppLogger - INFO - Initial state for SR Type 'Residents Requesting Assistance' (212): Unchecked
+2024-11-15 13:33:10,719 - AppLogger - INFO - Initial state for SR Type 'Retail - Resale' (213): Unchecked
+2024-11-15 13:33:10,719 - AppLogger - INFO - Initial state for SR Type 'River / Stream Issues' (214): Checked
+2024-11-15 13:33:10,720 - AppLogger - INFO - Initial state for SR Type 'Road Cave-In' (215): Unchecked
+2024-11-15 13:33:10,720 - AppLogger - INFO - Initial state for SR Type 'Road Cleanup' (216): Unchecked
+2024-11-15 13:33:10,720 - AppLogger - INFO - Initial state for SR Type 'Road Maintenance' (217): Unchecked
+2024-11-15 13:33:10,720 - AppLogger - INFO - Initial state for SR Type 'Rodent Extermination Program' (218): Unchecked
+2024-11-15 13:33:10,720 - AppLogger - INFO - Initial state for SR Type 'Rodent Extermination Program - Animal Poisoning Report' (219): Unchecked
+2024-11-15 13:33:10,720 - AppLogger - INFO - Initial state for SR Type 'RSVP' (220): Unchecked
+2024-11-15 13:33:10,720 - AppLogger - INFO - Initial state for SR Type 'Salvage Yard' (221): Unchecked
+2024-11-15 13:33:10,720 - AppLogger - INFO - Initial state for SR Type 'Sewer Issues / Road Flooding' (222): Unchecked
+2024-11-15 13:33:10,721 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Complaint' (223): Unchecked
+2024-11-15 13:33:10,721 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Issues' (224): Unchecked
+2024-11-15 13:33:10,721 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Restoration Complaint' (225): Unchecked
+2024-11-15 13:33:10,721 - AppLogger - INFO - Initial state for SR Type 'Sewer Project Restoration Issues' (226): Unchecked
+2024-11-15 13:33:10,721 - AppLogger - INFO - Initial state for SR Type 'Short Term Rental Issues' (227): Unchecked
+2024-11-15 13:33:10,721 - AppLogger - INFO - Initial state for SR Type 'Shoulder Repairs & Service' (228): Unchecked
+2024-11-15 13:33:10,721 - AppLogger - INFO - Initial state for SR Type 'Sidewalk Cleanup' (229): Unchecked
+2024-11-15 13:33:10,721 - AppLogger - INFO - Initial state for SR Type 'Sidewalk Repair' (230): Unchecked
+2024-11-15 13:33:10,722 - AppLogger - INFO - Initial state for SR Type 'Sign Complaint - Building' (231): Unchecked
+2024-11-15 13:33:10,722 - AppLogger - INFO - Initial state for SR Type 'Sign Complaint - Portable' (232): Unchecked
+2024-11-15 13:33:10,722 - AppLogger - INFO - Initial state for SR Type 'Skunk Inspection' (233): Unchecked
+2024-11-15 13:33:10,722 - AppLogger - INFO - Initial state for SR Type 'Smoking Complaint' (234): Unchecked
+2024-11-15 13:33:10,722 - AppLogger - INFO - Initial state for SR Type 'Smoking Complaint - Health Unit' (235): Unchecked
+2024-11-15 13:33:10,722 - AppLogger - INFO - Initial state for SR Type 'Snow - Transit Bus Stops' (236): Unchecked
+2024-11-15 13:33:10,722 - AppLogger - INFO - Initial state for SR Type 'Snow and Ice - Dumping on Road or Alley' (237): Unchecked
+2024-11-15 13:33:10,723 - AppLogger - INFO - Initial state for SR Type 'Snow and Ice Removal Complaint - Sidewalks' (238): Unchecked
+2024-11-15 13:33:10,723 - AppLogger - INFO - Initial state for SR Type 'Snow Angels Volunteer Registration' (239): Unchecked
+2024-11-15 13:33:10,723 - AppLogger - INFO - Initial state for SR Type 'Snow Angels Waiting List' (240): Unchecked
+2024-11-15 13:33:10,723 - AppLogger - INFO - Initial state for SR Type 'Snow Plow Damage' (241): Unchecked
+2024-11-15 13:33:10,723 - AppLogger - INFO - Initial state for SR Type 'Snow Plowing and Salting Request' (242): Unchecked
+2024-11-15 13:33:10,723 - AppLogger - INFO - Initial state for SR Type 'Snow Removal - Emergency' (243): Unchecked
+2024-11-15 13:33:10,723 - AppLogger - INFO - Initial state for SR Type 'Special Garbage Collection - Flood' (244): Unchecked
+2024-11-15 13:33:10,724 - AppLogger - INFO - Initial state for SR Type 'Special Sales' (245): Unchecked
+2024-11-15 13:33:10,724 - AppLogger - INFO - Initial state for SR Type 'SR Configuration Defaults' (246): Unchecked
+2024-11-15 13:33:10,724 - AppLogger - INFO - Initial state for SR Type 'Standing Water on Public Property' (247): Unchecked
+2024-11-15 13:33:10,724 - AppLogger - INFO - Initial state for SR Type 'Stop Sign Request / Issue' (248): Unchecked
+2024-11-15 13:33:10,724 - AppLogger - INFO - Initial state for SR Type 'Street Sweeping Request' (249): Unchecked
+2024-11-15 13:33:10,724 - AppLogger - INFO - Initial state for SR Type 'Streetlight Issue' (250): Unchecked
+2024-11-15 13:33:10,724 - AppLogger - INFO - Initial state for SR Type 'Strengthen the Core' (251): Checked
+2024-11-15 13:33:10,725 - AppLogger - INFO - Initial state for SR Type 'Sump Pump Grant' (252): Unchecked
+2024-11-15 13:33:10,725 - AppLogger - INFO - Initial state for SR Type 'Swimming Pool' (253): Unchecked
+2024-11-15 13:33:10,725 - AppLogger - INFO - Initial state for SR Type 'Swimming Pool Concerns' (254): Unchecked
+2024-11-15 13:33:10,725 - AppLogger - INFO - Initial state for SR Type 'Swimming Pool Issue' (255): Unchecked
+2024-11-15 13:33:10,725 - AppLogger - INFO - Initial state for SR Type 'Tax Account Spelling Correction' (256): Unchecked
+2024-11-15 13:33:10,725 - AppLogger - INFO - Initial state for SR Type 'Tax Inquiry' (257): Unchecked
+2024-11-15 13:33:10,725 - AppLogger - INFO - Initial state for SR Type 'Tax Receipt Request' (258): Unchecked
+2024-11-15 13:33:10,726 - AppLogger - INFO - Initial state for SR Type 'Tax Statement Request' (259): Unchecked
+2024-11-15 13:33:10,726 - AppLogger - INFO - Initial state for SR Type 'Taxi Cab Driver' (260): Unchecked
+2024-11-15 13:33:10,726 - AppLogger - INFO - Initial state for SR Type 'Taxi Cab Vehicle' (261): Unchecked
+2024-11-15 13:33:10,726 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE - QA SRs' (262): Unchecked
+2024-11-15 13:33:10,726 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE Employee/Department SF' (263): Unchecked
+2024-11-15 13:33:10,726 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE Quantitative Performance' (264): Unchecked
+2024-11-15 13:33:10,726 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE TC Speed Hump Survey' (265): Unchecked
+2024-11-15 13:33:10,726 - AppLogger - INFO - Initial state for SR Type 'TEMPLATE Traffic Calming Survey' (266): Unchecked
+2024-11-15 13:33:10,727 - AppLogger - INFO - Initial state for SR Type 'Tobacconist' (267): Unchecked
+2024-11-15 13:33:10,727 - AppLogger - INFO - Initial state for SR Type 'Tow Truck Concerns' (268): Unchecked
+2024-11-15 13:33:10,727 - AppLogger - INFO - Initial state for SR Type 'Tow Truck Driver Concerns' (269): Unchecked
+2024-11-15 13:33:10,727 - AppLogger - INFO - Initial state for SR Type 'Traffic - Speed Concerns/Radar Trailer' (270): Unchecked
+2024-11-15 13:33:10,727 - AppLogger - INFO - Initial state for SR Type 'Traffic Call - General' (271): Unchecked
+2024-11-15 13:33:10,727 - AppLogger - INFO - Initial state for SR Type 'Traffic Calming Request' (272): Unchecked
+2024-11-15 13:33:10,727 - AppLogger - INFO - Initial state for SR Type 'Traffic Sign Issues' (273): Unchecked
+2024-11-15 13:33:10,728 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal - Pedestrian Light' (274): Unchecked
+2024-11-15 13:33:10,728 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal Flashing' (275): Unchecked
+2024-11-15 13:33:10,728 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal Light Out' (276): Unchecked
+2024-11-15 13:33:10,728 - AppLogger - INFO - Initial state for SR Type 'Traffic Signal Not Changing' (277): Unchecked
+2024-11-15 13:33:10,728 - AppLogger - INFO - Initial state for SR Type 'Transit Windsor' (278): Checked
+2024-11-15 13:33:10,728 - AppLogger - INFO - Initial state for SR Type 'Tree Maintenance' (279): Unchecked
+2024-11-15 13:33:10,728 - AppLogger - INFO - Initial state for SR Type 'Tree Planting' (280): Unchecked
+2024-11-15 13:33:10,729 - AppLogger - INFO - Initial state for SR Type 'Tree Planting Follow Up' (281): Unchecked
+2024-11-15 13:33:10,729 - AppLogger - INFO - Initial state for SR Type 'TREE STORM' (282): Unchecked
+2024-11-15 13:33:10,729 - AppLogger - INFO - Initial state for SR Type 'Utility Damage - on Public ROW' (283): Unchecked
+2024-11-15 13:33:10,729 - AppLogger - INFO - Initial state for SR Type 'Vacant Home Tax' (284): Unchecked
+2024-11-15 13:33:10,729 - AppLogger - INFO - Initial state for SR Type 'Vehicles Leaking Fluids' (285): Unchecked
+2024-11-15 13:33:10,729 - AppLogger - INFO - Initial state for SR Type 'Vital Statistics Inquiry' (286): Unchecked
+2024-11-15 13:33:10,729 - AppLogger - INFO - Initial state for SR Type 'Volunteer Registration' (287): Unchecked
+2024-11-15 13:33:10,730 - AppLogger - INFO - Initial state for SR Type 'Walkways / Pedestrian Overpass' (288): Unchecked
+2024-11-15 13:33:10,730 - AppLogger - INFO - Initial state for SR Type 'Ward/Council' (289): Unchecked
+2024-11-15 13:33:10,730 - AppLogger - INFO - Initial state for SR Type 'Waste Disposal - Liquid' (290): Unchecked
+2024-11-15 13:33:10,730 - AppLogger - INFO - Initial state for SR Type 'Website/Eservices Issues' (291): Unchecked
+2024-11-15 13:33:10,730 - AppLogger - INFO - Initial state for SR Type 'West Nile Virus Program on Public Property' (292): Unchecked
+2024-11-15 13:33:10,730 - AppLogger - INFO - Initial state for SR Type 'Willistead Inquiry' (293): Unchecked
+2024-11-15 13:33:10,730 - AppLogger - INFO - Initial state for SR Type 'XX Quantitative Performance - Casslyn Heil' (294): Unchecked
+2024-11-15 13:33:10,731 - AppLogger - INFO - Initial state for SR Type 'Yard Condition Complaints' (295): Unchecked
+2024-11-15 13:33:10,731 - AppLogger - INFO - Initial state for SR Type 'Yard Waste Not Collected' (296): Unchecked
+2024-11-15 13:33:10,731 - AppLogger - INFO - Initial state for SR Type 'Zalev Scrap Yard Concerns' (297): Unchecked
+2024-11-15 13:33:10,731 - AppLogger - INFO - Initial state for SR Type 'Zoning Complaints - By-Law' (298): Unchecked
+2024-11-15 13:33:10,731 - AppLogger - INFO - Initial state for SR Type 'ztest_SR' (299): Unchecked
+2024-11-15 13:33:10,731 - AppLogger - INFO - Initial state for SR Type 'ZZ Moto Pothole Test' (300): Unchecked
+2024-11-15 13:33:10,731 - AppLogger - INFO - Initial state for SR Type 'zzz location_test' (301): Unchecked
+2024-11-15 13:33:10,732 - AppLogger - INFO - Initial state for Group '211 Call Centre' (1): Unchecked
+2024-11-15 13:33:10,732 - AppLogger - INFO - Initial state for Group 'Wuc' (2): Unchecked
+2024-11-15 13:33:10,732 - AppLogger - INFO - Initial state for Group 'Crime Prevention' (3): Unchecked
+2024-11-15 13:33:10,732 - AppLogger - INFO - Initial state for Group 'Public Works - Administration' (4): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Transit Windsor' (5): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Parks and Recreation' (6): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Community and Protective Services - Administration' (7): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Call Centre Group' (8): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Health Unit' (9): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Parks Development' (10): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Finance and City Treasurer' (11): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Community Services' (12): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Facilities' (13): Unchecked
+2024-11-15 13:33:10,733 - AppLogger - INFO - Initial state for Group 'Information Technology' (14): Unchecked
+2024-11-15 13:33:10,734 - AppLogger - INFO - Initial state for Group 'Chief Administrative Office' (15): Unchecked
+2024-11-15 13:33:10,734 - AppLogger - INFO - Initial state for Group 'Community Development & Health' (16): Unchecked
+2024-11-15 13:33:10,734 - AppLogger - INFO - Initial state for Group 'Economic Development' (17): Unchecked
+2024-11-15 13:33:10,734 - AppLogger - INFO - Initial state for Group 'Council Services' (18): Unchecked
+2024-11-15 13:33:10,734 - AppLogger - INFO - Initial state for Group 'Legal and Real Estate Services' (19): Unchecked
+2024-11-15 13:33:10,734 - AppLogger - INFO - Initial state for Group 'Homelessness and Housing Support' (20): Unchecked
+2024-11-15 13:33:10,734 - AppLogger - INFO - Initial state for Group 'Strategic Services - Administration' (21): Unchecked
+2024-11-15 13:33:10,734 - AppLogger - INFO - Initial state for Group 'Forestry and Natural Areas' (22): Unchecked
+2024-11-15 13:33:10,734 - AppLogger - INFO - Initial state for Group 'Contracts, Field Services and Maintenance' (23): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'Parks Operations' (24): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'Mayor's Office' (25): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'Environmental Services' (26): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'Customer Contact Centre' (27): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'Children Services' (28): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'City Clerk' (29): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'Social Support Services' (30): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'Huron Lodge' (31): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'Social Services - Administration' (32): Unchecked
+2024-11-15 13:33:10,735 - AppLogger - INFO - Initial state for Group 'Communication and Customer Service' (33): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'CSR System Internal Group' (34): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'Policy, Gaming, Licencing and Bylaw Enforcement' (35): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'Powerlines' (36): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'Purchasing & Risk Management' (37): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'Humane Society' (38): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'Hospitality and Facility Management' (39): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'Clean City' (40): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'Admin Data Group' (41): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'Health and Human Services' (42): Unchecked
+2024-11-15 13:33:10,736 - AppLogger - INFO - Initial state for Group 'Housing and Children Services' (43): Unchecked
+2024-11-15 13:33:10,737 - AppLogger - INFO - Initial state for Group 'Horticulture' (44): Unchecked
+2024-11-15 13:33:10,737 - AppLogger - INFO - Initial state for Group 'Taxation and Financial Projects' (45): Unchecked
+2024-11-15 13:33:10,737 - AppLogger - INFO - Initial state for Group 'Pollution Control' (46): Unchecked
+2024-11-15 13:33:10,737 - AppLogger - INFO - Initial state for Group 'Parking Enforcement' (47): Unchecked
+2024-11-15 13:33:10,737 - AppLogger - INFO - Initial state for Group 'Transportation Planning' (48): Unchecked
+2024-11-15 13:33:10,737 - AppLogger - INFO - Initial state for Group 'Infrastructure Services and City Engineer' (49): Unchecked
+2024-11-15 13:33:10,737 - AppLogger - INFO - Initial state for Group 'Building Inspections' (50): Unchecked
+2024-11-15 13:33:10,737 - AppLogger - INFO - Initial state for Group 'Corporate Services - Admin' (51): Unchecked
+2024-11-15 13:33:10,737 - AppLogger - INFO - Initial state for Group 'Windsor Public Library' (52): Unchecked
+2024-11-15 13:33:10,738 - AppLogger - INFO - Initial state for Group 'Building Services' (53): Unchecked
+2024-11-15 13:33:10,738 - AppLogger - INFO - Initial state for Group 'Recreation and Culture' (54): Unchecked
+2024-11-15 13:33:10,738 - AppLogger - INFO - Initial state for Group 'Corporate Services' (55): Unchecked
+2024-11-15 13:33:10,738 - AppLogger - INFO - Initial state for Group 'Traffic' (56): Unchecked
+2024-11-15 13:33:10,738 - AppLogger - INFO - Initial state for Group 'Human Resources and Employee Relations' (57): Unchecked
+2024-11-15 13:33:10,738 - AppLogger - INFO - Initial state for Group 'Planning' (58): Unchecked
+2024-11-15 13:33:10,738 - AppLogger - INFO - Initial state for Group 'Public Works Operations' (59): Unchecked
+2024-11-15 13:33:10,738 - AppLogger - INFO - Initial state for Group 'Operations' (60): Unchecked
+2024-11-15 13:33:10,738 - AppLogger - INFO - Initial state for Group 'Fire and Rescue Services' (61): Unchecked
+2024-11-15 13:33:10,741 - AppLogger - INFO - Enable checkbox for 'No Location Inclusion (Include SRs with 0,0 coordinates)' is Checked
+2024-11-15 13:35:01,686 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:35:02,187 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:35:50,833 - AppLogger - INFO - App initialized
+2024-11-15 13:35:50,834 - AppLogger - INFO - App initialized
+2024-11-15 13:35:50,834 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:35:50,835 - AppLogger - INFO - Theme applied: dark
+2024-11-15 13:35:50,835 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-15 13:35:50,835 - AppLogger - INFO - App version set to v1.0.44
+2024-11-15 13:35:50,836 - AppLogger - INFO - Settings loaded successfully
+2024-11-15 13:35:50,837 - AppLogger - INFO - Settings loaded successfully.
+2024-11-15 13:35:50,954 - AppLogger - INFO - Switched to Main Menu
+2024-11-15 13:35:53,377 - AppLogger - INFO - Settings loaded successfully.
+2024-11-18 08:27:27,821 - AppLogger - INFO - App initialized
+2024-11-18 08:27:27,825 - AppLogger - INFO - App initialized
+2024-11-18 08:27:27,825 - AppLogger - INFO - Settings loaded successfully.
+2024-11-18 08:27:27,829 - AppLogger - INFO - Theme applied: dark
+2024-11-18 08:27:27,829 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-18 08:27:27,830 - AppLogger - INFO - App version set to v1.0.44
+2024-11-18 08:27:27,832 - AppLogger - INFO - Settings loaded successfully
+2024-11-18 08:27:27,833 - AppLogger - INFO - Settings loaded successfully.
+2024-11-18 08:27:27,964 - AppLogger - INFO - Switched to Main Menu
+2024-11-18 08:28:42,863 - AppLogger - INFO - Settings loaded successfully.
+2024-11-19 11:20:06,459 - AppLogger - INFO - App initialized
+2024-11-19 11:20:06,462 - AppLogger - INFO - App initialized
+2024-11-19 11:20:06,462 - AppLogger - INFO - Settings loaded successfully.
+2024-11-19 11:20:06,466 - AppLogger - INFO - Theme applied: dark
+2024-11-19 11:20:06,466 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-19 11:20:06,466 - AppLogger - INFO - App version set to v1.0.44
+2024-11-19 11:20:06,468 - AppLogger - INFO - Settings loaded successfully
+2024-11-19 11:20:06,469 - AppLogger - INFO - Settings loaded successfully.
+2024-11-19 11:20:06,552 - AppLogger - INFO - Switched to Main Menu
+2024-11-19 11:20:08,307 - AppLogger - INFO - Settings loaded successfully.
+2024-11-19 13:21:24,273 - AppLogger - INFO - Theme applied: light
+2024-11-19 13:21:24,274 - AppLogger - INFO - Theme changed to light
+2024-11-19 13:21:26,708 - AppLogger - INFO - Settings loaded successfully.
+2024-11-19 13:21:26,731 - AppLogger - INFO - ReportGenerator initialized
+2024-11-19 13:21:26,731 - AppLogger - INFO - Settings loaded successfully.
+2024-11-19 13:21:26,735 - AppLogger - INFO - Switched to SR Counter
+2024-11-19 13:21:32,374 - AppLogger - INFO - Switched to Main Menu
+2024-11-19 13:21:33,473 - AppLogger - INFO - Settings loaded successfully.
+2024-11-19 13:21:36,752 - AppLogger - INFO - Theme applied: dark
+2024-11-19 13:21:36,752 - AppLogger - INFO - Theme changed to dark
+2024-11-19 13:21:41,625 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 12:39:04,778 - AppLogger - INFO - App initialized
+2024-11-20 12:39:04,781 - AppLogger - INFO - App initialized
+2024-11-20 12:39:04,782 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 12:39:04,786 - AppLogger - INFO - Theme applied: dark
+2024-11-20 12:39:04,786 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-20 12:39:04,786 - AppLogger - INFO - App version set to v1.0.44
+2024-11-20 12:39:04,788 - AppLogger - INFO - Settings loaded successfully
+2024-11-20 12:39:04,789 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 12:39:04,920 - AppLogger - INFO - Switched to Main Menu
+2024-11-20 12:39:07,395 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 12:46:34,616 - AppLogger - INFO - App initialized
+2024-11-20 12:46:34,626 - AppLogger - INFO - App initialized
+2024-11-20 12:46:34,626 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 12:46:34,633 - AppLogger - INFO - Theme applied: dark
+2024-11-20 12:46:34,633 - AppLogger - INFO - Looking for version file at: /Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/version.txt
+2024-11-20 12:46:34,634 - AppLogger - INFO - App version set to v1.0.44
+2024-11-20 12:46:34,637 - AppLogger - INFO - Settings loaded successfully
+2024-11-20 12:46:34,640 - AppLogger - INFO - Settings loaded successfully.
+2024-11-20 12:46:34,792 - AppLogger - INFO - Switched to Main Menu
+2024-11-20 12:46:35,891 - AppLogger - INFO - Settings loaded successfully.

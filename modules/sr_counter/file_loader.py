@@ -1,5 +1,6 @@
 import pandas as pd
 from PyQt6.QtWidgets import QFileDialog, QMessageBox
+from modules.utils.file_helpers import FileHelper  # Import FileHelper to use the existing read_excel method
 
 class FileLoader:
     def __init__(self, parent):
@@ -11,35 +12,21 @@ class FileLoader:
         try:
             file_path, _ = QFileDialog.getOpenFileName(self.parent, "Open Excel File", "", "Excel Files (*.xlsx *.xls);;All Files (*)")
             if file_path:
-                self.df = self.load_excel(file_path)
+                self.df = FileHelper.read_excel(file_path)  # Use FileHelper to load the file
                 if self.df is not None:
+                    # Map columns and check for missing required columns
+                    self.df = self.map_columns(self.df)
+                    self.check_missing_columns(self.df)
                     self.parent.checkbox_manager.populate_checkboxes(self.df.columns)
         except Exception as e:
             QMessageBox.critical(self.parent, "Error", f"Failed to load Excel file: {e}")
 
-    def load_excel(self, file_path):
-        """Load the Excel file and map column names."""
-        try:
-            # Load the Excel file depending on the extension
-            if file_path.endswith('.xls'):
-                df = pd.read_excel(file_path, engine='xlrd')
-            else:
-                df = pd.read_excel(file_path, engine='openpyxl')
-
-            # Map columns using the helper method
-            df = self.map_columns(df)
-
-            # Check if there are any missing required columns
-            required_columns = ["Service Request Number", "Created Date", "Type Description", "Group Description", "X Value", "Y Value"]
-            missing_columns = [col for col in required_columns if col not in df.columns]
-            if missing_columns:
-                QMessageBox.warning(self.parent, "Warning", f"The following required columns are missing: {', '.join(missing_columns)}")
-
-            return df
-
-        except Exception as e:
-            QMessageBox.critical(self.parent, "Error", f"Failed to load Excel file: {e}")
-            return None
+    def check_missing_columns(self, df):
+        """Check if there are any missing required columns."""
+        required_columns = ["Service Request Number", "Created Date", "Type Description", "Group Description", "X Value", "Y Value"]
+        missing_columns = [col for col in required_columns if col not in df.columns]
+        if missing_columns:
+            QMessageBox.warning(self.parent, "Warning", f"The following required columns are missing: {', '.join(missing_columns)}")
 
     def map_columns(self, df):
         """Map known Excel columns to user-friendly names."""
@@ -54,5 +41,4 @@ class FileLoader:
 
         # Apply column mapping to DataFrame
         df = df.rename(columns=column_mapping)
-
         return df
