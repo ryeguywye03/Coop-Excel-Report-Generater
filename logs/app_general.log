@@ -22521,3 +22521,32 @@ TypeError: 'builtin_function_or_method' object is not iterable
 2024-11-20 13:56:14,476 - AppLogger - INFO - Checking for updates...
 2024-11-20 13:56:15,046 - AppLogger - INFO - Fetched version from URL: v1.0.45
 2024-11-20 13:56:15,047 - AppLogger - INFO - You are using the latest version.
+2024-11-21 09:52:43,611 - AppLogger - INFO - App initialized
+2024-11-21 09:52:43,612 - AppLogger - INFO - App initialized
+2024-11-21 09:52:43,612 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 09:52:43,613 - AppLogger - INFO - Theme applied: dark
+2024-11-21 09:52:43,614 - AppLogger - INFO - Settings loaded successfully
+2024-11-21 09:52:43,615 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 09:52:43,706 - AppLogger - INFO - Switched to Main Menu
+2024-11-21 09:52:43,706 - AppLogger - INFO - App version set to v1.0.46
+2024-11-21 09:52:43,706 - AppLogger - INFO - Checking for updates...
+2024-11-21 09:52:43,805 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-11-21 10:30:06,474 - AppLogger - INFO - App initialized
+2024-11-21 10:30:06,477 - AppLogger - INFO - App initialized
+2024-11-21 10:30:06,477 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 10:30:06,480 - AppLogger - INFO - Theme applied: dark
+2024-11-21 10:30:06,482 - AppLogger - INFO - Settings loaded successfully
+2024-11-21 10:30:06,483 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 10:30:06,563 - AppLogger - INFO - Switched to Main Menu
+2024-11-21 10:30:06,564 - AppLogger - INFO - App version set to v1.0.46
+2024-11-21 10:30:06,564 - AppLogger - INFO - Checking for updates...
+2024-11-21 10:30:06,595 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-11-21 10:30:08,190 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 10:30:08,210 - AppLogger - INFO - ReportGenerator initialized
+2024-11-21 10:30:08,210 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 10:30:08,212 - AppLogger - INFO - Switched to SR Counter
+2024-11-21 10:30:11,289 - AppLogger - INFO - Switched to Main Menu
+2024-11-21 10:30:12,206 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 10:30:21,451 - AppLogger - INFO - Theme applied: light
+2024-11-21 10:30:21,451 - AppLogger - INFO - Theme changed to light
+2024-11-21 10:30:25,908 - AppLogger - INFO - Settings loaded successfully.

@@ -98,3 +98,5 @@ TypeError: EditableTableDialog.__init__() takes from 2 to 3 positional arguments
     return [tuple(row) for row in data.values] if data is not None else []
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: 'builtin_function_or_method' object is not iterable
+2024-11-21 09:52:43,805 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-11-21 10:30:06,595 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))

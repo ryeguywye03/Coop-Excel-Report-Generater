@@ -8,7 +8,7 @@ An application designed to load and generate customized Excel reports from datas
 - **Customizable Reports**: Select the columns you want in your report, and filter data by date ranges.
 - **Exclusion Settings**: Exclude specific SR types or groups and optionally exclude rows with no location (0,0 coordinates).
 - **Save as Excel**: Export your customized reports in Excel format.
-- **Intuitive UI**: Simple and user-friendly interface built with PyQt5.
+- **Intuitive UI**: Simple and user-friendly interface built with PyQt6.
 
 ## Installation
 

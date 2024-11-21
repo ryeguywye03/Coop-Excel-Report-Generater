@@ -36,7 +36,8 @@ class AppManager:
         self.logger.log_info("Checking for updates...")
         print("Checking for updates...")
         try:
-            response = requests.get(self.update_url)
+            # Attempt to fetch the latest version from GitHub
+            response = requests.get(self.update_url, timeout=10)
             if response.status_code == 200:
                 latest_version = response.text.strip()
                 print(f"Fetched version from URL: v{latest_version}")
@@ -53,11 +54,18 @@ class AppManager:
                     self.logger.log_info("You are using the latest version.")
                     print("You are using the latest version.")
             else:
+                # Log and print the error if response status is not 200
                 self.logger.log_error(f"Failed to fetch update information. Status code: {response.status_code}")
-                print(f"Failed to fetch update information. Status code: {response.status_code}")
-        except Exception as e:
+                print(f"Failed to fetch update information. Status code: {response.status_code}. Running the current version.")
+        except requests.exceptions.RequestException as e:
+            # Handle network issues (e.g., firewall, no internet)
             self.logger.log_error(f"Error checking for updates: {e}")
-            print(f"Error checking for updates: {e}")
+            print(f"Failed to check for updates due to a network issue. Proceeding with the current version.")
+        except Exception as e:
+            # Catch all other exceptions
+            self.logger.log_error(f"Unexpected error checking for updates: {e}")
+            print(f"Unexpected error checking for updates. Proceeding with the current version.")
+
 
     def perform_update(self):
         """Perform the update using Git pull."""
