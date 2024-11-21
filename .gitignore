@@ -2,7 +2,10 @@
 App/logs/
 
 # Ignore settings.json in the config folder
-App/config/settings.json
+resources/config/settings.json
+
+logs/
+
 
 # Your virtual environment, which should be excluded from version control
 venv/  
