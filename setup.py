@@ -16,7 +16,6 @@ setup(
     python_requires='>=3.11.6',  # Specify the Python version here
     install_requires=[
         'et-xmlfile==1.1.0',
-        'numpy==2.1.2',
         'openpyxl==3.1.5',
         'pandas==2.2.3',
         'PyQt6',

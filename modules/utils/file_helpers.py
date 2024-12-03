@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from datetime import datetime
 
+
 class FileHelper:
     PRINT_ENABLED = False  # Set this to True to enable print statements
 
@@ -16,23 +17,28 @@ class FileHelper:
 
     @staticmethod
     def resource_path(relative_path):
-        """Get the absolute path to a resource. Works for dev and for PyInstaller."""
-        if FileHelper.environment_check(print_env=False) == 'bundle':
-            # If running in a bundle (PyInstaller)
-            base_path = os.path.dirname(sys.executable)
+        """
+        Get the absolute path to a resource.
+        Works in both development and PyInstaller bundle modes.
+        """
+        try:
+            if getattr(sys, 'frozen', False):  # Check if running in a PyInstaller bundle
+                base_path = sys._MEIPASS  # Path to the temporary folder for bundled resources
+            else:  # Running in development mode
+                base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+            # Combine the base path with the relative path
             final_path = os.path.join(base_path, relative_path)
+
             if FileHelper.PRINT_ENABLED:
-                print(f"Using PyInstaller base path: {base_path}")
-        else:
-            # If running in a script (development)
-            base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))  # Adjusted to locate resources directory
-            final_path = os.path.join(base_path, relative_path)
-            if FileHelper.PRINT_ENABLED:
-                print(f"Using development base path: {base_path}")
-        
-        if FileHelper.PRINT_ENABLED:
-            print(f"Final resource path: {final_path}")
-        return final_path
+                print(f"[FileHelper] Resolved resource path: {final_path}")
+            
+            return final_path
+        except Exception as e:
+            print(f"[FileHelper] Error resolving resource path for {relative_path}: {e}")
+            raise
+
+
 
     @staticmethod
     def get_settings_file_path():
@@ -41,11 +47,6 @@ class FileHelper:
 
     @staticmethod
     def get_excel_file_path(filename):
-        """Get the path to an Excel file in the resources/Excel folder."""
-        return FileHelper.resource_path(os.path.join('resources', 'Excel', filename))
-    
-    @staticmethod
-    def get_excel_type_path():
         """Get the path to an Excel file in the resources/Excel folder."""
         return FileHelper.resource_path(os.path.join('resources', 'Excel', filename))
 
@@ -58,6 +59,11 @@ class FileHelper:
     def get_version_file_path():
         """Get the path to the version.txt file."""
         return FileHelper.resource_path('version.txt')
+    
+    @staticmethod
+    def get_spec_file_path():
+        """Get the path to the app.spec file."""
+        return FileHelper.resource_path('app.spec')
 
     @staticmethod
     def get_qss_file_path(theme, platform):
@@ -94,26 +100,57 @@ class FileHelper:
 
     @staticmethod
     def read_excel(file_path):
-        """Read data from an Excel file and return it as a pandas DataFrame, handling both .xls and .xlsx formats."""
-        if not os.path.exists(file_path):
-            if FileHelper.PRINT_ENABLED:
-                print(f"Excel file not found: {file_path}")
-            return None
         try:
-            # Use different engines based on file extension
+            if not os.path.exists(file_path):
+                raise FileNotFoundError(f"File not found: {file_path}")
+
             if file_path.endswith('.xls'):
                 df = pd.read_excel(file_path, engine='xlrd')
             else:
                 df = pd.read_excel(file_path, engine='openpyxl')
-            
-            if FileHelper.PRINT_ENABLED:
-                print(f"Read data from {file_path}:\n{df}")
-            return df  # Return DataFrame directly
+
+            if df.empty:
+                raise ValueError("Excel file is empty.")
+            return df
         except Exception as e:
-            if FileHelper.PRINT_ENABLED:
-                print(f"Error reading Excel file {file_path}: {e}")
+            print(f"Error reading Excel file: {e}")
             return None
 
+
+
+
+
+    # @staticmethod
+    # def read_csv(file_path):
+    #     if not os.path.exists(file_path):
+    #         print(f"CSV file not found: {file_path}")
+    #         return None
+
+    #     try:
+    #         df = pd.read_csv(file_path, encoding='utf-8')  # Start with utf-8 only
+    #         if df.empty:
+    #             print(f"CSV file {file_path} is empty.")
+    #             return None
+    #         return df
+    #     except UnicodeDecodeError:
+    #         print(f"Unicode error reading {file_path}.")
+    #         return None
+    #     except Exception as e:
+    #         print(f"General error reading {file_path}: {e}")
+    #         return None
+
+
+
+
+    @staticmethod
+    def read_file(file_path):
+        """General method to read either CSV or Excel files based on the extension."""
+        if file_path.endswith(('.csv', '.txt')):
+            return FileHelper.read_csv(file_path)
+        elif file_path.endswith(('.xlsx', '.xls')):
+            return FileHelper.read_excel(file_path)
+        else:
+            raise ValueError(f"Unsupported file format: {file_path}")
 
     @staticmethod
     def json_file_exists(json_path):

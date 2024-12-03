@@ -8,18 +8,35 @@ class FileLoader:
         self.df = None
 
     def load_file(self):
-        """Loads the Excel file and updates the columns."""
+        """Loads the Excel or CSV file and updates the columns."""
         try:
-            file_path, _ = QFileDialog.getOpenFileName(self.parent, "Open Excel File", "", "Excel Files (*.xlsx *.xls);;All Files (*)")
+            file_path, _ = QFileDialog.getOpenFileName(
+                self.parent,
+                "Open File",
+                "",
+                "Supported Files (*.xlsx *.xls *.csv);;Excel Files (*.xlsx *.xls);;CSV Files (*.csv);;All Files (*)"
+            )
             if file_path:
-                self.df = FileHelper.read_excel(file_path)  # Use FileHelper to load the file
+                if file_path.endswith(('.xlsx', '.xls')):
+                    self.df = FileHelper.read_excel(file_path)  # Use FileHelper to load Excel files
+                elif file_path.endswith('.csv'):
+                    self.df = self.read_csv(file_path)  # Use custom method to load CSV files
+                
                 if self.df is not None:
                     # Map columns and check for missing required columns
                     self.df = self.map_columns(self.df)
                     self.check_missing_columns(self.df)
                     self.parent.checkbox_manager.populate_checkboxes(self.df.columns)
         except Exception as e:
-            QMessageBox.critical(self.parent, "Error", f"Failed to load Excel file: {e}")
+            QMessageBox.critical(self.parent, "Error", f"Failed to load file: {e}")
+
+    def read_csv(self, file_path):
+        """Reads a CSV file into a pandas DataFrame."""
+        try:
+            df = pd.read_csv(file_path)
+            return df
+        except Exception as e:
+            raise ValueError(f"Error reading CSV file: {e}")
 
     def check_missing_columns(self, df):
         """Check if there are any missing required columns."""
@@ -29,7 +46,7 @@ class FileLoader:
             QMessageBox.warning(self.parent, "Warning", f"The following required columns are missing: {', '.join(missing_columns)}")
 
     def map_columns(self, df):
-        """Map known Excel columns to user-friendly names."""
+        """Map known columns to user-friendly names."""
         column_mapping = {
             'Service_Re': 'Service Request Number',
             'Created_Da': 'Created Date',

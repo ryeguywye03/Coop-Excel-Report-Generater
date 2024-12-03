@@ -22550,3 +22550,231 @@ TypeError: 'builtin_function_or_method' object is not iterable
 2024-11-21 10:30:21,451 - AppLogger - INFO - Theme applied: light
 2024-11-21 10:30:21,451 - AppLogger - INFO - Theme changed to light
 2024-11-21 10:30:25,908 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 13:06:44,683 - AppLogger - INFO - App initialized
+2024-11-21 13:06:44,685 - AppLogger - INFO - App initialized
+2024-11-21 13:06:44,685 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 13:06:44,687 - AppLogger - INFO - Theme applied: light
+2024-11-21 13:06:44,688 - AppLogger - INFO - Settings loaded successfully
+2024-11-21 13:06:44,689 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 13:06:44,768 - AppLogger - INFO - Switched to Main Menu
+2024-11-21 13:06:44,769 - AppLogger - INFO - App version set to v1.0.48
+2024-11-21 13:06:44,769 - AppLogger - INFO - Checking for updates...
+2024-11-21 13:06:45,516 - AppLogger - INFO - Fetched version from URL: v1.0.48
+2024-11-21 13:06:45,517 - AppLogger - INFO - You are using the latest version.
+2024-11-21 13:06:47,421 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 13:06:47,430 - AppLogger - INFO - ReportGenerator initialized
+2024-11-21 13:06:47,431 - AppLogger - INFO - Settings loaded successfully.
+2024-11-21 13:06:47,432 - AppLogger - INFO - Switched to SR Counter
+2024-11-21 13:07:32,201 - AppLogger - INFO - Excel file loaded successfully.
+2024-11-21 13:07:32,201 - AppLogger - INFO - Sort By changed to: 
+2024-11-21 13:07:32,201 - AppLogger - INFO - Sort By changed to: FID
+2024-11-21 13:07:32,202 - AppLogger - INFO - Dropdown populated with columns: Index(['FID', 'Service Request Number', 'Type Description', 'Created Date',
+       'Status_Des', 'Group Description', 'X Value', 'Y Value'],
+      dtype='object'), defaulted to: FID
+2024-11-21 13:07:34,441 - AppLogger - INFO - Sort By changed to: Group Description
+2024-11-21 13:07:51,192 - AppLogger - INFO - Preview Report - Sort By: Group Description
+2024-11-21 13:07:51,192 - AppLogger - INFO - Starting report generation from 2024-01-01 08:00:00 to 2024-11-21 16:00:00
+2024-11-21 13:07:51,368 - AppLogger - INFO - Sorted by Group Description
+2024-11-21 13:07:51,368 - AppLogger - INFO - Totals row appended successfully.
+2024-11-21 13:07:51,369 - AppLogger - INFO - Report generation completed successfully.
+2024-11-21 13:07:51,369 - AppLogger - INFO - Displaying report preview
+2024-11-27 13:53:06,645 - AppLogger - INFO - App initialized
+2024-11-27 13:53:06,647 - AppLogger - INFO - App initialized
+2024-11-27 13:53:06,647 - AppLogger - INFO - Settings loaded successfully.
+2024-11-27 13:53:06,650 - AppLogger - INFO - Theme applied: light
+2024-11-27 13:53:06,652 - AppLogger - INFO - Settings loaded successfully
+2024-11-27 13:53:06,653 - AppLogger - INFO - Settings loaded successfully.
+2024-11-27 13:53:06,748 - AppLogger - INFO - Switched to Main Menu
+2024-11-27 13:53:06,749 - AppLogger - INFO - App version set to v1.0.48
+2024-11-27 13:53:06,749 - AppLogger - INFO - Checking for updates...
+2024-11-27 13:53:06,824 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-11-27 13:53:09,708 - AppLogger - INFO - Settings loaded successfully.
+2024-11-27 13:53:09,734 - AppLogger - INFO - ReportGenerator initialized
+2024-11-27 13:53:09,734 - AppLogger - INFO - Settings loaded successfully.
+2024-11-27 13:53:09,738 - AppLogger - INFO - Switched to SR Counter
+2024-11-27 13:53:11,555 - AppLogger - INFO - Switched to Main Menu
+2024-11-27 13:53:12,090 - AppLogger - INFO - Settings loaded successfully.
+2024-11-27 13:53:14,518 - AppLogger - INFO - Theme applied: dark
+2024-11-27 13:53:14,519 - AppLogger - INFO - Theme changed to dark
+2024-11-27 13:53:16,126 - AppLogger - INFO - Switched to SR Counter
+2024-11-27 13:53:34,583 - AppLogger - INFO - Excel file loaded successfully.
+2024-11-27 13:53:34,583 - AppLogger - INFO - Sort By changed to: 
+2024-11-27 13:53:34,583 - AppLogger - INFO - Sort By changed to: FID
+2024-11-27 13:53:34,583 - AppLogger - INFO - Dropdown populated with columns: Index(['FID', 'Service Request Number', 'Type Description', 'Created Date',
+       'Status_Des', 'Group Description', 'X Value', 'Y Value'],
+      dtype='object'), defaulted to: FID
+2024-11-27 13:53:40,805 - AppLogger - INFO - Sort By changed to: Group Description
+2024-11-27 14:02:13,942 - AppLogger - INFO - Preview Report - Sort By: Group Description
+2024-11-27 14:02:13,943 - AppLogger - INFO - Starting report generation from 2024-01-01 08:00:00 to 2024-11-27 16:00:00
+2024-11-27 14:02:14,134 - AppLogger - INFO - Sorted by Group Description
+2024-11-27 14:02:14,135 - AppLogger - INFO - Totals row appended successfully.
+2024-11-27 14:02:14,135 - AppLogger - INFO - Report generation completed successfully.
+2024-11-27 14:02:14,135 - AppLogger - INFO - Displaying report preview
+2024-11-27 14:02:18,527 - AppLogger - INFO - Generating report with sort column: Group Description
+2024-11-27 14:02:18,527 - AppLogger - INFO - Starting report generation from 2024-01-01 08:00:00 to 2024-11-27 16:00:00
+2024-11-27 14:02:18,706 - AppLogger - INFO - Sorted by Group Description
+2024-11-27 14:02:18,707 - AppLogger - INFO - Totals row appended successfully.
+2024-11-27 14:02:18,707 - AppLogger - INFO - Report generation completed successfully.
+2024-11-27 14:02:18,707 - AppLogger - INFO - Saving report to Excel
+2024-11-27 14:02:21,936 - AppLogger - INFO - Report saved to /Users/ryanwybenga/Desktop/sr_count_report-11-27-2024-14-02-18.xlsx
+2024-12-02 08:13:52,730 - AppLogger - INFO - App initialized
+2024-12-02 08:13:52,733 - AppLogger - INFO - App initialized
+2024-12-02 08:13:52,734 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 08:13:52,737 - AppLogger - INFO - Theme applied: dark
+2024-12-02 08:13:52,740 - AppLogger - INFO - Settings loaded successfully
+2024-12-02 08:13:52,741 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 08:13:52,895 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 08:13:52,896 - AppLogger - INFO - App version set to v1.0.48
+2024-12-02 08:13:52,896 - AppLogger - INFO - Checking for updates...
+2024-12-02 08:13:52,932 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-02 08:13:57,981 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 08:13:58,006 - AppLogger - INFO - ReportGenerator initialized
+2024-12-02 08:13:58,007 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 08:13:58,011 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 08:13:59,779 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 08:14:01,150 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 08:14:04,521 - AppLogger - INFO - Theme applied: light
+2024-12-02 08:14:04,522 - AppLogger - INFO - Theme changed to light
+2024-12-02 08:14:06,348 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 09:27:49,955 - AppLogger - INFO - App initialized
+2024-12-02 09:27:49,958 - AppLogger - INFO - App initialized
+2024-12-02 09:27:49,958 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:27:49,962 - AppLogger - INFO - Theme applied: light
+2024-12-02 09:27:49,964 - AppLogger - INFO - Settings loaded successfully
+2024-12-02 09:27:49,965 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:27:50,113 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 09:27:50,113 - AppLogger - INFO - App version set to v1.0.48
+2024-12-02 09:27:50,113 - AppLogger - INFO - Checking for updates...
+2024-12-02 09:27:50,141 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-02 09:27:52,399 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:27:52,418 - AppLogger - INFO - ReportGenerator initialized
+2024-12-02 09:27:52,419 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:27:52,421 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 09:28:23,170 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 09:28:23,671 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:28:26,293 - AppLogger - INFO - Theme applied: dark
+2024-12-02 09:28:26,293 - AppLogger - INFO - Theme changed to dark
+2024-12-02 09:28:27,356 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 09:28:36,019 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 09:28:36,453 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:28:39,005 - AppLogger - INFO - Theme applied: light
+2024-12-02 09:28:39,005 - AppLogger - INFO - Theme changed to light
+2024-12-02 09:28:40,552 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 09:45:49,887 - AppLogger - INFO - App initialized
+2024-12-02 09:45:49,891 - AppLogger - INFO - App initialized
+2024-12-02 09:45:49,891 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:45:49,894 - AppLogger - INFO - Theme applied: light
+2024-12-02 09:45:49,896 - AppLogger - INFO - Settings loaded successfully
+2024-12-02 09:45:49,898 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:45:50,048 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 09:45:50,048 - AppLogger - INFO - App version set to v1.0.48
+2024-12-02 09:45:50,049 - AppLogger - INFO - Checking for updates...
+2024-12-02 09:45:50,078 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-02 09:45:54,942 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:45:57,641 - AppLogger - INFO - Theme applied: dark
+2024-12-02 09:45:57,641 - AppLogger - INFO - Theme changed to dark
+2024-12-02 09:46:22,838 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:46:25,427 - AppLogger - INFO - Theme applied: light
+2024-12-02 09:46:25,427 - AppLogger - INFO - Theme changed to light
+2024-12-02 09:46:27,469 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:46:27,495 - AppLogger - INFO - ReportGenerator initialized
+2024-12-02 09:46:27,495 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:46:27,499 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 09:49:47,093 - AppLogger - INFO - App initialized
+2024-12-02 09:49:47,095 - AppLogger - INFO - App initialized
+2024-12-02 09:49:47,096 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:49:47,099 - AppLogger - INFO - Theme applied: light
+2024-12-02 09:49:47,101 - AppLogger - INFO - Settings loaded successfully
+2024-12-02 09:49:47,102 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:49:47,246 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 09:49:47,246 - AppLogger - INFO - App version set to v1.0.48
+2024-12-02 09:49:47,247 - AppLogger - INFO - Checking for updates...
+2024-12-02 09:49:47,288 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-02 09:49:50,056 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:49:50,079 - AppLogger - INFO - ReportGenerator initialized
+2024-12-02 09:49:50,079 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:49:50,084 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 09:49:51,606 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 09:49:52,859 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 09:49:55,483 - AppLogger - INFO - Theme applied: dark
+2024-12-02 09:49:55,483 - AppLogger - INFO - Theme changed to dark
+2024-12-02 10:00:02,907 - AppLogger - INFO - App initialized
+2024-12-02 10:00:02,910 - AppLogger - INFO - App initialized
+2024-12-02 10:00:02,910 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 10:00:02,914 - AppLogger - INFO - Theme applied: dark
+2024-12-02 10:00:02,916 - AppLogger - INFO - Settings loaded successfully
+2024-12-02 10:00:02,917 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 10:00:03,065 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 10:00:03,065 - AppLogger - INFO - App version set to v1.0.48
+2024-12-02 10:00:03,065 - AppLogger - INFO - Checking for updates...
+2024-12-02 10:00:04,021 - AppLogger - INFO - Fetched version from URL: v1.0.48
+2024-12-02 10:00:04,022 - AppLogger - INFO - You are using the latest version.
+2024-12-02 10:00:05,633 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 10:00:05,652 - AppLogger - INFO - ReportGenerator initialized
+2024-12-02 10:00:05,652 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 10:00:05,655 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 10:43:59,102 - AppLogger - INFO - App initialized
+2024-12-02 10:43:59,104 - AppLogger - INFO - App initialized
+2024-12-02 10:43:59,105 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 10:43:59,106 - AppLogger - INFO - Theme applied: dark
+2024-12-02 10:43:59,107 - AppLogger - INFO - Settings loaded successfully
+2024-12-02 10:43:59,108 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 10:43:59,259 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 10:43:59,259 - AppLogger - INFO - App version set to v1.0.48
+2024-12-02 10:43:59,259 - AppLogger - INFO - Checking for updates...
+2024-12-02 10:43:59,931 - AppLogger - INFO - Fetched version from URL: v1.0.48
+2024-12-02 10:43:59,931 - AppLogger - INFO - You are using the latest version.
+2024-12-02 10:44:04,280 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 10:44:04,299 - AppLogger - INFO - ReportGenerator initialized
+2024-12-02 10:44:04,300 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 10:44:04,304 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 10:45:36,309 - AppLogger - WARNING - No data found in loaded Excel file.
+2024-12-02 14:30:37,724 - AppLogger - INFO - App initialized
+2024-12-02 14:30:37,727 - AppLogger - INFO - App initialized
+2024-12-02 14:30:37,727 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 14:30:37,731 - AppLogger - INFO - Theme applied: dark
+2024-12-02 14:30:37,733 - AppLogger - INFO - Settings loaded successfully
+2024-12-02 14:30:37,734 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 14:30:37,832 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 14:30:37,832 - AppLogger - INFO - App version set to v1.0.48
+2024-12-02 14:30:37,832 - AppLogger - INFO - Checking for updates...
+2024-12-02 14:30:38,862 - AppLogger - INFO - Fetched version from URL: v1.0.48
+2024-12-02 14:30:38,862 - AppLogger - INFO - You are using the latest version.
+2024-12-02 14:30:40,669 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 14:30:40,695 - AppLogger - INFO - ReportGenerator initialized
+2024-12-02 14:30:40,695 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 14:30:40,699 - AppLogger - INFO - Switched to SR Counter
+2024-12-02 15:03:42,456 - AppLogger - INFO - App initialized
+2024-12-02 15:03:42,457 - AppLogger - INFO - App initialized
+2024-12-02 15:03:42,457 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 15:03:42,458 - AppLogger - INFO - Theme applied: dark
+2024-12-02 15:03:42,459 - AppLogger - INFO - Settings loaded successfully
+2024-12-02 15:03:42,460 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 15:03:42,563 - AppLogger - INFO - Switched to Main Menu
+2024-12-02 15:03:42,563 - AppLogger - INFO - App version set to v1.0.48
+2024-12-02 15:03:42,564 - AppLogger - INFO - Checking for updates...
+2024-12-02 15:04:07,757 - AppLogger - ERROR - Error checking for updates: HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Read timed out. (read timeout=10)
+2024-12-02 15:04:21,627 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 15:04:21,649 - AppLogger - INFO - ReportGenerator initialized
+2024-12-02 15:04:21,650 - AppLogger - INFO - Settings loaded successfully.
+2024-12-02 15:04:21,654 - AppLogger - INFO - Switched to SR Counter
+2024-12-03 08:08:32,438 - AppLogger - INFO - App initialized
+2024-12-03 08:08:32,441 - AppLogger - INFO - App initialized
+2024-12-03 08:08:32,442 - AppLogger - INFO - Settings loaded successfully.
+2024-12-03 08:08:32,445 - AppLogger - INFO - Theme applied: dark
+2024-12-03 08:08:32,447 - AppLogger - INFO - Settings loaded successfully
+2024-12-03 08:08:32,448 - AppLogger - INFO - Settings loaded successfully.
+2024-12-03 08:08:32,617 - AppLogger - INFO - Switched to Main Menu
+2024-12-03 08:08:32,617 - AppLogger - INFO - App version set to v1.0.48
+2024-12-03 08:08:32,617 - AppLogger - INFO - Checking for updates...
+2024-12-03 08:08:32,828 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-03 08:08:41,265 - AppLogger - INFO - App initialized
+2024-12-03 08:08:41,266 - AppLogger - INFO - App initialized
+2024-12-03 08:08:41,266 - AppLogger - INFO - Settings loaded successfully.
+2024-12-03 08:08:41,267 - AppLogger - INFO - Theme applied: dark
+2024-12-03 08:08:41,267 - AppLogger - INFO - Settings loaded successfully
+2024-12-03 08:08:41,269 - AppLogger - INFO - Settings loaded successfully.
+2024-12-03 08:08:41,404 - AppLogger - INFO - Switched to Main Menu
+2024-12-03 08:08:41,405 - AppLogger - INFO - App version set to v1.0.48
+2024-12-03 08:08:41,405 - AppLogger - INFO - Checking for updates...
+2024-12-03 08:08:41,432 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))

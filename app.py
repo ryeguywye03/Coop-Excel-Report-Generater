@@ -1,10 +1,16 @@
-import sys
+import os
 import requests
 import subprocess
-from PyQt6.QtWidgets import QApplication
-from modules.utils.logger_manager import LoggerManager
-from modules.windows.main import MainWindow
+import ctypes
+import sys
+from PyQt6.QtWidgets import QApplication, QMessageBox
+
 from modules.utils.file_helpers import FileHelper
+from modules.windows.main import MainWindow
+
+from modules.utils.logger_manager import LoggerManager
+
+
 
 
 class AppManager:
@@ -36,7 +42,6 @@ class AppManager:
         self.logger.log_info("Checking for updates...")
         print("Checking for updates...")
         try:
-            # Attempt to fetch the latest version from GitHub
             response = requests.get(self.update_url, timeout=10)
             if response.status_code == 200:
                 latest_version = response.text.strip()
@@ -54,18 +59,14 @@ class AppManager:
                     self.logger.log_info("You are using the latest version.")
                     print("You are using the latest version.")
             else:
-                # Log and print the error if response status is not 200
                 self.logger.log_error(f"Failed to fetch update information. Status code: {response.status_code}")
                 print(f"Failed to fetch update information. Status code: {response.status_code}. Running the current version.")
         except requests.exceptions.RequestException as e:
-            # Handle network issues (e.g., firewall, no internet)
             self.logger.log_error(f"Error checking for updates: {e}")
             print(f"Failed to check for updates due to a network issue. Proceeding with the current version.")
         except Exception as e:
-            # Catch all other exceptions
             self.logger.log_error(f"Unexpected error checking for updates: {e}")
             print(f"Unexpected error checking for updates. Proceeding with the current version.")
-
 
     def perform_update(self):
         """Perform the update using Git pull."""
@@ -102,6 +103,50 @@ class AppManager:
             return False
         except Exception:
             return False
+
+    def check_network_drive(self):
+        """Check if the application is running from a network drive and display a warning dialog."""
+        try:
+            path = os.path.dirname(os.path.abspath(__file__))
+            drive_type = ctypes.windll.kernel32.GetDriveTypeW(path[:3])
+
+            if drive_type == 4:
+                self.logger.log_warning("App is running from a network drive.")
+                self.show_network_drive_warning()
+                return True
+            return False
+        except Exception as e:
+            self.logger.log_error(f"Error checking drive type: {e}")
+            return False
+
+    def show_network_drive_warning(self):
+        """Show a warning dialog about running the app from a network drive."""
+        message = (
+            "It looks like the application is running from a network drive. "
+            "To ensure proper functionality, please follow these steps:\n\n"
+            "1. Close the application.\n"
+            "2. Copy the entire 'dist' folder (including the .exe file) to your Desktop or another local drive.\n"
+            "3. Run the application from the new location.\n\n"
+            "If you need assistance, contact your IT department."
+        )
+
+        warning_dialog = QMessageBox()
+        warning_dialog.setIcon(QMessageBox.Icon.Warning)
+        warning_dialog.setWindowTitle("Network Drive Detected")
+        warning_dialog.setText("Application is running from a network drive.")
+        warning_dialog.setInformativeText(message)
+        warning_dialog.setStandardButtons(QMessageBox.StandardButton.Ok)
+        warning_dialog.exec()
+
+    def initialize_app(self, main_window):
+        """Initialize the app."""
+        if self.check_network_drive():
+            return
+        self.set_app_version(main_window)
+        self.check_for_update()
+
+
+
 
 
 def main():
