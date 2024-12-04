@@ -28,17 +28,15 @@ class FileHelper:
                 base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
             # Combine the base path with the relative path
-            final_path = os.path.join(base_path, relative_path)
+            final_path = os.path.normpath(os.path.join(base_path, relative_path))
 
             if FileHelper.PRINT_ENABLED:
                 print(f"[FileHelper] Resolved resource path: {final_path}")
-            
+
             return final_path
         except Exception as e:
             print(f"[FileHelper] Error resolving resource path for {relative_path}: {e}")
             raise
-
-
 
     @staticmethod
     def get_settings_file_path():
@@ -59,7 +57,7 @@ class FileHelper:
     def get_version_file_path():
         """Get the path to the version.txt file."""
         return FileHelper.resource_path('version.txt')
-    
+
     @staticmethod
     def get_spec_file_path():
         """Get the path to the app.spec file."""
@@ -116,37 +114,11 @@ class FileHelper:
             print(f"Error reading Excel file: {e}")
             return None
 
-
-
-
-
-    # @staticmethod
-    # def read_csv(file_path):
-    #     if not os.path.exists(file_path):
-    #         print(f"CSV file not found: {file_path}")
-    #         return None
-
-    #     try:
-    #         df = pd.read_csv(file_path, encoding='utf-8')  # Start with utf-8 only
-    #         if df.empty:
-    #             print(f"CSV file {file_path} is empty.")
-    #             return None
-    #         return df
-    #     except UnicodeDecodeError:
-    #         print(f"Unicode error reading {file_path}.")
-    #         return None
-    #     except Exception as e:
-    #         print(f"General error reading {file_path}: {e}")
-    #         return None
-
-
-
-
     @staticmethod
     def read_file(file_path):
         """General method to read either CSV or Excel files based on the extension."""
         if file_path.endswith(('.csv', '.txt')):
-            return FileHelper.read_csv(file_path)
+            return pd.read_csv(file_path)
         elif file_path.endswith(('.xlsx', '.xls')):
             return FileHelper.read_excel(file_path)
         else:

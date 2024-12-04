@@ -22778,3 +22778,196 @@ TypeError: 'builtin_function_or_method' object is not iterable
 2024-12-03 08:08:41,405 - AppLogger - INFO - App version set to v1.0.48
 2024-12-03 08:08:41,405 - AppLogger - INFO - Checking for updates...
 2024-12-03 08:08:41,432 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:17:03,266 - AppLogger - INFO - App initialized
+2024-12-04 14:17:03,267 - AppLogger - INFO - App initialized
+2024-12-04 14:17:03,267 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:17:03,268 - AppLogger - INFO - Theme applied: dark
+2024-12-04 14:17:03,268 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 14:17:03,270 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:17:03,376 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 14:17:03,376 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 14:17:03,376 - AppLogger - INFO - Checking for updates...
+2024-12-04 14:17:03,406 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:17:10,127 - AppLogger - INFO - App initialized
+2024-12-04 14:17:10,127 - AppLogger - INFO - App initialized
+2024-12-04 14:17:10,128 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:17:10,128 - AppLogger - INFO - Theme applied: dark
+2024-12-04 14:17:10,128 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 14:17:10,129 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:17:10,213 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 14:17:10,213 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 14:17:10,213 - AppLogger - INFO - Checking for updates...
+2024-12-04 14:17:10,247 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:20:32,743 - AppLogger - INFO - App initialized
+2024-12-04 14:20:32,744 - AppLogger - INFO - App initialized
+2024-12-04 14:20:32,744 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:20:32,745 - AppLogger - INFO - Theme applied: dark
+2024-12-04 14:20:32,745 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 14:20:32,746 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:20:32,830 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 14:20:32,830 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 14:20:32,830 - AppLogger - INFO - Checking for updates...
+2024-12-04 14:20:32,854 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:20:38,237 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:20:39,410 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/settings_handler.py", line 58, in open_types_dialog
+    dialog = EditableTableDialog(["Type"], "311_GIS_Type_Descriptions.xlsx", self)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 21, in __init__
+    self.file_path = self.ensure_writable_copy()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 32, in ensure_writable_copy
+    writable_path = FileHelper.get_writable_resource_path(os.path.join('Excel', self.excel_file_key))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FileHelper' has no attribute 'get_writable_resource_path'
+2024-12-04 14:21:33,986 - AppLogger - INFO - App initialized
+2024-12-04 14:21:33,990 - AppLogger - INFO - App initialized
+2024-12-04 14:21:33,990 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:21:33,994 - AppLogger - INFO - Theme applied: dark
+2024-12-04 14:21:33,996 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 14:21:33,997 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:21:34,091 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 14:21:34,092 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 14:21:34,092 - AppLogger - INFO - Checking for updates...
+2024-12-04 14:21:34,117 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:21:35,821 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:37:59,962 - AppLogger - INFO - App initialized
+2024-12-04 14:41:16,380 - AppLogger - INFO - App initialized
+2024-12-04 14:41:16,382 - AppLogger - INFO - App initialized
+2024-12-04 14:47:28,657 - AppLogger - INFO - App initialized
+2024-12-04 14:47:28,660 - AppLogger - INFO - App initialized
+2024-12-04 14:47:28,661 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:47:28,664 - AppLogger - INFO - Theme applied: dark
+2024-12-04 14:47:28,666 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 14:47:28,667 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:47:28,768 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 14:47:28,768 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 14:47:28,768 - AppLogger - INFO - Checking for updates...
+2024-12-04 14:47:28,796 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:47:30,718 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:47:37,787 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 121, in save_changes_to_excel
+    FileHelper.save_excel(df, file_path)
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FileHelper' has no attribute 'save_excel'
+2024-12-04 14:48:16,510 - AppLogger - INFO - App initialized
+2024-12-04 14:48:16,512 - AppLogger - INFO - App initialized
+2024-12-04 14:48:16,512 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:48:16,516 - AppLogger - INFO - Theme applied: dark
+2024-12-04 14:48:16,517 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 14:48:16,518 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:48:16,612 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 14:48:16,612 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 14:48:16,612 - AppLogger - INFO - Checking for updates...
+2024-12-04 14:48:16,656 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:48:18,134 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:49:57,156 - AppLogger - INFO - App initialized
+2024-12-04 14:49:57,157 - AppLogger - INFO - App initialized
+2024-12-04 14:49:57,158 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:49:57,158 - AppLogger - INFO - Theme applied: dark
+2024-12-04 14:49:57,158 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 14:49:57,159 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:49:57,245 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 14:49:57,245 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 14:49:57,245 - AppLogger - INFO - Checking for updates...
+2024-12-04 14:49:57,277 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:49:59,300 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:57:37,224 - AppLogger - INFO - App initialized
+2024-12-04 14:57:37,225 - AppLogger - INFO - App initialized
+2024-12-04 14:57:37,225 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:57:37,226 - AppLogger - INFO - Theme applied: dark
+2024-12-04 14:57:37,226 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 14:57:37,228 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:57:37,317 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 14:57:37,317 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 14:57:37,317 - AppLogger - INFO - Checking for updates...
+2024-12-04 14:57:37,377 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:57:39,005 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:58:20,753 - AppLogger - INFO - App initialized
+2024-12-04 14:58:20,754 - AppLogger - INFO - App initialized
+2024-12-04 14:58:20,755 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:58:20,755 - AppLogger - INFO - Theme applied: dark
+2024-12-04 14:58:20,756 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 14:58:20,757 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 14:58:20,841 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 14:58:20,841 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 14:58:20,842 - AppLogger - INFO - Checking for updates...
+2024-12-04 14:58:20,864 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:58:22,453 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:10:37,361 - AppLogger - INFO - App initialized
+2024-12-04 15:10:37,362 - AppLogger - INFO - App initialized
+2024-12-04 15:10:37,362 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:10:37,363 - AppLogger - INFO - Theme applied: dark
+2024-12-04 15:10:37,363 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 15:10:37,364 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:10:37,448 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 15:10:37,448 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 15:10:37,449 - AppLogger - INFO - Checking for updates...
+2024-12-04 15:10:37,471 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:10:39,153 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:10:40,343 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/settings_handler.py", line 58, in open_types_dialog
+    dialog = EditableTableDialog(["Type"], "311_GIS_Type_Descriptions.xlsx", self)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 19, in __init__
+    self.data = self.load_data_from_excel()  # Load data on initialization
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 70, in load_data_from_excel
+    file_path = FileHelper.ensure_writable_copy(f"resources/Excel/{self.excel_file_key}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FileHelper' has no attribute 'ensure_writable_copy'
+2024-12-04 15:14:50,521 - AppLogger - INFO - App initialized
+2024-12-04 15:14:50,523 - AppLogger - INFO - App initialized
+2024-12-04 15:14:50,523 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:14:50,526 - AppLogger - INFO - Theme applied: dark
+2024-12-04 15:14:50,528 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 15:14:50,529 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:14:50,621 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 15:14:50,621 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 15:14:50,621 - AppLogger - INFO - Checking for updates...
+2024-12-04 15:14:50,643 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:14:52,271 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:22:57,201 - AppLogger - INFO - App initialized
+2024-12-04 15:22:57,201 - AppLogger - INFO - App initialized
+2024-12-04 15:22:57,202 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:22:57,202 - AppLogger - INFO - Theme applied: dark
+2024-12-04 15:22:57,202 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 15:22:57,204 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:22:57,291 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 15:22:57,291 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 15:22:57,291 - AppLogger - INFO - Checking for updates...
+2024-12-04 15:22:57,319 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:23:10,003 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:26:50,566 - AppLogger - INFO - App initialized
+2024-12-04 15:26:50,567 - AppLogger - INFO - App initialized
+2024-12-04 15:26:50,567 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:26:50,568 - AppLogger - INFO - Theme applied: dark
+2024-12-04 15:26:50,568 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 15:26:50,569 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:26:50,654 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 15:26:50,655 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 15:26:50,655 - AppLogger - INFO - Checking for updates...
+2024-12-04 15:26:50,694 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:26:52,301 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:28:40,101 - AppLogger - INFO - App initialized
+2024-12-04 15:28:40,103 - AppLogger - INFO - App initialized
+2024-12-04 15:28:40,104 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:28:40,107 - AppLogger - INFO - Theme applied: dark
+2024-12-04 15:28:40,108 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 15:28:40,109 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:28:40,204 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 15:28:40,204 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 15:28:40,204 - AppLogger - INFO - Checking for updates...
+2024-12-04 15:28:40,228 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:29:09,725 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:31:02,261 - AppLogger - INFO - App initialized
+2024-12-04 15:31:02,264 - AppLogger - INFO - App initialized
+2024-12-04 15:31:02,265 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:31:02,268 - AppLogger - INFO - Theme applied: dark
+2024-12-04 15:31:02,270 - AppLogger - INFO - Settings loaded successfully
+2024-12-04 15:31:02,271 - AppLogger - INFO - Settings loaded successfully.
+2024-12-04 15:31:02,365 - AppLogger - INFO - Switched to Main Menu
+2024-12-04 15:31:02,365 - AppLogger - INFO - App version set to v1.0.49
+2024-12-04 15:31:02,365 - AppLogger - INFO - Checking for updates...
+2024-12-04 15:31:02,397 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:31:04,793 - AppLogger - INFO - Settings loaded successfully.

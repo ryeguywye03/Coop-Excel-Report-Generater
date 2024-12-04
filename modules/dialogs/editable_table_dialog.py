@@ -117,13 +117,21 @@ class EditableTableDialog(QDialog):
             row_data = []
             for col in range(self.table.columnCount()):
                 item = self.table.item(row, col)
-                row_data.append(item.text() if item else "")
+                value = item.text().strip() if item else ""  # Handle empty cells
+                row_data.append(value)
             data_to_save.append(row_data)
 
-        # Convert data to a DataFrame and save
+        # Convert data to a DataFrame
         df = pd.DataFrame(data_to_save, columns=self.headers)
+        # print(f"DataFrame to save:\n{df}")  # Debugging: Print the DataFrame before saving
+
         try:
-            df.to_excel(file_path, index=False)
+            # Save the DataFrame to Excel
+            df.to_excel(file_path, index=False, engine="openpyxl")
             print(f"Data successfully saved to {file_path}")
         except Exception as e:
             print(f"Error saving data: {e}")
+
+
+
+

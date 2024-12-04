@@ -108,3 +108,45 @@ TypeError: 'builtin_function_or_method' object is not iterable
 2024-12-02 15:04:07,757 - AppLogger - ERROR - Error checking for updates: HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Read timed out. (read timeout=10)
 2024-12-03 08:08:32,828 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
 2024-12-03 08:08:41,432 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:17:03,406 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:17:10,247 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:20:32,854 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:20:39,410 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/settings_handler.py", line 58, in open_types_dialog
+    dialog = EditableTableDialog(["Type"], "311_GIS_Type_Descriptions.xlsx", self)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 21, in __init__
+    self.file_path = self.ensure_writable_copy()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 32, in ensure_writable_copy
+    writable_path = FileHelper.get_writable_resource_path(os.path.join('Excel', self.excel_file_key))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FileHelper' has no attribute 'get_writable_resource_path'
+2024-12-04 14:21:34,117 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:47:28,796 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:47:37,787 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 121, in save_changes_to_excel
+    FileHelper.save_excel(df, file_path)
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FileHelper' has no attribute 'save_excel'
+2024-12-04 14:48:16,656 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:49:57,277 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:57:37,377 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 14:58:20,864 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:10:37,471 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:10:40,343 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/main_menu/settings_handler.py", line 58, in open_types_dialog
+    dialog = EditableTableDialog(["Type"], "311_GIS_Type_Descriptions.xlsx", self)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 19, in __init__
+    self.data = self.load_data_from_excel()  # Load data on initialization
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/dialogs/editable_table_dialog.py", line 70, in load_data_from_excel
+    file_path = FileHelper.ensure_writable_copy(f"resources/Excel/{self.excel_file_key}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FileHelper' has no attribute 'ensure_writable_copy'
+2024-12-04 15:14:50,643 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:22:57,319 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:26:50,694 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:28:40,228 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-04 15:31:02,397 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))

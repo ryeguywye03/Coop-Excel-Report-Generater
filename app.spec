@@ -1,24 +1,16 @@
 # -*- mode: python ; coding: utf-8 -*-
-from PyInstaller.utils.hooks import collect_submodules, collect_data_files
+from PyInstaller.utils.hooks import collect_submodules
 import os
 
 # Helper function to collect all app data paths
 def get_app_data_paths():
     app_data_paths = []
 
-    # Collecting specific subfolders under 'resources'
-    app_data_paths.extend(collect_data_files(os.path.join('resources', 'Excel')))   # Include Excel folder
-    app_data_paths.extend(collect_data_files(os.path.join('resources', 'config')))  # Include config folder
-    app_data_paths.extend(collect_data_files(os.path.join('resources', 'data')))    # Include data folder
-    app_data_paths.extend(collect_data_files(os.path.join('resources', 'styles')))  # Include styles folder
+    # Add resources folder in its entirety
+    app_data_paths.append(('resources', 'resources'))
 
-    # Collect all files in 'modules' folder
-    app_data_paths.extend(collect_data_files('modules'))
-
-    app_data_paths.append(('resources','resources'))
-
-    # Add specific logs folder
-    app_data_paths.append(('logs', 'logs'))  # Include logs folder
+    # Add logs folder
+    app_data_paths.append(('logs', 'logs'))
 
     # Include additional necessary files
     app_data_paths.append(('version.txt', '.'))
