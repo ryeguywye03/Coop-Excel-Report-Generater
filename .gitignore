@@ -12,6 +12,7 @@ venv/
 
 # Your virtual environment, which should be excluded from version control
 myenv/  
+.venv/
 
 # Optionally, you can add other folders or files to ignore
 *.pyc  # Python cache files
