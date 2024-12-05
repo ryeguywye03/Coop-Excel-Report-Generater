@@ -150,3 +150,4 @@ AttributeError: type object 'FileHelper' has no attribute 'ensure_writable_copy'
 2024-12-04 15:26:50,694 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
 2024-12-04 15:28:40,228 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
 2024-12-04 15:31:02,397 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 08:02:30,658 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
