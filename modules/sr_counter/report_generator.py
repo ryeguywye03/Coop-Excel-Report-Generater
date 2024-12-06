@@ -16,15 +16,15 @@ class ReportGenerator:
         self.included_months = []  # Initialize as an instance variable
         self.grand_totals = {}  # Store grand totals here
 
-    def generate_report(self, df: pd.DataFrame, selected_columns, start_date: datetime, end_date: datetime, sort_by=None, exclusions=None):
+    def generate_report(self, df: pd.DataFrame, selected_columns, start_date: datetime, end_date: datetime, start_time=None, end_time=None, sort_by=None, exclusions=None):
         """Generate the report by processing the DataFrame."""
-        self.logger.log_info(f"Starting report generation from {start_date} to {end_date}")
+        self.logger.log_info(f"Starting report generation from {start_date} to {end_date} with time frame {start_time} to {end_time}")
         self.logger.log_debug(f"Selected columns: {selected_columns}, Sort by: {sort_by}")
 
         try:
-            # Filter dates
-            df = self._filter_dates(df, start_date, end_date)
-            self.logger.log_debug(f"Row count after date filtering: {len(df)}")
+            # Filter dates and times
+            df = self._filter_dates(df, start_date, end_date, start_time, end_time)
+            self.logger.log_debug(f"Row count after date and time filtering: {len(df)}")
 
             # Ensure the 'Month' column is created
             if 'Created Date' in df.columns:
@@ -66,11 +66,29 @@ class ReportGenerator:
             return None
 
 
-    def _filter_dates(self, df, start_date, end_date):
-        self.logger.log_debug("Filtering data by date range")
+
+    def _filter_dates(self, df, start_date, end_date, start_time=None, end_time=None):
+        """
+        Filter the DataFrame by the specified date range and optional time frame.
+        """
+        self.logger.log_debug("Filtering data by date range and time frame")
+
+        # Ensure 'Created Date' is a valid datetime
         df['Created Date'] = pd.to_datetime(df['Created Date'], errors='coerce')
         df.dropna(subset=['Created Date'], inplace=True)
-        return df[(df['Created Date'] >= start_date) & (df['Created Date'] <= end_date)]
+
+        # Filter by date range
+        date_filtered_df = df[(df['Created Date'] >= start_date) & (df['Created Date'] <= end_date)]
+
+        if start_time and end_time:
+            # Filter by time frame
+            date_filtered_df = date_filtered_df[
+                (date_filtered_df['Created Date'].dt.time >= start_time) &
+                (date_filtered_df['Created Date'].dt.time <= end_time)
+            ]
+
+        return date_filtered_df
+
 
     def _apply_exclusions(self, df, exclusions):
         """Apply exclusions to the DataFrame based on the provided exclusion criteria."""
@@ -155,13 +173,41 @@ class ReportGenerator:
         return df[selected_columns + self.included_months + ['TOTAL']]
 
 
-    def show_report_preview(self, preview_df):
+    def show_report_preview(self, preview_df, start_time=None, end_time=None):
+        """
+        Display the report preview with optional time frame details.
+        """
         self.logger.log_info("Displaying report preview")
         try:
-            dialog = self._create_preview_dialog(preview_df)
+            dialog = QDialog()
+            dialog.setWindowTitle("Report Preview")
+            dialog.setWindowFlag(Qt.WindowType.WindowMaximizeButtonHint)
+            layout = QVBoxLayout(dialog)
+
+            # Add time frame details at the top if applicable
+            if start_time and end_time:
+                time_frame_label = QLabel(f"Time Frame: {start_time.strftime('%H:%M')} - {end_time.strftime('%H:%M')}")
+                time_frame_label.setStyleSheet("font-weight: bold; margin-bottom: 10px;")
+                layout.addWidget(time_frame_label)
+
+            table = QTableWidget()
+            table.setRowCount(preview_df.shape[0])
+            table.setColumnCount(preview_df.shape[1])
+            table.setHorizontalHeaderLabels(preview_df.columns)
+
+            for i in range(preview_df.shape[0]):
+                for j in range(preview_df.shape[1]):
+                    table.setItem(i, j, QTableWidgetItem(str(preview_df.iloc[i, j])))
+
+            layout.addWidget(table)
+            dialog.setLayout(layout)
+            dialog.resize(800, 400)
+            table.resizeColumnsToContents()
+
             dialog.exec()
         except Exception as e:
             self.logger.log_error(f"Error displaying preview: {e}")
+
 
     def _create_preview_dialog(self, df):
         dialog = QDialog()
@@ -185,42 +231,61 @@ class ReportGenerator:
 
         return dialog
 
-    def save_report(self, report_df):
-        """Save the report to an Excel file without duplicating rows."""
+    def save_report(self, report_df, start_date, end_date, start_time=None, end_time=None):
+        """Save the report to an Excel file with optional time frame details."""
         self.logger.log_info("Saving report to Excel")
-        self.logger.log_debug(f"Row count before saving: {len(report_df)}")
 
         try:
+            # Drop empty rows
             report_df.dropna(how='all', inplace=True)
-            self.logger.log_debug(f"Row count after dropping blank rows: {len(report_df)}")
-            clean_report_df = report_df.copy()
 
+            # Prompt for save location
             file_path = self._prompt_save_file()
             if not file_path:
                 self.logger.log_info("Save canceled by user.")
+                QMessageBox.warning(None, "Save Canceled", "The report was not saved because the save operation was canceled.")
                 return None
 
-            self._save_to_excel(clean_report_df, file_path)
-            self.logger.log_debug(f"Row count after save: {len(clean_report_df)}")
-            self.logger.log_info(f"Report saved to {file_path}")
+            # Save to Excel
+            self._save_to_excel(report_df, file_path, start_time=start_time, end_time=end_time)
+            QMessageBox.information(None, "Success", f"Report saved at {file_path}")
             return file_path
         except Exception as e:
             self.logger.log_error(f"Error saving report: {e}")
+            QMessageBox.critical(None, "Error", "Failed to save report.")
             return None
+
+
 
     def _prompt_save_file(self):
         current_time = datetime.now()
         default_filename = current_time.strftime("sr_count_report-%m-%d-%Y-%H-%M-%S.xlsx")
-        return QFileDialog.getSaveFileName(
+        file_path, _ = QFileDialog.getSaveFileName(
             None,
             "Save Report",
             os.path.join(os.path.expanduser("~/Desktop"), default_filename),
             "Excel Files (*.xlsx)"
-        )[0]
+        )
 
-    def _save_to_excel(self, df, file_path):
-        """Save the DataFrame to an Excel file with conditional formatting for totals row using openpyxl."""
-        self.logger.log_debug("Writing DataFrame to Excel with openpyxl.")
+        if not file_path:
+            self.logger.log_warning("No file path selected; save operation canceled.")
+            return None
+
+        self.logger.log_info(f"File path selected: {file_path}")
+        return file_path
+
+
+
+    def _save_to_excel(self, df, file_path, start_time=None, end_time=None):
+        """
+        Save the DataFrame to an Excel file with optional time frame details.
+
+        :param df: The DataFrame to save.
+        :param file_path: The path to save the Excel file.
+        :param start_time: Start time for the time frame (if enabled).
+        :param end_time: End time for the time frame (if enabled).
+        """
+        self.logger.log_debug("Writing DataFrame to Excel with time frame (if enabled).")
         try:
             workbook = Workbook()
             worksheet = workbook.active
@@ -229,19 +294,32 @@ class ReportGenerator:
             # Define styles
             header_font = Font(bold=True, color="FFFFFF")
             header_fill = PatternFill(start_color="4F81BD", end_color="4F81BD", fill_type="solid")
-            cell_border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'), bottom=Side(style='thin'))
+            cell_border = Border(left=Side(style='thin'), right=Side(style='thin'),
+                                top=Side(style='thin'), bottom=Side(style='thin'))
+            time_frame_fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
             total_fill = PatternFill(start_color="D9EAD3", end_color="D9EAD3", fill_type="solid")
             total_font = Font(bold=True)
 
+            current_row = 1
+
+            # Add time frame details if applicable
+            if start_time and end_time:
+                time_frame_text = f"Time Frame: {start_time.strftime('%H:%M')} - {end_time.strftime('%H:%M')}"
+                worksheet.merge_cells(start_row=current_row, start_column=1, end_row=current_row, end_column=len(df.columns))
+                time_frame_cell = worksheet.cell(row=current_row, column=1, value=time_frame_text)
+                time_frame_cell.font = Font(bold=True)
+                time_frame_cell.fill = time_frame_fill
+                current_row += 1  # Move to the next row for headers
+
             # Write headers
             for col_num, column_title in enumerate(df.columns, start=1):
-                cell = worksheet.cell(row=1, column=col_num, value=column_title)
+                cell = worksheet.cell(row=current_row, column=col_num, value=column_title)
                 cell.font = header_font
                 cell.fill = header_fill
                 cell.border = cell_border
 
             # Write data rows
-            for row_num, row_data in enumerate(df.itertuples(index=False), start=2):
+            for row_num, row_data in enumerate(df.itertuples(index=False), start=current_row + 1):
                 is_total_row = row_data[0] == "Totals"
                 for col_num, value in enumerate(row_data, start=1):
                     cell = worksheet.cell(row=row_num, column=col_num, value=value)
@@ -250,13 +328,15 @@ class ReportGenerator:
                         cell.fill = total_fill
                     cell.border = cell_border
 
-            # Autofit non-month columns
-            for idx, col in enumerate(df.columns, start=1):
-                max_length = max(len(str(value)) for value in df[col].astype(str)) + 2
-                worksheet.column_dimensions[worksheet.cell(row=1, column=idx).column_letter].width = max_length if idx <= 2 else 15
+            # Autofit column widths safely
+            for col_idx, column_cells in enumerate(worksheet.iter_cols(min_row=current_row, max_row=current_row, max_col=len(df.columns)), start=1):
+                column_letter = column_cells[0].column_letter
+                max_length = max(len(str(cell.value or "")) for cell in worksheet[column_letter]) + 2
+                worksheet.column_dimensions[column_letter].width = max_length
 
             workbook.save(file_path)
-            self.logger.log_debug("Excel file saved successfully using openpyxl.")
-
+            self.logger.log_debug(f"Excel file saved successfully to {file_path}.")
         except Exception as e:
-            self.logger.log_error(f"Failed to save to Excel with openpyxl: {e}")
+            self.logger.log_error(f"Failed to save Excel file: {e}")
+
+

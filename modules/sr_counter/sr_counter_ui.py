@@ -210,6 +210,12 @@ class SRCounterUI(QWidget):
         self.start_time_input.setEnabled(is_enabled)
         self.end_time_input.setEnabled(is_enabled)
 
+        # Reset to default "all time" if disabled
+        if not is_enabled:
+            self.start_time_input.setTime(QTime(0, 0))
+            self.end_time_input.setTime(QTime(23, 59))
+
+
 
 
     def validate_time_columns(self):
@@ -226,19 +232,32 @@ class SRCounterUI(QWidget):
             QMessageBox.warning(self, "Warning", "Please select columns for the report.")
             return
 
-        start_date = self.start_date_input.dateTime().toPyDateTime() if self.use_time_checkbox.isChecked() else None
-        end_date = self.end_date_input.dateTime().toPyDateTime() if self.use_time_checkbox.isChecked() else None
+        # Fetch start and end dates
+        start_date = self.start_date_input.dateTime().toPyDateTime()
+        end_date = self.end_date_input.dateTime().toPyDateTime()
+
+        # Fetch start and end times if time frame is enabled
+        start_time = self.start_time_input.time().toPyTime() if self.use_time_checkbox.isChecked() else None
+        end_time = self.end_time_input.time().toPyTime() if self.use_time_checkbox.isChecked() else None
+
+        # Validate time range if time frame is enabled
+        if start_time and end_time and start_time > end_time:
+            QMessageBox.critical(self, "Error", "Start Time cannot be after End Time.")
+            return
 
         try:
+            # Generate the report
             report_df = self.report_generator.generate_report(
-                self.file_loader.df, selected_columns, start_date, end_date, sort_by=self.selected_sort_by
+                self.file_loader.df, selected_columns, start_date, end_date, start_time, end_time, sort_by=self.selected_sort_by
             )
             if report_df is not None:
-                output_file = self.report_generator.save_report(report_df)
+                # Save the report, passing time frame details
+                output_file = self.report_generator.save_report(report_df, start_date, end_date, start_time, end_time)
                 QMessageBox.information(self, "Success", f"Report saved at {output_file}")
         except Exception as e:
             self.logger.log_error(f"Error during report generation: {e}")
             QMessageBox.critical(self, "Error", "Failed to generate report.")
+
 
     def preview_report(self):
         """Preview the report based on current settings."""
@@ -251,18 +270,30 @@ class SRCounterUI(QWidget):
             QMessageBox.warning(self, "Warning", "No columns selected for preview.")
             return
 
-        start_date = self.start_date_input.dateTime().toPyDateTime() if self.use_time_checkbox.isChecked() else None
-        end_date = self.end_date_input.dateTime().toPyDateTime() if self.use_time_checkbox.isChecked() else None
+        # Fetch start and end dates
+        start_date = self.start_date_input.dateTime().toPyDateTime()
+        end_date = self.end_date_input.dateTime().toPyDateTime()
+
+        # Fetch start and end times if time frame is enabled
+        start_time = self.start_time_input.time().toPyTime() if self.use_time_checkbox.isChecked() else None
+        end_time = self.end_time_input.time().toPyTime() if self.use_time_checkbox.isChecked() else None
+
+        # Validate time range if time frame is enabled
+        if start_time and end_time and start_time > end_time:
+            QMessageBox.critical(self, "Error", "Start Time cannot be after End Time.")
+            return
 
         try:
+            # Generate and preview the report
             report_df = self.report_generator.generate_report(
-                self.file_loader.df, selected_columns, start_date, end_date, sort_by=self.selected_sort_by
+                self.file_loader.df, selected_columns, start_date, end_date, start_time, end_time, sort_by=self.selected_sort_by
             )
             if report_df is not None:
                 self.report_generator.show_report_preview(report_df)
         except Exception as e:
             self.logger.log_error(f"Error during preview: {e}")
             QMessageBox.critical(self, "Error", "Failed to preview report.")
+
 
     def load_excel(self):
         """Delegate file loading to FileLoader."""

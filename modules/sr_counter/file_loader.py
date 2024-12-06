@@ -106,9 +106,9 @@ class FileLoader:
         )
         return False
 
-    def filter_by_time_frame(self, start_time, end_time):
+    def filter_by_time_frame(self, start_date, end_date, start_time=None, end_time=None):
         """
-        Filter the DataFrame by the specified time frame.
+        Filter the DataFrame by the specified time frame and date range.
         """
         if self.df is None:
             QMessageBox.warning(self.parent, "No Data", "No file loaded to filter.")
@@ -119,13 +119,18 @@ class FileLoader:
 
         if "Created Date" in self.df.columns:
             self.df["Created Date"] = pd.to_datetime(self.df["Created Date"], errors="coerce")
-            self.df = self.df[
-                (self.df["Created Date"] >= start_time) & (self.df["Created Date"] <= end_time)
-            ]
+            # Filter by date range
+            self.df = self.df[(self.df["Created Date"].dt.date >= start_date) &
+                              (self.df["Created Date"].dt.date <= end_date)]
+
+            # Filter by time frame if provided
+            if start_time and end_time:
+                self.df = self.df[(self.df["Created Date"].dt.time >= start_time) &
+                                  (self.df["Created Date"].dt.time <= end_time)]
+
         elif "Time" in self.df.columns:
-            self.df["Time"] = pd.to_datetime(self.df["Time"], errors="coerce")
-            self.df = self.df[
-                (self.df["Time"] >= start_time.time()) & (self.df["Time"] <= end_time.time())
-            ]
+            self.df["Time"] = pd.to_datetime(self.df["Time"], errors="coerce").dt.time
+            if start_time and end_time:
+                self.df = self.df[(self.df["Time"] >= start_time) & (self.df["Time"] <= end_time)]
 
         return self.df

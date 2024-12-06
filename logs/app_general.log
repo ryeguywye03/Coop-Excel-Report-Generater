@@ -23348,3 +23348,331 @@ NameError: name 'QDateEdit' is not defined. Did you mean: 'QTimeEdit'?
 2024-12-06 10:12:55,424 - AppLogger - INFO - Switched to SR Counter
 2024-12-06 10:18:13,715 - AppLogger - INFO - Sort By changed to: 
 2024-12-06 10:18:13,716 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 10:22:01,247 - AppLogger - INFO - App initialized
+2024-12-06 10:22:01,249 - AppLogger - INFO - App initialized
+2024-12-06 10:22:01,249 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:22:01,253 - AppLogger - INFO - Theme applied: dark
+2024-12-06 10:22:01,254 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 10:22:01,256 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:22:01,350 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 10:22:01,351 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 10:22:01,351 - AppLogger - INFO - Checking for updates...
+2024-12-06 10:22:01,382 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 10:22:03,703 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:22:03,725 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 10:22:03,726 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:22:03,730 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 10:22:15,656 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 10:22:15,656 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 10:22:19,636 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 10:22:22,577 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 10:22:40,317 - AppLogger - INFO - Sort By changed to: Status Description
+2024-12-06 10:22:42,617 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-06 10:23:02,389 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-11-30 00:00:00
+2024-12-06 10:23:02,516 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 10:23:02,517 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 10:23:02,517 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 10:23:02,517 - AppLogger - INFO - Displaying report preview
+2024-12-06 10:23:24,069 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-11-30 00:00:00
+2024-12-06 10:23:24,190 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 10:23:24,191 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 10:23:24,191 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 10:23:24,191 - AppLogger - INFO - Displaying report preview
+2024-12-06 10:33:52,028 - AppLogger - INFO - App initialized
+2024-12-06 10:33:52,030 - AppLogger - INFO - App initialized
+2024-12-06 10:33:52,030 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:33:52,033 - AppLogger - INFO - Theme applied: dark
+2024-12-06 10:33:52,035 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 10:33:52,037 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:33:52,130 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 10:33:52,130 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 10:33:52,130 - AppLogger - INFO - Checking for updates...
+2024-12-06 10:33:52,156 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 10:33:54,046 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:33:54,070 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 10:33:54,071 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:33:54,075 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 10:34:04,286 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 10:34:04,287 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 10:34:13,143 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-06 10:34:18,294 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame 00:00:00 to 23:59:00
+2024-12-06 10:34:18,397 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 10:34:18,397 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 10:34:18,397 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 10:34:18,398 - AppLogger - INFO - Displaying report preview
+2024-12-06 10:34:36,030 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-11-30 00:00:00 with time frame 00:00:00 to 23:59:00
+2024-12-06 10:34:36,154 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 10:34:36,154 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 10:34:36,154 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 10:34:36,154 - AppLogger - INFO - Displaying report preview
+2024-12-06 10:34:47,714 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-11-30 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 10:34:47,818 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 10:34:47,819 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 10:34:47,819 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 10:34:47,819 - AppLogger - INFO - Displaying report preview
+2024-12-06 10:35:21,163 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-11-30 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 10:35:21,268 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 10:35:21,268 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 10:35:21,268 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 10:35:21,269 - AppLogger - INFO - Saving report to Excel
+2024-12-06 10:35:25,494 - AppLogger - INFO - Report saved to /Users/ryanwybenga/Desktop/sr_count_report-12-06-2024-10-35-21.xlsx
+2024-12-06 11:26:34,845 - AppLogger - INFO - App initialized
+2024-12-06 11:26:34,849 - AppLogger - INFO - App initialized
+2024-12-06 11:26:34,849 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:26:34,852 - AppLogger - INFO - Theme applied: dark
+2024-12-06 11:26:34,853 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 11:26:34,855 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:26:34,952 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 11:26:34,952 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 11:26:34,952 - AppLogger - INFO - Checking for updates...
+2024-12-06 11:26:35,034 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:26:50,344 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:26:50,369 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 11:26:50,370 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:26:50,374 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 11:26:55,726 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 11:26:55,727 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 11:26:59,493 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-06 11:27:09,977 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame None to None
+2024-12-06 11:27:10,110 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:27:10,111 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:27:10,111 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:27:10,111 - AppLogger - INFO - Displaying report preview
+2024-12-06 11:27:25,694 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:27:25,806 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:27:25,806 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:27:25,806 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:27:25,806 - AppLogger - INFO - Displaying report preview
+2024-12-06 11:44:12,777 - AppLogger - INFO - App initialized
+2024-12-06 11:44:12,779 - AppLogger - INFO - App initialized
+2024-12-06 11:44:12,780 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:44:12,782 - AppLogger - INFO - Theme applied: dark
+2024-12-06 11:44:12,784 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 11:44:12,785 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:44:12,876 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 11:44:12,876 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 11:44:12,876 - AppLogger - INFO - Checking for updates...
+2024-12-06 11:44:12,901 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:44:15,024 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:44:15,045 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 11:44:15,046 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:44:15,050 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 11:44:20,664 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 11:44:20,665 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 11:44:25,789 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-06 11:44:37,492 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:44:37,607 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:44:37,608 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:44:37,608 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:44:37,608 - AppLogger - INFO - Saving report to Excel
+2024-12-06 11:44:39,816 - AppLogger - ERROR - Error saving report: ReportGenerator._save_to_excel() takes from 3 to 5 positional arguments but 7 were given
+2024-12-06 11:44:49,172 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:44:49,284 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:44:49,284 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:44:49,284 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:44:49,284 - AppLogger - INFO - Saving report to Excel
+2024-12-06 11:44:51,714 - AppLogger - ERROR - Error saving report: ReportGenerator._save_to_excel() takes from 3 to 5 positional arguments but 7 were given
+2024-12-06 11:46:58,501 - AppLogger - INFO - App initialized
+2024-12-06 11:46:58,504 - AppLogger - INFO - App initialized
+2024-12-06 11:46:58,504 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:46:58,507 - AppLogger - INFO - Theme applied: dark
+2024-12-06 11:46:58,509 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 11:46:58,511 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:46:58,603 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 11:46:58,603 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 11:46:58,603 - AppLogger - INFO - Checking for updates...
+2024-12-06 11:46:58,629 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:46:59,921 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:46:59,945 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 11:46:59,945 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:46:59,949 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 11:47:06,791 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 11:47:06,791 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 11:47:19,501 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-06 11:47:22,104 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:47:22,144 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:47:22,144 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:47:22,144 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:47:22,145 - AppLogger - INFO - Displaying report preview
+2024-12-06 11:47:42,520 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:47:42,630 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:47:42,631 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:47:42,631 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:47:42,631 - AppLogger - INFO - Displaying report preview
+2024-12-06 11:47:49,319 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:47:49,430 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:47:49,430 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:47:49,431 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:47:49,431 - AppLogger - INFO - Saving report to Excel
+2024-12-06 11:47:52,423 - AppLogger - ERROR - Error saving report: ReportGenerator._save_to_excel() takes from 3 to 5 positional arguments but 7 were given
+2024-12-06 11:50:14,624 - AppLogger - INFO - App initialized
+2024-12-06 11:50:14,627 - AppLogger - INFO - App initialized
+2024-12-06 11:50:14,627 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:50:14,629 - AppLogger - INFO - Theme applied: dark
+2024-12-06 11:50:14,631 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 11:50:14,632 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:50:14,724 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 11:50:14,724 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 11:50:14,724 - AppLogger - INFO - Checking for updates...
+2024-12-06 11:50:14,747 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:50:16,200 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:50:16,220 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 11:50:16,221 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:50:16,225 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 11:50:21,265 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 11:50:21,266 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 11:50:34,297 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-06 11:50:36,015 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:50:36,034 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:50:36,035 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:50:36,035 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:50:36,035 - AppLogger - INFO - Displaying report preview
+2024-12-06 11:50:40,313 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:50:40,324 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:50:40,324 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:50:40,324 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:50:40,324 - AppLogger - INFO - Saving report to Excel
+2024-12-06 11:50:42,678 - AppLogger - ERROR - Failed to save Excel file: 'MergedCell' object has no attribute 'column_letter'
+2024-12-06 11:51:11,814 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:51:11,846 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 11:51:11,846 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:51:11,846 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:51:11,846 - AppLogger - INFO - Saving report to Excel
+2024-12-06 11:51:17,247 - AppLogger - ERROR - Failed to save Excel file: 'MergedCell' object has no attribute 'column_letter'
+2024-12-06 11:53:23,207 - AppLogger - INFO - App initialized
+2024-12-06 11:53:23,210 - AppLogger - INFO - App initialized
+2024-12-06 11:53:23,210 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:53:23,213 - AppLogger - INFO - Theme applied: dark
+2024-12-06 11:53:23,215 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 11:53:23,216 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:53:23,308 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 11:53:23,308 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 11:53:23,308 - AppLogger - INFO - Checking for updates...
+2024-12-06 11:53:23,330 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:53:24,565 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:53:24,589 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 11:53:24,590 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 11:53:24,594 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 11:53:33,618 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 11:53:33,618 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 11:53:48,247 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:53:48,331 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:53:48,331 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:53:48,331 - AppLogger - INFO - Displaying report preview
+2024-12-06 11:53:54,113 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 11:53:54,185 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 11:53:54,185 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 11:53:54,185 - AppLogger - INFO - Saving report to Excel
+2024-12-06 11:53:56,387 - AppLogger - INFO - File path selected: /Users/ryanwybenga/Desktop/sr_count_report-12-06-2024-11-53-54.xlsx
+2024-12-06 11:53:56,397 - AppLogger - ERROR - Failed to save Excel file: 'MergedCell' object has no attribute 'column_letter'
+2024-12-06 12:35:13,578 - AppLogger - INFO - App initialized
+2024-12-06 12:35:13,581 - AppLogger - INFO - App initialized
+2024-12-06 12:35:13,581 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:35:13,584 - AppLogger - INFO - Theme applied: dark
+2024-12-06 12:35:13,586 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 12:35:13,588 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:35:13,680 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 12:35:13,680 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 12:35:13,680 - AppLogger - INFO - Checking for updates...
+2024-12-06 12:35:13,713 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 12:35:15,679 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:35:15,702 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 12:35:15,703 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:35:15,707 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 12:35:20,635 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 12:35:20,635 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 12:35:25,777 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-06 12:35:26,930 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame None to None
+2024-12-06 12:35:26,975 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 12:35:26,976 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 12:35:26,976 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 12:35:26,976 - AppLogger - INFO - Saving report to Excel
+2024-12-06 12:35:29,589 - AppLogger - INFO - File path selected: /Users/ryanwybenga/Desktop/sr_count_report-12-06-2024-12-35-26.xlsx
+2024-12-06 12:35:34,927 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame 00:00:00 to 23:59:00
+2024-12-06 12:35:34,948 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 12:35:34,948 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 12:35:34,948 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 12:35:34,948 - AppLogger - INFO - Saving report to Excel
+2024-12-06 12:35:36,539 - AppLogger - INFO - File path selected: /Users/ryanwybenga/Desktop/sr_count_report-12-06-2024-12-35-34.xlsx
+2024-12-06 12:35:36,544 - AppLogger - ERROR - Failed to save Excel file: 'MergedCell' object has no attribute 'column_letter'
+2024-12-06 12:51:11,266 - AppLogger - INFO - App initialized
+2024-12-06 12:51:11,269 - AppLogger - INFO - App initialized
+2024-12-06 12:51:11,269 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:51:11,272 - AppLogger - INFO - Theme applied: dark
+2024-12-06 12:51:11,274 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 12:51:11,275 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:51:11,368 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 12:51:11,368 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 12:51:11,368 - AppLogger - INFO - Checking for updates...
+2024-12-06 12:51:11,461 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 12:51:30,403 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:51:30,425 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 12:51:30,425 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:51:30,430 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 12:51:39,107 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 12:51:39,108 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 12:51:52,951 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-06 12:51:53,820 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame None to None
+2024-12-06 12:51:53,868 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 12:51:53,869 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 12:51:53,869 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 12:51:53,869 - AppLogger - INFO - Displaying report preview
+2024-12-06 12:51:57,652 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame None to None
+2024-12-06 12:51:57,687 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 12:51:57,688 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 12:51:57,688 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 12:51:57,688 - AppLogger - INFO - Saving report to Excel
+2024-12-06 12:51:59,597 - AppLogger - INFO - File path selected: /Users/ryanwybenga/Desktop/sr_count_report-12-06-2024-12-51-57.xlsx
+2024-12-06 12:57:34,606 - AppLogger - INFO - App initialized
+2024-12-06 12:57:34,609 - AppLogger - INFO - App initialized
+2024-12-06 12:57:34,610 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:57:34,613 - AppLogger - INFO - Theme applied: dark
+2024-12-06 12:57:34,615 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 12:57:34,616 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:57:34,710 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 12:57:34,710 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 12:57:34,710 - AppLogger - INFO - Checking for updates...
+2024-12-06 12:57:34,734 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 12:57:43,005 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:57:43,029 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 12:57:43,029 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 12:57:43,033 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 12:57:47,371 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 12:57:47,372 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 12:57:51,422 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame None to None
+2024-12-06 12:57:51,444 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 12:57:51,444 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 12:57:51,444 - AppLogger - INFO - Displaying report preview
+2024-12-06 12:57:55,054 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame None to None
+2024-12-06 12:57:55,069 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 12:57:55,069 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 12:57:55,069 - AppLogger - INFO - Saving report to Excel
+2024-12-06 12:57:56,834 - AppLogger - INFO - File path selected: /Users/ryanwybenga/Desktop/sr_count_report-12-06-2024-12-57-55.xlsx
+2024-12-06 12:58:03,821 - AppLogger - INFO - Starting report generation from 2024-11-06 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 12:58:03,833 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 12:58:03,833 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 12:58:03,833 - AppLogger - INFO - Saving report to Excel
+2024-12-06 12:58:05,773 - AppLogger - INFO - File path selected: /Users/ryanwybenga/Desktop/sr_count_report-12-06-2024-12-58-03.xlsx
+2024-12-06 13:05:34,191 - AppLogger - INFO - App initialized
+2024-12-06 13:05:34,194 - AppLogger - INFO - App initialized
+2024-12-06 13:05:34,194 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 13:05:34,197 - AppLogger - INFO - Theme applied: dark
+2024-12-06 13:05:34,199 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 13:05:34,200 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 13:05:34,294 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 13:05:34,294 - AppLogger - INFO - App version set to v1.0.53
+2024-12-06 13:05:34,294 - AppLogger - INFO - Checking for updates...
+2024-12-06 13:05:34,319 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 13:05:35,664 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 13:05:35,686 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 13:05:35,686 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 13:05:35,690 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 13:05:43,071 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 13:05:43,071 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-06 13:05:50,828 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-06 13:06:00,530 - AppLogger - INFO - Starting report generation from 2024-01-01 00:00:00 to 2024-12-06 00:00:00 with time frame 12:00:00 to 23:59:00
+2024-12-06 13:06:00,645 - AppLogger - INFO - Sorted by Group Description
+2024-12-06 13:06:00,645 - AppLogger - INFO - Totals row appended successfully.
+2024-12-06 13:06:00,645 - AppLogger - INFO - Report generation completed successfully.
+2024-12-06 13:06:00,645 - AppLogger - INFO - Saving report to Excel
+2024-12-06 13:06:02,317 - AppLogger - INFO - File path selected: /Users/ryanwybenga/Desktop/sr_count_report-12-06-2024-13-06-00.xlsx

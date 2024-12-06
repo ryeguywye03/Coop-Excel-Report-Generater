@@ -268,3 +268,21 @@ NameError: name 'QTimeEdit' is not defined. Did you mean: 'QDateTimeEdit'?
                             ^^^^^^^^^
 NameError: name 'QDateEdit' is not defined. Did you mean: 'QTimeEdit'?
 2024-12-06 10:12:54,248 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 10:22:01,382 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 10:33:52,156 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:26:35,034 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:44:12,901 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:44:39,816 - AppLogger - ERROR - Error saving report: ReportGenerator._save_to_excel() takes from 3 to 5 positional arguments but 7 were given
+2024-12-06 11:44:51,714 - AppLogger - ERROR - Error saving report: ReportGenerator._save_to_excel() takes from 3 to 5 positional arguments but 7 were given
+2024-12-06 11:46:58,629 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:47:52,423 - AppLogger - ERROR - Error saving report: ReportGenerator._save_to_excel() takes from 3 to 5 positional arguments but 7 were given
+2024-12-06 11:50:14,747 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:50:42,678 - AppLogger - ERROR - Failed to save Excel file: 'MergedCell' object has no attribute 'column_letter'
+2024-12-06 11:51:17,247 - AppLogger - ERROR - Failed to save Excel file: 'MergedCell' object has no attribute 'column_letter'
+2024-12-06 11:53:23,330 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 11:53:56,397 - AppLogger - ERROR - Failed to save Excel file: 'MergedCell' object has no attribute 'column_letter'
+2024-12-06 12:35:13,713 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 12:35:36,544 - AppLogger - ERROR - Failed to save Excel file: 'MergedCell' object has no attribute 'column_letter'
+2024-12-06 12:51:11,461 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 12:57:34,734 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 13:05:34,319 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))

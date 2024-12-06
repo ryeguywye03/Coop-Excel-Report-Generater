@@ -4,14 +4,9 @@ import subprocess
 import ctypes
 import sys
 from PyQt6.QtWidgets import QApplication, QMessageBox
-
 from modules.utils.file_helpers import FileHelper
 from modules.windows.main import MainWindow
-
 from modules.utils.logger_manager import LoggerManager
-
-
-
 
 class AppManager:
     def __init__(self, app, logger):
