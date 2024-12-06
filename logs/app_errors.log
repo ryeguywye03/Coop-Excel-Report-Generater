@@ -151,3 +151,120 @@ AttributeError: type object 'FileHelper' has no attribute 'ensure_writable_copy'
 2024-12-04 15:28:40,228 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
 2024-12-04 15:31:02,397 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
 2024-12-05 08:02:30,658 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:23:34,248 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:34:01,166 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:39:31,094 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:45:52,817 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:48:16,195 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:54:06,269 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 13:31:50,155 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 15:26:03,414 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 15:26:08,264 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 27, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sidebar = self.setup_sidebar()  # Ensure sidebar is created only once
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 64, in setup_sidebar
+    clear_excel_button.clicked.connect(self.clear_excel)
+                                       ^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'clear_excel'. Did you mean: 'load_excel'?
+2024-12-06 08:34:55,784 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 08:35:00,203 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 27, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sidebar = self.setup_sidebar()  # Ensure sidebar is created only once
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 64, in setup_sidebar
+    clear_excel_button.clicked.connect(self.clear_excel)
+                                       ^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'clear_excel'. Did you mean: 'load_excel'?
+2024-12-06 08:48:14,921 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 08:48:32,902 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 27, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sidebar = self.setup_sidebar()  # Ensure sidebar is created only once
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 64, in setup_sidebar
+    clear_excel_button.clicked.connect(self.clear_excel)
+                                       ^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'clear_excel'. Did you mean: 'load_excel'?
+2024-12-06 08:49:09,076 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 08:49:22,984 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 27, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sidebar = self.setup_sidebar()  # Ensure sidebar is created only once
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 68, in setup_sidebar
+    settings_button.clicked.connect(self.open_settings_dialog)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'open_settings_dialog'
+2024-12-06 09:21:17,908 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 09:21:19,149 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 26, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sr_counter_panel = self.setup_main_panel()
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 101, in setup_main_panel
+    self.sort_by_dropdown.currentIndexChanged.connect(self.on_sort_by_changed)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'on_sort_by_changed'
+2024-12-06 09:33:34,646 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 09:33:35,830 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 31, in __init__
+    self.checkbox_manager = CheckboxManager(self.columns_layout)
+                                            ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'columns_layout'
+2024-12-06 09:41:43,183 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 09:58:22,966 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 09:58:24,688 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 26, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 50, in setup_ui
+    sr_counter_panel = self.setup_main_panel()
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 129, in setup_main_panel
+    self.start_time_input = QTimeEdit()
+                            ^^^^^^^^^
+NameError: name 'QTimeEdit' is not defined. Did you mean: 'QDateTimeEdit'?
+2024-12-06 10:00:07,041 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 10:11:55,419 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 10:11:57,168 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 26, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 50, in setup_ui
+    sr_counter_panel = self.setup_main_panel()
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 113, in setup_main_panel
+    self.start_date_input = QDateEdit()
+                            ^^^^^^^^^
+NameError: name 'QDateEdit' is not defined. Did you mean: 'QTimeEdit'?
+2024-12-06 10:12:54,248 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))

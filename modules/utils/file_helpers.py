@@ -115,10 +115,62 @@ class FileHelper:
             return None
 
     @staticmethod
+    def read_csv(file_path):
+        """Reads a CSV file with robust handling for encoding and delimiters."""
+        try:
+            # Check for BOM and file encoding
+            with open(file_path, 'rb') as f:
+                raw_data = f.read(4)
+                if raw_data.startswith(b'\xff\xfe') or raw_data.startswith(b'\xfe\xff'):
+                    # UTF-16 encoded
+                    encoding = 'utf-16'
+                elif raw_data.startswith(b'\xef\xbb\xbf'):
+                    # UTF-8 with BOM
+                    encoding = 'utf-8-sig'
+                else:
+                    # Default to utf-8
+                    encoding = 'utf-8'
+
+            # Attempt to infer the delimiter automatically
+            with open(file_path, 'r', encoding=encoding) as f:
+                first_line = f.readline()
+                if ',' in first_line:
+                    delimiter = ','
+                elif '\t' in first_line:
+                    delimiter = '\t'
+                elif ';' in first_line:
+                    delimiter = ';'
+                else:
+                    delimiter = ','  # Fallback to comma as default
+
+            # Load the CSV into a DataFrame
+            df = pd.read_csv(file_path, encoding=encoding, delimiter=delimiter)
+            
+            # Print column names and the first few rows for debugging
+            # print(f"Loaded DataFrame columns: {df.columns}")
+            # print(f"First few rows:\n{df.head()}")
+
+            return df
+        except UnicodeDecodeError:
+            try:
+                # Fallback to ISO-8859-1 encoding
+                df = pd.read_csv(file_path, encoding='ISO-8859-1', delimiter=delimiter)
+                # print(f"Loaded DataFrame with ISO-8859-1 encoding:\n{df.head()}")
+                return df
+            except Exception as e:
+                print(f"Error reading CSV file with multiple encoding attempts: {e}")
+                return None
+        except Exception as e:
+            print(f"Error reading CSV file: {e}")
+            return None
+
+
+
+    @staticmethod
     def read_file(file_path):
         """General method to read either CSV or Excel files based on the extension."""
         if file_path.endswith(('.csv', '.txt')):
-            return pd.read_csv(file_path)
+            return FileHelper.read_csv(file_path)
         elif file_path.endswith(('.xlsx', '.xls')):
             return FileHelper.read_excel(file_path)
         else:

@@ -22981,3 +22981,370 @@ AttributeError: type object 'FileHelper' has no attribute 'ensure_writable_copy'
 2024-12-05 08:02:30,470 - AppLogger - INFO - App version set to v1.0.50
 2024-12-05 08:02:30,470 - AppLogger - INFO - Checking for updates...
 2024-12-05 08:02:30,658 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:23:33,045 - AppLogger - INFO - App initialized
+2024-12-05 11:23:33,048 - AppLogger - INFO - App initialized
+2024-12-05 11:23:33,049 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:23:33,051 - AppLogger - INFO - Theme applied: dark
+2024-12-05 11:23:33,053 - AppLogger - INFO - Settings loaded successfully
+2024-12-05 11:23:33,055 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:23:33,206 - AppLogger - INFO - Switched to Main Menu
+2024-12-05 11:23:33,207 - AppLogger - INFO - App version set to v1.0.52
+2024-12-05 11:23:33,207 - AppLogger - INFO - Checking for updates...
+2024-12-05 11:23:34,248 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:23:35,669 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:23:35,689 - AppLogger - INFO - ReportGenerator initialized
+2024-12-05 11:23:35,690 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:23:35,693 - AppLogger - INFO - Switched to SR Counter
+2024-12-05 11:25:22,967 - AppLogger - WARNING - No data found in loaded Excel file.
+2024-12-05 11:34:01,003 - AppLogger - INFO - App initialized
+2024-12-05 11:34:01,004 - AppLogger - INFO - App initialized
+2024-12-05 11:34:01,004 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:34:01,005 - AppLogger - INFO - Theme applied: dark
+2024-12-05 11:34:01,005 - AppLogger - INFO - Settings loaded successfully
+2024-12-05 11:34:01,007 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:34:01,144 - AppLogger - INFO - Switched to Main Menu
+2024-12-05 11:34:01,144 - AppLogger - INFO - App version set to v1.0.52
+2024-12-05 11:34:01,144 - AppLogger - INFO - Checking for updates...
+2024-12-05 11:34:01,166 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:34:02,465 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:34:02,474 - AppLogger - INFO - ReportGenerator initialized
+2024-12-05 11:34:02,474 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:34:02,476 - AppLogger - INFO - Switched to SR Counter
+2024-12-05 11:36:12,730 - AppLogger - INFO - Excel file loaded successfully.
+2024-12-05 11:36:12,731 - AppLogger - INFO - Sort By changed to: 
+2024-12-05 11:36:12,731 - AppLogger - INFO - Sort By changed to: ÿþS
+2024-12-05 11:36:12,732 - AppLogger - INFO - Dropdown populated with columns: Index(['ÿþS'], dtype='object'), defaulted to: ÿþS
+2024-12-05 11:39:30,902 - AppLogger - INFO - App initialized
+2024-12-05 11:39:30,906 - AppLogger - INFO - App initialized
+2024-12-05 11:39:30,906 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:39:30,910 - AppLogger - INFO - Theme applied: dark
+2024-12-05 11:39:30,912 - AppLogger - INFO - Settings loaded successfully
+2024-12-05 11:39:30,914 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:39:31,062 - AppLogger - INFO - Switched to Main Menu
+2024-12-05 11:39:31,062 - AppLogger - INFO - App version set to v1.0.52
+2024-12-05 11:39:31,062 - AppLogger - INFO - Checking for updates...
+2024-12-05 11:39:31,094 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:39:32,206 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:39:32,232 - AppLogger - INFO - ReportGenerator initialized
+2024-12-05 11:39:32,233 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:39:32,236 - AppLogger - INFO - Switched to SR Counter
+2024-12-05 11:45:52,637 - AppLogger - INFO - App initialized
+2024-12-05 11:45:52,638 - AppLogger - INFO - App initialized
+2024-12-05 11:45:52,639 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:45:52,640 - AppLogger - INFO - Theme applied: dark
+2024-12-05 11:45:52,640 - AppLogger - INFO - Settings loaded successfully
+2024-12-05 11:45:52,642 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:45:52,777 - AppLogger - INFO - Switched to Main Menu
+2024-12-05 11:45:52,778 - AppLogger - INFO - App version set to v1.0.52
+2024-12-05 11:45:52,778 - AppLogger - INFO - Checking for updates...
+2024-12-05 11:45:52,817 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:45:59,313 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:45:59,326 - AppLogger - INFO - ReportGenerator initialized
+2024-12-05 11:45:59,327 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:45:59,330 - AppLogger - INFO - Switched to SR Counter
+2024-12-05 11:48:16,015 - AppLogger - INFO - App initialized
+2024-12-05 11:48:16,018 - AppLogger - INFO - App initialized
+2024-12-05 11:48:16,019 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:48:16,022 - AppLogger - INFO - Theme applied: dark
+2024-12-05 11:48:16,024 - AppLogger - INFO - Settings loaded successfully
+2024-12-05 11:48:16,026 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:48:16,172 - AppLogger - INFO - Switched to Main Menu
+2024-12-05 11:48:16,172 - AppLogger - INFO - App version set to v1.0.52
+2024-12-05 11:48:16,172 - AppLogger - INFO - Checking for updates...
+2024-12-05 11:48:16,195 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:48:37,719 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:48:37,745 - AppLogger - INFO - ReportGenerator initialized
+2024-12-05 11:48:37,745 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:48:37,749 - AppLogger - INFO - Switched to SR Counter
+2024-12-05 11:48:46,398 - AppLogger - INFO - Excel file loaded successfully.
+2024-12-05 11:48:46,399 - AppLogger - INFO - Sort By changed to: 
+2024-12-05 11:48:46,399 - AppLogger - INFO - Sort By changed to: Service Request Number	Type Description	Group Description	Status Description	Created Date Only	Geo Area Value	X_Value	Y_Value
+2024-12-05 11:48:46,399 - AppLogger - INFO - Dropdown populated with columns: Index(['Service Request Number\tType Description\tGroup Description\tStatus Description\tCreated Date Only\tGeo Area Value\tX_Value\tY_Value'], dtype='object'), defaulted to: Service Request Number	Type Description	Group Description	Status Description	Created Date Only	Geo Area Value	X_Value	Y_Value
+2024-12-05 11:54:06,090 - AppLogger - INFO - App initialized
+2024-12-05 11:54:06,093 - AppLogger - INFO - App initialized
+2024-12-05 11:54:06,094 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:54:06,097 - AppLogger - INFO - Theme applied: dark
+2024-12-05 11:54:06,099 - AppLogger - INFO - Settings loaded successfully
+2024-12-05 11:54:06,101 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:54:06,246 - AppLogger - INFO - Switched to Main Menu
+2024-12-05 11:54:06,246 - AppLogger - INFO - App version set to v1.0.52
+2024-12-05 11:54:06,246 - AppLogger - INFO - Checking for updates...
+2024-12-05 11:54:06,269 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 11:54:07,474 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:54:07,498 - AppLogger - INFO - ReportGenerator initialized
+2024-12-05 11:54:07,498 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 11:54:07,502 - AppLogger - INFO - Switched to SR Counter
+2024-12-05 11:54:14,400 - AppLogger - INFO - Excel file loaded successfully.
+2024-12-05 11:54:14,401 - AppLogger - INFO - Sort By changed to: 
+2024-12-05 11:54:14,401 - AppLogger - INFO - Sort By changed to: Service Request Number
+2024-12-05 11:54:14,401 - AppLogger - INFO - Dropdown populated with columns: Index(['Service Request Number', 'Type Description', 'Group Description',
+       'Status Description', 'Created Date', 'Geo Area Value', 'X Value',
+       'Y Value'],
+      dtype='object'), defaulted to: Service Request Number
+2024-12-05 11:54:40,890 - AppLogger - INFO - Sort By changed to: Group Description
+2024-12-05 11:54:57,211 - AppLogger - INFO - Preview Report - Sort By: Group Description
+2024-12-05 11:54:57,214 - AppLogger - INFO - Starting report generation from 2024-01-01 08:00:00 to 2024-11-30 16:00:00
+2024-12-05 11:54:58,049 - AppLogger - INFO - Sorted by Group Description
+2024-12-05 11:54:58,051 - AppLogger - INFO - Totals row appended successfully.
+2024-12-05 11:54:58,051 - AppLogger - INFO - Report generation completed successfully.
+2024-12-05 11:54:58,051 - AppLogger - INFO - Displaying report preview
+2024-12-05 11:55:10,574 - AppLogger - INFO - Preview Report - Sort By: Group Description
+2024-12-05 11:55:10,575 - AppLogger - INFO - Starting report generation from 2024-01-01 08:00:00 to 2024-11-30 16:00:00
+2024-12-05 11:55:10,704 - AppLogger - INFO - Sorted by Group Description
+2024-12-05 11:55:10,705 - AppLogger - INFO - Totals row appended successfully.
+2024-12-05 11:55:10,705 - AppLogger - INFO - Report generation completed successfully.
+2024-12-05 11:55:10,705 - AppLogger - INFO - Displaying report preview
+2024-12-05 11:56:00,192 - AppLogger - INFO - Generating report with sort column: Group Description
+2024-12-05 11:56:00,194 - AppLogger - INFO - Starting report generation from 2024-01-01 08:00:00 to 2024-11-30 16:00:00
+2024-12-05 11:56:00,339 - AppLogger - INFO - Sorted by Group Description
+2024-12-05 11:56:00,339 - AppLogger - INFO - Totals row appended successfully.
+2024-12-05 11:56:00,340 - AppLogger - INFO - Report generation completed successfully.
+2024-12-05 11:56:00,340 - AppLogger - INFO - Saving report to Excel
+2024-12-05 11:56:10,906 - AppLogger - INFO - Report saved to /Users/ryanwybenga/Desktop/sr_count_report-12-05-2024-11-56-00.xlsx
+2024-12-05 13:31:49,947 - AppLogger - INFO - App initialized
+2024-12-05 13:31:49,950 - AppLogger - INFO - App initialized
+2024-12-05 13:31:49,950 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 13:31:49,957 - AppLogger - INFO - Theme applied: dark
+2024-12-05 13:31:49,960 - AppLogger - INFO - Settings loaded successfully
+2024-12-05 13:31:49,961 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 13:31:50,113 - AppLogger - INFO - Switched to Main Menu
+2024-12-05 13:31:50,114 - AppLogger - INFO - App version set to v1.0.52
+2024-12-05 13:31:50,114 - AppLogger - INFO - Checking for updates...
+2024-12-05 13:31:50,155 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 13:31:51,619 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 13:31:51,645 - AppLogger - INFO - ReportGenerator initialized
+2024-12-05 13:31:51,645 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 13:31:51,649 - AppLogger - INFO - Switched to SR Counter
+2024-12-05 13:32:04,472 - AppLogger - WARNING - No data found in loaded Excel file.
+2024-12-05 15:26:03,215 - AppLogger - INFO - App initialized
+2024-12-05 15:26:03,218 - AppLogger - INFO - App initialized
+2024-12-05 15:26:03,218 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 15:26:03,222 - AppLogger - INFO - Theme applied: dark
+2024-12-05 15:26:03,224 - AppLogger - INFO - Settings loaded successfully
+2024-12-05 15:26:03,225 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 15:26:03,378 - AppLogger - INFO - Switched to Main Menu
+2024-12-05 15:26:03,378 - AppLogger - INFO - App version set to v1.0.52
+2024-12-05 15:26:03,378 - AppLogger - INFO - Checking for updates...
+2024-12-05 15:26:03,414 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-05 15:26:08,261 - AppLogger - INFO - Settings loaded successfully.
+2024-12-05 15:26:08,264 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 27, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sidebar = self.setup_sidebar()  # Ensure sidebar is created only once
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 64, in setup_sidebar
+    clear_excel_button.clicked.connect(self.clear_excel)
+                                       ^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'clear_excel'. Did you mean: 'load_excel'?
+2024-12-06 08:34:55,581 - AppLogger - INFO - App initialized
+2024-12-06 08:34:55,585 - AppLogger - INFO - App initialized
+2024-12-06 08:34:55,585 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 08:34:55,588 - AppLogger - INFO - Theme applied: dark
+2024-12-06 08:34:55,591 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 08:34:55,593 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 08:34:55,742 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 08:34:55,743 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 08:34:55,743 - AppLogger - INFO - Checking for updates...
+2024-12-06 08:34:55,784 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 08:35:00,200 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 08:35:00,203 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 27, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sidebar = self.setup_sidebar()  # Ensure sidebar is created only once
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 64, in setup_sidebar
+    clear_excel_button.clicked.connect(self.clear_excel)
+                                       ^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'clear_excel'. Did you mean: 'load_excel'?
+2024-12-06 08:48:14,726 - AppLogger - INFO - App initialized
+2024-12-06 08:48:14,729 - AppLogger - INFO - App initialized
+2024-12-06 08:48:14,729 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 08:48:14,733 - AppLogger - INFO - Theme applied: dark
+2024-12-06 08:48:14,735 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 08:48:14,736 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 08:48:14,888 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 08:48:14,888 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 08:48:14,889 - AppLogger - INFO - Checking for updates...
+2024-12-06 08:48:14,921 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 08:48:32,897 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 08:48:32,902 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 27, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sidebar = self.setup_sidebar()  # Ensure sidebar is created only once
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 64, in setup_sidebar
+    clear_excel_button.clicked.connect(self.clear_excel)
+                                       ^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'clear_excel'. Did you mean: 'load_excel'?
+2024-12-06 08:49:08,881 - AppLogger - INFO - App initialized
+2024-12-06 08:49:08,884 - AppLogger - INFO - App initialized
+2024-12-06 08:49:08,884 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 08:49:08,888 - AppLogger - INFO - Theme applied: dark
+2024-12-06 08:49:08,890 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 08:49:08,892 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 08:49:09,043 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 08:49:09,043 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 08:49:09,043 - AppLogger - INFO - Checking for updates...
+2024-12-06 08:49:09,076 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 08:49:22,981 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 08:49:22,984 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 27, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sidebar = self.setup_sidebar()  # Ensure sidebar is created only once
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 68, in setup_sidebar
+    settings_button.clicked.connect(self.open_settings_dialog)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'open_settings_dialog'
+2024-12-06 09:21:17,771 - AppLogger - INFO - App initialized
+2024-12-06 09:21:17,774 - AppLogger - INFO - App initialized
+2024-12-06 09:21:17,774 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:21:17,777 - AppLogger - INFO - Theme applied: dark
+2024-12-06 09:21:17,779 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 09:21:17,781 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:21:17,881 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 09:21:17,881 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 09:21:17,881 - AppLogger - INFO - Checking for updates...
+2024-12-06 09:21:17,908 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 09:21:19,140 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:21:19,149 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 26, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 44, in setup_ui
+    sr_counter_panel = self.setup_main_panel()
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 101, in setup_main_panel
+    self.sort_by_dropdown.currentIndexChanged.connect(self.on_sort_by_changed)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'on_sort_by_changed'
+2024-12-06 09:33:34,521 - AppLogger - INFO - App initialized
+2024-12-06 09:33:34,525 - AppLogger - INFO - App initialized
+2024-12-06 09:33:34,525 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:33:34,528 - AppLogger - INFO - Theme applied: dark
+2024-12-06 09:33:34,530 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 09:33:34,531 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:33:34,624 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 09:33:34,624 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 09:33:34,624 - AppLogger - INFO - Checking for updates...
+2024-12-06 09:33:34,646 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 09:33:35,804 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:33:35,829 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 09:33:35,830 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 31, in __init__
+    self.checkbox_manager = CheckboxManager(self.columns_layout)
+                                            ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SRCounterUI' object has no attribute 'columns_layout'
+2024-12-06 09:41:43,047 - AppLogger - INFO - App initialized
+2024-12-06 09:41:43,050 - AppLogger - INFO - App initialized
+2024-12-06 09:41:43,050 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:41:43,053 - AppLogger - INFO - Theme applied: dark
+2024-12-06 09:41:43,055 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 09:41:43,057 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:41:43,160 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 09:41:43,160 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 09:41:43,160 - AppLogger - INFO - Checking for updates...
+2024-12-06 09:41:43,183 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 09:41:44,585 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:41:44,609 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 09:41:44,609 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:41:44,613 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 09:58:18,735 - AppLogger - INFO - App initialized
+2024-12-06 09:58:18,738 - AppLogger - INFO - App initialized
+2024-12-06 09:58:18,738 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:58:18,741 - AppLogger - INFO - Theme applied: dark
+2024-12-06 09:58:18,743 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 09:58:18,747 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:58:18,845 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 09:58:18,845 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 09:58:18,845 - AppLogger - INFO - Checking for updates...
+2024-12-06 09:58:22,966 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 09:58:24,669 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 09:58:24,688 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 26, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 50, in setup_ui
+    sr_counter_panel = self.setup_main_panel()
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 129, in setup_main_panel
+    self.start_time_input = QTimeEdit()
+                            ^^^^^^^^^
+NameError: name 'QTimeEdit' is not defined. Did you mean: 'QDateTimeEdit'?
+2024-12-06 10:00:06,918 - AppLogger - INFO - App initialized
+2024-12-06 10:00:06,921 - AppLogger - INFO - App initialized
+2024-12-06 10:00:06,921 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:00:06,924 - AppLogger - INFO - Theme applied: dark
+2024-12-06 10:00:06,926 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 10:00:06,927 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:00:07,018 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 10:00:07,018 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 10:00:07,018 - AppLogger - INFO - Checking for updates...
+2024-12-06 10:00:07,041 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 10:00:08,435 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:00:08,459 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 10:00:08,459 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:00:08,464 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 10:11:55,279 - AppLogger - INFO - App initialized
+2024-12-06 10:11:55,282 - AppLogger - INFO - App initialized
+2024-12-06 10:11:55,282 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:11:55,285 - AppLogger - INFO - Theme applied: dark
+2024-12-06 10:11:55,288 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 10:11:55,289 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:11:55,386 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 10:11:55,386 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 10:11:55,386 - AppLogger - INFO - Checking for updates...
+2024-12-06 10:11:55,419 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 10:11:57,158 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:11:57,168 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 77, in switch_to_sr_counter
+    self.sr_counter = SRCounterUI(self)
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 26, in __init__
+    self.setup_ui()
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 50, in setup_ui
+    sr_counter_panel = self.setup_main_panel()
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_counter/sr_counter_ui.py", line 113, in setup_main_panel
+    self.start_date_input = QDateEdit()
+                            ^^^^^^^^^
+NameError: name 'QDateEdit' is not defined. Did you mean: 'QTimeEdit'?
+2024-12-06 10:12:54,111 - AppLogger - INFO - App initialized
+2024-12-06 10:12:54,114 - AppLogger - INFO - App initialized
+2024-12-06 10:12:54,114 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:12:54,116 - AppLogger - INFO - Theme applied: dark
+2024-12-06 10:12:54,118 - AppLogger - INFO - Settings loaded successfully
+2024-12-06 10:12:54,119 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:12:54,215 - AppLogger - INFO - Switched to Main Menu
+2024-12-06 10:12:54,215 - AppLogger - INFO - App version set to v1.0.52
+2024-12-06 10:12:54,215 - AppLogger - INFO - Checking for updates...
+2024-12-06 10:12:54,248 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 10:12:55,392 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:12:55,419 - AppLogger - INFO - ReportGenerator initialized
+2024-12-06 10:12:55,419 - AppLogger - INFO - Settings loaded successfully.
+2024-12-06 10:12:55,424 - AppLogger - INFO - Switched to SR Counter
+2024-12-06 10:18:13,715 - AppLogger - INFO - Sort By changed to: 
+2024-12-06 10:18:13,716 - AppLogger - INFO - Sort By changed to: Service Request Number

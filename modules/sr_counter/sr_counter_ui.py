@@ -1,14 +1,15 @@
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QGridLayout, QGroupBox, QProgressBar, QPushButton, QLabel,
-    QDateTimeEdit, QComboBox, QScrollArea, QHBoxLayout, QMessageBox
+    QDateEdit, QTimeEdit, QComboBox, QScrollArea, QHBoxLayout, QMessageBox, QCheckBox
 )
 from PyQt6.QtCore import QDateTime, QTime, Qt
 from modules.utils.logger_manager import LoggerManager
-from modules.utils.app_settings import AppSettings  # Use AppSettings for unified configuration
+from modules.utils.app_settings import AppSettings
 from .file_loader import FileLoader
 from .report_generator import ReportGenerator
 from .checkbox_manager import CheckboxManager
 from .settings_handler import SettingsHandler
+
 
 class SRCounterUI(QWidget):
     def __init__(self, parent):
@@ -17,10 +18,10 @@ class SRCounterUI(QWidget):
 
         # Initialize logger
         self.logger = LoggerManager()
-        
+
         # Initialize AppSettings for shared settings access
         self.settings = AppSettings()
-        
+
         # Setup UI and other components
         self.setup_ui()
 
@@ -33,18 +34,23 @@ class SRCounterUI(QWidget):
         # Variable to track the selected sort column
         self.selected_sort_by = None
 
+    def on_sort_by_changed(self):
+        """Updates the selected_sort_by variable when the dropdown selection changes."""
+        self.selected_sort_by = self.sort_by_dropdown.currentText()
+        self.logger.log_info(f"Sort By changed to: {self.selected_sort_by}")
+
+
     def setup_ui(self):
         """Set up the UI layout."""
         self.setObjectName("mainPanel")  # Main panel object name
         self.main_layout = QGridLayout(self)
-        
+
         # Set up the sidebar and main panel
-        sidebar = self.setup_sidebar()  # Ensure sidebar is created only once
+        sidebar = self.setup_sidebar()
         sr_counter_panel = self.setup_main_panel()
 
-        # Add sidebar and main panel to the main layout
-        self.main_layout.addWidget(sidebar, 0, 0, 1, 1)  # Add sidebar once on the left
-        self.main_layout.addWidget(sr_counter_panel, 0, 1, 1, 2)  # Add main panel next to sidebar
+        self.main_layout.addWidget(sidebar, 0, 0, 1, 1)
+        self.main_layout.addWidget(sr_counter_panel, 0, 1, 1, 2)
 
     def setup_sidebar(self):
         """Set up the sidebar specific to SR Counter."""
@@ -52,29 +58,30 @@ class SRCounterUI(QWidget):
         sidebar_group.setObjectName("sidebarGroup")
         sidebar_layout = QVBoxLayout()
 
-        # Example buttons for the sidebar
+        # Load Excel Button
         load_excel_button = QPushButton("Load Excel")
         load_excel_button.setObjectName("loadExcelButton")
         load_excel_button.clicked.connect(self.load_excel)
 
+        # Clear Excel Button
         clear_excel_button = QPushButton("Clear Excel")
         clear_excel_button.setObjectName("clearExcelButton")
         clear_excel_button.clicked.connect(self.clear_excel)
 
+        # Settings Button
         settings_button = QPushButton("Settings")
         settings_button.setObjectName("settingsButton")
         settings_button.clicked.connect(self.open_settings_dialog)
 
+        # Back Button
         back_button = QPushButton("Back to Main Menu")
         back_button.setObjectName("backButton")
         back_button.clicked.connect(self.main_window.switch_to_main_menu)
 
-        # Add buttons to the sidebar layout
+        # Add Buttons
         sidebar_layout.addWidget(load_excel_button)
         sidebar_layout.addWidget(clear_excel_button)
         sidebar_layout.addWidget(settings_button)
-
-        # Add a stretch to push the back button to the bottom
         sidebar_layout.addStretch(1)
         sidebar_layout.addWidget(back_button)
 
@@ -99,33 +106,56 @@ class SRCounterUI(QWidget):
         main_panel_layout.addLayout(sort_layout)
         self.sort_by_dropdown.currentIndexChanged.connect(self.on_sort_by_changed)
 
-        # Date range selectors
+        # Date selectors (start and end)
         date_layout = QHBoxLayout()
         start_date_label = QLabel("Start Date:")
         start_date_label.setObjectName("startDateLabel")
-        self.start_date_input = QDateTimeEdit()
+        self.start_date_input = QDateEdit()
         self.start_date_input.setObjectName("startDateInput")
         self.start_date_input.setCalendarPopup(True)
-        start_date_time = QDateTime.currentDateTime().addMonths(-1)
-        start_date_time.setTime(QTime(8, 0))
-        self.start_date_input.setDateTime(start_date_time)
-        self.start_date_input.dateTimeChanged.connect(self.set_start_time)
+        self.start_date_input.setDate(QDateTime.currentDateTime().addMonths(-1).date())
 
         end_date_label = QLabel("End Date:")
         end_date_label.setObjectName("endDateLabel")
-        self.end_date_input = QDateTimeEdit()
+        self.end_date_input = QDateEdit()
         self.end_date_input.setObjectName("endDateInput")
         self.end_date_input.setCalendarPopup(True)
-        end_date_time = QDateTime.currentDateTime()
-        end_date_time.setTime(QTime(16, 0))
-        self.end_date_input.setDateTime(end_date_time)
-        self.end_date_input.dateTimeChanged.connect(self.set_end_time)
+        self.end_date_input.setDate(QDateTime.currentDateTime().date())
 
         date_layout.addWidget(start_date_label)
         date_layout.addWidget(self.start_date_input)
         date_layout.addWidget(end_date_label)
         date_layout.addWidget(self.end_date_input)
         main_panel_layout.addLayout(date_layout)
+
+        # Time frame toggle and dropdowns (below date selectors)
+        time_frame_layout = QHBoxLayout()
+        self.use_time_checkbox = QCheckBox("Enable Time Frame")
+        self.use_time_checkbox.setObjectName("useTimeCheckbox")
+        self.use_time_checkbox.stateChanged.connect(self.toggle_time_frame)
+
+        start_time_label = QLabel("Start Time:")
+        start_time_label.setObjectName("startTimeLabel")
+        self.start_time_input = QTimeEdit()
+        self.start_time_input.setObjectName("startTimeInput")
+        self.start_time_input.setEnabled(False)
+
+        end_time_label = QLabel("End Time:")
+        end_time_label.setObjectName("endTimeLabel")
+        self.end_time_input = QTimeEdit()
+        self.end_time_input.setObjectName("endTimeInput")
+        self.end_time_input.setEnabled(False)
+
+        # Default times are set to "all time" by leaving inputs disabled until checkbox is checked
+        self.start_time_input.setTime(QTime(0, 0))
+        self.end_time_input.setTime(QTime(23, 59))
+
+        time_frame_layout.addWidget(self.use_time_checkbox)
+        time_frame_layout.addWidget(start_time_label)
+        time_frame_layout.addWidget(self.start_time_input)
+        time_frame_layout.addWidget(end_time_label)
+        time_frame_layout.addWidget(self.end_time_input)
+        main_panel_layout.addLayout(time_frame_layout)
 
         # Column checkboxes in a scrollable area
         columns_group = QGroupBox("Select Columns")
@@ -135,7 +165,6 @@ class SRCounterUI(QWidget):
         scroll_area.setWidgetResizable(True)
         scroll_area.setFixedHeight(200)
 
-        # Create a widget for the checkboxes and add it to the scroll area
         scroll_content = QWidget()
         scroll_content.setObjectName("scrollContent")
         self.columns_layout = QVBoxLayout(scroll_content)
@@ -173,135 +202,86 @@ class SRCounterUI(QWidget):
         sr_counter_group.setLayout(main_panel_layout)
         return sr_counter_group
 
-    def on_sort_by_changed(self):
-        """Updates the selected_sort_by variable when the dropdown selection changes."""
-        self.selected_sort_by = self.sort_by_dropdown.currentText()
-        self.logger.log_info(f"Sort By changed to: {self.selected_sort_by}")
+
+
+    def toggle_time_frame(self):
+        """Enable or disable the time frame dropdowns."""
+        is_enabled = self.use_time_checkbox.isChecked()
+        self.start_time_input.setEnabled(is_enabled)
+        self.end_time_input.setEnabled(is_enabled)
+
+
+
+    def validate_time_columns(self):
+        """Validate if time columns exist when time frame is enabled."""
+        if not self.use_time_checkbox.isChecked():
+            return
+        if not self.file_loader.validate_time_columns():
+            self.use_time_checkbox.setChecked(False)
 
     def generate_report(self):
-        """Generates the report based on selected sort column and other criteria."""
-        if not self.selected_sort_by:
-            self.selected_sort_by = self.sort_by_dropdown.currentText()
-
+        """Generate the report based on selected criteria."""
         selected_columns = self.checkbox_manager.get_selected_columns()
-        start_date = self.start_date_input.dateTime().toPyDateTime()
-        end_date = self.end_date_input.dateTime().toPyDateTime()
-
         if not selected_columns:
             QMessageBox.warning(self, "Warning", "Please select columns for the report.")
             return
 
-        if not hasattr(self.file_loader, 'df') or self.file_loader.df is None:
-            QMessageBox.warning(self, "No Data", "Please load an Excel file first before generating the report.")
-            return
-
-        self.logger.log_info(f"Generating report with sort column: {self.selected_sort_by}")
+        start_date = self.start_date_input.dateTime().toPyDateTime() if self.use_time_checkbox.isChecked() else None
+        end_date = self.end_date_input.dateTime().toPyDateTime() if self.use_time_checkbox.isChecked() else None
 
         try:
             report_df = self.report_generator.generate_report(
                 self.file_loader.df, selected_columns, start_date, end_date, sort_by=self.selected_sort_by
             )
-            
             if report_df is not None:
                 output_file = self.report_generator.save_report(report_df)
-                if output_file:
-                    QMessageBox.information(self, "Success", f"Report saved at {output_file}")
-                else:
-                    QMessageBox.warning(self, "Error", "Report could not be saved. Check logs for details.")
-            else:
-                QMessageBox.warning(self, "Error", "Report generation failed. Check logs for details.")
-        
+                QMessageBox.information(self, "Success", f"Report saved at {output_file}")
         except Exception as e:
             self.logger.log_error(f"Error during report generation: {e}")
-            QMessageBox.critical(self, "Error", f"Failed to generate report: {e}")
-
+            QMessageBox.critical(self, "Error", "Failed to generate report.")
 
     def preview_report(self):
-        """Generates and shows a preview of the report based on current settings."""
-        if not hasattr(self.file_loader, 'df') or self.file_loader.df is None:
-            QMessageBox.warning(self, "No Data", "Please load an Excel file first before previewing the report.")
+        """Preview the report based on current settings."""
+        if self.file_loader.df is None:
+            QMessageBox.warning(self, "No Data", "Please load a file first.")
             return
 
         selected_columns = self.checkbox_manager.get_selected_columns()
         if not selected_columns:
-            self.logger.log_warning("No columns selected for the preview.")
-            QMessageBox.warning(self, "Warning", "No columns selected for the preview.")
+            QMessageBox.warning(self, "Warning", "No columns selected for preview.")
             return
 
-        start_date = self.start_date_input.dateTime().toPyDateTime()
-        end_date = self.end_date_input.dateTime().toPyDateTime()
-
-        if start_date > end_date:
-            QMessageBox.critical(self, "Error", "Start date cannot be after end date.")
-            return
-
-        if not self.selected_sort_by:
-            self.selected_sort_by = self.sort_by_dropdown.currentText()
-
-        self.logger.log_info(f"Preview Report - Sort By: {self.selected_sort_by}")
+        start_date = self.start_date_input.dateTime().toPyDateTime() if self.use_time_checkbox.isChecked() else None
+        end_date = self.end_date_input.dateTime().toPyDateTime() if self.use_time_checkbox.isChecked() else None
 
         try:
             report_df = self.report_generator.generate_report(
                 self.file_loader.df, selected_columns, start_date, end_date, sort_by=self.selected_sort_by
             )
-            
             if report_df is not None:
                 self.report_generator.show_report_preview(report_df)
-            else:
-                QMessageBox.warning(self, "Error", "Report generation failed. Check logs for details.")
         except Exception as e:
-            self.logger.log_error(f"Error generating preview: {e}")
-            QMessageBox.critical(self, "Error", f"Error generating preview: {e}")
-
+            self.logger.log_error(f"Error during preview: {e}")
+            QMessageBox.critical(self, "Error", "Failed to preview report.")
 
     def load_excel(self):
-        """Delegate the Excel file loading to the FileLoader class."""
+        """Delegate file loading to FileLoader."""
         self.file_loader.load_file()
         if self.file_loader.df is not None:
-            self.logger.log_info("Excel file loaded successfully.")
-            self.populate_sort_by_dropdown()  # Populate the sort dropdown with columns
-        else:
-            self.logger.log_warning("No data found in loaded Excel file.")
-
-    def set_start_time(self):
-        """Set the start time to 8:00 AM whenever the date is changed."""
-        current_date = self.start_date_input.dateTime()
-        current_date.setTime(QTime(8, 0))  # Set time to 8:00 AM
-        self.start_date_input.setDateTime(current_date)  # Update the QDateTimeEdit with the modified date
-
-    def set_end_time(self):
-        """Set the end time to 4:00 PM whenever the date is changed."""
-        current_date = self.end_date_input.dateTime()
-        current_date.setTime(QTime(16, 0))  # Set time to 4:00 PM
-        self.end_date_input.setDateTime(current_date)  # Update the QDateTimeEdit with the modified date
+            self.populate_sort_by_dropdown()
 
     def clear_excel(self):
-        """Clear the loaded Excel file and reset the UI."""
+        """Clear the loaded file and reset UI."""
         self.file_loader.df = None
         self.sort_by_dropdown.clear()
-        self.sort_by_dropdown.setEnabled(False)
         self.checkbox_manager.clear_checkboxes()
-        self.logger.log_info("Excel file cleared.")
 
     def populate_sort_by_dropdown(self):
-        """Populate the Sort By dropdown with the columns from the loaded Excel file."""
+        """Populate the dropdown with column headers."""
         if self.file_loader.df is not None:
             self.sort_by_dropdown.clear()
-            self.sort_by_dropdown.addItems(self.file_loader.df.columns)  # Add columns dynamically
-            self.sort_by_dropdown.setEnabled(True)
-            self.sort_by_dropdown.setCurrentIndex(0)  # Set the first item as the default selection
-            self.selected_sort_by = self.sort_by_dropdown.currentText()
-            self.logger.log_info(f"Dropdown populated with columns: {self.file_loader.df.columns}, defaulted to: {self.selected_sort_by}")
+            self.sort_by_dropdown.addItems(self.file_loader.df.columns)
 
     def open_settings_dialog(self):
-        """Open the settings dialog by using the SettingsHandler."""
+        """Open settings dialog."""
         self.settings_handler.open_settings_dialog()
-
-    def remove_extra_widget(self):
-        """Ensure any extra, unnecessary widgets are removed."""
-        for i in reversed(range(self.main_layout.count())):
-            widget = self.main_layout.itemAt(i).widget()
-            if widget and isinstance(widget, QGroupBox):
-                if widget.title() == "":
-                    widget.deleteLater()
-                    break
