@@ -1,6 +1,6 @@
 import pandas as pd
 from modules.utils.logger_manager import LoggerManager
-from PyQt6.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem, QMessageBox, QFileDialog
+from PyQt6.QtWidgets import QDialog, QVBoxLayout, QTableWidget, QTableWidgetItem, QMessageBox, QFileDialog, QLabel
 from PyQt6.QtCore import Qt
 import os
 from datetime import datetime
@@ -243,12 +243,12 @@ class ReportGenerator:
             file_path = self._prompt_save_file()
             if not file_path:
                 self.logger.log_info("Save canceled by user.")
-                QMessageBox.warning(None, "Save Canceled", "The report was not saved because the save operation was canceled.")
+                # QMessageBox.warning(None, "Save Canceled", "The report was not saved because the save operation was canceled.")
                 return None
 
             # Save to Excel
             self._save_to_excel(report_df, file_path, start_time=start_time, end_time=end_time)
-            QMessageBox.information(None, "Success", f"Report saved at {file_path}")
+            # QMessageBox.information(self, "Success", f"Report saved at {file_path}")
             return file_path
         except Exception as e:
             self.logger.log_error(f"Error saving report: {e}")

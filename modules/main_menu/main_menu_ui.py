@@ -35,19 +35,27 @@ class MainMenuUI(QWidget):
     def setup_sidebar(self):
         """Set up the sidebar for the Main Menu."""
         sidebar_group = QGroupBox("Navigation")
-        sidebar_group.setObjectName("sidebarGroup")
+        sidebar_group.setObjectName("sidebarGroup")  # Assign QSS ID
         sidebar_layout = QVBoxLayout()
 
         # Button to go to SR Counter page
         sr_counter_button = QPushButton("SR Counter")
-        sr_counter_button.setObjectName("srCounterButton")
+        sr_counter_button.setProperty("class", "sidebar-button")  # Assign QSS class
         sr_counter_button.clicked.connect(self.main_window.switch_to_sr_counter)
 
-        settings_button = QPushButton('Settings')
-        settings_button.setObjectName("settingsButton")
+        # Button to go to SR Formatter page
+        sr_formatter_button = QPushButton("SR Formatter")
+        sr_formatter_button.setProperty("class", "sidebar-button")  # Assign QSS class
+        sr_formatter_button.clicked.connect(self.main_window.switch_to_sr_formatter)
+
+        # Settings Button
+        settings_button = QPushButton("Settings")
+        settings_button.setProperty("class", "sidebar-button")  # Assign QSS class
         settings_button.clicked.connect(self.open_settings_dialog)
 
+        # Add buttons to the layout
         sidebar_layout.addWidget(sr_counter_button)
+        sidebar_layout.addWidget(sr_formatter_button)
         sidebar_layout.addStretch(1)
         sidebar_layout.addWidget(settings_button)
 
@@ -57,11 +65,11 @@ class MainMenuUI(QWidget):
     def setup_main_panel(self):
         """Set up the main content area for the welcome screen."""
         main_panel_group = QGroupBox("Welcome")
-        main_panel_group.setObjectName("mainPanelGroup")
+        main_panel_group.setObjectName("mainPanelGroup")  # Assign QSS ID
         main_panel_layout = QVBoxLayout()
 
         welcome_label = QLabel("Welcome to the Excel Report Generator!")
-        welcome_label.setObjectName("welcomeLabel")
+        welcome_label.setProperty("class", "welcome-label")  # Assign QSS class
         main_panel_layout.addWidget(welcome_label)
 
         main_panel_group.setLayout(main_panel_layout)

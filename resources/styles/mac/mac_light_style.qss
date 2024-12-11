@@ -1,26 +1,15 @@
-/* General Light Mode Styling */
+/* General Dark Mode Styling */
 QMainWindow {
-    background-color: #FFFFFF; /* Light background */
-    color: #000000; /* Dark text color */
+    background-color: #FFFFFF;
+    color: #000000;
     font-family: Arial, sans-serif;
     font-size: 12px;
 }
 
-/* Sidebar Styling */
-QWidget#sidebarGroup {
-    background-color: #F0F0F0; /* Light sidebar background */
-    color: #0062A3; /* Blue text color */
-    border: 1px solid #0062A3; /* Blue border */
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin: 5px;
-}
-
-/* Sidebar Buttons */
-QPushButton#loadExcelButton, QPushButton#clearExcelButton, QPushButton#settingsButton, QPushButton#backButton, QPushButton#srCounterButton {
-    background-color: #0062A3; /* Blue background */
-    color: #FFFFFF; /* White text */
+/* Reusable Class: Sidebar Buttons */
+QPushButton.sidebar-button {
+    background-color: #0062A3;
+    color: #000000;
     padding: 8px;
     border-radius: 8px;
     font-size: 12px;
@@ -29,216 +18,178 @@ QPushButton#loadExcelButton, QPushButton#clearExcelButton, QPushButton#settingsB
     margin-top: 5px;
 }
 
-QPushButton#loadExcelButton:hover, QPushButton#clearExcelButton:hover, QPushButton#settingsButton:hover, QPushButton#backButton:hover, QPushButton#srCounterButton:hover {
-    background-color: #00518C; /* Darker blue on hover */
+QPushButton.sidebar-button:hover {
+    background-color: #00518C;
 }
 
-QPushButton#loadExcelButton:pressed, QPushButton#clearExcelButton:pressed, QPushButton#settingsButton:pressed, QPushButton#backButton:pressed, QPushButton#srCounterButton:pressed {
-    background-color: #004078; /* Even darker on press */
+QPushButton.sidebar-button:pressed {
+    background-color: #004078;
 }
 
-/* Main Content Panel */
-QWidget#mainPanelGroup {
-    background-color: #FFFFFF; /* Light background */
-    color: #000000; /* Dark text color */
-    padding: 15px;
-    border: 1px solid #0062A3; /* Blue border */
-    border-radius: 10px; /* Ensure rounded corners */
-    margin: 5px;
+/* Reusable Class: Report Buttons */
+QPushButton.report-button {
+    background-color: #0062A3;
+    color: #000000;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
 }
 
-/* Title and Header Styling */
-QLabel#welcomeLabel, QLabel#title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #0062A3; /* Blue label */
-    padding: 5px;
-    margin: 5px 0;
+QPushButton.report-button:hover {
+    background-color: #00518C;
+}
+
+QPushButton.report-button:pressed {
+    background-color: #004078;
 }
 
 /* Group Box Styling */
-QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroupBox#mainPanelGroup {
-    background-color: #FFFFFF; /* Light background */
-    border: 1px solid #0062A3; /* Blue border */
+QGroupBox {
+    background-color: #FFFFFF;
+    border: 1px solid #0062A3;
     padding: 10px;
     font-weight: bold;
-    color: #0062A3; /* Blue text */
-    border-radius: 10px; /* Updated rounded corners */
+    color: #0062A3;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 
-/* Make the title background transparent */
 QGroupBox::title {
-    background-color: transparent; /* Transparent title background */
-    color: #0062A3; /* Title text color */
-    padding: 5px;
-    margin: 0 0 5px 0; /* Adjust margin as needed */
-}
-
-/* Scroll Area Styling */
-QScrollArea#columnsScrollArea {
-    border: 1px solid #CCCCCC; /* Light gray border */
-    border-radius: 10px; /* Rounded corners for consistency */
-    background-color: #FFFFFF; /* Light background */
-}
-
-/* Windows colour for the scroll area for the checkboxes */
-QWidget#scrollContent {
-    border: 1px solid #B0BEC5;
-    border-radius: 10px; /* Ensure rounded corners */
-    background-color: #FFFFFF; /* Ensure background is light */
-}
-
-/* General Light Mode Styling for Settings Dialog */
-QDialog#settings_dialog {
-    background-color: #FFFFFF; /* Light background */
-    color: #000000; /* Default text color */
-    padding: 10px; /* Padding */
+    subcontrol-origin: margin;
+    left: 15px;
+    padding: 0 3px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /* QLabel Styling */
 QLabel {
-    color: #000000; /* Black text color */
-    font-size: 12px; /* Match with the dark mode font size */
+    color: #000000;
 }
 
-/* QLineEdit Styling */
-QLineEdit {
-    background-color: #FFFFFF; /* White background for input fields */
-    color: #000000; /* Black text */
-    border: 1px solid #0062A3; /* Border color */
-    border-radius: 5px; /* Rounded corners */
+QLabel.welcome-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0062A3;
+    padding: 5px;
+    margin: 5px 0;
+    text-align: center;
 }
 
-/* QListWidget Styling */
-QListWidget {
-    background-color: #FFFFFF; /* White background */
-    color: #000000; /* Black text */
-    border: 1px solid #0062A3; /* Border color */
-}
-
-/* QPushButton Styling for Settings Dialog */
-QPushButton#save_button, QPushButton#refresh_button {
-    background-color: #0062A3; /* Background color for buttons */
-    color: #FFFFFF; /* Text color */
-    border-radius: 8px; /* Rounded corners */
-    padding: 12px; /* Increase padding */
-    font-size: 14px; /* Larger font size */
-    min-width: 150px; /* Minimum width */
-    margin-top: 10px; /* Margin */
-}
-
-QPushButton#save_button:hover, QPushButton#refresh_button:hover {
-    background-color: #00518C; /* Hover color */
-}
-
-QPushButton#save_button:pressed, QPushButton#refresh_button:pressed {
-    background-color: #004078; /* Pressed color */
-}
-
-/* Checkbox Styling */
-QCheckBox {
-    color: #000000; /* Checkbox text color */
-}
-
-/* Scroll Area Styling for Settings Dialog */
-QScrollArea {
-    border: 1px solid #CCCCCC; /* Light gray border */
-    background-color: #FFFFFF; /* Light background */
-}
-
-/* Sort Label and Dropdown */
-QLabel#sortLabel, QLabel#startDateLabel, QLabel#endDateLabel {
-    color: #000000; /* Black text */
-}
-
-QComboBox#sortByDropdown, QDateTimeEdit#startDateInput, QDateTimeEdit#endDateInput {
-    background-color: #FFFFFF; /* White background */
-    color: #000000; /* Black text */
-    border: 1px solid #0062A3; /* Border color */
-    border-radius: 5px;
+/* Input Fields */
+QLineEdit, QDateTimeEdit, QComboBox {
+    background-color: #F7F7F7;
+    color: #000000;
+    border: 1px solid #0062A3;
+    border-radius: 4px;
     padding: 5px;
 }
 
-QComboBox#sortByDropdown:hover, QDateTimeEdit#startDateInput:hover, QDateTimeEdit#endDateInput:hover {
-    border-color: #00518C; /* Darker border on hover */
-}
-
-/* QComboBox Specific Styling */
-QComboBox {
-    background-color: #FFFFFF; /* White background for dropdown */
-    color: #000000; /* Black text */
-    border: 1px solid #0062A3; /* Blue border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 5px; /* Padding */
+QLineEdit:hover, QDateTimeEdit:hover, QComboBox:hover {
+    border-color: #00518C;
 }
 
 QComboBox::drop-down {
-    background-color: #FFFFFF; /* White background for dropdown button */
-    border: 1px solid #0062A3; /* Blue border */
+    background-color: #F7F7F7;
+    border: 1px solid #0062A3;
 }
 
 QComboBox::item {
-    background-color: #FFFFFF; /* White background for items */
-    color: #000000; /* Black text */
+    background-color: #F7F7F7;
+    color: #000000;
 }
 
 QComboBox::item:selected {
-    background-color: #E0E0E0; /* Light gray background for selected item */
-}
-
-/* Column Selection Group */
-QGroupBox#columnsGroup {
-    background-color: #FFFFFF; /* Light background */
-    border: 1px solid #0062A3; /* Blue border */
-    border-radius: 10px; /* Rounded corners */
-    padding: 10px;
+    background-color: #E0E0E0;
 }
 
 /* Progress Bar */
-QProgressBar#progressBar {
-    border: 1px solid #0062A3; /* Blue border */
-    background: #F0F0F0; /* Light background */
+QProgressBar {
+    border: 1px solid #0062A3;
+    background: #CCCCCC;
     height: 15px;
-    border-radius: 7px; /* Rounded corners */
-    text-align: center; /* Center text */
-    padding: 0; /* No padding */
-    margin: 0; /* No margin */
+    border-radius: 7px;
+    text-align: center;
 }
 
-QProgressBar#progressBar::chunk {
-    background-color: #0062A3; /* Blue progress */
-    border-radius: 7px; /* Rounded corners */
+QProgressBar::chunk {
+    background-color: #0062A3;
+    border-radius: 7px;
 }
 
-QProgressBar#progressBar::text {
-    color: #000000; /* Black text */
+QProgressBar::text {
+    color: #000000;
+    padding: 0;
+}
+
+/* Scroll Area Styling */
+QScrollArea {
+    border: 1px solid #0062A3;
+    background-color: #FFFFFF;
 }
 
 /* Calendar Styling */
 QCalendarWidget QWidget#qt_calendar_navigationbar { 
-    color: #000000; /* Black text */
-    background-color: #F0F0F0; /* Light background */
+    color: #000000;
+    background-color: #F7F7F7;
 }
 
 QCalendarWidget QToolButton {
-    color: #000000; /* Black text */
-    background-color: #F0F0F0; /* Light background */
+    color: #000000;
+    background-color: #F7F7F7;
     border: none;
-    padding: 5px;
 }
 
 QCalendarWidget QAbstractItemView {
-    background-color: #FFFFFF; /* White background */
-    color: #000000; /* Black text */
+    background-color: #EFEFEF;
+    color: #000000;
 }
 
+/* Weekday Labels Styling */
 QCalendarWidget QHeaderView::section {
-    color: #000000; /* Black text */
-    background-color: #F0F0F0; /* Light background */
+    color: #333333;
+    background-color: #EFEFEF;
     font-weight: bold;
     border: none;
 }
 
+/* Additional Styling for Settings Dialog */
+QDialog {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 10px;
+}
 
+/* Exclude/Include Cards */
+QGroupBox.exclude-card, QGroupBox.no-location-card, QGroupBox.inclusion-card {
+    background-color: #FFFFFF;
+    border: 1px solid #0062A3;
+    padding: 10px;
+    font-weight: bold;
+    color: #0062A3;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+/* Checkbox Styling with Rounded Indicator */
+QCheckBox {
+    color: #000000; /* Ensure text is dark for visibility in light mode */
+    font-size: 12px;
+}
+
+QCheckBox::indicator {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #0062A3; /* Blue border for the checkbox indicator */
+    background-color: #FFFFFF; /* White background for the indicator */
+    border-radius: 7px; /* Rounded corners for a circular appearance */
+}
+
+QCheckBox::indicator:checked {
+    background-color: #0062A3; /* Blue fill when checked */
+    border: 1px solid #004078; /* Darker blue border for checked state */
+    border-radius: 7px; /* Maintain rounded corners for checked state */
+}

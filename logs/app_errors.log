@@ -286,3 +286,109 @@ NameError: name 'QDateEdit' is not defined. Did you mean: 'QTimeEdit'?
 2024-12-06 12:51:11,461 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
 2024-12-06 12:57:34,734 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
 2024-12-06 13:05:34,319 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-06 13:46:59,941 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-09 08:25:30,760 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-09 08:29:26,530 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-09 08:30:22,747 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:41:40,721 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:41:45,248 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 83, in switch_to_sr_formatter
+    if self.sr_formatter is None:
+       ^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'sr_formatter'
+2024-12-10 10:43:08,819 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:43:10,364 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 83, in switch_to_sr_formatter
+    if self.sr_formatter is None:
+       ^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'sr_formatter'
+2024-12-10 10:45:43,502 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:45:45,726 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 85, in switch_to_sr_formatter
+    from modules.sr_formatter import SRFormatterUI
+ImportError: cannot import name 'SRFormatterUI' from 'modules.sr_formatter' (unknown location)
+2024-12-10 10:46:24,853 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:47:45,366 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:48:44,795 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:48:46,578 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 85, in switch_to_sr_formatter
+    from modules.sr_formatter import SRFormatterUI
+ImportError: cannot import name 'SRFormatterUI' from 'modules.sr_formatter' (unknown location)
+2024-12-10 10:49:42,080 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:49:43,692 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 85, in switch_to_sr_formatter
+    from modules.sr_formatter import SRFormatterUI
+ImportError: cannot import name 'SRFormatterUI' from 'modules.sr_formatter' (unknown location)
+2024-12-10 10:51:35,762 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:51:37,090 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 85, in switch_to_sr_formatter
+    from modules.sr_formatter import SRFormatterUI
+ImportError: cannot import name 'SRFormatterUI' from 'modules.sr_formatter' (unknown location)
+2024-12-10 10:55:06,268 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 10:55:07,723 - AppLogger - ERROR - Traceback (most recent call last):
+  File "/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/windows/main.py", line 85, in switch_to_sr_formatter
+    from modules.sr_formatter import SRFormatterUI
+ImportError: cannot import name 'SRFormatterUI' from 'modules.sr_formatter' (/Users/ryanwybenga/Desktop/Development/COOP/Excel-Report_Generator/modules/sr_formatter/__init__.py)
+2024-12-10 10:56:42,632 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:03:48,070 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:10:01,877 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:14:42,664 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:20:03,374 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:23:40,413 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:23:56,036 - AppLogger - ERROR - Error previewing file: name 'pd' is not defined
+2024-12-10 11:31:48,956 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:32:02,180 - AppLogger - ERROR - Error previewing file: name 'pd' is not defined
+2024-12-10 11:33:58,824 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:34:07,525 - AppLogger - ERROR - Error previewing file: name 'pd' is not defined
+2024-12-10 11:36:30,387 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:36:41,731 - AppLogger - ERROR - Error previewing file: StringMethods.split() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2024-12-10 11:38:46,815 - AppLogger - ERROR - Error checking for updates: HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Read timed out. (read timeout=10)
+2024-12-10 11:38:55,236 - AppLogger - ERROR - Error previewing file: StringMethods.split() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2024-12-10 11:41:33,925 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:41:42,406 - AppLogger - ERROR - Error previewing file: StringMethods.split() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2024-12-10 11:42:04,172 - AppLogger - ERROR - Error previewing file: StringMethods.split() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2024-12-10 11:44:09,175 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:44:18,657 - AppLogger - ERROR - Error previewing file: StringMethods.split() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2024-12-10 11:46:36,150 - AppLogger - ERROR - Error checking for updates: HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Read timed out. (read timeout=10)
+2024-12-10 11:46:45,451 - AppLogger - ERROR - Error previewing file: StringMethods.split() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2024-12-10 11:49:09,218 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:49:18,243 - AppLogger - ERROR - Error previewing file: StringMethods.split() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2024-12-10 11:54:21,807 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 11:54:31,346 - AppLogger - ERROR - Error previewing file: StringMethods.split() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2024-12-10 12:32:27,599 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 12:32:37,263 - AppLogger - ERROR - Error previewing file: StringMethods.split() takes from 1 to 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2024-12-10 14:26:42,330 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 14:29:36,793 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 14:29:45,974 - AppLogger - ERROR - Error previewing file: 'SRFormatter' object has no attribute 'preview_sr_data'
+2024-12-10 14:39:27,993 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 14:46:59,437 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 14:50:55,386 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-10 14:53:45,280 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 07:53:17,022 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:08:28,101 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:23:45,150 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:26:41,559 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:32:23,765 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:35:11,521 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:35:30,419 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:38:11,220 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:40:09,034 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:43:40,230 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:46:31,854 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:47:59,339 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:48:54,430 - AppLogger - ERROR - Error saving report: information(parent: Optional[QWidget], title: Optional[str], text: Optional[str], buttons: QMessageBox.StandardButton = QMessageBox.Ok, defaultButton: QMessageBox.StandardButton = QMessageBox.NoButton): argument 1 has unexpected type 'ReportGenerator'
+2024-12-11 08:49:31,895 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 08:54:39,650 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 09:09:17,498 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 09:12:39,792 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 09:12:57,426 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 09:35:57,562 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 11:01:26,982 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 11:02:54,354 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 11:03:02,665 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 11:05:09,815 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 11:06:23,136 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 11:07:15,468 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 11:09:08,486 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 11:15:12,607 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 11:17:19,875 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))

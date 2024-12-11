@@ -65,7 +65,7 @@ class FileLoader:
         Map known columns with alternative names to user-friendly names.
         """
         column_mapping = {
-            "Service Request Number": ["Service Request Number", "Service_Re"],
+            "Service Request Number": ["Service Request Number", "Service_Re","SR #"],
             "Created Date": ["Created Date", "Created_Da", "Created Date Only"],
             "Type Description": ["Type Description", "Type_Descr"],
             "Group Description": ["Group Description", "Group_Desc"],

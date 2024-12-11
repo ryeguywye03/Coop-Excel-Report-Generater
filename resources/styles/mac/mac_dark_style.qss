@@ -6,19 +6,8 @@ QMainWindow {
     font-size: 12px;
 }
 
-/* Sidebar Styling */
-QWidget#sidebarGroup {
-    background-color: #333333;
-    color: #0062A3;
-    border: 1px solid #0062A3;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin: 5px;
-}
-
-/* Sidebar Buttons */
-QPushButton#loadExcelButton, QPushButton#clearExcelButton, QPushButton#settingsButton, QPushButton#backButton, QPushButton#srCounterButton {
+/* Reusable Class: Sidebar Buttons */
+QPushButton.sidebar-button {
     background-color: #0062A3;
     color: #FFFFFF;
     padding: 8px;
@@ -29,43 +18,33 @@ QPushButton#loadExcelButton, QPushButton#clearExcelButton, QPushButton#settingsB
     margin-top: 5px;
 }
 
-QPushButton#loadExcelButton:hover, QPushButton#clearExcelButton:hover, QPushButton#settingsButton:hover, QPushButton#backButton:hover, QPushButton#srCounterButton:hover {
+QPushButton.sidebar-button:hover {
     background-color: #00518C;
 }
 
-QPushButton#loadExcelButton:pressed, QPushButton#clearExcelButton:pressed, QPushButton#settingsButton:pressed, QPushButton#backButton:pressed, QPushButton#srCounterButton:pressed {
+QPushButton.sidebar-button:pressed {
     background-color: #004078;
 }
 
-/* Main Content Panel */
-QWidget#mainPanelGroup {
-    background-color: #2D2D2D;
+/* Reusable Class: Report Buttons */
+QPushButton.report-button {
+    background-color: #0062A3;
     color: #FFFFFF;
-    padding: 15px;
-    border: 1px solid #0062A3;
-    border-radius: 15px;
-    margin: 5px;
-}
-
-/* SR Counter Panel Styling */
-QWidget#srCounterPanel {
-    background-color: #2D2D2D;
-    border: 1px solid #0062A3;
-    border-radius: 15px;
     padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
 }
 
-/* Title and Header Styling */
-QLabel#welcomeLabel, QLabel#title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #0062A3;
-    padding: 5px;
-    margin: 5px 0;
+QPushButton.report-button:hover {
+    background-color: #00518C;
+}
+
+QPushButton.report-button:pressed {
+    background-color: #004078;
 }
 
 /* Group Box Styling */
-QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroupBox#mainPanelGroup {
+QGroupBox {
     background-color: #2D2D2D;
     border: 1px solid #0062A3;
     padding: 10px;
@@ -74,70 +53,6 @@ QGroupBox#sidebarGroup, QGroupBox#srCounterGroup, QGroupBox#columnsGroup, QGroup
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
-}
-
-/* Scroll Area Styling */
-QScrollArea#columnsScrollArea {
-    border: 1px solid #333333;
-    border-radius: 5px;
-    background-color: #2D2D2D;
-}
-
-/* Settings Dialog */
-QDialog#settings_dialog {
-    background-color: #2D2D2D;
-    color: #FFFFFF;
-    padding: 10px;
-}
-
-/* QLabel Styling */
-QLabel {
-    color: #FFFFFF;
-}
-
-/* QLineEdit Styling */
-QLineEdit {
-    background-color: #333333;
-    color: #FFFFFF;
-    border: 1px solid #0062A3;
-    border-radius: 4px;
-    padding: 5px;
-}
-
-/* QListWidget Styling */
-QListWidget {
-    background-color: #333333;
-    color: #FFFFFF;
-    border: 1px solid #0062A3;
-}
-
-/* QPushButton Styling for Settings Dialog */
-QPushButton#save_button, QPushButton#refresh_button {
-    background-color: #800080;
-    color: #FFFFFF;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    min-width: 150px;
-    margin-top: 10px;
-}
-
-QPushButton#save_button:hover, QPushButton#refresh_button:hover {
-    background-color: #660066;
-}
-
-QPushButton#save_button:pressed, QPushButton#refresh_button:pressed {
-    background-color: #550055;
-}
-
-/* QGroupBox Styling with Rounded Borders for Settings Sections */
-QGroupBox {
-    background-color: #2D2D2D;
-    border: 2px solid #4F81BD;
-    border-radius: 8px;
-    padding: 10px;
-    margin-top: 10px;
 }
 
 QGroupBox::title {
@@ -149,41 +64,31 @@ QGroupBox::title {
     font-weight: bold;
 }
 
-/* Checkbox Styling */
-QCheckBox {
+/* QLabel Styling */
+QLabel {
     color: #FFFFFF;
 }
 
-/* Scroll Area Styling for Settings Dialog */
-QScrollArea {
-    border: 1px solid #333333;
-    background-color: #2D2D2D;
+QLabel.welcome-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0062A3;
+    padding: 5px;
+    margin: 5px 0;
+    text-align: center;
 }
 
-/* Sort Label and Dropdown */
-QLabel#sortLabel, QLabel#startDateLabel, QLabel#endDateLabel {
-    color: #FFFFFF;
-}
-
-QComboBox#sortByDropdown, QDateTimeEdit#startDateInput, QDateTimeEdit#endDateInput {
+/* Input Fields */
+QLineEdit, QDateTimeEdit, QComboBox {
     background-color: #333333;
     color: #FFFFFF;
     border: 1px solid #0062A3;
-    border-radius: 5px;
+    border-radius: 4px;
     padding: 5px;
 }
 
-QComboBox#sortByDropdown:hover, QDateTimeEdit#startDateInput:hover, QDateTimeEdit#endDateInput:hover {
+QLineEdit:hover, QDateTimeEdit:hover, QComboBox:hover {
     border-color: #00518C;
-}
-
-/* QComboBox Specific Styling */
-QComboBox {
-    background-color: #333333;
-    color: #FFFFFF;
-    border: 1px solid #0062A3;
-    border-radius: 5px;
-    padding: 5px;
 }
 
 QComboBox::drop-down {
@@ -200,50 +105,29 @@ QComboBox::item:selected {
     background-color: #E0E0E0;
 }
 
-/* Column Selection Group */
-QGroupBox#columnsGroup {
-    background-color: #2D2D2D;
-    border: 1px solid #0062A3;
-    border-radius: 8px;
-    padding: 10px;
-}
-
 /* Progress Bar */
-QProgressBar#progressBar {
+QProgressBar {
     border: 1px solid #0062A3;
     background: #333333;
     height: 15px;
     border-radius: 7px;
     text-align: center;
-    padding: 0;
-    margin: 0;
 }
 
-QProgressBar#progressBar::chunk {
+QProgressBar::chunk {
     background-color: #0062A3;
     border-radius: 7px;
 }
 
-/* Set the text color */
-QProgressBar#progressBar::text {
+QProgressBar::text {
     color: #FFFFFF;
     padding: 0;
 }
 
-/* Report Buttons */
-QPushButton#previewButton, QPushButton#generateButton {
-    background-color: #0062A3;
-    color: #FFFFFF;
-    padding: 10px;
-    border-radius: 6px;
-}
-
-QPushButton#previewButton:hover, QPushButton#generateButton:hover {
-    background-color: #00518C;
-}
-
-QPushButton#previewButton:pressed, QPushButton#generateButton:pressed {
-    background-color: #004078;
+/* Scroll Area Styling */
+QScrollArea {
+    border: 1px solid #333333;
+    background-color: #2D2D2D;
 }
 
 /* Calendar Styling */
@@ -271,8 +155,15 @@ QCalendarWidget QHeaderView::section {
     border: none;
 }
 
-/* Additional GroupBox Styling for Specific Sections */
-QGroupBox#excludeCard, QGroupBox#noLocationCard, QGroupBox#inclusionCard {
+/* Additional Styling for Settings Dialog */
+QDialog {
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+/* Exclude/Include Cards */
+QGroupBox.exclude-card, QGroupBox.no-location-card, QGroupBox.inclusion-card {
     background-color: #2D2D2D;
     border: 1px solid #0062A3;
     padding: 10px;

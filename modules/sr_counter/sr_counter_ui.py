@@ -5,9 +5,9 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import QDateTime, QTime, Qt
 from modules.utils.logger_manager import LoggerManager
 from modules.utils.app_settings import AppSettings
-from .file_loader import FileLoader
+from ..utils.file_loader import FileLoader
 from .report_generator import ReportGenerator
-from .checkbox_manager import CheckboxManager
+from ..utils.checkbox_manager import CheckboxManager
 from .settings_handler import SettingsHandler
 
 
@@ -39,7 +39,6 @@ class SRCounterUI(QWidget):
         self.selected_sort_by = self.sort_by_dropdown.currentText()
         self.logger.log_info(f"Sort By changed to: {self.selected_sort_by}")
 
-
     def setup_ui(self):
         """Set up the UI layout."""
         self.setObjectName("mainPanel")  # Main panel object name
@@ -60,22 +59,22 @@ class SRCounterUI(QWidget):
 
         # Load Excel Button
         load_excel_button = QPushButton("Load Excel")
-        load_excel_button.setObjectName("loadExcelButton")
+        load_excel_button.setProperty("class", "sidebar-button")  # Apply reusable class
         load_excel_button.clicked.connect(self.load_excel)
 
         # Clear Excel Button
         clear_excel_button = QPushButton("Clear Excel")
-        clear_excel_button.setObjectName("clearExcelButton")
+        clear_excel_button.setProperty("class", "sidebar-button")  # Apply reusable class
         clear_excel_button.clicked.connect(self.clear_excel)
 
         # Settings Button
         settings_button = QPushButton("Settings")
-        settings_button.setObjectName("settingsButton")
+        settings_button.setProperty("class", "sidebar-button")  # Apply reusable class
         settings_button.clicked.connect(self.open_settings_dialog)
 
         # Back Button
         back_button = QPushButton("Back to Main Menu")
-        back_button.setObjectName("backButton")
+        back_button.setProperty("class", "sidebar-button")  # Apply reusable class
         back_button.clicked.connect(self.main_window.switch_to_main_menu)
 
         # Add Buttons
@@ -97,9 +96,9 @@ class SRCounterUI(QWidget):
         # Sort dropdown
         sort_layout = QHBoxLayout()
         sort_label = QLabel("Sort By:")
-        sort_label.setObjectName("sortLabel")
+        sort_label.setProperty("class", "label")  # Apply reusable class
         self.sort_by_dropdown = QComboBox()
-        self.sort_by_dropdown.setObjectName("sortByDropdown")
+        self.sort_by_dropdown.setProperty("class", "dropdown")  # Apply reusable class
         self.sort_by_dropdown.addItems(["Type Description", "Group Description", "Created Date"])
         sort_layout.addWidget(sort_label)
         sort_layout.addWidget(self.sort_by_dropdown)
@@ -109,16 +108,16 @@ class SRCounterUI(QWidget):
         # Date selectors (start and end)
         date_layout = QHBoxLayout()
         start_date_label = QLabel("Start Date:")
-        start_date_label.setObjectName("startDateLabel")
+        start_date_label.setProperty("class", "label")  # Apply reusable class
         self.start_date_input = QDateEdit()
-        self.start_date_input.setObjectName("startDateInput")
+        self.start_date_input.setProperty("class", "input-field")  # Apply reusable class
         self.start_date_input.setCalendarPopup(True)
         self.start_date_input.setDate(QDateTime.currentDateTime().addMonths(-1).date())
 
         end_date_label = QLabel("End Date:")
-        end_date_label.setObjectName("endDateLabel")
+        end_date_label.setProperty("class", "label")  # Apply reusable class
         self.end_date_input = QDateEdit()
-        self.end_date_input.setObjectName("endDateInput")
+        self.end_date_input.setProperty("class", "input-field")  # Apply reusable class
         self.end_date_input.setCalendarPopup(True)
         self.end_date_input.setDate(QDateTime.currentDateTime().date())
 
@@ -131,22 +130,21 @@ class SRCounterUI(QWidget):
         # Time frame toggle and dropdowns (below date selectors)
         time_frame_layout = QHBoxLayout()
         self.use_time_checkbox = QCheckBox("Enable Time Frame")
-        self.use_time_checkbox.setObjectName("useTimeCheckbox")
+        self.use_time_checkbox.setProperty("class", "checkbox")  # Apply reusable class
         self.use_time_checkbox.stateChanged.connect(self.toggle_time_frame)
 
         start_time_label = QLabel("Start Time:")
-        start_time_label.setObjectName("startTimeLabel")
+        start_time_label.setProperty("class", "label")  # Apply reusable class
         self.start_time_input = QTimeEdit()
-        self.start_time_input.setObjectName("startTimeInput")
+        self.start_time_input.setProperty("class", "input-field")  # Apply reusable class
         self.start_time_input.setEnabled(False)
 
         end_time_label = QLabel("End Time:")
-        end_time_label.setObjectName("endTimeLabel")
+        end_time_label.setProperty("class", "label")  # Apply reusable class
         self.end_time_input = QTimeEdit()
-        self.end_time_input.setObjectName("endTimeInput")
+        self.end_time_input.setProperty("class", "input-field")  # Apply reusable class
         self.end_time_input.setEnabled(False)
 
-        # Default times are set to "all time" by leaving inputs disabled until checkbox is checked
         self.start_time_input.setTime(QTime(0, 0))
         self.end_time_input.setTime(QTime(23, 59))
 
@@ -161,7 +159,7 @@ class SRCounterUI(QWidget):
         columns_group = QGroupBox("Select Columns")
         columns_group.setObjectName("columnsGroup")
         scroll_area = QScrollArea()
-        scroll_area.setObjectName("columnsScrollArea")
+        scroll_area.setProperty("class", "scroll-area")  # Apply reusable class
         scroll_area.setWidgetResizable(True)
         scroll_area.setFixedHeight(200)
 
@@ -175,23 +173,20 @@ class SRCounterUI(QWidget):
         columns_group_layout.addWidget(scroll_area)
         main_panel_layout.addWidget(columns_group)
 
-        # Initialize CheckboxManager without predefined columns
-        self.checkbox_manager = CheckboxManager(self.columns_layout)
-
         # Progress bar
         self.progress_bar = QProgressBar()
-        self.progress_bar.setObjectName("progressBar")
+        self.progress_bar.setProperty("class", "progress-bar")  # Apply reusable class
         self.progress_bar.setValue(0)
         main_panel_layout.addWidget(self.progress_bar)
 
         # Buttons for generating the report
         button_layout = QHBoxLayout()
         preview_button = QPushButton("Preview Report")
-        preview_button.setObjectName("previewButton")
+        preview_button.setProperty("class", "report-button")  # Apply reusable class
         preview_button.clicked.connect(self.preview_report)
 
         generate_button = QPushButton("Generate Report")
-        generate_button.setObjectName("generateButton")
+        generate_button.setProperty("class", "report-button")  # Apply reusable class
         generate_button.clicked.connect(self.generate_report)
 
         button_layout.addWidget(preview_button)
@@ -201,6 +196,7 @@ class SRCounterUI(QWidget):
 
         sr_counter_group.setLayout(main_panel_layout)
         return sr_counter_group
+
 
 
 
@@ -253,10 +249,12 @@ class SRCounterUI(QWidget):
             if report_df is not None:
                 # Save the report, passing time frame details
                 output_file = self.report_generator.save_report(report_df, start_date, end_date, start_time, end_time)
-                QMessageBox.information(self, "Success", f"Report saved at {output_file}")
+                if output_file:  # Alert only after successful save
+                    QMessageBox.information(self, "Success", f"Report saved at {output_file}")
         except Exception as e:
             self.logger.log_error(f"Error during report generation: {e}")
             QMessageBox.critical(self, "Error", "Failed to generate report.")
+
 
 
     def preview_report(self):

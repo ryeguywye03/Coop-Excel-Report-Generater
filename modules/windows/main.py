@@ -49,6 +49,7 @@ class MainWindow(QMainWindow):
 
         self.main_menu = None
         self.sr_counter = None
+        self.sr_formatter = None
         self.switch_to_main_menu()
 
     def get_window_size_from_settings(self):
@@ -78,6 +79,16 @@ class MainWindow(QMainWindow):
             self.central_widget.addWidget(self.sr_counter)
         self.central_widget.setCurrentWidget(self.sr_counter)
         self.logger.log_info("Switched to SR Counter")
+
+    def switch_to_sr_formatter(self):
+        if self.sr_formatter is None:
+            from modules.sr_formatter import SRFormatterUI
+            self.sr_formatter = SRFormatterUI(self)  # Properly initialize SRFormatterUI
+            self.central_widget.addWidget(self.sr_formatter)
+        self.central_widget.setCurrentWidget(self.sr_formatter)
+        self.logger.log_info("Switched to SR Formatter")
+
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
