@@ -6,7 +6,6 @@ from openpyxl.styles import Font, PatternFill, Border, Side
 from PyQt6.QtWidgets import QFileDialog
 from modules.utils.logger_manager import LoggerManager
 
-
 class SRFormatter:
     def __init__(self, logger=None):
         self.logger = logger if logger else LoggerManager()
@@ -61,16 +60,6 @@ class SRFormatter:
             self.logger.log_error(f"Error generating preview: {e}")
             raise
 
-
-    def _is_already_processed(self, row, sr_column_index):
-        """
-        Check if a row is already processed based on SR # and the column to its right.
-        The column to the right of SR # is dynamically identified.
-        """
-        if sr_column_index + 1 < len(row):
-            return pd.notnull(row.iloc[sr_column_index + 1])
-        return False
-
     def _process_data(self, df):
         """Process the DataFrame by splitting and formatting the 'SR #' column."""
         if 'SR #' not in df.columns:
@@ -81,14 +70,17 @@ class SRFormatter:
         # Get the index of the 'SR #' column
         sr_column_index = df.columns.get_loc('SR #')
 
-        # Iterate through each row and update inline if necessary
+        # Check if a description column already exists or needs to be created
+        if sr_column_index + 1 >= len(df.columns) or 'Description' not in df.columns:
+            description_column = 'Description'
+            df.insert(sr_column_index + 1, description_column, '')
+        else:
+            description_column = df.columns[sr_column_index + 1]
+
+        # Process each row
         for index, row in df.iterrows():
             if pd.notnull(row['SR #']):
-                # Skip processing if the row is already processed
-                if self._is_already_processed(row, sr_column_index):
-                    continue
-
-                # Process the SR # column
+                # Split the SR # column
                 sr_parts = str(row['SR #']).split(' ', 1)
                 sr_number = self._add_leading_zeros(sr_parts[0]) if len(sr_parts) > 0 else None
                 description = sr_parts[1] if len(sr_parts) > 1 else ''
@@ -96,21 +88,12 @@ class SRFormatter:
                 # Update the SR # column
                 df.at[index, 'SR #'] = sr_number
 
-                # Update the column to the right of SR #
-                right_column_name = df.columns[sr_column_index + 1]
-                df.at[index, right_column_name] = description
-
-        # Rename the column to the right of SR # to "Description"
-        right_column_name = df.columns[sr_column_index + 1]
-        if 'Unnamed' in right_column_name:  # Check if it's an unnamed column
-            df.rename(columns={right_column_name: 'Description'}, inplace=True)
+                # Update the Description column
+                df.at[index, description_column] = description
 
         # Reorder columns to ensure SR # and Description are first
-        description_column = 'Description'
         columns_order = ['SR #', description_column] + [col for col in df.columns if col not in ['SR #', description_column]]
         return df[columns_order]
-
-
 
     @staticmethod
     def _add_leading_zeros(sr_number):

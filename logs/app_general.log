@@ -26825,3 +26825,50 @@ ImportError: cannot import name 'SRFormatterUI' from 'modules.sr_formatter' (/Us
 2024-12-11 11:17:34,335 - AppLogger - INFO - Theme applied: dark
 2024-12-11 11:17:34,335 - AppLogger - INFO - Theme changed to dark
 2024-12-11 11:17:35,558 - AppLogger - INFO - Switched to SR Counter
+2024-12-11 13:39:34,851 - AppLogger - INFO - App initialized
+2024-12-11 13:39:34,852 - AppLogger - INFO - App initialized
+2024-12-11 13:39:34,853 - AppLogger - INFO - Settings loaded successfully.
+2024-12-11 13:39:34,853 - AppLogger - INFO - Theme applied: dark
+2024-12-11 13:39:34,854 - AppLogger - INFO - Settings loaded successfully
+2024-12-11 13:39:34,855 - AppLogger - INFO - Settings loaded successfully.
+2024-12-11 13:39:34,972 - AppLogger - INFO - Switched to Main Menu
+2024-12-11 13:39:34,973 - AppLogger - INFO - App version set to v1.0.55
+2024-12-11 13:39:34,973 - AppLogger - INFO - Checking for updates...
+2024-12-11 13:39:35,018 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 13:39:36,880 - AppLogger - INFO - Switched to SR Formatter
+2024-12-11 13:39:52,168 - AppLogger - INFO - Processing SR data.
+2024-12-11 13:39:52,185 - AppLogger - ERROR - Error generating preview: "['Description'] not in index"
+2024-12-11 13:39:52,185 - AppLogger - ERROR - KeyError during preview: "['Description'] not in index"
+2024-12-11 13:39:56,112 - AppLogger - INFO - Processing SR data.
+2024-12-11 13:39:56,129 - AppLogger - ERROR - Error formatting SR data: "['Description'] not in index"
+2024-12-11 13:39:56,129 - AppLogger - ERROR - Error formatting and saving file: "['Description'] not in index"
+2024-12-11 13:46:49,159 - AppLogger - INFO - App initialized
+2024-12-11 13:46:49,161 - AppLogger - INFO - App initialized
+2024-12-11 13:46:49,162 - AppLogger - INFO - Settings loaded successfully.
+2024-12-11 13:46:49,164 - AppLogger - INFO - Theme applied: dark
+2024-12-11 13:46:49,166 - AppLogger - INFO - Settings loaded successfully
+2024-12-11 13:46:49,169 - AppLogger - INFO - Settings loaded successfully.
+2024-12-11 13:46:49,261 - AppLogger - INFO - Switched to Main Menu
+2024-12-11 13:46:49,261 - AppLogger - INFO - App version set to v1.0.55
+2024-12-11 13:46:49,261 - AppLogger - INFO - Checking for updates...
+2024-12-11 13:46:49,288 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 13:46:54,237 - AppLogger - INFO - Switched to SR Formatter
+2024-12-11 13:47:04,309 - AppLogger - INFO - Processing SR data.
+2024-12-11 13:47:04,332 - AppLogger - INFO - Generating preview for SR data.
+2024-12-11 13:51:32,066 - AppLogger - INFO - App initialized
+2024-12-11 13:51:32,070 - AppLogger - INFO - App initialized
+2024-12-11 13:51:32,070 - AppLogger - INFO - Settings loaded successfully.
+2024-12-11 13:51:32,073 - AppLogger - INFO - Theme applied: dark
+2024-12-11 13:51:32,075 - AppLogger - INFO - Settings loaded successfully
+2024-12-11 13:51:32,076 - AppLogger - INFO - Settings loaded successfully.
+2024-12-11 13:51:32,173 - AppLogger - INFO - Switched to Main Menu
+2024-12-11 13:51:32,174 - AppLogger - INFO - App version set to v1.0.55
+2024-12-11 13:51:32,174 - AppLogger - INFO - Checking for updates...
+2024-12-11 13:51:32,199 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 13:51:33,603 - AppLogger - INFO - Switched to SR Formatter
+2024-12-11 13:51:41,910 - AppLogger - INFO - Processing SR data.
+2024-12-11 13:51:41,927 - AppLogger - INFO - Generating preview for SR data.
+2024-12-11 13:54:42,026 - AppLogger - INFO - Processing SR data.
+2024-12-11 13:54:42,050 - AppLogger - INFO - Generating preview for SR data.
+2024-12-11 13:55:01,154 - AppLogger - INFO - Processing SR data.
+2024-12-11 13:55:01,178 - AppLogger - INFO - Generating preview for SR data.

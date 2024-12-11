@@ -392,3 +392,10 @@ ImportError: cannot import name 'SRFormatterUI' from 'modules.sr_formatter' (/Us
 2024-12-11 11:09:08,486 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
 2024-12-11 11:15:12,607 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
 2024-12-11 11:17:19,875 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 13:39:35,018 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 13:39:52,185 - AppLogger - ERROR - Error generating preview: "['Description'] not in index"
+2024-12-11 13:39:52,185 - AppLogger - ERROR - KeyError during preview: "['Description'] not in index"
+2024-12-11 13:39:56,129 - AppLogger - ERROR - Error formatting SR data: "['Description'] not in index"
+2024-12-11 13:39:56,129 - AppLogger - ERROR - Error formatting and saving file: "['Description'] not in index"
+2024-12-11 13:46:49,288 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-12-11 13:51:32,199 - AppLogger - ERROR - Error checking for updates: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
